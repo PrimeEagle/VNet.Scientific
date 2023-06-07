@@ -51,7 +51,7 @@ public class Measurement<TDim, TVal> where TDim : notnull, IDimensionBase<TVal>
                a.Dimension.AmountDenominatorExponent == b.Dimension.AmountDenominatorExponent;
     }
 
-    public Type FindMatchingDimensions()
+    private static Type FindMatchingDimensions(Measurement<TDim, TVal> a)
     {
         Type matchedType = null;
 
@@ -64,55 +64,61 @@ public class Measurement<TDim, TVal> where TDim : notnull, IDimensionBase<TVal>
 
             
             var lengthNumerator = (float)(dimensionType?.GetProperty("LengthNumeratorExponent")?.GetValue(null, null) ?? throw new InvalidOperationException());
-            if (lengthNumerator != Dimension.LengthNumeratorExponent) continue;
+            if (lengthNumerator != a.Dimension.LengthNumeratorExponent) continue;
 
             var massNumerator = (float)(dimensionType?.GetProperty("MassNumeratorExponent")?.GetValue(null, null) ?? throw new InvalidOperationException());
-            if (massNumerator != Dimension.MassNumeratorExponent) continue;
+            if (massNumerator != a.Dimension.MassNumeratorExponent) continue;
 
             var timeNumerator = (float)(dimensionType?.GetProperty("TimeNumeratorExponent")?.GetValue(null, null) ?? throw new InvalidOperationException());
-            if (timeNumerator != Dimension.TimeNumeratorExponent) continue;
+            if (timeNumerator != a.Dimension.TimeNumeratorExponent) continue;
 
             var electricalCurrentNumerator = (float)(dimensionType?.GetProperty("ElectricalCurrentNumeratorExponent")?.GetValue(null, null) ?? throw new InvalidOperationException());
-            if (electricalCurrentNumerator != Dimension.ElectricalCurrentNumeratorExponent) continue;
+            if (electricalCurrentNumerator != a.Dimension.ElectricalCurrentNumeratorExponent) continue;
 
             var luminousIntensityNumerator = (float)(dimensionType?.GetProperty("LuminousIntensityNumeratorExponent")?.GetValue(null, null) ?? throw new InvalidOperationException());
-            if (luminousIntensityNumerator != Dimension.LuminousIntensityNumeratorExponent) continue;
+            if (luminousIntensityNumerator != a.Dimension.LuminousIntensityNumeratorExponent) continue;
 
             var temperatureNumerator = (float)(dimensionType?.GetProperty("TemperatureNumeratorExponent")?.GetValue(null, null) ?? throw new InvalidOperationException());
-            if (temperatureNumerator != Dimension.TemperatureNumeratorExponent) continue;
+            if (temperatureNumerator != a.Dimension.TemperatureNumeratorExponent) continue;
 
             var amountNumerator = (float)(dimensionType?.GetProperty("AmountNumeratorExponent")?.GetValue(null, null) ?? throw new InvalidOperationException());
-            if (amountNumerator != Dimension.AmountNumeratorExponent) continue;
+            if (amountNumerator != a.Dimension.AmountNumeratorExponent) continue;
 
 
             var lengthDenominator = (float)(dimensionType?.GetProperty("LengthDenominatorExponent")?.GetValue(null, null) ?? throw new InvalidOperationException());
-            if (lengthDenominator != Dimension.LengthDenominatorExponent) continue;
+            if (lengthDenominator != a.Dimension.LengthDenominatorExponent) continue;
 
             var massDenominator = (float)(dimensionType?.GetProperty("MassDenominatorExponent")?.GetValue(null, null) ?? throw new InvalidOperationException());
-            if (massDenominator != Dimension.MassDenominatorExponent) continue;
+            if (massDenominator != a.Dimension.MassDenominatorExponent) continue;
 
             var timeDenominator = (float)(dimensionType?.GetProperty("TimeDenominatorExponent")?.GetValue(null, null) ?? throw new InvalidOperationException());
-            if (timeDenominator != Dimension.TimeDenominatorExponent) continue;
+            if (timeDenominator != a.Dimension.TimeDenominatorExponent) continue;
 
             var electricalCurrentDenominator = (float)(dimensionType?.GetProperty("ElectricalCurrentDenominatorExponent")?.GetValue(null, null) ?? throw new InvalidOperationException());
-            if (electricalCurrentDenominator != Dimension.ElectricalCurrentDenominatorExponent) continue;
+            if (electricalCurrentDenominator != a.Dimension.ElectricalCurrentDenominatorExponent) continue;
 
             var luminousIntensityDenominator = (float)(dimensionType?.GetProperty("LuminousIntensityDenominatorExponent")?.GetValue(null, null) ?? throw new InvalidOperationException());
-            if (luminousIntensityDenominator != Dimension.LuminousIntensityDenominatorExponent) continue;
+            if (luminousIntensityDenominator != a.Dimension.LuminousIntensityDenominatorExponent) continue;
 
             var temperatureDenominator = (float)(dimensionType?.GetProperty("TemperatureDenominatorExponent")?.GetValue(null, null) ?? throw new InvalidOperationException());
-            if (temperatureDenominator != Dimension.TemperatureDenominatorExponent) continue;
+            if (temperatureDenominator != a.Dimension.TemperatureDenominatorExponent) continue;
 
             var amountDenominator = (float)(dimensionType?.GetProperty("AmountDenominatorExponent")?.GetValue(null, null) ?? throw new InvalidOperationException());
-            if (amountDenominator != Dimension.AmountDenominatorExponent) continue;
+            if (amountDenominator != a.Dimension.AmountDenominatorExponent) continue;
 
             matchedType = dimensionType;
             break;
         }
 
+        // TODO
         matchedType ??= typeof(UniversalDimension);
 
         return matchedType;
+    }
+
+    private static void ReduceDimensions(Measurement<TDim, TVal> a)
+    {
+        // TODO
     }
 
     public static Measurement<TDim, TVal> operator +(Measurement<TDim, TVal> a, Measurement<TDim, TVal> b)
@@ -132,6 +138,34 @@ public class Measurement<TDim, TVal> where TDim : notnull, IDimensionBase<TVal>
         var value = a.Value - b.Value;
 
         return new Measurement<TDim, TVal>(value);
+    }
+
+    public static Measurement<TDim, TVal> operator *(Measurement<TDim, TVal> a, Measurement<TDim, TVal> b)
+    {
+        var value = a.Value * b.Value;
+
+        var result = new Measurement<TDim, TVal>(value);
+        result.Dimension.LengthNumeratorExponent = a.Dimension.LengthNumeratorExponent + b.Dimension.LengthNumeratorExponent;
+        result.Dimension.MassNumeratorExponent = a.Dimension.MassNumeratorExponent + b.Dimension.MassNumeratorExponent;
+        result.Dimension.TimeNumeratorExponent = a.Dimension.TimeNumeratorExponent + b.Dimension.TimeNumeratorExponent;
+        result.Dimension.ElectricalCurrentNumeratorExponent = a.Dimension.ElectricalCurrentNumeratorExponent + b.Dimension.ElectricalCurrentNumeratorExponent;
+        result.Dimension.LuminousIntensityNumeratorExponent = a.Dimension.LuminousIntensityNumeratorExponent + b.Dimension.LuminousIntensityNumeratorExponent;
+        result.Dimension.TemperatureNumeratorExponent = a.Dimension.TemperatureNumeratorExponent + b.Dimension.TemperatureNumeratorExponent;
+        result.Dimension.AmountNumeratorExponent = a.Dimension.AmountNumeratorExponent + b.Dimension.AmountNumeratorExponent;
+
+        result.Dimension.LengthDenominatorExponent = a.Dimension.LengthDenominatorExponent + b.Dimension.LengthDenominatorExponent;
+        result.Dimension.MassDenominatorExponent = a.Dimension.MassDenominatorExponent + b.Dimension.MassDenominatorExponent;
+        result.Dimension.TimeDenominatorExponent = a.Dimension.TimeDenominatorExponent + b.Dimension.TimeDenominatorExponent;
+        result.Dimension.ElectricalCurrentDenominatorExponent = a.Dimension.ElectricalCurrentDenominatorExponent + b.Dimension.ElectricalCurrentDenominatorExponent;
+        result.Dimension.LuminousIntensityDenominatorExponent = a.Dimension.LuminousIntensityDenominatorExponent + b.Dimension.LuminousIntensityDenominatorExponent;
+        result.Dimension.TemperatureDenominatorExponent = a.Dimension.TemperatureDenominatorExponent + b.Dimension.TemperatureDenominatorExponent;
+        result.Dimension.AmountDenominatorExponent = a.Dimension.AmountDenominatorExponent + b.Dimension.AmountDenominatorExponent;
+
+        ReduceDimensions(result);
+        var matchedType = FindMatchingDimensions(result);
+        // TODO
+
+        return result;
     }
 
     public static Measurement<TDim, TVal> operator -(Measurement<TDim, TVal> a)
