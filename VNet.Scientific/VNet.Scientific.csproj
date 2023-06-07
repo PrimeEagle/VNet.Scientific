@@ -14,4 +14,8 @@
     <PackageReference Include="MathNet.Filtering" Version="0.7.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\VNet.System\VNet.System\VNet.System.csproj" />
+  </ItemGroup>
+
 </Project>

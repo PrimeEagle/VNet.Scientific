@@ -1,0 +1,40 @@
+﻿namespace VNet.Scientific.Measurement
+{
+    [UnitEnum]
+    public enum MassUnit
+    {
+        AtomicMass,
+        Baht,
+        Carat,
+        Catty,
+        Dalton,
+        Decigram,
+        Dram,
+        Dyne,
+        Gigagram,
+        Grain,
+        Gram,
+        Hectogram,
+        Jin,
+        Kilogram,
+        Kip,
+        Megagram,
+        Microgram,
+        Milligram,
+        Nanogram,
+        MetricTon,
+        Ounce,
+        Picogram,
+        PlanckMass,
+        Pound,
+        PoundForce,
+        Qunital,
+        Slug,
+        SolarMass,
+        Stone,
+        Teragram,
+        Tola,
+        Ton,
+        TroyOunce
+    }
+}
