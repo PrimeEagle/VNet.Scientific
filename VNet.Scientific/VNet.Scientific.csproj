@@ -15,11 +15,10 @@
 	<ItemGroup>
 		<PackageReference Include="MathNet.Filtering" Version="0.7.0" />
 	</ItemGroup>
-
 	<ItemGroup>
 		<ProjectReference Include="..\..\VNet.Mathematics\VNet.Mathematics\VNet.Mathematics.csproj" />
 		<ProjectReference Include="..\..\VNet.System\VNet.System\VNet.System.csproj" />
-		<ProjectReference Include="..\VNet.Scientific.CodeGen\VNet.Scientific.CodeGen.csproj" />
+		<ProjectReference Include="..\VNet.Scientific.CodeGen\VNet.Scientific.CodeGen.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
 	</ItemGroup>
 
 </Project>
