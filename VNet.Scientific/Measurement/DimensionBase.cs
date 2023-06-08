@@ -5,28 +5,40 @@ namespace VNet.Scientific.Measurement;
 
 public abstract class DimensionBase<TUnit, TVal> : IDimension<TUnit, TVal> where TUnit : notnull, Enum where TVal : notnull, INumber<TVal>
 {
-    public abstract float LengthNumeratorExponent { get; }
-    public abstract float MassNumeratorExponent { get; }
-    public abstract float TimeNumeratorExponent { get; }
-    public abstract float ElectricalCurrentNumeratorExponent { get; }
-    public abstract float LuminousIntensityNumeratorExponent { get; }
-    public abstract float AmountNumeratorExponent { get; }
-    public abstract float TemperatureNumeratorExponent { get; }
-            
-    public abstract float LengthDenominatorExponent { get; }
-    public abstract float MassDenominatorExponent { get; }
-    public abstract float TimeDenominatorExponent { get; }
-    public abstract float ElectricalCurrentDenominatorExponent { get; }
-    public abstract float LuminousIntensityDenominatorExponent { get; }
-    public abstract float AmountDenominatorExponent { get; }
-    public abstract float TemperatureDenominatorExponent { get; }
-
-    public TUnit DefaultUnit { get; init; }
+    public abstract string IdTag { get; }
+    public DimensionComponent DimensionComponent { get; init; }
+    public TUnit DefaultUnit { get; set; }
 
 
-    protected DimensionBase(TUnit defaultUnit)
+
+    protected DimensionBase()
     {
-        DefaultUnit = defaultUnit;
+        DimensionComponent = new DimensionComponent();
+    }
+
+    protected void Initialize(string idTag)
+    {
+        if (!UnitDefinition.Components.ContainsKey(idTag)) throw new InvalidOperationException($"Value '{idTag}' was not found in UnitDefinition.Components");
+
+        var definition = UnitDefinition.Components[idTag];
+
+        DimensionComponent.Numerator.Length.Exponent = definition.Item1[0];
+        DimensionComponent.Numerator.Mass.Exponent = definition.Item1[1];
+        DimensionComponent.Numerator.Time.Exponent = definition.Item1[2];
+        DimensionComponent.Numerator.ElectricalCurrent.Exponent = definition.Item1[3];
+        DimensionComponent.Numerator.LuminousIntensity.Exponent = definition.Item1[4];
+        DimensionComponent.Numerator.Temperature.Exponent = definition.Item1[5];
+        DimensionComponent.Numerator.Amount.Exponent = definition.Item1[6];
+
+        DimensionComponent.Denominator.Length.Exponent = definition.Item2[0];
+        DimensionComponent.Denominator.Mass.Exponent = definition.Item2[1];
+        DimensionComponent.Denominator.Time.Exponent = definition.Item2[2];
+        DimensionComponent.Denominator.ElectricalCurrent.Exponent = definition.Item2[3];
+        DimensionComponent.Denominator.LuminousIntensity.Exponent = definition.Item2[4];
+        DimensionComponent.Denominator.Temperature.Exponent = definition.Item2[5];
+        DimensionComponent.Denominator.Amount.Exponent = definition.Item2[6];
+
+        DefaultUnit = (TUnit)definition.Item3;
     }
 
     public virtual void ValidateUnit(Enum unit)
@@ -58,16 +70,14 @@ public abstract class DimensionBase<TUnit, TVal> : IDimension<TUnit, TVal> where
 
     protected virtual TVal Convert(TVal value, Enum fromUnit, Enum toUnit)
     {
-        var unitType = typeof(TUnit);
-
-        if (!UnitLookup.ConversionFactors.ContainsKey(unitType) || !UnitLookup.ConversionFactors[unitType].ContainsKey(fromUnit) || 
-            !UnitLookup.ConversionFactors[unitType].ContainsKey(toUnit))
+        if (!UnitDefinition.ConversionFactors.ContainsKey(IdTag) || !UnitDefinition.ConversionFactors[IdTag].ContainsKey(fromUnit) || 
+            !UnitDefinition.ConversionFactors[IdTag].ContainsKey(toUnit))
         {
             throw new ArgumentException("Invalid unit specified");
         }
 
-        var valueInMeters = value * GenericNumber<TVal>.FromDouble(UnitLookup.ConversionFactors[unitType][(TUnit)fromUnit]);
-        var convertedValue = valueInMeters / GenericNumber<TVal>.FromDouble(UnitLookup.ConversionFactors[unitType][(TUnit)toUnit]);
+        var valueInMeters = value * GenericNumber<TVal>.FromDouble(UnitDefinition.ConversionFactors[IdTag][(TUnit)fromUnit]);
+        var convertedValue = valueInMeters / GenericNumber<TVal>.FromDouble(UnitDefinition.ConversionFactors[IdTag][(TUnit)toUnit]);
 
         return convertedValue;
     }

@@ -6,12 +6,12 @@
 
 namespace VNet.Scientific.Measurement;
 
-public sealed class Length<TVal> : DimensionBase<LengthUnit, TVal> where TVal : notnull, INumber<TVal>
+public sealed class UndefinedDimension<TVal> : DimensionBase<LengthUnit, TVal> where TVal : notnull, INumber<TVal>
 {
-    public override string IdTag => nameof(Length<TVal>);
+    public override string IdTag => nameof(UndefinedDimension<TVal>);
 
-    public Length() : base()
+    public UndefinedDimension() : base()
     {
-        Initialize(IdTag);
+
     }
 }
