@@ -19,6 +19,7 @@
 	<ItemGroup>
 		<ProjectReference Include="..\..\VNet.Mathematics\VNet.Mathematics\VNet.Mathematics.csproj" />
 		<ProjectReference Include="..\..\VNet.System\VNet.System\VNet.System.csproj" />
+		<ProjectReference Include="..\VNet.Scientific.CodeGen\VNet.Scientific.CodeGen.csproj" />
 	</ItemGroup>
 
 </Project>
