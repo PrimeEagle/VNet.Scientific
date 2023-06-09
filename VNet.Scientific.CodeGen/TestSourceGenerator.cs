@@ -6,8 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using CodeWriter = VNet.Scientific.CodeGen.Writers.CodeWriter.CodeWriter;
-using CSharpLanguageSettings = VNet.Scientific.CodeGen.Writers.CodeWriter.CSharpLanguageSettings;
+using VNet.CodeGeneration.Writers.CodeWriter;
 
 namespace VNet.Scientific.CodeGen
 {
@@ -50,14 +49,7 @@ namespace VNet.Scientific.CodeGen
 
                 try
                 {
-                    var cw = new CodeWriter(new CSharpLanguageSettings());
-                    using (var ns = cw.BeginNamespace(namespaceName))
-                    {
-                        using (var c = ns.BeginClass($"{dimension}Test", true))
-                        {
-                            
-                        }
-                    }
+                    var cw = new CodeWriter(new CSharpLanguageSettings(new CSharpDefaultStyle()));
 
                     var output = cw.ToString();
                     context.AddSource(fileName, SourceText.From(output, Encoding.UTF8));
