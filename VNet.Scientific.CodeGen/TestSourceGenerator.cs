@@ -1,10 +1,13 @@
 ﻿using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Text;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using VNet.CodeGeneration;
+using System.Text;
+using CodeWriter = VNet.Scientific.CodeGen.Writers.CodeWriter.CodeWriter;
+using CSharpLanguageSettings = VNet.Scientific.CodeGen.Writers.CodeWriter.CSharpLanguageSettings;
 
 namespace VNet.Scientific.CodeGen
 {
@@ -13,21 +16,28 @@ namespace VNet.Scientific.CodeGen
     {
         public void Initialize(GeneratorInitializationContext context)
         {
-#if DEBUG
-            if (!System.Diagnostics.Debugger.IsAttached)
-            {
-                System.Diagnostics.Debugger.Launch();
-            }
-#endif
+
 
             context.RegisterForSyntaxNotifications(() => new TestSyntaxReceiver());
         }
 
+        //public void Execute(GeneratorExecutionContext context)
+        //{
+        //    var cw = new CodeWriter(new CSharpLanguageSettings());
+        //    context.AddSource("Test", SourceText.From("public class Test { }", Encoding.UTF8));
+        //}
+
         public void Execute(GeneratorExecutionContext context)
         {
-            // retrieve the populated receiver
-            var receiver = context.SyntaxContextReceiver as TestSyntaxReceiver;
-            if (receiver == null)
+//#if DEBUG
+//            if (!System.Diagnostics.Debugger.IsAttached)
+//            {
+//                System.Diagnostics.Debugger.Launch();
+//            }
+//#endif
+
+            var namespaceName = "VNet.Scientific.Measurement";
+            if (!(context.SyntaxContextReceiver is TestSyntaxReceiver receiver))
             {
                 return;
             }
@@ -37,78 +47,80 @@ namespace VNet.Scientific.CodeGen
                 if (dimension == "Scalar") continue;
 
                 var fileName = dimension + ".g.cs";
-                //CodeWriter cw = new CodeWriter(CodeWriterSettings.CSharpDefault);
-                
-                var namespaceName = "VNet.Scientific.Measurement";
-                //using (cw.Write(namespaceName))
-                //{
 
-                //}
+                try
+                {
+                    var cw = new CodeWriter(new CSharpLanguageSettings());
+                    using (var ns = cw.BeginNamespace(namespaceName))
+                    {
+                        using (var c = ns.BeginClass($"{dimension}Test", true))
+                        {
+                            
+                        }
+                    }
 
-                    try
-                    {
-                        //context.AddSource(fileName, SourceText.From(cw.ToString()));
-                    }
-                    catch (Exception e)
-                    {
-                        continue;
-                    }
+                    var output = cw.ToString();
+                    context.AddSource(fileName, SourceText.From(output, Encoding.UTF8));
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
             }
         }
-    }
 
-    public class TestSyntaxReceiver : ISyntaxContextReceiver
-    {
-        public List<string> Dimensions = new List<string>();
 
-        public void OnVisitSyntaxNode(GeneratorSyntaxContext context)
+        public class TestSyntaxReceiver : ISyntaxContextReceiver
         {
-            if (context.Node is ClassDeclarationSyntax classDeclarationSyntax)
+            public readonly List<string> Dimensions = new List<string>();
+
+            public void OnVisitSyntaxNode(GeneratorSyntaxContext context)
             {
-                // Get all of the FieldDeclarationSyntax nodes
-                var fieldDeclarations = classDeclarationSyntax.DescendantNodes().OfType<FieldDeclarationSyntax>();
-
-                // Filter the fields to only include public static fields
-                var publicStaticFields = fieldDeclarations.Where(f =>
-                    f.Modifiers.Any(m => m.ValueText == "public") &&
-                    f.Modifiers.Any(m => m.ValueText == "static"));
-
-                // Loop through the public static fields
-                foreach (var field in publicStaticFields)
+                try
                 {
-                    // Get the type of the field
-                    var fieldType = field.Declaration.Type;
+                    if (!(context.Node is ClassDeclarationSyntax classDeclarationSyntax) || !classDeclarationSyntax.Modifiers.Any(SyntaxKind.PartialKeyword) || classDeclarationSyntax.Identifier.Text != "UnitDefinition") return;
+                    // Get all of the FieldDeclarationSyntax nodes
+                    var fieldDeclarations = classDeclarationSyntax.DescendantNodes().OfType<FieldDeclarationSyntax>();
 
-                    // Check if the field is a Dictionary
-                    if (fieldType is GenericNameSyntax genericNameSyntax &&
-                        genericNameSyntax.Identifier.Text == "Dictionary")
+                    // Filter the fields to only include public static fields
+                    var publicStaticFields = fieldDeclarations.Where(f =>
+                        f.Modifiers.Any(m => m.ValueText == "public") &&
+                        f.Modifiers.Any(m => m.ValueText == "static"));
+
+                    // Loop through the public static fields
+                    foreach (var field in publicStaticFields)
                     {
+                        // Get the type of the field
+                        var fieldType = field.Declaration.Type;
+
+                        // Check if the field is a Dictionary
+                        if (!(fieldType is GenericNameSyntax genericNameSyntax) ||
+                            genericNameSyntax.Identifier.Text != "Dictionary") continue;
                         // Loop through the variables (fields) in the declaration.
                         foreach (var variable in field.Declaration.Variables)
                         {
                             var fieldName = variable.Identifier.Text;
 
-                            if (fieldName == "Components" && variable.Initializer != null)
+                            if (fieldName != "Components" || variable.Initializer == null) continue;
+                            if (!(variable.Initializer.Value is ImplicitObjectCreationExpressionSyntax objCreation)
+                                || !(objCreation.Initializer is InitializerExpressionSyntax initializer)) continue;
+                            foreach (var expression in initializer.Expressions)
                             {
-                                if (variable.Initializer.Value is ImplicitObjectCreationExpressionSyntax objCreation
-                                    && objCreation.Initializer is InitializerExpressionSyntax initializer)
+                                if (!(expression is InitializerExpressionSyntax dictInitializer)) continue;
+                                if (!(dictInitializer.Expressions[0] is LiteralExpressionSyntax key)) continue;
+
+                                var keyValue = key.Token.Value?.ToString();
+                                lock (Dimensions)
                                 {
-                                    foreach (var expression in initializer.Expressions)
-                                    {
-                                        if (expression is InitializerExpressionSyntax dictInitializer)
-                                        {
-                                            if (dictInitializer.Expressions[0] is LiteralExpressionSyntax key)
-                                            {
-                                                // Get the actual value of the key
-                                                var keyValue = key.Token.Value.ToString();
-                                                Dimensions.Add(keyValue);
-                                            }
-                                        }
-                                    }
+                                    Dimensions.Add(keyValue);
                                 }
                             }
                         }
                     }
+                }
+                catch (Exception e)
+                {
+                    throw;
                 }
             }
         }

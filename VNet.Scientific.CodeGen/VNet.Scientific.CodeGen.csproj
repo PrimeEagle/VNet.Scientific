@@ -3,6 +3,7 @@
 	<PropertyGroup>
 		<TargetFramework>netstandard2.0</TargetFramework>
 		<IsRoslynComponent>true</IsRoslynComponent>
+		<GenerateAssemblyInfo>true</GenerateAssemblyInfo>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -14,7 +15,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\..\VNet.CodeGeneration\VNet.CodeGeneration\VNet.CodeGeneration.csproj" />
+	  <Reference Include="VNet.CodeGeneration">
+	    <HintPath>..\..\..\VNet bin\VNet.CodeGeneration.dll</HintPath>
+	    <Private>True</Private>
+	  </Reference>
 	</ItemGroup>
+
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+	  <Exec Command="xcopy &quot;D:\My Code\VNet bin\VNet.CodeGeneration.pdb&quot; &quot;$(SolutionDir)VNet.Scientific\VNet.Scientific.CodeGen\bin\$(ConfigurationName)\netstandard2.0\&quot; /Y&#xD;&#xA;xcopy &quot;D:\My Code\VNet bin\VNet.CodeGeneration.deps.json&quot; &quot;$(SolutionDir)VNet.Scientific\VNet.Scientific.CodeGen\bin\$(ConfigurationName)\netstandard2.0\&quot; /Y&#xD;&#xA;" />
+	</Target>
+
+	<Import Project="..\..\VNet.CodeGeneration\VNet.CodeGeneration\VNet.CodeGeneration.projitems" Label="Shared" />
 
 </Project>
