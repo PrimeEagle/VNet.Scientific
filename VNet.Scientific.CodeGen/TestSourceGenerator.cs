@@ -1,12 +1,13 @@
-﻿using Microsoft.CodeAnalysis;
-using Microsoft.CodeAnalysis.CSharp;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
-using Microsoft.CodeAnalysis.Text;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.CSharp;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Microsoft.CodeAnalysis.Text;
 using VNet.CodeGeneration.Writers.CodeWriter;
+using VNet.CodeGeneration.Writers.CodeWriter.Languages.CSharp;
 
 namespace VNet.Scientific.CodeGen
 {
@@ -20,12 +21,6 @@ namespace VNet.Scientific.CodeGen
             context.RegisterForSyntaxNotifications(() => new TestSyntaxReceiver());
         }
 
-        //public void Execute(GeneratorExecutionContext context)
-        //{
-        //    var cw = new CodeWriter(new CSharpLanguageSettings());
-        //    context.AddSource("Test", SourceText.From("public class Test { }", Encoding.UTF8));
-        //}
-
         public void Execute(GeneratorExecutionContext context)
         {
 //#if DEBUG
@@ -34,8 +29,20 @@ namespace VNet.Scientific.CodeGen
 //                System.Diagnostics.Debugger.Launch();
 //            }
 //#endif
+            var cSharp = new CSharpLanguageSettings(new CSharpDefaultStyle());
 
-            var namespaceName = "VNet.Scientific.Measurement";
+            var code = CodeWriter.CreateCodeFile()
+                                        .UsingLanguageSettings(cSharp)
+                                            .AddNamespace("test.name.space").UseScopedStyle()
+                                                .AddClass("class")
+                                                    .AddMethod("method")
+                                                    .Up()
+                                                .Up()
+                                            .Up()
+                                        .Generate();
+
+
+
             if (!(context.SyntaxContextReceiver is TestSyntaxReceiver receiver))
             {
                 return;
@@ -49,10 +56,7 @@ namespace VNet.Scientific.CodeGen
 
                 try
                 {
-                    var cw = new CodeWriter(new CSharpLanguageSettings(new CSharpDefaultStyle()));
-
-                    var output = cw.ToString();
-                    context.AddSource(fileName, SourceText.From(output, Encoding.UTF8));
+                    context.AddSource(fileName, SourceText.From(code, Encoding.UTF8));
                 }
                 catch (Exception e)
                 {

@@ -1,4 +1,5 @@
 ﻿using System.Numerics;
+
 // ReSharper disable UnusedMember.Global
 // ReSharper disable ClassNeverInstantiated.Global
 // ReSharper disable StaticMemberInGenericType

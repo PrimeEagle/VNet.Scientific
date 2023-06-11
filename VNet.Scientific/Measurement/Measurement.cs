@@ -1,4 +1,5 @@
 ﻿using System.Numerics;
+
 // ReSharper disable CompareOfFloatsByEqualityOperator
 // ReSharper disable UnusedVariable
 

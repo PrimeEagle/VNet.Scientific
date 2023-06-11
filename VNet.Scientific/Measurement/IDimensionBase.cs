@@ -1,4 +1,5 @@
 ﻿using System.Numerics;
+
 // ReSharper disable UnusedMember.Global
 // ReSharper disable StaticMemberInGenericType
 #pragma warning disable CA2211
