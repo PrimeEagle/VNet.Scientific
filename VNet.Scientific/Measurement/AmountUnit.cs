@@ -18,5 +18,6 @@ public enum AmountUnit
     Score,
     SixPack,
     Teramole,
-    TwelvePack
+    TwelvePack,
+    Unit
 }

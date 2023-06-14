@@ -22,23 +22,16 @@ public abstract class DimensionBase<TUnit, TVal> : IDimension<TUnit, TVal> where
 
         var definition = UnitDefinition.Components[idTag];
 
-        DimensionComponent.Numerator.Length.Exponent = definition.Item1[0];
-        DimensionComponent.Numerator.Mass.Exponent = definition.Item1[1];
-        DimensionComponent.Numerator.Time.Exponent = definition.Item1[2];
-        DimensionComponent.Numerator.ElectricalCurrent.Exponent = definition.Item1[3];
-        DimensionComponent.Numerator.LuminousIntensity.Exponent = definition.Item1[4];
-        DimensionComponent.Numerator.Temperature.Exponent = definition.Item1[5];
-        DimensionComponent.Numerator.Amount.Exponent = definition.Item1[6];
+        DimensionComponent.Exponents.Length = definition.Item1[0];
+        DimensionComponent.Exponents.Mass = definition.Item1[1];
+        DimensionComponent.Exponents.Time = definition.Item1[2];
+        DimensionComponent.Exponents.ElectricalCurrent = definition.Item1[3];
+        DimensionComponent.Exponents.LuminousIntensity = definition.Item1[4];
+        DimensionComponent.Exponents.Temperature = definition.Item1[5];
+        DimensionComponent.Exponents.Amount = definition.Item1[6];
 
-        DimensionComponent.Denominator.Length.Exponent = definition.Item2[0];
-        DimensionComponent.Denominator.Mass.Exponent = definition.Item2[1];
-        DimensionComponent.Denominator.Time.Exponent = definition.Item2[2];
-        DimensionComponent.Denominator.ElectricalCurrent.Exponent = definition.Item2[3];
-        DimensionComponent.Denominator.LuminousIntensity.Exponent = definition.Item2[4];
-        DimensionComponent.Denominator.Temperature.Exponent = definition.Item2[5];
-        DimensionComponent.Denominator.Amount.Exponent = definition.Item2[6];
 
-        DefaultUnit = (TUnit)definition.Item3;
+        DefaultUnit = (TUnit)definition.Item2;
     }
 
     public virtual void ValidateUnit(Enum unit)

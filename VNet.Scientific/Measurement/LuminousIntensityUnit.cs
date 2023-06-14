@@ -6,6 +6,7 @@ public enum LuminousIntensityUnit
     Attocandela,
     Blaze,
     Blondel,
+    Candela,
     Centicandela,
     Crab,
     Decacandela,
