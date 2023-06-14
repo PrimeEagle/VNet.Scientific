@@ -1,13 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Microsoft.CodeAnalysis;
+﻿using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
-using Microsoft.CodeAnalysis.Text;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using VNet.CodeGeneration.Extensions;
 using VNet.CodeGeneration.Writers.CodeWriter;
 using VNet.CodeGeneration.Writers.CodeWriter.Languages.CSharp;
+// ReSharper disable ForeachCanBePartlyConvertedToQueryUsingAnotherGetEnumerator
+// ReSharper disable MemberCanBePrivate.Global
 
 namespace VNet.Scientific.CodeGen
 {
@@ -29,21 +30,6 @@ namespace VNet.Scientific.CodeGen
 //                System.Diagnostics.Debugger.Launch();
 //            }
 //#endif
-            var cSharp = new CSharpLanguageSettings(new CSharpDefaultStyle());
-
-            var code = CodeWriter.CreateCodeFile()
-                                        .UsingLanguageSettings(cSharp)
-                                            .AddNamespace("test.name.space").WithScopedStyle()
-                                                .AddComment("this is a comment").ThatIsSingleLine()
-                                                .AddClass("class")
-                                                    .AddMethod("method")
-                                                    .Up()
-                                                .Up()
-                                            .Up()
-                                        .Generate();
-
-
-
             if (!(context.SyntaxContextReceiver is TestSyntaxReceiver receiver))
             {
                 return;
@@ -53,11 +39,24 @@ namespace VNet.Scientific.CodeGen
             {
                 if (dimension == "Scalar") continue;
 
-                var fileName = dimension + ".g.cs";
+                var filename = context.ProjectDir() + dimension + ".g.cs";
 
                 try
                 {
-                    context.AddSource(fileName, SourceText.From(code, Encoding.UTF8));
+                    var cSharp = new CSharpLanguageSettings(new CSharpDefaultStyle());
+
+                   CodeWriter.CreateCodeFile()
+                             .UsingLanguageSettings(cSharp)
+                                .AddNamespace("test.name.space").WithScopedStyle()
+                                    .AddComment("this is a comment").ThatIsSingleLine()
+                                    .AddClass("TestClass")
+                                        .AddMethod("TestMethod")
+                                    .Up()
+                                .Up()
+                            .Up()
+                            .ToFile(filename);
+
+                    //context.AddSource(fileName, SourceText.From(code, Encoding.UTF8));
                 }
                 catch (Exception e)
                 {
