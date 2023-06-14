@@ -47,13 +47,6 @@ public abstract class DimensionBase<TUnit, TVal> : IDimension<TUnit, TVal> where
         {
             throw new ArgumentException($"Units must be of type {nameof(TUnit)}.");
         }
-
-        var hasAttribute = typeof(TUnit).GetCustomAttributes(typeof(UnitEnumAttribute), false).Length > 0;
-
-        if (!hasAttribute)
-        {
-            throw new ArgumentException($"The provided unit type does not have the [UnitEnum] attribute");
-        }
     }
         
     public TVal ConvertToDefaultUnit(TVal value, Enum fromUnit)

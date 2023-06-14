@@ -20,6 +20,7 @@ public static partial class UnitDefinition
                 { LengthUnit.Fathom, 1.8288 },
                 { LengthUnit.Foot, 0.3048 },
                 { LengthUnit.Furlong, 201.168 },
+                { LengthUnit.Gigameter, 1e7 },
                 { LengthUnit.Hectometer, 100 },
                 { LengthUnit.HubbleLength, 4.4e26 },
                 { LengthUnit.Inch, 0.0254 },
@@ -41,6 +42,7 @@ public static partial class UnitDefinition
                 { LengthUnit.PlanckLength, 1.616255e-35 },
                 { LengthUnit.Rod, 5.0292 },
                 { LengthUnit.Rope, 6.096 },
+                { LengthUnit.Terameter, 1e8 },
                 { LengthUnit.Thou, 2.54e-5 },
                 { LengthUnit.Verst, 1066.8 },
                 { LengthUnit.Yard, 0.9144 }

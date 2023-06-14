@@ -1,4 +1,5 @@
-﻿namespace VNet.Scientific.Measurement;
+﻿// ReSharper disable RedundantAssignment
+namespace VNet.Scientific.Measurement;
 
 public class Test
 {
