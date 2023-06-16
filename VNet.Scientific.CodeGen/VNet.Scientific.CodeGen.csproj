@@ -3,8 +3,8 @@
 	<PropertyGroup>
 		<TargetFramework>netstandard2.0</TargetFramework>
 		<IsRoslynComponent>true</IsRoslynComponent>
-		<GenerateAssemblyInfo>true</GenerateAssemblyInfo>
-		<EnforceExtendedAnalyzerRules>true</EnforceExtendedAnalyzerRules>
+		<!--<GenerateAssemblyInfo>true</GenerateAssemblyInfo>-->
+		<!--<EnforceExtendedAnalyzerRules>true</EnforceExtendedAnalyzerRules>-->
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -13,9 +13,13 @@
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
 		<PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.6.0" />
+		<PackageReference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform" Version="4.1.0" />
 		<PackageReference Include="System.CodeDom" Version="7.0.0" />
+		<PackageReference Include="System.Text.Json" Version="7.0.3" />
 	</ItemGroup>
 
 	<Import Project="..\..\VNet.CodeGeneration\VNet.CodeGeneration\VNet.CodeGeneration.projitems" Label="Shared" />
+
+	<Import Project="..\..\VNet.Expressions\VNet.Expressions\VNet.Expressions.projitems" Label="Shared" />
 
 </Project>
