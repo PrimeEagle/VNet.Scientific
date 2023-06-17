@@ -1,0 +1,47 @@
+{
+  "name": "StandardVolumeFlow",
+  "exponents": [
+    0,
+    1,
+    -1,
+    0,
+    0,
+    0,
+    0
+  ],
+  "default unit": "StandardCubicMeterPerSecond",
+  "units": [
+    "StandardCubicMeterPerSecond",
+    "StandardCubicMeterPerMinute",
+    "StandardCubicMeterPerHour",
+    "StandardCubicMeterPerDay",
+    "StandardCubicCentimeterPerMinute",
+    "StandardLiterPerMinute",
+    "StandardCubicFootPerSecond",
+    "StandardCubicFootPerMinute",
+    "StandardCubicFootPerHour"
+  ],
+  "conversion functions": {
+    "StandardCubicMeterPerSecond": "x",
+    "StandardCubicMeterPerMinute": "x / 60",
+    "StandardCubicMeterPerHour": "x / 3600",
+    "StandardCubicMeterPerDay": "x / 86400",
+    "StandardCubicCentimeterPerMinute": "x / 6e7",
+    "StandardLiterPerMinute": "x / 60000",
+    "StandardCubicFootPerSecond": "x / 35.314666721",
+    "StandardCubicFootPerMinute": "x / 2118.88000326",
+    "StandardCubicFootPerHour": "x * 7.8657907199999087346816086183876e-6"
+  },
+  "symbols": {
+    "StandardCubicMeterPerSecond": "Sm³/s",
+    "StandardCubicMeterPerMinute": "Sm³/min",
+    "StandardCubicMeterPerHour": "Sm³/h",
+    "StandardCubicMeterPerDay": "Sm³/d",
+    "StandardCubicCentimeterPerMinute": "sccm",
+    "StandardLiterPerMinute": "slm",
+    "StandardCubicFootPerSecond": "Sft³/s",
+    "StandardCubicFootPerMinute": "scfm",
+    "StandardCubicFootPerHour": "scfh"
+  },
+  "plural symbols": {}
+}

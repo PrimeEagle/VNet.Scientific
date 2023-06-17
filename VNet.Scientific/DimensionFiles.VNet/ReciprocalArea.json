@@ -1,0 +1,53 @@
+{
+  "name": "ReciprocalArea",
+  "exponents": [
+    -2,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "default unit": "InverseSquareMeter",
+  "units": [
+    "InverseSquareMeter",
+    "InverseSquareKilometer",
+    "InverseSquareDecimeter",
+    "InverseSquareCentimeter",
+    "InverseSquareMillimeter",
+    "InverseSquareMicrometer",
+    "InverseSquareMile",
+    "InverseSquareYard",
+    "InverseSquareFoot",
+    "InverseUsSurveySquareFoot",
+    "InverseSquareInch"
+  ],
+  "conversion functions": {
+    "InverseSquareMeter": "x",
+    "InverseSquareKilometer": "x / 1e6",
+    "InverseSquareDecimeter": "x / 1e-2",
+    "InverseSquareCentimeter": "x / 1e-4",
+    "InverseSquareMillimeter": "x / 1e-6",
+    "InverseSquareMicrometer": "x / 1e-12",
+    "InverseSquareMile": "x / 2.59e6",
+    "InverseSquareYard": "x / 0.836127",
+    "InverseSquareFoot": "x / 0.092903",
+    "InverseUsSurveySquareFoot": "x / 0.09290341161",
+    "InverseSquareInch": "x / 0.00064516"
+  },
+  "symbols": {
+    "InverseSquareMeter": "m⁻²",
+    "InverseSquareKilometer": "km⁻²",
+    "InverseSquareDecimeter": "dm⁻²",
+    "InverseSquareCentimeter": "cm⁻²",
+    "InverseSquareMillimeter": "mm⁻²",
+    "InverseSquareMicrometer": "µm⁻²",
+    "InverseSquareMile": "mi⁻²",
+    "InverseSquareYard": "yd⁻²",
+    "InverseSquareFoot": "ft⁻²",
+    "InverseUsSurveySquareFoot": "ft⁻² (US)",
+    "InverseSquareInch": "in⁻²"
+  },
+  "plural symbols": {}
+}

@@ -1,0 +1,61 @@
+{
+  "name": "ReciprocalLength",
+  "exponents": [
+    -1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "default unit": "InverseMeter",
+  "units": [
+    "InverseMeter",
+    "InverseCentimeter",
+    "InverseMillimeter",
+    "InverseMile",
+    "InverseYard",
+    "InverseFoot",
+    "InverseUsSurveyFoot",
+    "InverseInch",
+    "InverseMil",
+    "InverseMicroinch"
+  ],
+  "conversion functions": {
+    "InverseMeter": "x",
+    "InverseCentimeter": "x * 1e2",
+    "InverseMillimeter": "x * 1e3",
+    "InverseMile": "x / 1609.344",
+    "InverseYard": "x / 0.9144",
+    "InverseFoot": "x / 0.3048",
+    "InverseUsSurveyFoot": "x * 3937 / 1200",
+    "InverseInch": "x / 2.54e-2",
+    "InverseMil": "x / 2.54e-5",
+    "InverseMicroinch": "x / 2.54e-8"
+  },
+  "symbols": {
+    "InverseMeter": "m⁻¹",
+    "InverseCentimeter": "cm⁻¹",
+    "InverseMillimeter": "mm⁻¹",
+    "InverseMile": "mi⁻¹",
+    "InverseYard": "yd⁻¹",
+    "InverseFoot": "ft⁻¹",
+    "InverseUsSurveyFoot": "ftUS⁻¹",
+    "InverseInch": "in⁻¹",
+    "InverseMil": "mil⁻¹",
+    "InverseMicroinch": "µin⁻¹"
+  },
+  "plural symbols": {
+    "InverseMeter": "1/m",
+    "InverseCentimeter": "1/cm",
+    "InverseMillimeter": "1/mm",
+    "InverseMile": "1/mi",
+    "InverseYard": "1/yd",
+    "InverseFoot": "1/ft",
+    "InverseUsSurveyFoot": "1/ftUS",
+    "InverseInch": "1/in",
+    "InverseMil": "1/mil",
+    "InverseMicroinch": "1/µin"
+  }
+}

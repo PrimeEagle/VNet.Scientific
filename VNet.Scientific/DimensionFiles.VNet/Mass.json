@@ -1,0 +1,63 @@
+{
+  "name": "Mass",
+  "exponents": [
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "default unit": "Kilogram",
+  "units": [
+    "Gram",
+    "Tonne",
+    "ShortTon",
+    "LongTon",
+    "Pound",
+    "Ounce",
+    "Slug",
+    "Stone",
+    "ShortHundredweight",
+    "LongHundredweight",
+    "Grain",
+    "SolarMass",
+    "EarthMass"
+  ],
+  "conversion functions": {
+    "Gram": "x / 1e3",
+    "Tonne": "x * 1e3",
+    "ShortTon": "x * 9.0718474e2",
+    "LongTon": "x * 1.0160469088e3",
+    "Pound": "x * 0.45359237",
+    "Ounce": "x * 0.028349523125",
+    "Slug": "x / 6.852176556196105e-2",
+    "Stone": "x / 0.1574731728702698",
+    "ShortHundredweight": "x / 0.022046226218487758",
+    "LongHundredweight": "x / 0.01968413055222121",
+    "Grain": "x / 15432.358352941431",
+    "SolarMass": "x * 1.98947e30",
+    "EarthMass": "x * 5.9722E+24"
+  },
+  "symbols": {
+    "Gram": "g",
+    "Tonne": "t",
+    "ShortTon": "t (short)",
+    "LongTon": "long tn",
+    "Pound": "lb",
+    "Ounce": "oz",
+    "Slug": "slug",
+    "Stone": "st",
+    "ShortHundredweight": "cwt",
+    "LongHundredweight": "cwt",
+    "Grain": "gr",
+    "SolarMass": "M☉",
+    "EarthMass": "em"
+  },
+  "plural symbols": {
+    "ShortTon": "short tn",
+    "Pound": "lbs",
+    "SolarMass": "M⊙"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "name": "Compressibility",
+  "exponents": [
+    1,
+    -1,
+    2,
+    0,
+    0,
+    0,
+    0
+  ],
+  "default unit": "InversePascal",
+  "units": [
+    "InversePascal",
+    "InverseKilopascal",
+    "InverseMegapascal",
+    "InverseAtmosphere",
+    "InverseMillibar",
+    "InverseBar",
+    "InversePoundForcePerSquareInch"
+  ],
+  "conversion functions": {
+    "InversePascal": "x",
+    "InverseKilopascal": "x * 1e3",
+    "InverseMegapascal": "x * 1e6",
+    "InverseAtmosphere": "x * 101325",
+    "InverseMillibar": "x * 100",
+    "InverseBar": "x * 1e5",
+    "InversePoundForcePerSquareInch": "x * 6.894757293168361e3"
+  },
+  "symbols": {
+    "InversePascal": "Pa⁻¹",
+    "InverseKilopascal": "kPa⁻¹",
+    "InverseMegapascal": "MPa⁻¹",
+    "InverseAtmosphere": "atm⁻¹",
+    "InverseMillibar": "mbar⁻¹",
+    "InverseBar": "bar⁻¹",
+    "InversePoundForcePerSquareInch": "psi⁻¹"
+  },
+  "plural symbols": {
+    "InversePascal": "1/Pa",
+    "InverseKilopascal": "1/kPa",
+    "InverseMegapascal": "1/MPa",
+    "InverseAtmosphere": "1/atm",
+    "InverseMillibar": "1/mbar",
+    "InverseBar": "1/bar",
+    "InversePoundForcePerSquareInch": "1/psi"
+  }
+}

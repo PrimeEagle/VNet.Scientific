@@ -1,0 +1,38 @@
+{
+  "name": "MassFlux",
+  "exponents": [
+    -2,
+    1,
+    -1,
+    0,
+    0,
+    0,
+    0
+  ],
+  "default unit": "KilogramPerSecondPerSquareMeter",
+  "units": [
+    "GramPerSecondPerSquareMeter",
+    "GramPerSecondPerSquareCentimeter",
+    "GramPerSecondPerSquareMillimeter",
+    "GramPerHourPerSquareMeter",
+    "GramPerHourPerSquareCentimeter",
+    "GramPerHourPerSquareMillimeter"
+  ],
+  "conversion functions": {
+    "GramPerSecondPerSquareMeter": "x / 1e3",
+    "GramPerSecondPerSquareCentimeter": "x / 1e-1",
+    "GramPerSecondPerSquareMillimeter": "x / 1e-3",
+    "GramPerHourPerSquareMeter": "x / 3.6e6",
+    "GramPerHourPerSquareCentimeter": "x / 3.6e2",
+    "GramPerHourPerSquareMillimeter": "x / 3.6e0"
+  },
+  "symbols": {
+    "GramPerSecondPerSquareMeter": "g·s⁻¹·m⁻²",
+    "GramPerSecondPerSquareCentimeter": "g·s⁻¹·cm⁻²",
+    "GramPerSecondPerSquareMillimeter": "g·s⁻¹·mm⁻²",
+    "GramPerHourPerSquareMeter": "g·h⁻¹·m⁻²",
+    "GramPerHourPerSquareCentimeter": "g·h⁻¹·cm⁻²",
+    "GramPerHourPerSquareMillimeter": "g·h⁻¹·mm⁻²"
+  },
+  "plural symbols": {}
+}

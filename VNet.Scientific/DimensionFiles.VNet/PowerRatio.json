@@ -1,0 +1,28 @@
+{
+  "name": "PowerRatio",
+  "exponents": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "default unit": "DecibelWatt",
+  "units": [
+    "DecibelWatt",
+    "DecibelMilliwatt"
+  ],
+  "conversion functions": {
+    "DecibelWatt": "x",
+    "DecibelMilliwatt": "x - 30"
+  },
+  "symbols": {
+    "DecibelWatt": "dBW",
+    "DecibelMilliwatt": "dBmW"
+  },
+  "plural symbols": {
+    "DecibelMilliwatt": "dBm"
+  }
+}

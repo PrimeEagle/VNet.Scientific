@@ -1,0 +1,23 @@
+{
+  "name": "Turbidity",
+  "exponents": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "default unit": "NTU",
+  "units": [
+    "NTU"
+  ],
+  "conversion functions": {
+    "NTU": "x"
+  },
+  "symbols": {
+    "NTU": "NTU"
+  },
+  "plural symbols": {}
+}

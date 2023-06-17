@@ -1,0 +1,23 @@
+{
+  "name": "Scalar",
+  "exponents": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "default unit": "Amount",
+  "units": [
+    "Amount"
+  ],
+  "conversion functions": {
+    "Amount": "x"
+  },
+  "symbols": {
+    "Amount": ""
+  },
+  "plural symbols": {}
+}

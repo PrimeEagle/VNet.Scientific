@@ -1,0 +1,35 @@
+{
+  "name": "LinearDensity",
+  "exponents": [
+    -1,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "default unit": "KilogramPerMeter",
+  "units": [
+    "GramPerMillimeter",
+    "GramPerCentimeter",
+    "GramPerMeter",
+    "PoundPerInch",
+    "PoundPerFoot"
+  ],
+  "conversion functions": {
+    "GramPerMillimeter": "x",
+    "GramPerCentimeter": "x * 1e-1",
+    "GramPerMeter": "x * 1e-3",
+    "PoundPerInch": "x / 5.5997415e-2",
+    "PoundPerFoot": "x * 1.48816394"
+  },
+  "symbols": {
+    "GramPerMillimeter": "g/mm",
+    "GramPerCentimeter": "g/cm",
+    "GramPerMeter": "g/m",
+    "PoundPerInch": "lb/in",
+    "PoundPerFoot": "lb/ft"
+  },
+  "plural symbols": {}
+}

@@ -1,0 +1,26 @@
+{
+  "name": "SpecificVolume",
+  "exponents": [
+    3,
+    -1,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "default unit": "CubicMeterPerKilogram",
+  "units": [
+    "CubicMeterPerKilogram",
+    "CubicFootPerPound"
+  ],
+  "conversion functions": {
+    "CubicMeterPerKilogram": "x",
+    "CubicFootPerPound": "x / 16.01846353"
+  },
+  "symbols": {
+    "CubicMeterPerKilogram": "m³/kg",
+    "CubicFootPerPound": "ft³/lb"
+  },
+  "plural symbols": {}
+}

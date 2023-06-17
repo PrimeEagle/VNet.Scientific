@@ -1,0 +1,56 @@
+{
+  "name": "MassMomentOfInertia",
+  "exponents": [
+    2,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "default unit": "KilogramSquareMeter",
+  "units": [
+    "GramSquareMeter",
+    "GramSquareDecimeter",
+    "GramSquareCentimeter",
+    "GramSquareMillimeter",
+    "TonneSquareMeter",
+    "TonneSquareDecimeter",
+    "TonneSquareCentimeter",
+    "TonneSquareMilimeter",
+    "PoundSquareFoot",
+    "PoundSquareInch",
+    "SlugSquareFoot",
+    "SlugSquareInch"
+  ],
+  "conversion functions": {
+    "GramSquareMeter": "x / 1e3",
+    "GramSquareDecimeter": "x / 1e5",
+    "GramSquareCentimeter": "x / 1e7",
+    "GramSquareMillimeter": "x / 1e9",
+    "TonneSquareMeter": "x / 1e-3",
+    "TonneSquareDecimeter": "x / 1e-1",
+    "TonneSquareCentimeter": "x / 1e1",
+    "TonneSquareMilimeter": "x / 1e3",
+    "PoundSquareFoot": "x * 4.21401101e-2",
+    "PoundSquareInch": "x * 2.9263965e-4",
+    "SlugSquareFoot": "x * 1.3558179619",
+    "SlugSquareInch": "x * 9.41540242e-3"
+  },
+  "symbols": {
+    "GramSquareMeter": "g·m²",
+    "GramSquareDecimeter": "g·dm²",
+    "GramSquareCentimeter": "g·cm²",
+    "GramSquareMillimeter": "g·mm²",
+    "TonneSquareMeter": "t·m²",
+    "TonneSquareDecimeter": "t·dm²",
+    "TonneSquareCentimeter": "t·cm²",
+    "TonneSquareMilimeter": "t·mm²",
+    "PoundSquareFoot": "lb·ft²",
+    "PoundSquareInch": "lb·in²",
+    "SlugSquareFoot": "slug·ft²",
+    "SlugSquareInch": "slug·in²"
+  },
+  "plural symbols": {}
+}

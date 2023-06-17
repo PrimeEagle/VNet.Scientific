@@ -1,0 +1,29 @@
+{
+  "name": "PorousMediumPermeability",
+  "exponents": [
+    2,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "default unit": "SquareMeter",
+  "units": [
+    "Darcy",
+    "SquareMeter",
+    "SquareCentimeter"
+  ],
+  "conversion functions": {
+    "Darcy": "x * 9.869233e-13",
+    "SquareMeter": "x",
+    "SquareCentimeter": "x * 1e-4"
+  },
+  "symbols": {
+    "Darcy": "D",
+    "SquareMeter": "m²",
+    "SquareCentimeter": "cm²"
+  },
+  "plural symbols": {}
+}

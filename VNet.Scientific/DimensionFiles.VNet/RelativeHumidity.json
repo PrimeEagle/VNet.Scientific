@@ -1,0 +1,23 @@
+{
+  "name": "RelativeHumidity",
+  "exponents": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "default unit": "Percent",
+  "units": [
+    "Percent"
+  ],
+  "conversion functions": {
+    "Percent": "x"
+  },
+  "symbols": {
+    "Percent": "%RH"
+  },
+  "plural symbols": {}
+}
