@@ -29,4 +29,8 @@
 		<Compile Remove="Generated\**" />
 		<Content Include="Generated\**" />
 	</ItemGroup>
+
+	<ItemGroup>
+		<Folder Include="DimensionFiles.VNet\" />
+	</ItemGroup>
 </Project>

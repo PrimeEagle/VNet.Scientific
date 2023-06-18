@@ -1,15 +1,15 @@
-﻿using System.Text.Json.Serialization;
-// ReSharper disable ClassNeverInstantiated.Global
+﻿// ReSharper disable ClassNeverInstantiated.Global
+using VNet.CodeGeneration.Json;
 
 
 namespace VNet.Scientific.CodeGen
 {
     public class UnitNetVNetMappingEntry
     {
-        [JsonPropertyName("unitNetName")]
+        [VNetJsonProperty("unitNetName")]
         public string UnitNetName { get; set; }
 
-        [JsonPropertyName("vNetName")]
+        [VNetJsonProperty("vNetName")]
         public string VNetName { get; set; }
     }
 }
