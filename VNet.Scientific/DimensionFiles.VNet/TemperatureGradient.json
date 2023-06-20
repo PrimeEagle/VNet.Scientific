@@ -1,32 +1,72 @@
 {
-  "name": "TemperatureGradient",
-  "exponents": [
-    -1,
-    0,
-    0,
-    0,
-    0,
-    1,
-    0
-  ],
-  "default unit": "KelvinPerMeter",
-  "units": [
-    "KelvinPerMeter",
-    "DegreeCelsiusPerMeter",
-    "DegreeFahrenheitPerFoot",
-    "DegreeCelsiusPerKilometer"
-  ],
-  "conversion functions": {
-    "KelvinPerMeter": "x",
-    "DegreeCelsiusPerMeter": "x",
-    "DegreeFahrenheitPerFoot": "(x / 0.3048) * 5 / 9",
-    "DegreeCelsiusPerKilometer": "x / 1e3"
-  },
-  "symbols": {
-    "KelvinPerMeter": "∆°K/m",
-    "DegreeCelsiusPerMeter": "∆°C/m",
-    "DegreeFahrenheitPerFoot": "∆°F/ft",
-    "DegreeCelsiusPerKilometer": "∆°C/km"
-  },
-  "plural symbols": {}
+    "name": "TemperatureGradient",
+    "exponents": [
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        }
+    ],
+    "default unit": "KelvinPerMeter",
+    "units": [
+        {
+            "Length": 14
+        },
+        {
+            "Length": 21
+        },
+        {
+            "Length": 23
+        },
+        {
+            "Length": 25
+        }
+    ],
+    "conversion functions": [
+        {
+            "Key": "KelvinPerMeter",
+            "Value": "x"
+        },
+        {
+            "Key": "DegreeCelsiusPerMeter",
+            "Value": "x"
+        },
+        {
+            "Key": "DegreeFahrenheitPerFoot",
+            "Value": "(x / 0.3048) * 5 / 9"
+        },
+        {
+            "Key": "DegreeCelsiusPerKilometer",
+            "Value": "x / 1e3"
+        }
+    ],
+    "symbols": [
+        {
+            "Key": "KelvinPerMeter",
+            "Value": " "∆°K/m" "
+        },
+        {
+            "Key": "DegreeCelsiusPerMeter",
+            "Value": " "∆°C/m" "
+        },
+        {
+            "Key": "DegreeFahrenheitPerFoot",
+            "Value": " "∆°F/ft" "
+        },
+        {
+            "Key": "DegreeCelsiusPerKilometer",
+            "Value": " "∆°C/km" "
+        }
+    ],
+    "plural symbols": [
+    ]
 }

@@ -1,89 +1,61 @@
 {
-  "name": "Entropy",
-  "exponents": [
-    2,
-    1,
-    -2,
-    0,
-    0,
-    -1,
-    0
-  ],
-  "default unit": "JoulePerKelvin",
-  "units": [
-    "CaloriePerKelvin",
-    "JoulePerDegreeCelsius",
-    "YottajoulePerKelvin",
-    "ZettajoulePerKelvin",
-    "ExajoulePerKelvin",
-    "PetajoulePerKelvin",
-    "TerajoulePerKelvin",
-    "GigajoulePerKelvin",
-    "MegajoulePerKelvin",
-    "KilojoulePerKelvin",
-    "HectojoulePerKelvin",
-    "DekajoulePerKelvin",
-    "JoulePerKelvin",
-    "DecijoulePerKelvin",
-    "CentijoulePerKelvin",
-    "MillijoulePerKelvin",
-    "MicrojoulePerKelvin",
-    "NanojoulePerKelvin",
-    "PicojoulePerKelvin",
-    "FemtojoulePerKelvin",
-    "AttojoulePerKelvin",
-    "ZeptojoulePerKelvin",
-    "YoctojoulePerKelvin"
-  ],
-  "conversion functions": {
-    "CaloriePerKelvin": "x * 4.184",
-    "JoulePerDegreeCelsius": "x",
-    "YottajoulePerKelvin": "x * 10e24",
-    "ZettajoulePerKelvin": "x * 10e21",
-    "ExajoulePerKelvin": "x * 10e18",
-    "PetajoulePerKelvin": "x * 10e15",
-    "TerajoulePerKelvin": "x * 10e12",
-    "GigajoulePerKelvin": "x * 10e9",
-    "MegajoulePerKelvin": "x * 10e6",
-    "KilojoulePerKelvin": "x * 10e3",
-    "HectojoulePerKelvin": "x * 10e2",
-    "DekajoulePerKelvin": "x * 10e1",
-    "JoulePerKelvin": "x * 10e0",
-    "DecijoulePerKelvin": "x * 10e-1",
-    "CentijoulePerKelvin": "x * 10e-2",
-    "MillijoulePerKelvin": "x * 10e-3",
-    "MicrojoulePerKelvin": "x * 10e-6",
-    "NanojoulePerKelvin": "x * 10e-9",
-    "PicojoulePerKelvin": "x * 10e-12",
-    "FemtojoulePerKelvin": "x * 10e-15",
-    "AttojoulePerKelvin": "x * 10e-18",
-    "ZeptojoulePerKelvin": "x * 10e-21",
-    "YoctojoulePerKelvin": "x * 10e-24"
-  },
-  "symbols": {
-    "CaloriePerKelvin": "cal/K",
-    "JoulePerDegreeCelsius": "J/C",
-    "YottajoulePerKelvin": "YJ/K",
-    "ZettajoulePerKelvin": "ZJ/K",
-    "ExajoulePerKelvin": "EJ/K",
-    "PetajoulePerKelvin": "PJ/K",
-    "TerajoulePerKelvin": "TJ/K",
-    "GigajoulePerKelvin": "GJ/K",
-    "MegajoulePerKelvin": "MJ/K",
-    "KilojoulePerKelvin": "kJ/K",
-    "HectojoulePerKelvin": "hJ/K",
-    "DekajoulePerKelvin": "daJ/K",
-    "JoulePerKelvin": "J/K",
-    "DecijoulePerKelvin": "dJ/K",
-    "CentijoulePerKelvin": "cJ/K",
-    "MillijoulePerKelvin": "mJ/K",
-    "MicrojoulePerKelvin": "µJ/K",
-    "NanojoulePerKelvin": "nJ/K",
-    "PicojoulePerKelvin": "pJ/K",
-    "FemtojoulePerKelvin": "fJ/K",
-    "AttojoulePerKelvin": "aJ/K",
-    "ZeptojoulePerKelvin": "zJ/K",
-    "YoctojoulePerKelvin": "yJ/K"
-  },
-  "plural symbols": {}
+    "name": "Entropy",
+    "exponents": [
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        }
+    ],
+    "default unit": "JoulePerKelvin",
+    "units": [
+        {
+            "Length": 14
+        },
+        {
+            "Length": 16
+        },
+        {
+            "Length": 21
+        }
+    ],
+    "conversion functions": [
+        {
+            "Key": "JoulePerKelvin",
+            "Value": "x"
+        },
+        {
+            "Key": "CaloriePerKelvin",
+            "Value": "x * 4.184"
+        },
+        {
+            "Key": "JoulePerDegreeCelsius",
+            "Value": "x"
+        }
+    ],
+    "symbols": [
+        {
+            "Key": "JoulePerKelvin",
+            "Value": " "J/K" "
+        },
+        {
+            "Key": "CaloriePerKelvin",
+            "Value": " "cal/K" "
+        },
+        {
+            "Key": "JoulePerDegreeCelsius",
+            "Value": " "J/C" "
+        }
+    ],
+    "plural symbols": [
+    ]
 }

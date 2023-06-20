@@ -1,86 +1,50 @@
 {
-  "name": "AmountOfSubstance",
-  "exponents": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    1
-  ],
-  "default unit": "Mole",
-  "units": [
-    "PoundMole",
-    "Yottamole",
-    "Zettamole",
-    "Examole",
-    "Petamole",
-    "Teramole",
-    "Gigamole",
-    "Megamole",
-    "Kilomole",
-    "Hectomole",
-    "Dekamole",
-    "Mole",
-    "Decimole",
-    "Centimole",
-    "Millimole",
-    "Micromole",
-    "Nanomole",
-    "Picomole",
-    "Femtomole",
-    "Attomole",
-    "Zeptomole",
-    "Yoctomole"
-  ],
-  "conversion functions": {
-    "PoundMole": "x * 453.59237",
-    "Yottamole": "x * 10e24",
-    "Zettamole": "x * 10e21",
-    "Examole": "x * 10e18",
-    "Petamole": "x * 10e15",
-    "Teramole": "x * 10e12",
-    "Gigamole": "x * 10e9",
-    "Megamole": "x * 10e6",
-    "Kilomole": "x * 10e3",
-    "Hectomole": "x * 10e2",
-    "Dekamole": "x * 10e1",
-    "Mole": "x * 10e0",
-    "Decimole": "x * 10e-1",
-    "Centimole": "x * 10e-2",
-    "Millimole": "x * 10e-3",
-    "Micromole": "x * 10e-6",
-    "Nanomole": "x * 10e-9",
-    "Picomole": "x * 10e-12",
-    "Femtomole": "x * 10e-15",
-    "Attomole": "x * 10e-18",
-    "Zeptomole": "x * 10e-21",
-    "Yoctomole": "x * 10e-24"
-  },
-  "symbols": {
-    "PoundMole": "lbmol",
-    "Yottamole": "Ymol",
-    "Zettamole": "Zmol",
-    "Examole": "Emol",
-    "Petamole": "Pmol",
-    "Teramole": "Tmol",
-    "Gigamole": "Gmol",
-    "Megamole": "Mmol",
-    "Kilomole": "kmol",
-    "Hectomole": "hmol",
-    "Dekamole": "damol",
-    "Mole": "mol",
-    "Decimole": "dmol",
-    "Centimole": "cmol",
-    "Millimole": "mmol",
-    "Micromole": "µmol",
-    "Nanomole": "nmol",
-    "Picomole": "pmol",
-    "Femtomole": "fmol",
-    "Attomole": "amol",
-    "Zeptomole": "zmol",
-    "Yoctomole": "ymol"
-  },
-  "plural symbols": {}
+    "name": "AmountOfSubstance",
+    "exponents": [
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        }
+    ],
+    "default unit": "Mole",
+    "units": [
+        {
+            "Length": 4
+        },
+        {
+            "Length": 9
+        }
+    ],
+    "conversion functions": [
+        {
+            "Key": "Mole",
+            "Value": "x"
+        },
+        {
+            "Key": "PoundMole",
+            "Value": "x * 453.59237"
+        }
+    ],
+    "symbols": [
+        {
+            "Key": "Mole",
+            "Value": " "mol" "
+        },
+        {
+            "Key": "PoundMole",
+            "Value": " "lbmol" "
+        }
+    ],
+    "plural symbols": [
+    ]
 }

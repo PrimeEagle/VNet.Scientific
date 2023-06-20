@@ -1,89 +1,61 @@
 {
-  "name": "BrakeSpecificFuelConsumption",
-  "exponents": [
-    -2,
-    0,
-    2,
-    0,
-    0,
-    0,
-    0
-  ],
-  "default unit": "KilogramPerJoule",
-  "units": [
-    "GramPerKiloWattHour",
-    "PoundPerMechanicalHorsepowerHour",
-    "YottakilogramPerJoule",
-    "ZettakilogramPerJoule",
-    "ExakilogramPerJoule",
-    "PetakilogramPerJoule",
-    "TerakilogramPerJoule",
-    "GigakilogramPerJoule",
-    "MegakilogramPerJoule",
-    "KilokilogramPerJoule",
-    "HectokilogramPerJoule",
-    "DekakilogramPerJoule",
-    "KilogramPerJoule",
-    "DecikilogramPerJoule",
-    "CentikilogramPerJoule",
-    "MillikilogramPerJoule",
-    "MicrokilogramPerJoule",
-    "NanokilogramPerJoule",
-    "PicokilogramPerJoule",
-    "FemtokilogramPerJoule",
-    "AttokilogramPerJoule",
-    "ZeptokilogramPerJoule",
-    "YoctokilogramPerJoule"
-  ],
-  "conversion functions": {
-    "GramPerKiloWattHour": "x / 3.6e9",
-    "PoundPerMechanicalHorsepowerHour": "x * 1.689659410672e-7",
-    "YottakilogramPerJoule": "x * 10e24",
-    "ZettakilogramPerJoule": "x * 10e21",
-    "ExakilogramPerJoule": "x * 10e18",
-    "PetakilogramPerJoule": "x * 10e15",
-    "TerakilogramPerJoule": "x * 10e12",
-    "GigakilogramPerJoule": "x * 10e9",
-    "MegakilogramPerJoule": "x * 10e6",
-    "KilokilogramPerJoule": "x * 10e3",
-    "HectokilogramPerJoule": "x * 10e2",
-    "DekakilogramPerJoule": "x * 10e1",
-    "KilogramPerJoule": "x * 10e0",
-    "DecikilogramPerJoule": "x * 10e-1",
-    "CentikilogramPerJoule": "x * 10e-2",
-    "MillikilogramPerJoule": "x * 10e-3",
-    "MicrokilogramPerJoule": "x * 10e-6",
-    "NanokilogramPerJoule": "x * 10e-9",
-    "PicokilogramPerJoule": "x * 10e-12",
-    "FemtokilogramPerJoule": "x * 10e-15",
-    "AttokilogramPerJoule": "x * 10e-18",
-    "ZeptokilogramPerJoule": "x * 10e-21",
-    "YoctokilogramPerJoule": "x * 10e-24"
-  },
-  "symbols": {
-    "GramPerKiloWattHour": "g/kWh",
-    "PoundPerMechanicalHorsepowerHour": "lb/hph",
-    "YottakilogramPerJoule": "Ykg/J",
-    "ZettakilogramPerJoule": "Zkg/J",
-    "ExakilogramPerJoule": "Ekg/J",
-    "PetakilogramPerJoule": "Pkg/J",
-    "TerakilogramPerJoule": "Tkg/J",
-    "GigakilogramPerJoule": "Gkg/J",
-    "MegakilogramPerJoule": "Mkg/J",
-    "KilokilogramPerJoule": "kkg/J",
-    "HectokilogramPerJoule": "hkg/J",
-    "DekakilogramPerJoule": "dakg/J",
-    "KilogramPerJoule": "kg/J",
-    "DecikilogramPerJoule": "dkg/J",
-    "CentikilogramPerJoule": "ckg/J",
-    "MillikilogramPerJoule": "mkg/J",
-    "MicrokilogramPerJoule": "µkg/J",
-    "NanokilogramPerJoule": "nkg/J",
-    "PicokilogramPerJoule": "pkg/J",
-    "FemtokilogramPerJoule": "fkg/J",
-    "AttokilogramPerJoule": "akg/J",
-    "ZeptokilogramPerJoule": "zkg/J",
-    "YoctokilogramPerJoule": "ykg/J"
-  },
-  "plural symbols": {}
+    "name": "BrakeSpecificFuelConsumption",
+    "exponents": [
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        }
+    ],
+    "default unit": "KilogramPerJoule",
+    "units": [
+        {
+            "Length": 19
+        },
+        {
+            "Length": 16
+        },
+        {
+            "Length": 32
+        }
+    ],
+    "conversion functions": [
+        {
+            "Key": "GramPerKiloWattHour",
+            "Value": "x / 3.6e9"
+        },
+        {
+            "Key": "KilogramPerJoule",
+            "Value": "x"
+        },
+        {
+            "Key": "PoundPerMechanicalHorsepowerHour",
+            "Value": "x * 1.689659410672e-7"
+        }
+    ],
+    "symbols": [
+        {
+            "Key": "GramPerKiloWattHour",
+            "Value": " "g/kWh" "
+        },
+        {
+            "Key": "KilogramPerJoule",
+            "Value": " "kg/J" "
+        },
+        {
+            "Key": "PoundPerMechanicalHorsepowerHour",
+            "Value": " "lb/hph" "
+        }
+    ],
+    "plural symbols": [
+    ]
 }

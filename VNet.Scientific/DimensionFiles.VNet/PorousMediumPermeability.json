@@ -1,29 +1,61 @@
 {
-  "name": "PorousMediumPermeability",
-  "exponents": [
-    2,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
-  ],
-  "default unit": "SquareMeter",
-  "units": [
-    "Darcy",
-    "SquareMeter",
-    "SquareCentimeter"
-  ],
-  "conversion functions": {
-    "Darcy": "x * 9.869233e-13",
-    "SquareMeter": "x",
-    "SquareCentimeter": "x * 1e-4"
-  },
-  "symbols": {
-    "Darcy": "D",
-    "SquareMeter": "m²",
-    "SquareCentimeter": "cm²"
-  },
-  "plural symbols": {}
+    "name": "PorousMediumPermeability",
+    "exponents": [
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        }
+    ],
+    "default unit": "SquareMeter",
+    "units": [
+        {
+            "Length": 5
+        },
+        {
+            "Length": 11
+        },
+        {
+            "Length": 16
+        }
+    ],
+    "conversion functions": [
+        {
+            "Key": "Darcy",
+            "Value": "x * 9.869233e-13"
+        },
+        {
+            "Key": "SquareMeter",
+            "Value": "x"
+        },
+        {
+            "Key": "SquareCentimeter",
+            "Value": "x * 1e-4"
+        }
+    ],
+    "symbols": [
+        {
+            "Key": "Darcy",
+            "Value": " "D" "
+        },
+        {
+            "Key": "SquareMeter",
+            "Value": " "m²" "
+        },
+        {
+            "Key": "SquareCentimeter",
+            "Value": " "cm²" "
+        }
+    ],
+    "plural symbols": [
+    ]
 }

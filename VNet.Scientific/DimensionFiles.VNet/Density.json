@@ -1,98 +1,314 @@
 {
-  "name": "Density",
-  "exponents": [
-    -3,
-    1,
-    0,
-    0,
-    0,
-    0,
-    0
-  ],
-  "default unit": "KilogramPerCubicMeter",
-  "units": [
-    "GramPerCubicMillimeter",
-    "GramPerCubicCentimeter",
-    "GramPerCubicMeter",
-    "PoundPerCubicInch",
-    "PoundPerCubicFoot",
-    "TonnePerCubicMillimeter",
-    "TonnePerCubicCentimeter",
-    "TonnePerCubicMeter",
-    "SlugPerCubicFoot",
-    "GramPerLiter",
-    "GramPerDeciliter",
-    "GramPerMilliliter",
-    "PoundPerUSGallon",
-    "PoundPerImperialGallon",
-    "KilogramPerLiter",
-    "TonnePerCubicFoot",
-    "TonnePerCubicInch",
-    "GramPerCubicFoot",
-    "GramPerCubicInch",
-    "PoundPerCubicMeter",
-    "PoundPerCubicCentimeter",
-    "PoundPerCubicMillimeter",
-    "SlugPerCubicMeter",
-    "SlugPerCubicCentimeter",
-    "SlugPerCubicMillimeter",
-    "SlugPerCubicInch"
-  ],
-  "conversion functions": {
-    "GramPerCubicMillimeter": "x / 1e-6",
-    "GramPerCubicCentimeter": "x / 1e-3",
-    "GramPerCubicMeter": "x / 1e3",
-    "PoundPerCubicInch": "x / 3.6127298147753e-5",
-    "PoundPerCubicFoot": "x / 0.062427961",
-    "TonnePerCubicMillimeter": "x / 1e-12",
-    "TonnePerCubicCentimeter": "x / 1e-9",
-    "TonnePerCubicMeter": "x / 0.001",
-    "SlugPerCubicFoot": "x * 515.378818",
-    "GramPerLiter": "x / 1",
-    "GramPerDeciliter": "x / 1e-1",
-    "GramPerMilliliter": "x / 1e-3",
-    "PoundPerUSGallon": "x * 1.19826427e2",
-    "PoundPerImperialGallon": "x * 9.9776398e1",
-    "KilogramPerLiter": "x * 1e3",
-    "TonnePerCubicFoot": "x * 3.53146667214886e4",
-    "TonnePerCubicInch": "x * 6.10237440947323e7",
-    "GramPerCubicFoot": "x * 0.0353146667214886",
-    "GramPerCubicInch": "x * 61.0237440947323",
-    "PoundPerCubicMeter": "x / 2.204622621848775",
-    "PoundPerCubicCentimeter": "x / 2.204622621848775e-6",
-    "PoundPerCubicMillimeter": "x / 2.204622621848775e-9",
-    "SlugPerCubicMeter": "x * 14.5939",
-    "SlugPerCubicCentimeter": "x * 14593903",
-    "SlugPerCubicMillimeter": "x * 14593903000",
-    "SlugPerCubicInch": "x * 890574.60201535"
-  },
-  "symbols": {
-    "GramPerCubicMillimeter": "g/mm³",
-    "GramPerCubicCentimeter": "g/cm³",
-    "GramPerCubicMeter": "g/m³",
-    "PoundPerCubicInch": "lb/in³",
-    "PoundPerCubicFoot": "lb/ft³",
-    "TonnePerCubicMillimeter": "t/mm³",
-    "TonnePerCubicCentimeter": "t/cm³",
-    "TonnePerCubicMeter": "t/m³",
-    "SlugPerCubicFoot": "slug/ft³",
-    "GramPerLiter": "g/L",
-    "GramPerDeciliter": "g/dl",
-    "GramPerMilliliter": "g/ml",
-    "PoundPerUSGallon": "ppg (U.S.)",
-    "PoundPerImperialGallon": "ppg (imp.)",
-    "KilogramPerLiter": "kg/l",
-    "TonnePerCubicFoot": "t/ft³",
-    "TonnePerCubicInch": "t/in³",
-    "GramPerCubicFoot": "g/ft³",
-    "GramPerCubicInch": "g/in³",
-    "PoundPerCubicMeter": "lb/m³",
-    "PoundPerCubicCentimeter": "lb/cm³",
-    "PoundPerCubicMillimeter": "lb/mm³",
-    "SlugPerCubicMeter": "slug/m³",
-    "SlugPerCubicCentimeter": "slug/cm³",
-    "SlugPerCubicMillimeter": "slug/mm³",
-    "SlugPerCubicInch": "slug/in³"
-  },
-  "plural symbols": {}
+    "name": "Density",
+    "exponents": [
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        }
+    ],
+    "default unit": "KilogramPerCubicMeter",
+    "units": [
+        {
+            "Length": 22
+        },
+        {
+            "Length": 22
+        },
+        {
+            "Length": 17
+        },
+        {
+            "Length": 17
+        },
+        {
+            "Length": 17
+        },
+        {
+            "Length": 23
+        },
+        {
+            "Length": 23
+        },
+        {
+            "Length": 18
+        },
+        {
+            "Length": 16
+        },
+        {
+            "Length": 12
+        },
+        {
+            "Length": 16
+        },
+        {
+            "Length": 17
+        },
+        {
+            "Length": 16
+        },
+        {
+            "Length": 22
+        },
+        {
+            "Length": 16
+        },
+        {
+            "Length": 17
+        },
+        {
+            "Length": 17
+        },
+        {
+            "Length": 16
+        },
+        {
+            "Length": 16
+        },
+        {
+            "Length": 18
+        },
+        {
+            "Length": 23
+        },
+        {
+            "Length": 23
+        },
+        {
+            "Length": 17
+        },
+        {
+            "Length": 22
+        },
+        {
+            "Length": 22
+        },
+        {
+            "Length": 16
+        }
+    ],
+    "conversion functions": [
+        {
+            "Key": "GramPerCubicMillimeter",
+            "Value": "x / 1e-6"
+        },
+        {
+            "Key": "GramPerCubicCentimeter",
+            "Value": "x / 1e-3"
+        },
+        {
+            "Key": "GramPerCubicMeter",
+            "Value": "x / 1e3"
+        },
+        {
+            "Key": "PoundPerCubicInch",
+            "Value": "x / 3.6127298147753e-5"
+        },
+        {
+            "Key": "PoundPerCubicFoot",
+            "Value": "x / 0.062427961"
+        },
+        {
+            "Key": "TonnePerCubicMillimeter",
+            "Value": "x / 1e-12"
+        },
+        {
+            "Key": "TonnePerCubicCentimeter",
+            "Value": "x / 1e-9"
+        },
+        {
+            "Key": "TonnePerCubicMeter",
+            "Value": "x / 0.001"
+        },
+        {
+            "Key": "SlugPerCubicFoot",
+            "Value": "x * 515.378818"
+        },
+        {
+            "Key": "GramPerLiter",
+            "Value": "x / 1"
+        },
+        {
+            "Key": "GramPerDeciliter",
+            "Value": "x / 1e-1"
+        },
+        {
+            "Key": "GramPerMilliliter",
+            "Value": "x / 1e-3"
+        },
+        {
+            "Key": "PoundPerUSGallon",
+            "Value": "x * 1.19826427e2"
+        },
+        {
+            "Key": "PoundPerImperialGallon",
+            "Value": "x * 9.9776398e1"
+        },
+        {
+            "Key": "KilogramPerLiter",
+            "Value": "x * 1e3"
+        },
+        {
+            "Key": "TonnePerCubicFoot",
+            "Value": "x * 3.53146667214886e4"
+        },
+        {
+            "Key": "TonnePerCubicInch",
+            "Value": "x * 6.10237440947323e7"
+        },
+        {
+            "Key": "GramPerCubicFoot",
+            "Value": "x * 0.0353146667214886"
+        },
+        {
+            "Key": "GramPerCubicInch",
+            "Value": "x * 61.0237440947323"
+        },
+        {
+            "Key": "PoundPerCubicMeter",
+            "Value": "x / 2.204622621848775"
+        },
+        {
+            "Key": "PoundPerCubicCentimeter",
+            "Value": "x / 2.204622621848775e-6"
+        },
+        {
+            "Key": "PoundPerCubicMillimeter",
+            "Value": "x / 2.204622621848775e-9"
+        },
+        {
+            "Key": "SlugPerCubicMeter",
+            "Value": "x * 14.5939"
+        },
+        {
+            "Key": "SlugPerCubicCentimeter",
+            "Value": "x * 14593903"
+        },
+        {
+            "Key": "SlugPerCubicMillimeter",
+            "Value": "x * 14593903000"
+        },
+        {
+            "Key": "SlugPerCubicInch",
+            "Value": "x * 890574.60201535"
+        }
+    ],
+    "symbols": [
+        {
+            "Key": "GramPerCubicMillimeter",
+            "Value": " "g/mm³" "
+        },
+        {
+            "Key": "GramPerCubicCentimeter",
+            "Value": " "g/cm³" "
+        },
+        {
+            "Key": "GramPerCubicMeter",
+            "Value": " "g/m³" "
+        },
+        {
+            "Key": "PoundPerCubicInch",
+            "Value": " "lb/in³" "
+        },
+        {
+            "Key": "PoundPerCubicFoot",
+            "Value": " "lb/ft³" "
+        },
+        {
+            "Key": "TonnePerCubicMillimeter",
+            "Value": " "t/mm³" "
+        },
+        {
+            "Key": "TonnePerCubicCentimeter",
+            "Value": " "t/cm³" "
+        },
+        {
+            "Key": "TonnePerCubicMeter",
+            "Value": " "t/m³" "
+        },
+        {
+            "Key": "SlugPerCubicFoot",
+            "Value": " "slug/ft³" "
+        },
+        {
+            "Key": "GramPerLiter",
+            "Value": " "g/L" "
+        },
+        {
+            "Key": "GramPerDeciliter",
+            "Value": " "g/dl" "
+        },
+        {
+            "Key": "GramPerMilliliter",
+            "Value": " "g/ml" "
+        },
+        {
+            "Key": "PoundPerUSGallon",
+            "Value": " "ppg (U.S.)" "
+        },
+        {
+            "Key": "PoundPerImperialGallon",
+            "Value": " "ppg (imp.)" "
+        },
+        {
+            "Key": "KilogramPerLiter",
+            "Value": " "kg/l" "
+        },
+        {
+            "Key": "TonnePerCubicFoot",
+            "Value": " "t/ft³" "
+        },
+        {
+            "Key": "TonnePerCubicInch",
+            "Value": " "t/in³" "
+        },
+        {
+            "Key": "GramPerCubicFoot",
+            "Value": " "g/ft³" "
+        },
+        {
+            "Key": "GramPerCubicInch",
+            "Value": " "g/in³" "
+        },
+        {
+            "Key": "PoundPerCubicMeter",
+            "Value": " "lb/m³" "
+        },
+        {
+            "Key": "PoundPerCubicCentimeter",
+            "Value": " "lb/cm³" "
+        },
+        {
+            "Key": "PoundPerCubicMillimeter",
+            "Value": " "lb/mm³" "
+        },
+        {
+            "Key": "SlugPerCubicMeter",
+            "Value": " "slug/m³" "
+        },
+        {
+            "Key": "SlugPerCubicCentimeter",
+            "Value": " "slug/cm³" "
+        },
+        {
+            "Key": "SlugPerCubicMillimeter",
+            "Value": " "slug/mm³" "
+        },
+        {
+            "Key": "SlugPerCubicInch",
+            "Value": " "slug/in³" "
+        }
+    ],
+    "plural symbols": [
+    ]
 }

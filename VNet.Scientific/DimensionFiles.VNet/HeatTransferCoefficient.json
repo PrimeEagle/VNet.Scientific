@@ -1,98 +1,91 @@
 {
-  "name": "HeatTransferCoefficient",
-  "exponents": [
-    0,
-    1,
-    -3,
-    0,
-    0,
-    -1,
-    0
-  ],
-  "default unit": "WattPerSquareMeterKelvin",
-  "units": [
-    "WattPerSquareMeterCelsius",
-    "BtuPerSquareFootDegreeFahrenheit",
-    "BtuPerHourSquareFootDegreeFahrenheit",
-    "CaloriePerHourSquareMeterDegreeCelsius",
-    "YottawattPerSquareMeterKelvin",
-    "ZettawattPerSquareMeterKelvin",
-    "ExawattPerSquareMeterKelvin",
-    "PetawattPerSquareMeterKelvin",
-    "TerawattPerSquareMeterKelvin",
-    "GigawattPerSquareMeterKelvin",
-    "MegawattPerSquareMeterKelvin",
-    "KilowattPerSquareMeterKelvin",
-    "HectowattPerSquareMeterKelvin",
-    "DekawattPerSquareMeterKelvin",
-    "WattPerSquareMeterKelvin",
-    "DeciwattPerSquareMeterKelvin",
-    "CentiwattPerSquareMeterKelvin",
-    "MilliwattPerSquareMeterKelvin",
-    "MicrowattPerSquareMeterKelvin",
-    "NanowattPerSquareMeterKelvin",
-    "PicowattPerSquareMeterKelvin",
-    "FemtowattPerSquareMeterKelvin",
-    "AttowattPerSquareMeterKelvin",
-    "ZeptowattPerSquareMeterKelvin",
-    "YoctowattPerSquareMeterKelvin"
-  ],
-  "conversion functions": {
-    "WattPerSquareMeterCelsius": "x",
-    "BtuPerSquareFootDegreeFahrenheit": "x * 5.6782633411134878",
-    "BtuPerHourSquareFootDegreeFahrenheit": "x * 5.6782633411134878",
-    "CaloriePerHourSquareMeterDegreeCelsius": "(x * 4.1868) / 3600",
-    "YottawattPerSquareMeterKelvin": "x * 10e24",
-    "ZettawattPerSquareMeterKelvin": "x * 10e21",
-    "ExawattPerSquareMeterKelvin": "x * 10e18",
-    "PetawattPerSquareMeterKelvin": "x * 10e15",
-    "TerawattPerSquareMeterKelvin": "x * 10e12",
-    "GigawattPerSquareMeterKelvin": "x * 10e9",
-    "MegawattPerSquareMeterKelvin": "x * 10e6",
-    "KilowattPerSquareMeterKelvin": "x * 10e3",
-    "HectowattPerSquareMeterKelvin": "x * 10e2",
-    "DekawattPerSquareMeterKelvin": "x * 10e1",
-    "WattPerSquareMeterKelvin": "x * 10e0",
-    "DeciwattPerSquareMeterKelvin": "x * 10e-1",
-    "CentiwattPerSquareMeterKelvin": "x * 10e-2",
-    "MilliwattPerSquareMeterKelvin": "x * 10e-3",
-    "MicrowattPerSquareMeterKelvin": "x * 10e-6",
-    "NanowattPerSquareMeterKelvin": "x * 10e-9",
-    "PicowattPerSquareMeterKelvin": "x * 10e-12",
-    "FemtowattPerSquareMeterKelvin": "x * 10e-15",
-    "AttowattPerSquareMeterKelvin": "x * 10e-18",
-    "ZeptowattPerSquareMeterKelvin": "x * 10e-21",
-    "YoctowattPerSquareMeterKelvin": "x * 10e-24"
-  },
-  "symbols": {
-    "WattPerSquareMeterCelsius": "W/m²·°C",
-    "BtuPerSquareFootDegreeFahrenheit": "Btu/ft²·°F",
-    "BtuPerHourSquareFootDegreeFahrenheit": "Btu/h·ft²·°F",
-    "CaloriePerHourSquareMeterDegreeCelsius": "kcal/h·m²·°C",
-    "YottawattPerSquareMeterKelvin": "YW/m²·K",
-    "ZettawattPerSquareMeterKelvin": "ZW/m²·K",
-    "ExawattPerSquareMeterKelvin": "EW/m²·K",
-    "PetawattPerSquareMeterKelvin": "PW/m²·K",
-    "TerawattPerSquareMeterKelvin": "TW/m²·K",
-    "GigawattPerSquareMeterKelvin": "GW/m²·K",
-    "MegawattPerSquareMeterKelvin": "MW/m²·K",
-    "KilowattPerSquareMeterKelvin": "kW/m²·K",
-    "HectowattPerSquareMeterKelvin": "hW/m²·K",
-    "DekawattPerSquareMeterKelvin": "daW/m²·K",
-    "WattPerSquareMeterKelvin": "W/m²·K",
-    "DeciwattPerSquareMeterKelvin": "dW/m²·K",
-    "CentiwattPerSquareMeterKelvin": "cW/m²·K",
-    "MilliwattPerSquareMeterKelvin": "mW/m²·K",
-    "MicrowattPerSquareMeterKelvin": "µW/m²·K",
-    "NanowattPerSquareMeterKelvin": "nW/m²·K",
-    "PicowattPerSquareMeterKelvin": "pW/m²·K",
-    "FemtowattPerSquareMeterKelvin": "fW/m²·K",
-    "AttowattPerSquareMeterKelvin": "aW/m²·K",
-    "ZeptowattPerSquareMeterKelvin": "zW/m²·K",
-    "YoctowattPerSquareMeterKelvin": "yW/m²·K"
-  },
-  "plural symbols": {
-    "BtuPerHourSquareFootDegreeFahrenheit": "Btu/ft²·h·°F",
-    "CaloriePerHourSquareMeterDegreeCelsius": "kcal/m²·h·°C"
-  }
+    "name": "HeatTransferCoefficient",
+    "exponents": [
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        }
+    ],
+    "default unit": "WattPerSquareMeterKelvin",
+    "units": [
+        {
+            "Length": 24
+        },
+        {
+            "Length": 25
+        },
+        {
+            "Length": 32
+        },
+        {
+            "Length": 36
+        },
+        {
+            "Length": 38
+        }
+    ],
+    "conversion functions": [
+        {
+            "Key": "WattPerSquareMeterKelvin",
+            "Value": "x"
+        },
+        {
+            "Key": "WattPerSquareMeterCelsius",
+            "Value": "x"
+        },
+        {
+            "Key": "BtuPerSquareFootDegreeFahrenheit",
+            "Value": "x * 5.6782633411134878"
+        },
+        {
+            "Key": "BtuPerHourSquareFootDegreeFahrenheit",
+            "Value": "x * 5.6782633411134878"
+        },
+        {
+            "Key": "CaloriePerHourSquareMeterDegreeCelsius",
+            "Value": "(x * 4.1868) / 3600"
+        }
+    ],
+    "symbols": [
+        {
+            "Key": "WattPerSquareMeterKelvin",
+            "Value": " "W/m²·K" "
+        },
+        {
+            "Key": "WattPerSquareMeterCelsius",
+            "Value": " "W/m²·°C" "
+        },
+        {
+            "Key": "BtuPerSquareFootDegreeFahrenheit",
+            "Value": " "Btu/ft²·°F" "
+        },
+        {
+            "Key": "BtuPerHourSquareFootDegreeFahrenheit",
+            "Value": " "Btu/h·ft²·°F""
+        },
+        {
+            "Key": "CaloriePerHourSquareMeterDegreeCelsius",
+            "Value": " "kcal/h·m²·°C""
+        }
+    ],
+    "plural symbols": [
+        {
+            "Key": "BtuPerHourSquareFootDegreeFahrenheit",
+            "Value": " "Btu/ft²·h·°F""
+        },
+        {
+            "Key": "CaloriePerHourSquareMeterDegreeCelsius",
+            "Value": " "kcal/m²·h·°C""
+        }
+    ]
 }

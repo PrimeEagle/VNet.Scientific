@@ -1,83 +1,39 @@
 {
-  "name": "Magnetization",
-  "exponents": [
-    -1,
-    0,
-    0,
-    1,
-    0,
-    0,
-    0
-  ],
-  "default unit": "AmperePerMeter",
-  "units": [
-    "YottaamperePerMeter",
-    "ZettaamperePerMeter",
-    "ExaamperePerMeter",
-    "PetaamperePerMeter",
-    "TeraamperePerMeter",
-    "GigaamperePerMeter",
-    "MegaamperePerMeter",
-    "KiloamperePerMeter",
-    "HectoamperePerMeter",
-    "DekaamperePerMeter",
-    "AmperePerMeter",
-    "DeciamperePerMeter",
-    "CentiamperePerMeter",
-    "MilliamperePerMeter",
-    "MicroamperePerMeter",
-    "NanoamperePerMeter",
-    "PicoamperePerMeter",
-    "FemtoamperePerMeter",
-    "AttoamperePerMeter",
-    "ZeptoamperePerMeter",
-    "YoctoamperePerMeter"
-  ],
-  "conversion functions": {
-    "YottaamperePerMeter": "x * 10e24",
-    "ZettaamperePerMeter": "x * 10e21",
-    "ExaamperePerMeter": "x * 10e18",
-    "PetaamperePerMeter": "x * 10e15",
-    "TeraamperePerMeter": "x * 10e12",
-    "GigaamperePerMeter": "x * 10e9",
-    "MegaamperePerMeter": "x * 10e6",
-    "KiloamperePerMeter": "x * 10e3",
-    "HectoamperePerMeter": "x * 10e2",
-    "DekaamperePerMeter": "x * 10e1",
-    "AmperePerMeter": "x * 10e0",
-    "DeciamperePerMeter": "x * 10e-1",
-    "CentiamperePerMeter": "x * 10e-2",
-    "MilliamperePerMeter": "x * 10e-3",
-    "MicroamperePerMeter": "x * 10e-6",
-    "NanoamperePerMeter": "x * 10e-9",
-    "PicoamperePerMeter": "x * 10e-12",
-    "FemtoamperePerMeter": "x * 10e-15",
-    "AttoamperePerMeter": "x * 10e-18",
-    "ZeptoamperePerMeter": "x * 10e-21",
-    "YoctoamperePerMeter": "x * 10e-24"
-  },
-  "symbols": {
-    "YottaamperePerMeter": "YA/m",
-    "ZettaamperePerMeter": "ZA/m",
-    "ExaamperePerMeter": "EA/m",
-    "PetaamperePerMeter": "PA/m",
-    "TeraamperePerMeter": "TA/m",
-    "GigaamperePerMeter": "GA/m",
-    "MegaamperePerMeter": "MA/m",
-    "KiloamperePerMeter": "kA/m",
-    "HectoamperePerMeter": "hA/m",
-    "DekaamperePerMeter": "daA/m",
-    "AmperePerMeter": "A/m",
-    "DeciamperePerMeter": "dA/m",
-    "CentiamperePerMeter": "cA/m",
-    "MilliamperePerMeter": "mA/m",
-    "MicroamperePerMeter": "µA/m",
-    "NanoamperePerMeter": "nA/m",
-    "PicoamperePerMeter": "pA/m",
-    "FemtoamperePerMeter": "fA/m",
-    "AttoamperePerMeter": "aA/m",
-    "ZeptoamperePerMeter": "zA/m",
-    "YoctoamperePerMeter": "yA/m"
-  },
-  "plural symbols": {}
+    "name": "Magnetization",
+    "exponents": [
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        }
+    ],
+    "default unit": "AmperePerMeter",
+    "units": [
+        {
+            "Length": 14
+        }
+    ],
+    "conversion functions": [
+        {
+            "Key": "AmperePerMeter",
+            "Value": "x"
+        }
+    ],
+    "symbols": [
+        {
+            "Key": "AmperePerMeter",
+            "Value": " "A/m" "
+        }
+    ],
+    "plural symbols": [
+    ]
 }

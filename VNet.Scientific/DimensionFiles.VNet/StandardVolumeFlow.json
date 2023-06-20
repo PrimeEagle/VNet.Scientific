@@ -1,47 +1,127 @@
 {
-  "name": "StandardVolumeFlow",
-  "exponents": [
-    0,
-    1,
-    -1,
-    0,
-    0,
-    0,
-    0
-  ],
-  "default unit": "StandardCubicMeterPerSecond",
-  "units": [
-    "StandardCubicMeterPerSecond",
-    "StandardCubicMeterPerMinute",
-    "StandardCubicMeterPerHour",
-    "StandardCubicMeterPerDay",
-    "StandardCubicCentimeterPerMinute",
-    "StandardLiterPerMinute",
-    "StandardCubicFootPerSecond",
-    "StandardCubicFootPerMinute",
-    "StandardCubicFootPerHour"
-  ],
-  "conversion functions": {
-    "StandardCubicMeterPerSecond": "x",
-    "StandardCubicMeterPerMinute": "x / 60",
-    "StandardCubicMeterPerHour": "x / 3600",
-    "StandardCubicMeterPerDay": "x / 86400",
-    "StandardCubicCentimeterPerMinute": "x / 6e7",
-    "StandardLiterPerMinute": "x / 60000",
-    "StandardCubicFootPerSecond": "x / 35.314666721",
-    "StandardCubicFootPerMinute": "x / 2118.88000326",
-    "StandardCubicFootPerHour": "x * 7.8657907199999087346816086183876e-6"
-  },
-  "symbols": {
-    "StandardCubicMeterPerSecond": "Sm³/s",
-    "StandardCubicMeterPerMinute": "Sm³/min",
-    "StandardCubicMeterPerHour": "Sm³/h",
-    "StandardCubicMeterPerDay": "Sm³/d",
-    "StandardCubicCentimeterPerMinute": "sccm",
-    "StandardLiterPerMinute": "slm",
-    "StandardCubicFootPerSecond": "Sft³/s",
-    "StandardCubicFootPerMinute": "scfm",
-    "StandardCubicFootPerHour": "scfh"
-  },
-  "plural symbols": {}
+    "name": "StandardVolumeFlow",
+    "exponents": [
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        }
+    ],
+    "default unit": "StandardCubicMeterPerSecond",
+    "units": [
+        {
+            "Length": 27
+        },
+        {
+            "Length": 27
+        },
+        {
+            "Length": 25
+        },
+        {
+            "Length": 24
+        },
+        {
+            "Length": 32
+        },
+        {
+            "Length": 22
+        },
+        {
+            "Length": 26
+        },
+        {
+            "Length": 26
+        },
+        {
+            "Length": 24
+        }
+    ],
+    "conversion functions": [
+        {
+            "Key": "StandardCubicMeterPerSecond",
+            "Value": "x"
+        },
+        {
+            "Key": "StandardCubicMeterPerMinute",
+            "Value": "x / 60"
+        },
+        {
+            "Key": "StandardCubicMeterPerHour",
+            "Value": "x / 3600"
+        },
+        {
+            "Key": "StandardCubicMeterPerDay",
+            "Value": "x / 86400"
+        },
+        {
+            "Key": "StandardCubicCentimeterPerMinute",
+            "Value": "x / 6e7"
+        },
+        {
+            "Key": "StandardLiterPerMinute",
+            "Value": "x / 60000"
+        },
+        {
+            "Key": "StandardCubicFootPerSecond",
+            "Value": "x / 35.314666721"
+        },
+        {
+            "Key": "StandardCubicFootPerMinute",
+            "Value": "x / 2118.88000326"
+        },
+        {
+            "Key": "StandardCubicFootPerHour",
+            "Value": "x * 7.8657907199999087346816086183876e-6"
+        }
+    ],
+    "symbols": [
+        {
+            "Key": "StandardCubicMeterPerSecond",
+            "Value": " "Sm³/s" "
+        },
+        {
+            "Key": "StandardCubicMeterPerMinute",
+            "Value": " "Sm³/min" "
+        },
+        {
+            "Key": "StandardCubicMeterPerHour",
+            "Value": " "Sm³/h" "
+        },
+        {
+            "Key": "StandardCubicMeterPerDay",
+            "Value": " "Sm³/d" "
+        },
+        {
+            "Key": "StandardCubicCentimeterPerMinute",
+            "Value": " "sccm" "
+        },
+        {
+            "Key": "StandardLiterPerMinute",
+            "Value": " "slm" "
+        },
+        {
+            "Key": "StandardCubicFootPerSecond",
+            "Value": " "Sft³/s" "
+        },
+        {
+            "Key": "StandardCubicFootPerMinute",
+            "Value": " "scfm" "
+        },
+        {
+            "Key": "StandardCubicFootPerHour",
+            "Value": " "scfh" "
+        }
+    ],
+    "plural symbols": [
+    ]
 }

@@ -1,113 +1,149 @@
 {
-  "name": "SpecificWeight",
-  "exponents": [
-    -2,
-    1,
-    -2,
-    0,
-    0,
-    0,
-    0
-  ],
-  "default unit": "NewtonPerCubicMeter",
-  "units": [
-    "NewtonPerCubicMillimeter",
-    "NewtonPerCubicCentimeter",
-    "KilogramForcePerCubicMillimeter",
-    "KilogramForcePerCubicCentimeter",
-    "KilogramForcePerCubicMeter",
-    "PoundForcePerCubicInch",
-    "PoundForcePerCubicFoot",
-    "TonneForcePerCubicMillimeter",
-    "TonneForcePerCubicCentimeter",
-    "TonneForcePerCubicMeter",
-    "YottanewtonPerCubicMeter",
-    "ZettanewtonPerCubicMeter",
-    "ExanewtonPerCubicMeter",
-    "PetanewtonPerCubicMeter",
-    "TeranewtonPerCubicMeter",
-    "GiganewtonPerCubicMeter",
-    "MeganewtonPerCubicMeter",
-    "KilonewtonPerCubicMeter",
-    "HectonewtonPerCubicMeter",
-    "DekanewtonPerCubicMeter",
-    "NewtonPerCubicMeter",
-    "DecinewtonPerCubicMeter",
-    "CentinewtonPerCubicMeter",
-    "MillinewtonPerCubicMeter",
-    "MicronewtonPerCubicMeter",
-    "NanonewtonPerCubicMeter",
-    "PiconewtonPerCubicMeter",
-    "FemtonewtonPerCubicMeter",
-    "AttonewtonPerCubicMeter",
-    "ZeptonewtonPerCubicMeter",
-    "YoctonewtonPerCubicMeter"
-  ],
-  "conversion functions": {
-    "NewtonPerCubicMillimeter": "x * 1000000000",
-    "NewtonPerCubicCentimeter": "x * 1000000",
-    "KilogramForcePerCubicMillimeter": "x * 9.80665e9",
-    "KilogramForcePerCubicCentimeter": "x * 9.80665e6",
-    "KilogramForcePerCubicMeter": "x * 9.80665",
-    "PoundForcePerCubicInch": "x * 2.714471375263134e5",
-    "PoundForcePerCubicFoot": "x * 1.570874638462462e2",
-    "TonneForcePerCubicMillimeter": "x * 9.80665e12",
-    "TonneForcePerCubicCentimeter": "x * 9.80665e9",
-    "TonneForcePerCubicMeter": "x * 9.80665e3",
-    "YottanewtonPerCubicMeter": "x * 10e24",
-    "ZettanewtonPerCubicMeter": "x * 10e21",
-    "ExanewtonPerCubicMeter": "x * 10e18",
-    "PetanewtonPerCubicMeter": "x * 10e15",
-    "TeranewtonPerCubicMeter": "x * 10e12",
-    "GiganewtonPerCubicMeter": "x * 10e9",
-    "MeganewtonPerCubicMeter": "x * 10e6",
-    "KilonewtonPerCubicMeter": "x * 10e3",
-    "HectonewtonPerCubicMeter": "x * 10e2",
-    "DekanewtonPerCubicMeter": "x * 10e1",
-    "NewtonPerCubicMeter": "x * 10e0",
-    "DecinewtonPerCubicMeter": "x * 10e-1",
-    "CentinewtonPerCubicMeter": "x * 10e-2",
-    "MillinewtonPerCubicMeter": "x * 10e-3",
-    "MicronewtonPerCubicMeter": "x * 10e-6",
-    "NanonewtonPerCubicMeter": "x * 10e-9",
-    "PiconewtonPerCubicMeter": "x * 10e-12",
-    "FemtonewtonPerCubicMeter": "x * 10e-15",
-    "AttonewtonPerCubicMeter": "x * 10e-18",
-    "ZeptonewtonPerCubicMeter": "x * 10e-21",
-    "YoctonewtonPerCubicMeter": "x * 10e-24"
-  },
-  "symbols": {
-    "NewtonPerCubicMillimeter": "N/mm³",
-    "NewtonPerCubicCentimeter": "N/cm³",
-    "KilogramForcePerCubicMillimeter": "kgf/mm³",
-    "KilogramForcePerCubicCentimeter": "kgf/cm³",
-    "KilogramForcePerCubicMeter": "kgf/m³",
-    "PoundForcePerCubicInch": "lbf/in³",
-    "PoundForcePerCubicFoot": "lbf/ft³",
-    "TonneForcePerCubicMillimeter": "tf/mm³",
-    "TonneForcePerCubicCentimeter": "tf/cm³",
-    "TonneForcePerCubicMeter": "tf/m³",
-    "YottanewtonPerCubicMeter": "YN/m³",
-    "ZettanewtonPerCubicMeter": "ZN/m³",
-    "ExanewtonPerCubicMeter": "EN/m³",
-    "PetanewtonPerCubicMeter": "PN/m³",
-    "TeranewtonPerCubicMeter": "TN/m³",
-    "GiganewtonPerCubicMeter": "GN/m³",
-    "MeganewtonPerCubicMeter": "MN/m³",
-    "KilonewtonPerCubicMeter": "kN/m³",
-    "HectonewtonPerCubicMeter": "hN/m³",
-    "DekanewtonPerCubicMeter": "daN/m³",
-    "NewtonPerCubicMeter": "N/m³",
-    "DecinewtonPerCubicMeter": "dN/m³",
-    "CentinewtonPerCubicMeter": "cN/m³",
-    "MillinewtonPerCubicMeter": "mN/m³",
-    "MicronewtonPerCubicMeter": "µN/m³",
-    "NanonewtonPerCubicMeter": "nN/m³",
-    "PiconewtonPerCubicMeter": "pN/m³",
-    "FemtonewtonPerCubicMeter": "fN/m³",
-    "AttonewtonPerCubicMeter": "aN/m³",
-    "ZeptonewtonPerCubicMeter": "zN/m³",
-    "YoctonewtonPerCubicMeter": "yN/m³"
-  },
-  "plural symbols": {}
+    "name": "SpecificWeight",
+    "exponents": [
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        }
+    ],
+    "default unit": "NewtonPerCubicMeter",
+    "units": [
+        {
+            "Length": 24
+        },
+        {
+            "Length": 24
+        },
+        {
+            "Length": 19
+        },
+        {
+            "Length": 31
+        },
+        {
+            "Length": 31
+        },
+        {
+            "Length": 26
+        },
+        {
+            "Length": 22
+        },
+        {
+            "Length": 22
+        },
+        {
+            "Length": 28
+        },
+        {
+            "Length": 28
+        },
+        {
+            "Length": 23
+        }
+    ],
+    "conversion functions": [
+        {
+            "Key": "NewtonPerCubicMillimeter",
+            "Value": "x * 1000000000"
+        },
+        {
+            "Key": "NewtonPerCubicCentimeter",
+            "Value": "x * 1000000"
+        },
+        {
+            "Key": "NewtonPerCubicMeter",
+            "Value": "x"
+        },
+        {
+            "Key": "KilogramForcePerCubicMillimeter",
+            "Value": "x * 9.80665e9"
+        },
+        {
+            "Key": "KilogramForcePerCubicCentimeter",
+            "Value": "x * 9.80665e6"
+        },
+        {
+            "Key": "KilogramForcePerCubicMeter",
+            "Value": "x * 9.80665"
+        },
+        {
+            "Key": "PoundForcePerCubicInch",
+            "Value": "x * 2.714471375263134e5"
+        },
+        {
+            "Key": "PoundForcePerCubicFoot",
+            "Value": "x * 1.570874638462462e2"
+        },
+        {
+            "Key": "TonneForcePerCubicMillimeter",
+            "Value": "x * 9.80665e12"
+        },
+        {
+            "Key": "TonneForcePerCubicCentimeter",
+            "Value": "x * 9.80665e9"
+        },
+        {
+            "Key": "TonneForcePerCubicMeter",
+            "Value": "x * 9.80665e3"
+        }
+    ],
+    "symbols": [
+        {
+            "Key": "NewtonPerCubicMillimeter",
+            "Value": " "N/mm³" "
+        },
+        {
+            "Key": "NewtonPerCubicCentimeter",
+            "Value": " "N/cm³" "
+        },
+        {
+            "Key": "NewtonPerCubicMeter",
+            "Value": " "N/m³" "
+        },
+        {
+            "Key": "KilogramForcePerCubicMillimeter",
+            "Value": " "kgf/mm³" "
+        },
+        {
+            "Key": "KilogramForcePerCubicCentimeter",
+            "Value": " "kgf/cm³" "
+        },
+        {
+            "Key": "KilogramForcePerCubicMeter",
+            "Value": " "kgf/m³" "
+        },
+        {
+            "Key": "PoundForcePerCubicInch",
+            "Value": " "lbf/in³" "
+        },
+        {
+            "Key": "PoundForcePerCubicFoot",
+            "Value": " "lbf/ft³" "
+        },
+        {
+            "Key": "TonneForcePerCubicMillimeter",
+            "Value": " "tf/mm³" "
+        },
+        {
+            "Key": "TonneForcePerCubicCentimeter",
+            "Value": " "tf/cm³" "
+        },
+        {
+            "Key": "TonneForcePerCubicMeter",
+            "Value": " "tf/m³" "
+        }
+    ],
+    "plural symbols": [
+    ]
 }

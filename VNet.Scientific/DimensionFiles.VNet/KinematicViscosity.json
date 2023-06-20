@@ -1,89 +1,61 @@
 {
-  "name": "KinematicViscosity",
-  "exponents": [
-    2,
-    0,
-    -1,
-    0,
-    0,
-    0,
-    0
-  ],
-  "default unit": "SquareMeterPerSecond",
-  "units": [
-    "Stokes",
-    "SquareFootPerSecond",
-    "YottasquareMeterPerSecond",
-    "ZettasquareMeterPerSecond",
-    "ExasquareMeterPerSecond",
-    "PetasquareMeterPerSecond",
-    "TerasquareMeterPerSecond",
-    "GigasquareMeterPerSecond",
-    "MegasquareMeterPerSecond",
-    "KilosquareMeterPerSecond",
-    "HectosquareMeterPerSecond",
-    "DekasquareMeterPerSecond",
-    "SquareMeterPerSecond",
-    "DecisquareMeterPerSecond",
-    "CentisquareMeterPerSecond",
-    "MillisquareMeterPerSecond",
-    "MicrosquareMeterPerSecond",
-    "NanosquareMeterPerSecond",
-    "PicosquareMeterPerSecond",
-    "FemtosquareMeterPerSecond",
-    "AttosquareMeterPerSecond",
-    "ZeptosquareMeterPerSecond",
-    "YoctosquareMeterPerSecond"
-  ],
-  "conversion functions": {
-    "Stokes": "x / 1e4",
-    "SquareFootPerSecond": "x / 10.7639",
-    "YottasquareMeterPerSecond": "x * 10e24",
-    "ZettasquareMeterPerSecond": "x * 10e21",
-    "ExasquareMeterPerSecond": "x * 10e18",
-    "PetasquareMeterPerSecond": "x * 10e15",
-    "TerasquareMeterPerSecond": "x * 10e12",
-    "GigasquareMeterPerSecond": "x * 10e9",
-    "MegasquareMeterPerSecond": "x * 10e6",
-    "KilosquareMeterPerSecond": "x * 10e3",
-    "HectosquareMeterPerSecond": "x * 10e2",
-    "DekasquareMeterPerSecond": "x * 10e1",
-    "SquareMeterPerSecond": "x * 10e0",
-    "DecisquareMeterPerSecond": "x * 10e-1",
-    "CentisquareMeterPerSecond": "x * 10e-2",
-    "MillisquareMeterPerSecond": "x * 10e-3",
-    "MicrosquareMeterPerSecond": "x * 10e-6",
-    "NanosquareMeterPerSecond": "x * 10e-9",
-    "PicosquareMeterPerSecond": "x * 10e-12",
-    "FemtosquareMeterPerSecond": "x * 10e-15",
-    "AttosquareMeterPerSecond": "x * 10e-18",
-    "ZeptosquareMeterPerSecond": "x * 10e-21",
-    "YoctosquareMeterPerSecond": "x * 10e-24"
-  },
-  "symbols": {
-    "Stokes": "St",
-    "SquareFootPerSecond": "ft²/s",
-    "YottasquareMeterPerSecond": "Ym²/s",
-    "ZettasquareMeterPerSecond": "Zm²/s",
-    "ExasquareMeterPerSecond": "Em²/s",
-    "PetasquareMeterPerSecond": "Pm²/s",
-    "TerasquareMeterPerSecond": "Tm²/s",
-    "GigasquareMeterPerSecond": "Gm²/s",
-    "MegasquareMeterPerSecond": "Mm²/s",
-    "KilosquareMeterPerSecond": "km²/s",
-    "HectosquareMeterPerSecond": "hm²/s",
-    "DekasquareMeterPerSecond": "dam²/s",
-    "SquareMeterPerSecond": "m²/s",
-    "DecisquareMeterPerSecond": "dm²/s",
-    "CentisquareMeterPerSecond": "cm²/s",
-    "MillisquareMeterPerSecond": "mm²/s",
-    "MicrosquareMeterPerSecond": "µm²/s",
-    "NanosquareMeterPerSecond": "nm²/s",
-    "PicosquareMeterPerSecond": "pm²/s",
-    "FemtosquareMeterPerSecond": "fm²/s",
-    "AttosquareMeterPerSecond": "am²/s",
-    "ZeptosquareMeterPerSecond": "zm²/s",
-    "YoctosquareMeterPerSecond": "ym²/s"
-  },
-  "plural symbols": {}
+    "name": "KinematicViscosity",
+    "exponents": [
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        }
+    ],
+    "default unit": "SquareMeterPerSecond",
+    "units": [
+        {
+            "Length": 20
+        },
+        {
+            "Length": 6
+        },
+        {
+            "Length": 19
+        }
+    ],
+    "conversion functions": [
+        {
+            "Key": "SquareMeterPerSecond",
+            "Value": "x"
+        },
+        {
+            "Key": "Stokes",
+            "Value": "x / 1e4"
+        },
+        {
+            "Key": "SquareFootPerSecond",
+            "Value": "x / 10.7639"
+        }
+    ],
+    "symbols": [
+        {
+            "Key": "SquareMeterPerSecond",
+            "Value": " "m²/s" "
+        },
+        {
+            "Key": "Stokes",
+            "Value": " "St" "
+        },
+        {
+            "Key": "SquareFootPerSecond",
+            "Value": " "ft²/s" "
+        }
+    ],
+    "plural symbols": [
+    ]
 }

@@ -1,56 +1,160 @@
 {
-  "name": "MassMomentOfInertia",
-  "exponents": [
-    2,
-    1,
-    0,
-    0,
-    0,
-    0,
-    0
-  ],
-  "default unit": "KilogramSquareMeter",
-  "units": [
-    "GramSquareMeter",
-    "GramSquareDecimeter",
-    "GramSquareCentimeter",
-    "GramSquareMillimeter",
-    "TonneSquareMeter",
-    "TonneSquareDecimeter",
-    "TonneSquareCentimeter",
-    "TonneSquareMilimeter",
-    "PoundSquareFoot",
-    "PoundSquareInch",
-    "SlugSquareFoot",
-    "SlugSquareInch"
-  ],
-  "conversion functions": {
-    "GramSquareMeter": "x / 1e3",
-    "GramSquareDecimeter": "x / 1e5",
-    "GramSquareCentimeter": "x / 1e7",
-    "GramSquareMillimeter": "x / 1e9",
-    "TonneSquareMeter": "x / 1e-3",
-    "TonneSquareDecimeter": "x / 1e-1",
-    "TonneSquareCentimeter": "x / 1e1",
-    "TonneSquareMilimeter": "x / 1e3",
-    "PoundSquareFoot": "x * 4.21401101e-2",
-    "PoundSquareInch": "x * 2.9263965e-4",
-    "SlugSquareFoot": "x * 1.3558179619",
-    "SlugSquareInch": "x * 9.41540242e-3"
-  },
-  "symbols": {
-    "GramSquareMeter": "g·m²",
-    "GramSquareDecimeter": "g·dm²",
-    "GramSquareCentimeter": "g·cm²",
-    "GramSquareMillimeter": "g·mm²",
-    "TonneSquareMeter": "t·m²",
-    "TonneSquareDecimeter": "t·dm²",
-    "TonneSquareCentimeter": "t·cm²",
-    "TonneSquareMilimeter": "t·mm²",
-    "PoundSquareFoot": "lb·ft²",
-    "PoundSquareInch": "lb·in²",
-    "SlugSquareFoot": "slug·ft²",
-    "SlugSquareInch": "slug·in²"
-  },
-  "plural symbols": {}
+    "name": "MassMomentOfInertia",
+    "exponents": [
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        }
+    ],
+    "default unit": "KilogramSquareMeter",
+    "units": [
+        {
+            "Length": 15
+        },
+        {
+            "Length": 19
+        },
+        {
+            "Length": 20
+        },
+        {
+            "Length": 20
+        },
+        {
+            "Length": 16
+        },
+        {
+            "Length": 20
+        },
+        {
+            "Length": 21
+        },
+        {
+            "Length": 20
+        },
+        {
+            "Length": 15
+        },
+        {
+            "Length": 15
+        },
+        {
+            "Length": 14
+        },
+        {
+            "Length": 14
+        }
+    ],
+    "conversion functions": [
+        {
+            "Key": "GramSquareMeter",
+            "Value": "x / 1e3"
+        },
+        {
+            "Key": "GramSquareDecimeter",
+            "Value": "x / 1e5"
+        },
+        {
+            "Key": "GramSquareCentimeter",
+            "Value": "x / 1e7"
+        },
+        {
+            "Key": "GramSquareMillimeter",
+            "Value": "x / 1e9"
+        },
+        {
+            "Key": "TonneSquareMeter",
+            "Value": "x / 1e-3"
+        },
+        {
+            "Key": "TonneSquareDecimeter",
+            "Value": "x / 1e-1"
+        },
+        {
+            "Key": "TonneSquareCentimeter",
+            "Value": "x / 1e1"
+        },
+        {
+            "Key": "TonneSquareMilimeter",
+            "Value": "x / 1e3"
+        },
+        {
+            "Key": "PoundSquareFoot",
+            "Value": "x * 4.21401101e-2"
+        },
+        {
+            "Key": "PoundSquareInch",
+            "Value": "x * 2.9263965e-4"
+        },
+        {
+            "Key": "SlugSquareFoot",
+            "Value": "x * 1.3558179619"
+        },
+        {
+            "Key": "SlugSquareInch",
+            "Value": "x * 9.41540242e-3"
+        }
+    ],
+    "symbols": [
+        {
+            "Key": "GramSquareMeter",
+            "Value": " "g·m²" "
+        },
+        {
+            "Key": "GramSquareDecimeter",
+            "Value": " "g·dm²" "
+        },
+        {
+            "Key": "GramSquareCentimeter",
+            "Value": " "g·cm²" "
+        },
+        {
+            "Key": "GramSquareMillimeter",
+            "Value": " "g·mm²" "
+        },
+        {
+            "Key": "TonneSquareMeter",
+            "Value": " "t·m²" "
+        },
+        {
+            "Key": "TonneSquareDecimeter",
+            "Value": " "t·dm²" "
+        },
+        {
+            "Key": "TonneSquareCentimeter",
+            "Value": " "t·cm²" "
+        },
+        {
+            "Key": "TonneSquareMilimeter",
+            "Value": " "t·mm²" "
+        },
+        {
+            "Key": "PoundSquareFoot",
+            "Value": " "lb·ft²" "
+        },
+        {
+            "Key": "PoundSquareInch",
+            "Value": " "lb·in²" "
+        },
+        {
+            "Key": "SlugSquareFoot",
+            "Value": " "slug·ft²" "
+        },
+        {
+            "Key": "SlugSquareInch",
+            "Value": " "slug·in²" "
+        }
+    ],
+    "plural symbols": [
+    ]
 }

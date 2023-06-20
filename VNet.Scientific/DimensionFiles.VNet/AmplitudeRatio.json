@@ -1,92 +1,72 @@
 {
-  "name": "AmplitudeRatio",
-  "exponents": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
-  ],
-  "default unit": "DecibelVolt",
-  "units": [
-    "DecibelMicrovolt",
-    "DecibelMillivolt",
-    "DecibelUnloaded",
-    "YottadecibelVolt",
-    "ZettadecibelVolt",
-    "ExadecibelVolt",
-    "PetadecibelVolt",
-    "TeradecibelVolt",
-    "GigadecibelVolt",
-    "MegadecibelVolt",
-    "KilodecibelVolt",
-    "HectodecibelVolt",
-    "DekadecibelVolt",
-    "DecibelVolt",
-    "DecidecibelVolt",
-    "CentidecibelVolt",
-    "MillidecibelVolt",
-    "MicrodecibelVolt",
-    "NanodecibelVolt",
-    "PicodecibelVolt",
-    "FemtodecibelVolt",
-    "AttodecibelVolt",
-    "ZeptodecibelVolt",
-    "YoctodecibelVolt"
-  ],
-  "conversion functions": {
-    "DecibelMicrovolt": "x - 120",
-    "DecibelMillivolt": "x - 60",
-    "DecibelUnloaded": "x - 2.218487499",
-    "YottadecibelVolt": "x * 10e24",
-    "ZettadecibelVolt": "x * 10e21",
-    "ExadecibelVolt": "x * 10e18",
-    "PetadecibelVolt": "x * 10e15",
-    "TeradecibelVolt": "x * 10e12",
-    "GigadecibelVolt": "x * 10e9",
-    "MegadecibelVolt": "x * 10e6",
-    "KilodecibelVolt": "x * 10e3",
-    "HectodecibelVolt": "x * 10e2",
-    "DekadecibelVolt": "x * 10e1",
-    "DecibelVolt": "x * 10e0",
-    "DecidecibelVolt": "x * 10e-1",
-    "CentidecibelVolt": "x * 10e-2",
-    "MillidecibelVolt": "x * 10e-3",
-    "MicrodecibelVolt": "x * 10e-6",
-    "NanodecibelVolt": "x * 10e-9",
-    "PicodecibelVolt": "x * 10e-12",
-    "FemtodecibelVolt": "x * 10e-15",
-    "AttodecibelVolt": "x * 10e-18",
-    "ZeptodecibelVolt": "x * 10e-21",
-    "YoctodecibelVolt": "x * 10e-24"
-  },
-  "symbols": {
-    "DecibelMicrovolt": "dBµV",
-    "DecibelMillivolt": "dBmV",
-    "DecibelUnloaded": "dBu",
-    "YottadecibelVolt": "YdBV",
-    "ZettadecibelVolt": "ZdBV",
-    "ExadecibelVolt": "EdBV",
-    "PetadecibelVolt": "PdBV",
-    "TeradecibelVolt": "TdBV",
-    "GigadecibelVolt": "GdBV",
-    "MegadecibelVolt": "MdBV",
-    "KilodecibelVolt": "kdBV",
-    "HectodecibelVolt": "hdBV",
-    "DekadecibelVolt": "dadBV",
-    "DecibelVolt": "dBV",
-    "DecidecibelVolt": "ddBV",
-    "CentidecibelVolt": "cdBV",
-    "MillidecibelVolt": "mdBV",
-    "MicrodecibelVolt": "µdBV",
-    "NanodecibelVolt": "ndBV",
-    "PicodecibelVolt": "pdBV",
-    "FemtodecibelVolt": "fdBV",
-    "AttodecibelVolt": "adBV",
-    "ZeptodecibelVolt": "zdBV",
-    "YoctodecibelVolt": "ydBV"
-  },
-  "plural symbols": {}
+    "name": "AmplitudeRatio",
+    "exponents": [
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        }
+    ],
+    "default unit": "DecibelVolt",
+    "units": [
+        {
+            "Length": 11
+        },
+        {
+            "Length": 16
+        },
+        {
+            "Length": 16
+        },
+        {
+            "Length": 15
+        }
+    ],
+    "conversion functions": [
+        {
+            "Key": "DecibelVolt",
+            "Value": "x"
+        },
+        {
+            "Key": "DecibelMicrovolt",
+            "Value": "x - 120"
+        },
+        {
+            "Key": "DecibelMillivolt",
+            "Value": "x - 60"
+        },
+        {
+            "Key": "DecibelUnloaded",
+            "Value": "x - 2.218487499"
+        }
+    ],
+    "symbols": [
+        {
+            "Key": "DecibelVolt",
+            "Value": " "dBV" "
+        },
+        {
+            "Key": "DecibelMicrovolt",
+            "Value": " "dBµV" "
+        },
+        {
+            "Key": "DecibelMillivolt",
+            "Value": " "dBmV" "
+        },
+        {
+            "Key": "DecibelUnloaded",
+            "Value": " "dBu" "
+        }
+    ],
+    "plural symbols": [
+    ]
 }

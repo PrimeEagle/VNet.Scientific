@@ -1,38 +1,94 @@
 {
-  "name": "Ratio",
-  "exponents": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
-  ],
-  "default unit": "DecimalFraction",
-  "units": [
-    "DecimalFraction",
-    "Percent",
-    "PartPerThousand",
-    "PartPerMillion",
-    "PartPerBillion",
-    "PartPerTrillion"
-  ],
-  "conversion functions": {
-    "DecimalFraction": "x",
-    "Percent": "x / 1e2",
-    "PartPerThousand": "x / 1e3",
-    "PartPerMillion": "x / 1e6",
-    "PartPerBillion": "x / 1e9",
-    "PartPerTrillion": "x / 1e12"
-  },
-  "symbols": {
-    "DecimalFraction": "",
-    "Percent": "%",
-    "PartPerThousand": "‰",
-    "PartPerMillion": "ppm",
-    "PartPerBillion": "ppb",
-    "PartPerTrillion": "ppt"
-  },
-  "plural symbols": {}
+    "name": "Ratio",
+    "exponents": [
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        }
+    ],
+    "default unit": "DecimalFraction",
+    "units": [
+        {
+            "Length": 15
+        },
+        {
+            "Length": 7
+        },
+        {
+            "Length": 15
+        },
+        {
+            "Length": 14
+        },
+        {
+            "Length": 14
+        },
+        {
+            "Length": 15
+        }
+    ],
+    "conversion functions": [
+        {
+            "Key": "DecimalFraction",
+            "Value": "x"
+        },
+        {
+            "Key": "Percent",
+            "Value": "x / 1e2"
+        },
+        {
+            "Key": "PartPerThousand",
+            "Value": "x / 1e3"
+        },
+        {
+            "Key": "PartPerMillion",
+            "Value": "x / 1e6"
+        },
+        {
+            "Key": "PartPerBillion",
+            "Value": "x / 1e9"
+        },
+        {
+            "Key": "PartPerTrillion",
+            "Value": "x / 1e12"
+        }
+    ],
+    "symbols": [
+        {
+            "Key": "DecimalFraction",
+            "Value": " "" "
+        },
+        {
+            "Key": "Percent",
+            "Value": " "%" "
+        },
+        {
+            "Key": "PartPerThousand",
+            "Value": " "‰" "
+        },
+        {
+            "Key": "PartPerMillion",
+            "Value": " "ppm" "
+        },
+        {
+            "Key": "PartPerBillion",
+            "Value": " "ppb" "
+        },
+        {
+            "Key": "PartPerTrillion",
+            "Value": " "ppt" "
+        }
+    ],
+    "plural symbols": [
+    ]
 }

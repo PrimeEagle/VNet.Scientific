@@ -1,38 +1,94 @@
 {
-  "name": "ThermalResistance",
-  "exponents": [
-    0,
-    -1,
-    3,
-    0,
-    0,
-    1,
-    0
-  ],
-  "default unit": "SquareMeterKelvinPerKilowatt",
-  "units": [
-    "SquareMeterKelvinPerKilowatt",
-    "SquareMeterKelvinPerWatt",
-    "SquareMeterDegreeCelsiusPerWatt",
-    "SquareCentimeterKelvinPerWatt",
-    "SquareCentimeterHourDegreeCelsiusPerKilocalorie",
-    "HourSquareFeetDegreeFahrenheitPerBtu"
-  ],
-  "conversion functions": {
-    "SquareMeterKelvinPerKilowatt": "x",
-    "SquareMeterKelvinPerWatt": "x * 1000",
-    "SquareMeterDegreeCelsiusPerWatt": "x * 1000.0",
-    "SquareCentimeterKelvinPerWatt": "x * 0.1",
-    "SquareCentimeterHourDegreeCelsiusPerKilocalorie": "x * 0.0859779507590433",
-    "HourSquareFeetDegreeFahrenheitPerBtu": "x * 176.1121482159839"
-  },
-  "symbols": {
-    "SquareMeterKelvinPerKilowatt": "m²K/kW",
-    "SquareMeterKelvinPerWatt": "m²K/W",
-    "SquareMeterDegreeCelsiusPerWatt": "m²°C/W",
-    "SquareCentimeterKelvinPerWatt": "cm²K/W",
-    "SquareCentimeterHourDegreeCelsiusPerKilocalorie": "cm²Hr°C/kcal",
-    "HourSquareFeetDegreeFahrenheitPerBtu": "Hrft²°F/Btu"
-  },
-  "plural symbols": {}
+    "name": "ThermalResistance",
+    "exponents": [
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        }
+    ],
+    "default unit": "SquareMeterKelvinPerKilowatt",
+    "units": [
+        {
+            "Length": 28
+        },
+        {
+            "Length": 24
+        },
+        {
+            "Length": 31
+        },
+        {
+            "Length": 29
+        },
+        {
+            "Length": 47
+        },
+        {
+            "Length": 36
+        }
+    ],
+    "conversion functions": [
+        {
+            "Key": "SquareMeterKelvinPerKilowatt",
+            "Value": "x"
+        },
+        {
+            "Key": "SquareMeterKelvinPerWatt",
+            "Value": "x * 1000"
+        },
+        {
+            "Key": "SquareMeterDegreeCelsiusPerWatt",
+            "Value": "x * 1000.0"
+        },
+        {
+            "Key": "SquareCentimeterKelvinPerWatt",
+            "Value": "x * 0.1"
+        },
+        {
+            "Key": "SquareCentimeterHourDegreeCelsiusPerKilocalorie",
+            "Value": "x * 0.0859779507590433"
+        },
+        {
+            "Key": "HourSquareFeetDegreeFahrenheitPerBtu",
+            "Value": "x * 176.1121482159839"
+        }
+    ],
+    "symbols": [
+        {
+            "Key": "SquareMeterKelvinPerKilowatt",
+            "Value": " "m²K/kW" "
+        },
+        {
+            "Key": "SquareMeterKelvinPerWatt",
+            "Value": " "m²K/W" "
+        },
+        {
+            "Key": "SquareMeterDegreeCelsiusPerWatt",
+            "Value": " "m²°C/W" "
+        },
+        {
+            "Key": "SquareCentimeterKelvinPerWatt",
+            "Value": " "cm²K/W" "
+        },
+        {
+            "Key": "SquareCentimeterHourDegreeCelsiusPerKilocalorie",
+            "Value": " "cm²Hr°C/kcal" "
+        },
+        {
+            "Key": "HourSquareFeetDegreeFahrenheitPerBtu",
+            "Value": " "Hrft²°F/Btu" "
+        }
+    ],
+    "plural symbols": [
+    ]
 }

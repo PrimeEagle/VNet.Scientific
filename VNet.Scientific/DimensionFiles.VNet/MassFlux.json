@@ -1,38 +1,94 @@
 {
-  "name": "MassFlux",
-  "exponents": [
-    -2,
-    1,
-    -1,
-    0,
-    0,
-    0,
-    0
-  ],
-  "default unit": "KilogramPerSecondPerSquareMeter",
-  "units": [
-    "GramPerSecondPerSquareMeter",
-    "GramPerSecondPerSquareCentimeter",
-    "GramPerSecondPerSquareMillimeter",
-    "GramPerHourPerSquareMeter",
-    "GramPerHourPerSquareCentimeter",
-    "GramPerHourPerSquareMillimeter"
-  ],
-  "conversion functions": {
-    "GramPerSecondPerSquareMeter": "x / 1e3",
-    "GramPerSecondPerSquareCentimeter": "x / 1e-1",
-    "GramPerSecondPerSquareMillimeter": "x / 1e-3",
-    "GramPerHourPerSquareMeter": "x / 3.6e6",
-    "GramPerHourPerSquareCentimeter": "x / 3.6e2",
-    "GramPerHourPerSquareMillimeter": "x / 3.6e0"
-  },
-  "symbols": {
-    "GramPerSecondPerSquareMeter": "g·s⁻¹·m⁻²",
-    "GramPerSecondPerSquareCentimeter": "g·s⁻¹·cm⁻²",
-    "GramPerSecondPerSquareMillimeter": "g·s⁻¹·mm⁻²",
-    "GramPerHourPerSquareMeter": "g·h⁻¹·m⁻²",
-    "GramPerHourPerSquareCentimeter": "g·h⁻¹·cm⁻²",
-    "GramPerHourPerSquareMillimeter": "g·h⁻¹·mm⁻²"
-  },
-  "plural symbols": {}
+    "name": "MassFlux",
+    "exponents": [
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        }
+    ],
+    "default unit": "KilogramPerSecondPerSquareMeter",
+    "units": [
+        {
+            "Length": 27
+        },
+        {
+            "Length": 32
+        },
+        {
+            "Length": 32
+        },
+        {
+            "Length": 25
+        },
+        {
+            "Length": 30
+        },
+        {
+            "Length": 30
+        }
+    ],
+    "conversion functions": [
+        {
+            "Key": "GramPerSecondPerSquareMeter",
+            "Value": "x / 1e3"
+        },
+        {
+            "Key": "GramPerSecondPerSquareCentimeter",
+            "Value": "x / 1e-1"
+        },
+        {
+            "Key": "GramPerSecondPerSquareMillimeter",
+            "Value": "x / 1e-3"
+        },
+        {
+            "Key": "GramPerHourPerSquareMeter",
+            "Value": "x / 3.6e6"
+        },
+        {
+            "Key": "GramPerHourPerSquareCentimeter",
+            "Value": "x / 3.6e2"
+        },
+        {
+            "Key": "GramPerHourPerSquareMillimeter",
+            "Value": "x / 3.6e0"
+        }
+    ],
+    "symbols": [
+        {
+            "Key": "GramPerSecondPerSquareMeter",
+            "Value": " "g·s⁻¹·m⁻²" "
+        },
+        {
+            "Key": "GramPerSecondPerSquareCentimeter",
+            "Value": " "g·s⁻¹·cm⁻²" "
+        },
+        {
+            "Key": "GramPerSecondPerSquareMillimeter",
+            "Value": " "g·s⁻¹·mm⁻²" "
+        },
+        {
+            "Key": "GramPerHourPerSquareMeter",
+            "Value": " "g·h⁻¹·m⁻²" "
+        },
+        {
+            "Key": "GramPerHourPerSquareCentimeter",
+            "Value": " "g·h⁻¹·cm⁻²" "
+        },
+        {
+            "Key": "GramPerHourPerSquareMillimeter",
+            "Value": " "g·h⁻¹·mm⁻²" "
+        }
+    ],
+    "plural symbols": [
+    ]
 }

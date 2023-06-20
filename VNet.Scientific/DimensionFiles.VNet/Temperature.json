@@ -1,50 +1,138 @@
 {
-  "name": "Temperature",
-  "exponents": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    1,
-    0
-  ],
-  "default unit": "Kelvin",
-  "units": [
-    "Kelvin",
-    "DegreeCelsius",
-    "MillidegreeCelsius",
-    "DegreeDelisle",
-    "DegreeFahrenheit",
-    "DegreeNewton",
-    "DegreeRankine",
-    "DegreeReaumur",
-    "DegreeRoemer",
-    "SolarTemperature"
-  ],
-  "conversion functions": {
-    "Kelvin": "x",
-    "DegreeCelsius": "x + 273.15",
-    "MillidegreeCelsius": "x / 1000 + 273.15",
-    "DegreeDelisle": "x * -2 / 3 + 373.15",
-    "DegreeFahrenheit": "x * 5 / 9 + 459.67 * 5 / 9",
-    "DegreeNewton": "x * 100 / 33 + 273.15",
-    "DegreeRankine": "x * 5 / 9",
-    "DegreeReaumur": "x * 5 / 4 + 273.15",
-    "DegreeRoemer": "x * 40 / 21 + 273.15 - 7.5 * 40d / 21",
-    "SolarTemperature": "x * 5778"
-  },
-  "symbols": {
-    "Kelvin": "K",
-    "DegreeCelsius": "°C",
-    "MillidegreeCelsius": "m°C",
-    "DegreeDelisle": "°De",
-    "DegreeFahrenheit": "°F",
-    "DegreeNewton": "°N",
-    "DegreeRankine": "°R",
-    "DegreeReaumur": "°Ré",
-    "DegreeRoemer": "°Rø",
-    "SolarTemperature": "T⊙"
-  },
-  "plural symbols": {}
+    "name": "Temperature",
+    "exponents": [
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        }
+    ],
+    "default unit": "Kelvin",
+    "units": [
+        {
+            "Length": 6
+        },
+        {
+            "Length": 13
+        },
+        {
+            "Length": 18
+        },
+        {
+            "Length": 13
+        },
+        {
+            "Length": 16
+        },
+        {
+            "Length": 12
+        },
+        {
+            "Length": 13
+        },
+        {
+            "Length": 13
+        },
+        {
+            "Length": 12
+        },
+        {
+            "Length": 16
+        }
+    ],
+    "conversion functions": [
+        {
+            "Key": "Kelvin",
+            "Value": "x"
+        },
+        {
+            "Key": "DegreeCelsius",
+            "Value": "x + 273.15"
+        },
+        {
+            "Key": "MillidegreeCelsius",
+            "Value": "x / 1000 + 273.15"
+        },
+        {
+            "Key": "DegreeDelisle",
+            "Value": "x * -2 / 3 + 373.15"
+        },
+        {
+            "Key": "DegreeFahrenheit",
+            "Value": "x * 5 / 9 + 459.67 * 5 / 9"
+        },
+        {
+            "Key": "DegreeNewton",
+            "Value": "x * 100 / 33 + 273.15"
+        },
+        {
+            "Key": "DegreeRankine",
+            "Value": "x * 5 / 9"
+        },
+        {
+            "Key": "DegreeReaumur",
+            "Value": "x * 5 / 4 + 273.15"
+        },
+        {
+            "Key": "DegreeRoemer",
+            "Value": "x * 40 / 21 + 273.15 - 7.5 * 40d / 21"
+        },
+        {
+            "Key": "SolarTemperature",
+            "Value": "x * 5778"
+        }
+    ],
+    "symbols": [
+        {
+            "Key": "Kelvin",
+            "Value": " "K" "
+        },
+        {
+            "Key": "DegreeCelsius",
+            "Value": " "°C" "
+        },
+        {
+            "Key": "MillidegreeCelsius",
+            "Value": " "m°C" "
+        },
+        {
+            "Key": "DegreeDelisle",
+            "Value": " "°De" "
+        },
+        {
+            "Key": "DegreeFahrenheit",
+            "Value": " "°F" "
+        },
+        {
+            "Key": "DegreeNewton",
+            "Value": " "°N" "
+        },
+        {
+            "Key": "DegreeRankine",
+            "Value": " "°R" "
+        },
+        {
+            "Key": "DegreeReaumur",
+            "Value": " "°Ré" "
+        },
+        {
+            "Key": "DegreeRoemer",
+            "Value": " "°Rø" "
+        },
+        {
+            "Key": "SolarTemperature",
+            "Value": " "T⊙" "
+        }
+    ],
+    "plural symbols": [
+    ]
 }

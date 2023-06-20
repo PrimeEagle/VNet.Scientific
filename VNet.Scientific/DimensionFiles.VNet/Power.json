@@ -1,106 +1,120 @@
 {
-  "name": "Power",
-  "exponents": [
-    2,
-    1,
-    -3,
-    0,
-    0,
-    0,
-    0
-  ],
-  "default unit": "Watt",
-  "units": [
-    "MechanicalHorsepower",
-    "MetricHorsepower",
-    "ElectricalHorsepower",
-    "BoilerHorsepower",
-    "HydraulicHorsepower",
-    "BritishThermalUnitPerHour",
-    "JoulePerHour",
-    "Yottawatt",
-    "Zettawatt",
-    "Exawatt",
-    "Petawatt",
-    "Terawatt",
-    "Gigawatt",
-    "Megawatt",
-    "Kilowatt",
-    "Hectowatt",
-    "Dekawatt",
-    "Watt",
-    "Deciwatt",
-    "Centiwatt",
-    "Milliwatt",
-    "Microwatt",
-    "Nanowatt",
-    "Picowatt",
-    "Femtowatt",
-    "Attowatt",
-    "Zeptowatt",
-    "Yoctowatt"
-  ],
-  "conversion functions": {
-    "MechanicalHorsepower": "x * 745.69m",
-    "MetricHorsepower": "x * 735.49875m",
-    "ElectricalHorsepower": "x * 746m",
-    "BoilerHorsepower": "x * 9812.5m",
-    "HydraulicHorsepower": "x * 745.69988145m",
-    "BritishThermalUnitPerHour": "x * 0.29307107017m",
-    "JoulePerHour": "x / 3600m",
-    "Yottawatt": "x * 10e24",
-    "Zettawatt": "x * 10e21",
-    "Exawatt": "x * 10e18",
-    "Petawatt": "x * 10e15",
-    "Terawatt": "x * 10e12",
-    "Gigawatt": "x * 10e9",
-    "Megawatt": "x * 10e6",
-    "Kilowatt": "x * 10e3",
-    "Hectowatt": "x * 10e2",
-    "Dekawatt": "x * 10e1",
-    "Watt": "x * 10e0",
-    "Deciwatt": "x * 10e-1",
-    "Centiwatt": "x * 10e-2",
-    "Milliwatt": "x * 10e-3",
-    "Microwatt": "x * 10e-6",
-    "Nanowatt": "x * 10e-9",
-    "Picowatt": "x * 10e-12",
-    "Femtowatt": "x * 10e-15",
-    "Attowatt": "x * 10e-18",
-    "Zeptowatt": "x * 10e-21",
-    "Yoctowatt": "x * 10e-24"
-  },
-  "symbols": {
-    "MechanicalHorsepower": "hp(I)",
-    "MetricHorsepower": "hp(M)",
-    "ElectricalHorsepower": "hp(E)",
-    "BoilerHorsepower": "hp(S)",
-    "HydraulicHorsepower": "hp(H)",
-    "BritishThermalUnitPerHour": "Btu/h",
-    "JoulePerHour": "J/h",
-    "Yottawatt": "YW",
-    "Zettawatt": "ZW",
-    "Exawatt": "EW",
-    "Petawatt": "PW",
-    "Terawatt": "TW",
-    "Gigawatt": "GW",
-    "Megawatt": "MW",
-    "Kilowatt": "kW",
-    "Hectowatt": "hW",
-    "Dekawatt": "daW",
-    "Watt": "W",
-    "Deciwatt": "dW",
-    "Centiwatt": "cW",
-    "Milliwatt": "mW",
-    "Microwatt": "µW",
-    "Nanowatt": "nW",
-    "Picowatt": "pW",
-    "Femtowatt": "fW",
-    "Attowatt": "aW",
-    "Zeptowatt": "zW",
-    "Yoctowatt": "yW"
-  },
-  "plural symbols": {
-    "BritishThermalUnitPerHour": "Btu/hr"
-  }
+    "name": "Power",
+    "exponents": [
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        }
+    ],
+    "default unit": "Watt",
+    "units": [
+        {
+            "Length": 4
+        },
+        {
+            "Length": 20
+        },
+        {
+            "Length": 16
+        },
+        {
+            "Length": 20
+        },
+        {
+            "Length": 16
+        },
+        {
+            "Length": 19
+        },
+        {
+            "Length": 25
+        },
+        {
+            "Length": 12
+        }
+    ],
+    "conversion functions": [
+        {
+            "Key": "Watt",
+            "Value": "x"
+        },
+        {
+            "Key": "MechanicalHorsepower",
+            "Value": "x * 745.69m"
+        },
+        {
+            "Key": "MetricHorsepower",
+            "Value": "x * 735.49875m"
+        },
+        {
+            "Key": "ElectricalHorsepower",
+            "Value": "x * 746m"
+        },
+        {
+            "Key": "BoilerHorsepower",
+            "Value": "x * 9812.5m"
+        },
+        {
+            "Key": "HydraulicHorsepower",
+            "Value": "x * 745.69988145m"
+        },
+        {
+            "Key": "BritishThermalUnitPerHour",
+            "Value": "x * 0.29307107017m"
+        },
+        {
+            "Key": "JoulePerHour",
+            "Value": "x / 3600m"
+        }
+    ],
+    "symbols": [
+        {
+            "Key": "Watt",
+            "Value": " "W" "
+        },
+        {
+            "Key": "MechanicalHorsepower",
+            "Value": " "hp(I)" "
+        },
+        {
+            "Key": "MetricHorsepower",
+            "Value": " "hp(M)" "
+        },
+        {
+            "Key": "ElectricalHorsepower",
+            "Value": " "hp(E)" "
+        },
+        {
+            "Key": "BoilerHorsepower",
+            "Value": " "hp(S)" "
+        },
+        {
+            "Key": "HydraulicHorsepower",
+            "Value": " "hp(H)" "
+        },
+        {
+            "Key": "BritishThermalUnitPerHour",
+            "Value": " "Btu/h""
+        },
+        {
+            "Key": "JoulePerHour",
+            "Value": " "J/h" "
+        }
+    ],
+    "plural symbols": [
+        {
+            "Key": "BritishThermalUnitPerHour",
+            "Value": " "Btu/hr" "
+        }
+    ]
 }

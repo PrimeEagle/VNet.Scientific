@@ -1,89 +1,61 @@
 {
-  "name": "ElectricSurfaceChargeDensity",
-  "exponents": [
-    -2,
-    0,
-    1,
-    1,
-    0,
-    0,
-    0
-  ],
-  "default unit": "CoulombPerSquareMeter",
-  "units": [
-    "CoulombPerSquareCentimeter",
-    "CoulombPerSquareInch",
-    "YottacoulombPerSquareMeter",
-    "ZettacoulombPerSquareMeter",
-    "ExacoulombPerSquareMeter",
-    "PetacoulombPerSquareMeter",
-    "TeracoulombPerSquareMeter",
-    "GigacoulombPerSquareMeter",
-    "MegacoulombPerSquareMeter",
-    "KilocoulombPerSquareMeter",
-    "HectocoulombPerSquareMeter",
-    "DekacoulombPerSquareMeter",
-    "CoulombPerSquareMeter",
-    "DecicoulombPerSquareMeter",
-    "CenticoulombPerSquareMeter",
-    "MillicoulombPerSquareMeter",
-    "MicrocoulombPerSquareMeter",
-    "NanocoulombPerSquareMeter",
-    "PicocoulombPerSquareMeter",
-    "FemtocoulombPerSquareMeter",
-    "AttocoulombPerSquareMeter",
-    "ZeptocoulombPerSquareMeter",
-    "YoctocoulombPerSquareMeter"
-  ],
-  "conversion functions": {
-    "CoulombPerSquareCentimeter": "x * 1.0e4",
-    "CoulombPerSquareInch": "x * 1.5500031000062000e3",
-    "YottacoulombPerSquareMeter": "x * 10e24",
-    "ZettacoulombPerSquareMeter": "x * 10e21",
-    "ExacoulombPerSquareMeter": "x * 10e18",
-    "PetacoulombPerSquareMeter": "x * 10e15",
-    "TeracoulombPerSquareMeter": "x * 10e12",
-    "GigacoulombPerSquareMeter": "x * 10e9",
-    "MegacoulombPerSquareMeter": "x * 10e6",
-    "KilocoulombPerSquareMeter": "x * 10e3",
-    "HectocoulombPerSquareMeter": "x * 10e2",
-    "DekacoulombPerSquareMeter": "x * 10e1",
-    "CoulombPerSquareMeter": "x * 10e0",
-    "DecicoulombPerSquareMeter": "x * 10e-1",
-    "CenticoulombPerSquareMeter": "x * 10e-2",
-    "MillicoulombPerSquareMeter": "x * 10e-3",
-    "MicrocoulombPerSquareMeter": "x * 10e-6",
-    "NanocoulombPerSquareMeter": "x * 10e-9",
-    "PicocoulombPerSquareMeter": "x * 10e-12",
-    "FemtocoulombPerSquareMeter": "x * 10e-15",
-    "AttocoulombPerSquareMeter": "x * 10e-18",
-    "ZeptocoulombPerSquareMeter": "x * 10e-21",
-    "YoctocoulombPerSquareMeter": "x * 10e-24"
-  },
-  "symbols": {
-    "CoulombPerSquareCentimeter": "C/cm²",
-    "CoulombPerSquareInch": "C/in²",
-    "YottacoulombPerSquareMeter": "YC/m²",
-    "ZettacoulombPerSquareMeter": "ZC/m²",
-    "ExacoulombPerSquareMeter": "EC/m²",
-    "PetacoulombPerSquareMeter": "PC/m²",
-    "TeracoulombPerSquareMeter": "TC/m²",
-    "GigacoulombPerSquareMeter": "GC/m²",
-    "MegacoulombPerSquareMeter": "MC/m²",
-    "KilocoulombPerSquareMeter": "kC/m²",
-    "HectocoulombPerSquareMeter": "hC/m²",
-    "DekacoulombPerSquareMeter": "daC/m²",
-    "CoulombPerSquareMeter": "C/m²",
-    "DecicoulombPerSquareMeter": "dC/m²",
-    "CenticoulombPerSquareMeter": "cC/m²",
-    "MillicoulombPerSquareMeter": "mC/m²",
-    "MicrocoulombPerSquareMeter": "µC/m²",
-    "NanocoulombPerSquareMeter": "nC/m²",
-    "PicocoulombPerSquareMeter": "pC/m²",
-    "FemtocoulombPerSquareMeter": "fC/m²",
-    "AttocoulombPerSquareMeter": "aC/m²",
-    "ZeptocoulombPerSquareMeter": "zC/m²",
-    "YoctocoulombPerSquareMeter": "yC/m²"
-  },
-  "plural symbols": {}
+    "name": "ElectricSurfaceChargeDensity",
+    "exponents": [
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        }
+    ],
+    "default unit": "CoulombPerSquareMeter",
+    "units": [
+        {
+            "Length": 21
+        },
+        {
+            "Length": 26
+        },
+        {
+            "Length": 20
+        }
+    ],
+    "conversion functions": [
+        {
+            "Key": "CoulombPerSquareMeter",
+            "Value": "x"
+        },
+        {
+            "Key": "CoulombPerSquareCentimeter",
+            "Value": "x * 1.0e4"
+        },
+        {
+            "Key": "CoulombPerSquareInch",
+            "Value": "x * 1.5500031000062000e3"
+        }
+    ],
+    "symbols": [
+        {
+            "Key": "CoulombPerSquareMeter",
+            "Value": " "C/m²" "
+        },
+        {
+            "Key": "CoulombPerSquareCentimeter",
+            "Value": " "C/cm²" "
+        },
+        {
+            "Key": "CoulombPerSquareInch",
+            "Value": " "C/in²" "
+        }
+    ],
+    "plural symbols": [
+    ]
 }

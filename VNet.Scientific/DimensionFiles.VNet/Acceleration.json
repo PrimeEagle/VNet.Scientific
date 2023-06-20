@@ -1,101 +1,105 @@
 {
-  "name": "Acceleration",
-  "exponents": [
-    1,
-    0,
-    -2,
-    0,
-    0,
-    0,
-    0
-  ],
-  "default unit": "MeterPerSecondSquared",
-  "units": [
-    "InchPerSecondSquared",
-    "FootPerSecondSquared",
-    "KnotPerSecond",
-    "KnotPerMinute",
-    "KnotPerHour",
-    "StandardGravity",
-    "YottameterPerSecondSquared",
-    "ZettameterPerSecondSquared",
-    "ExameterPerSecondSquared",
-    "PetameterPerSecondSquared",
-    "TerameterPerSecondSquared",
-    "GigameterPerSecondSquared",
-    "MegameterPerSecondSquared",
-    "KilometerPerSecondSquared",
-    "HectometerPerSecondSquared",
-    "DekameterPerSecondSquared",
-    "MeterPerSecondSquared",
-    "DecimeterPerSecondSquared",
-    "CentimeterPerSecondSquared",
-    "MillimeterPerSecondSquared",
-    "MicrometerPerSecondSquared",
-    "NanometerPerSecondSquared",
-    "PicometerPerSecondSquared",
-    "FemtometerPerSecondSquared",
-    "AttometerPerSecondSquared",
-    "ZeptometerPerSecondSquared",
-    "YoctometerPerSecondSquared"
-  ],
-  "conversion functions": {
-    "InchPerSecondSquared": "x * 0.0254",
-    "FootPerSecondSquared": "x * 0.304800",
-    "KnotPerSecond": "x * 0.5144444444444",
-    "KnotPerMinute": "x * 0.5144444444444 / 60",
-    "KnotPerHour": "x * 0.5144444444444 / 3600",
-    "StandardGravity": "x * 9.80665",
-    "YottameterPerSecondSquared": "x * 10e24",
-    "ZettameterPerSecondSquared": "x * 10e21",
-    "ExameterPerSecondSquared": "x * 10e18",
-    "PetameterPerSecondSquared": "x * 10e15",
-    "TerameterPerSecondSquared": "x * 10e12",
-    "GigameterPerSecondSquared": "x * 10e9",
-    "MegameterPerSecondSquared": "x * 10e6",
-    "KilometerPerSecondSquared": "x * 10e3",
-    "HectometerPerSecondSquared": "x * 10e2",
-    "DekameterPerSecondSquared": "x * 10e1",
-    "MeterPerSecondSquared": "x * 10e0",
-    "DecimeterPerSecondSquared": "x * 10e-1",
-    "CentimeterPerSecondSquared": "x * 10e-2",
-    "MillimeterPerSecondSquared": "x * 10e-3",
-    "MicrometerPerSecondSquared": "x * 10e-6",
-    "NanometerPerSecondSquared": "x * 10e-9",
-    "PicometerPerSecondSquared": "x * 10e-12",
-    "FemtometerPerSecondSquared": "x * 10e-15",
-    "AttometerPerSecondSquared": "x * 10e-18",
-    "ZeptometerPerSecondSquared": "x * 10e-21",
-    "YoctometerPerSecondSquared": "x * 10e-24"
-  },
-  "symbols": {
-    "InchPerSecondSquared": "in/s²",
-    "FootPerSecondSquared": "ft/s²",
-    "KnotPerSecond": "kn/s",
-    "KnotPerMinute": "kn/min",
-    "KnotPerHour": "kn/h",
-    "StandardGravity": "g",
-    "YottameterPerSecondSquared": "Ym/s²",
-    "ZettameterPerSecondSquared": "Zm/s²",
-    "ExameterPerSecondSquared": "Em/s²",
-    "PetameterPerSecondSquared": "Pm/s²",
-    "TerameterPerSecondSquared": "Tm/s²",
-    "GigameterPerSecondSquared": "Gm/s²",
-    "MegameterPerSecondSquared": "Mm/s²",
-    "KilometerPerSecondSquared": "km/s²",
-    "HectometerPerSecondSquared": "hm/s²",
-    "DekameterPerSecondSquared": "dam/s²",
-    "MeterPerSecondSquared": "m/s²",
-    "DecimeterPerSecondSquared": "dm/s²",
-    "CentimeterPerSecondSquared": "cm/s²",
-    "MillimeterPerSecondSquared": "mm/s²",
-    "MicrometerPerSecondSquared": "µm/s²",
-    "NanometerPerSecondSquared": "nm/s²",
-    "PicometerPerSecondSquared": "pm/s²",
-    "FemtometerPerSecondSquared": "fm/s²",
-    "AttometerPerSecondSquared": "am/s²",
-    "ZeptometerPerSecondSquared": "zm/s²",
-    "YoctometerPerSecondSquared": "ym/s²"
-  },
-  "plural symbols": {}
+    "name": "Acceleration",
+    "exponents": [
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        }
+    ],
+    "default unit": "MeterPerSecondSquared",
+    "units": [
+        {
+            "Length": 21
+        },
+        {
+            "Length": 20
+        },
+        {
+            "Length": 20
+        },
+        {
+            "Length": 13
+        },
+        {
+            "Length": 13
+        },
+        {
+            "Length": 11
+        },
+        {
+            "Length": 15
+        }
+    ],
+    "conversion functions": [
+        {
+            "Key": "MeterPerSecondSquared",
+            "Value": "x"
+        },
+        {
+            "Key": "InchPerSecondSquared",
+            "Value": "x * 0.0254"
+        },
+        {
+            "Key": "FootPerSecondSquared",
+            "Value": "x * 0.304800"
+        },
+        {
+            "Key": "KnotPerSecond",
+            "Value": "x * 0.5144444444444"
+        },
+        {
+            "Key": "KnotPerMinute",
+            "Value": "x * 0.5144444444444 / 60"
+        },
+        {
+            "Key": "KnotPerHour",
+            "Value": "x * 0.5144444444444 / 3600"
+        },
+        {
+            "Key": "StandardGravity",
+            "Value": "x * 9.80665"
+        }
+    ],
+    "symbols": [
+        {
+            "Key": "MeterPerSecondSquared",
+            "Value": " "m/s²" "
+        },
+        {
+            "Key": "InchPerSecondSquared",
+            "Value": " "in/s²" "
+        },
+        {
+            "Key": "FootPerSecondSquared",
+            "Value": " "ft/s²" "
+        },
+        {
+            "Key": "KnotPerSecond",
+            "Value": " "kn/s" "
+        },
+        {
+            "Key": "KnotPerMinute",
+            "Value": " "kn/min" "
+        },
+        {
+            "Key": "KnotPerHour",
+            "Value": " "kn/h" "
+        },
+        {
+            "Key": "StandardGravity",
+            "Value": " "g" "
+        }
+    ],
+    "plural symbols": [
+    ]
 }

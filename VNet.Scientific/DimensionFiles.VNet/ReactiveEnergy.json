@@ -1,83 +1,39 @@
 {
-  "name": "ReactiveEnergy",
-  "exponents": [
-    2,
-    1,
-    -1,
-    0,
-    0,
-    0,
-    0
-  ],
-  "default unit": "VoltampereReactiveHour",
-  "units": [
-    "YottavoltampereReactiveHour",
-    "ZettavoltampereReactiveHour",
-    "ExavoltampereReactiveHour",
-    "PetavoltampereReactiveHour",
-    "TeravoltampereReactiveHour",
-    "GigavoltampereReactiveHour",
-    "MegavoltampereReactiveHour",
-    "KilovoltampereReactiveHour",
-    "HectovoltampereReactiveHour",
-    "DekavoltampereReactiveHour",
-    "VoltampereReactiveHour",
-    "DecivoltampereReactiveHour",
-    "CentivoltampereReactiveHour",
-    "MillivoltampereReactiveHour",
-    "MicrovoltampereReactiveHour",
-    "NanovoltampereReactiveHour",
-    "PicovoltampereReactiveHour",
-    "FemtovoltampereReactiveHour",
-    "AttovoltampereReactiveHour",
-    "ZeptovoltampereReactiveHour",
-    "YoctovoltampereReactiveHour"
-  ],
-  "conversion functions": {
-    "YottavoltampereReactiveHour": "x * 10e24",
-    "ZettavoltampereReactiveHour": "x * 10e21",
-    "ExavoltampereReactiveHour": "x * 10e18",
-    "PetavoltampereReactiveHour": "x * 10e15",
-    "TeravoltampereReactiveHour": "x * 10e12",
-    "GigavoltampereReactiveHour": "x * 10e9",
-    "MegavoltampereReactiveHour": "x * 10e6",
-    "KilovoltampereReactiveHour": "x * 10e3",
-    "HectovoltampereReactiveHour": "x * 10e2",
-    "DekavoltampereReactiveHour": "x * 10e1",
-    "VoltampereReactiveHour": "x * 10e0",
-    "DecivoltampereReactiveHour": "x * 10e-1",
-    "CentivoltampereReactiveHour": "x * 10e-2",
-    "MillivoltampereReactiveHour": "x * 10e-3",
-    "MicrovoltampereReactiveHour": "x * 10e-6",
-    "NanovoltampereReactiveHour": "x * 10e-9",
-    "PicovoltampereReactiveHour": "x * 10e-12",
-    "FemtovoltampereReactiveHour": "x * 10e-15",
-    "AttovoltampereReactiveHour": "x * 10e-18",
-    "ZeptovoltampereReactiveHour": "x * 10e-21",
-    "YoctovoltampereReactiveHour": "x * 10e-24"
-  },
-  "symbols": {
-    "YottavoltampereReactiveHour": "Yvarh",
-    "ZettavoltampereReactiveHour": "Zvarh",
-    "ExavoltampereReactiveHour": "Evarh",
-    "PetavoltampereReactiveHour": "Pvarh",
-    "TeravoltampereReactiveHour": "Tvarh",
-    "GigavoltampereReactiveHour": "Gvarh",
-    "MegavoltampereReactiveHour": "Mvarh",
-    "KilovoltampereReactiveHour": "kvarh",
-    "HectovoltampereReactiveHour": "hvarh",
-    "DekavoltampereReactiveHour": "davarh",
-    "VoltampereReactiveHour": "varh",
-    "DecivoltampereReactiveHour": "dvarh",
-    "CentivoltampereReactiveHour": "cvarh",
-    "MillivoltampereReactiveHour": "mvarh",
-    "MicrovoltampereReactiveHour": "µvarh",
-    "NanovoltampereReactiveHour": "nvarh",
-    "PicovoltampereReactiveHour": "pvarh",
-    "FemtovoltampereReactiveHour": "fvarh",
-    "AttovoltampereReactiveHour": "avarh",
-    "ZeptovoltampereReactiveHour": "zvarh",
-    "YoctovoltampereReactiveHour": "yvarh"
-  },
-  "plural symbols": {}
+    "name": "ReactiveEnergy",
+    "exponents": [
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        }
+    ],
+    "default unit": "VoltampereReactiveHour",
+    "units": [
+        {
+            "Length": 22
+        }
+    ],
+    "conversion functions": [
+        {
+            "Key": "VoltampereReactiveHour",
+            "Value": "x"
+        }
+    ],
+    "symbols": [
+        {
+            "Key": "VoltampereReactiveHour",
+            "Value": " "varh" "
+        }
+    ],
+    "plural symbols": [
+    ]
 }

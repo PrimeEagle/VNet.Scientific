@@ -1,98 +1,94 @@
 {
-  "name": "MolarFlow",
-  "exponents": [
-    0,
-    0,
-    -1,
-    0,
-    0,
-    0,
-    1
-  ],
-  "default unit": "MolePerSecond",
-  "units": [
-    "MolePerMinute",
-    "MolePerHour",
-    "PoundMolePerSecond",
-    "PoundMolePerMinute",
-    "PoundMolePerHour",
-    "YottamolePerSecond",
-    "ZettamolePerSecond",
-    "ExamolePerSecond",
-    "PetamolePerSecond",
-    "TeramolePerSecond",
-    "GigamolePerSecond",
-    "MegamolePerSecond",
-    "KilomolePerSecond",
-    "HectomolePerSecond",
-    "DekamolePerSecond",
-    "MolePerSecond",
-    "DecimolePerSecond",
-    "CentimolePerSecond",
-    "MillimolePerSecond",
-    "MicromolePerSecond",
-    "NanomolePerSecond",
-    "PicomolePerSecond",
-    "FemtomolePerSecond",
-    "AttomolePerSecond",
-    "ZeptomolePerSecond",
-    "YoctomolePerSecond"
-  ],
-  "conversion functions": {
-    "MolePerMinute": "x / 60",
-    "MolePerHour": "x / 3600",
-    "PoundMolePerSecond": "x * 453.59237",
-    "PoundMolePerMinute": "(x * 453.59237) / 60",
-    "PoundMolePerHour": "(x * 453.59237) / 3600",
-    "YottamolePerSecond": "x * 10e24",
-    "ZettamolePerSecond": "x * 10e21",
-    "ExamolePerSecond": "x * 10e18",
-    "PetamolePerSecond": "x * 10e15",
-    "TeramolePerSecond": "x * 10e12",
-    "GigamolePerSecond": "x * 10e9",
-    "MegamolePerSecond": "x * 10e6",
-    "KilomolePerSecond": "x * 10e3",
-    "HectomolePerSecond": "x * 10e2",
-    "DekamolePerSecond": "x * 10e1",
-    "MolePerSecond": "x * 10e0",
-    "DecimolePerSecond": "x * 10e-1",
-    "CentimolePerSecond": "x * 10e-2",
-    "MillimolePerSecond": "x * 10e-3",
-    "MicromolePerSecond": "x * 10e-6",
-    "NanomolePerSecond": "x * 10e-9",
-    "PicomolePerSecond": "x * 10e-12",
-    "FemtomolePerSecond": "x * 10e-15",
-    "AttomolePerSecond": "x * 10e-18",
-    "ZeptomolePerSecond": "x * 10e-21",
-    "YoctomolePerSecond": "x * 10e-24"
-  },
-  "symbols": {
-    "MolePerMinute": "mol/min",
-    "MolePerHour": "kmol/h",
-    "PoundMolePerSecond": "lbmol/s",
-    "PoundMolePerMinute": "lbmol/min",
-    "PoundMolePerHour": "lbmol/h",
-    "YottamolePerSecond": "Ymol/s",
-    "ZettamolePerSecond": "Zmol/s",
-    "ExamolePerSecond": "Emol/s",
-    "PetamolePerSecond": "Pmol/s",
-    "TeramolePerSecond": "Tmol/s",
-    "GigamolePerSecond": "Gmol/s",
-    "MegamolePerSecond": "Mmol/s",
-    "KilomolePerSecond": "kmol/s",
-    "HectomolePerSecond": "hmol/s",
-    "DekamolePerSecond": "damol/s",
-    "MolePerSecond": "mol/s",
-    "DecimolePerSecond": "dmol/s",
-    "CentimolePerSecond": "cmol/s",
-    "MillimolePerSecond": "mmol/s",
-    "MicromolePerSecond": "µmol/s",
-    "NanomolePerSecond": "nmol/s",
-    "PicomolePerSecond": "pmol/s",
-    "FemtomolePerSecond": "fmol/s",
-    "AttomolePerSecond": "amol/s",
-    "ZeptomolePerSecond": "zmol/s",
-    "YoctomolePerSecond": "ymol/s"
-  },
-  "plural symbols": {}
+    "name": "MolarFlow",
+    "exponents": [
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        }
+    ],
+    "default unit": "MolePerSecond",
+    "units": [
+        {
+            "Length": 13
+        },
+        {
+            "Length": 13
+        },
+        {
+            "Length": 11
+        },
+        {
+            "Length": 18
+        },
+        {
+            "Length": 18
+        },
+        {
+            "Length": 16
+        }
+    ],
+    "conversion functions": [
+        {
+            "Key": "MolePerSecond",
+            "Value": "x"
+        },
+        {
+            "Key": "MolePerMinute",
+            "Value": "x / 60"
+        },
+        {
+            "Key": "MolePerHour",
+            "Value": "x / 3600"
+        },
+        {
+            "Key": "PoundMolePerSecond",
+            "Value": "x * 453.59237"
+        },
+        {
+            "Key": "PoundMolePerMinute",
+            "Value": "(x * 453.59237) / 60"
+        },
+        {
+            "Key": "PoundMolePerHour",
+            "Value": "(x * 453.59237) / 3600"
+        }
+    ],
+    "symbols": [
+        {
+            "Key": "MolePerSecond",
+            "Value": " "mol/s" "
+        },
+        {
+            "Key": "MolePerMinute",
+            "Value": " "mol/min" "
+        },
+        {
+            "Key": "MolePerHour",
+            "Value": " "kmol/h" "
+        },
+        {
+            "Key": "PoundMolePerSecond",
+            "Value": " "lbmol/s" "
+        },
+        {
+            "Key": "PoundMolePerMinute",
+            "Value": " "lbmol/min" "
+        },
+        {
+            "Key": "PoundMolePerHour",
+            "Value": " "lbmol/h" "
+        }
+    ],
+    "plural symbols": [
+    ]
 }

@@ -1,23 +1,39 @@
 {
-  "name": "InternationalUnit",
-  "exponents": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
-  ],
-  "default unit": "InternationalUnit",
-  "units": [
-    "InternationalUnit"
-  ],
-  "conversion functions": {
-    "InternationalUnit": "x"
-  },
-  "symbols": {
-    "InternationalUnit": "IU"
-  },
-  "plural symbols": {}
+    "name": "InternationalUnit",
+    "exponents": [
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        }
+    ],
+    "default unit": "InternationalUnit",
+    "units": [
+        {
+            "Length": 17
+        }
+    ],
+    "conversion functions": [
+        {
+            "Key": "InternationalUnit",
+            "Value": "x"
+        }
+    ],
+    "symbols": [
+        {
+            "Key": "InternationalUnit",
+            "Value": " "IU" "
+        }
+    ],
+    "plural symbols": [
+    ]
 }

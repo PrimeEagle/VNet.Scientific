@@ -1,110 +1,135 @@
 {
-  "name": "Force",
-  "exponents": [
-    1,
-    1,
-    -2,
-    0,
-    0,
-    0,
-    0
-  ],
-  "default unit": "Newton",
-  "units": [
-    "Dyn",
-    "KilogramForce",
-    "TonneForce",
-    "KiloPond",
-    "Poundal",
-    "PoundForce",
-    "OunceForce",
-    "ShortTonForce",
-    "Yottanewton",
-    "Zettanewton",
-    "Exanewton",
-    "Petanewton",
-    "Teranewton",
-    "Giganewton",
-    "Meganewton",
-    "Kilonewton",
-    "Hectonewton",
-    "Dekanewton",
-    "Newton",
-    "Decinewton",
-    "Centinewton",
-    "Millinewton",
-    "Micronewton",
-    "Nanonewton",
-    "Piconewton",
-    "Femtonewton",
-    "Attonewton",
-    "Zeptonewton",
-    "Yoctonewton"
-  ],
-  "conversion functions": {
-    "Dyn": "x / 1e5",
-    "KilogramForce": "x * 9.80665002864",
-    "TonneForce": "x * 9.80665002864e3",
-    "KiloPond": "x * 9.80665002864",
-    "Poundal": "x * 0.13825502798973041652092282466083",
-    "PoundForce": "x * 4.4482216152605095551842641431421",
-    "OunceForce": "x * 2.780138509537812e-1",
-    "ShortTonForce": "x * 8.896443230521e3",
-    "Yottanewton": "x * 10e24",
-    "Zettanewton": "x * 10e21",
-    "Exanewton": "x * 10e18",
-    "Petanewton": "x * 10e15",
-    "Teranewton": "x * 10e12",
-    "Giganewton": "x * 10e9",
-    "Meganewton": "x * 10e6",
-    "Kilonewton": "x * 10e3",
-    "Hectonewton": "x * 10e2",
-    "Dekanewton": "x * 10e1",
-    "Newton": "x * 10e0",
-    "Decinewton": "x * 10e-1",
-    "Centinewton": "x * 10e-2",
-    "Millinewton": "x * 10e-3",
-    "Micronewton": "x * 10e-6",
-    "Nanonewton": "x * 10e-9",
-    "Piconewton": "x * 10e-12",
-    "Femtonewton": "x * 10e-15",
-    "Attonewton": "x * 10e-18",
-    "Zeptonewton": "x * 10e-21",
-    "Yoctonewton": "x * 10e-24"
-  },
-  "symbols": {
-    "Dyn": "dyn",
-    "KilogramForce": "kgf",
-    "TonneForce": "tf",
-    "KiloPond": "kp",
-    "Poundal": "pdl",
-    "PoundForce": "lbf",
-    "OunceForce": "ozf",
-    "ShortTonForce": "tf (short)",
-    "Yottanewton": "YN",
-    "Zettanewton": "ZN",
-    "Exanewton": "EN",
-    "Petanewton": "PN",
-    "Teranewton": "TN",
-    "Giganewton": "GN",
-    "Meganewton": "MN",
-    "Kilonewton": "kN",
-    "Hectonewton": "hN",
-    "Dekanewton": "daN",
-    "Newton": "N",
-    "Decinewton": "dN",
-    "Centinewton": "cN",
-    "Millinewton": "mN",
-    "Micronewton": "µN",
-    "Nanonewton": "nN",
-    "Piconewton": "pN",
-    "Femtonewton": "fN",
-    "Attonewton": "aN",
-    "Zeptonewton": "zN",
-    "Yoctonewton": "yN"
-  },
-  "plural symbols": {
-    "TonneForce": "Ton",
-    "ShortTonForce": "t (US)f"
-  }
+    "name": "Force",
+    "exponents": [
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        }
+    ],
+    "default unit": "Newton",
+    "units": [
+        {
+            "Length": 3
+        },
+        {
+            "Length": 13
+        },
+        {
+            "Length": 10
+        },
+        {
+            "Length": 6
+        },
+        {
+            "Length": 8
+        },
+        {
+            "Length": 7
+        },
+        {
+            "Length": 10
+        },
+        {
+            "Length": 10
+        },
+        {
+            "Length": 13
+        }
+    ],
+    "conversion functions": [
+        {
+            "Key": "Dyn",
+            "Value": "x / 1e5"
+        },
+        {
+            "Key": "KilogramForce",
+            "Value": "x * 9.80665002864"
+        },
+        {
+            "Key": "TonneForce",
+            "Value": "x * 9.80665002864e3"
+        },
+        {
+            "Key": "Newton",
+            "Value": "x"
+        },
+        {
+            "Key": "KiloPond",
+            "Value": "x * 9.80665002864"
+        },
+        {
+            "Key": "Poundal",
+            "Value": "x * 0.13825502798973041652092282466083"
+        },
+        {
+            "Key": "PoundForce",
+            "Value": "x * 4.4482216152605095551842641431421"
+        },
+        {
+            "Key": "OunceForce",
+            "Value": "x * 2.780138509537812e-1"
+        },
+        {
+            "Key": "ShortTonForce",
+            "Value": "x * 8.896443230521e3"
+        }
+    ],
+    "symbols": [
+        {
+            "Key": "Dyn",
+            "Value": " "dyn" "
+        },
+        {
+            "Key": "KilogramForce",
+            "Value": " "kgf" "
+        },
+        {
+            "Key": "TonneForce",
+            "Value": " "tf""
+        },
+        {
+            "Key": "Newton",
+            "Value": " "N" "
+        },
+        {
+            "Key": "KiloPond",
+            "Value": " "kp" "
+        },
+        {
+            "Key": "Poundal",
+            "Value": " "pdl" "
+        },
+        {
+            "Key": "PoundForce",
+            "Value": " "lbf" "
+        },
+        {
+            "Key": "OunceForce",
+            "Value": " "ozf" "
+        },
+        {
+            "Key": "ShortTonForce",
+            "Value": " "tf (short)""
+        }
+    ],
+    "plural symbols": [
+        {
+            "Key": "TonneForce",
+            "Value": " "Ton" "
+        },
+        {
+            "Key": "ShortTonForce",
+            "Value": " "t (US)f""
+        }
+    ]
 }

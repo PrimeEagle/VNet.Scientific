@@ -4,12 +4,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using VNet.CodeGeneration.Extensions;
+using VNet.CodeGeneration.FileComparer;
 using VNet.CodeGeneration.Json;
 //using VNet.CodeGeneration.Extensions;
 //using VNet.CodeGeneration.FileComparer;
 //using VNet.CodeGeneration.Log;
 using VNet.CodeGeneration.Log;
-
+using VNet.Scientific.CodeGen.UnitNet;
 
 namespace VNet.Scientific.CodeGen
 {
@@ -47,6 +48,14 @@ namespace VNet.Scientific.CodeGen
             //}
 
             // convert UnitNet JSON files to VNet JSON files
+
+            //string testJson;
+            //using (var reader = new StreamReader(@"D:\test.json", Encoding.UTF8))
+            //{
+            //    testJson = reader.ReadToEnd();
+            //}
+            //var test = VNetJsonSerializer.Deserialize<List<UnitNetUnit>>(testJson);
+
             var log = new Logger();
 
             try
@@ -54,7 +63,6 @@ namespace VNet.Scientific.CodeGen
                 log.Initialize(@"D:\generator.log");
                 log.Clear();
                 var fileNameMapping = Path.Combine(context.ProjectDir(), "DimensionFiles.VNet", "_unitNetToVNetMappings.json");
-                //var fileNameMapping = @"D:\My Code\VNet\VNet.Scientific\VNet.Scientific\DimensionFiles.VNet\_unitNetToVNetMappings.json";
                 string mappingJson;
 
                 using (var reader = new StreamReader(fileNameMapping, Encoding.UTF8))
@@ -63,59 +71,56 @@ namespace VNet.Scientific.CodeGen
                 }
                 log.WriteLine($"{mappingJson}");
 
-                //var mapping = VNetDimension.Do(mappingJson);
                 var mapping = VNetJsonSerializer.Deserialize<List<UnitNetVNetMappingEntry>>(mappingJson.Trim());
 
 
+                var fileNameUnitNet = Path.Combine(context.ProjectDir(), "DimensionFiles.UnitNet", "_dimensionHashFile.json");
+                var dimensionHashFileUnitNet = new FileComparer(fileNameUnitNet);
+                dimensionHashFileUnitNet.Update();
+                dimensionHashFileUnitNet.Save();
+
+                foreach (var unitNetFile in dimensionHashFileUnitNet.GetUpdatedEntries())
+                {
+                    log.WriteLine($"{unitNetFile.FileName}");
+                    var dimUnitNet = VNetJsonSerializer.Deserialize<UnitNetDimension>(unitNetFile.GetJson());
+                    var dimVNet = VNetDimension.ConvertFrom(dimUnitNet, mapping);
+
+                    var saveFileName = context.ProjectDir() + @"DimensionFiles.VNet\" + dimVNet.Name + ".json";
+                    dimVNet.Save(saveFileName);
+                }
 
 
 
-                //var fileNameUnitNet = Path.Combine(context.ProjectDir(), "DimensionFiles.UnitNet", "_dimensionHashFile.json");
-                //var dimensionHashFileUnitNet = new FileComparer(fileNameUnitNet);
-                //dimensionHashFileUnitNet.Update();
-                //dimensionHashFileUnitNet.Save();
+                // code gen VNet JSON files
+                var fileNameVNet = Path.Combine(context.ProjectDir(), "DimensionFiles.VNet", "_dimensionHashFile.json");
+                var dimensionHashFileVNet = new FileComparer(fileNameVNet);
+                dimensionHashFileVNet.Update();
+                dimensionHashFileVNet.Save();
 
-                //foreach (var unitNetFile in dimensionHashFileUnitNet.GetUpdatedEntries())
-                //{
-                //    var dimUnitNet = JsonSerializer.Deserialize<UnitNetDimension>(unitNetFile.GetJson());
-                //    var dimVNet = VNetDimension.ConvertFrom(dimUnitNet, mapping);
-
-                //    var saveFileName = context.ProjectDir() + @"DimensionFiles.VNet\" + dimVNet.Name + ".json";
-                //    dimVNet.Save(saveFileName);
-                //}
-
-
-
-                //// code gen VNet JSON files
-                //var fileNameVNet = Path.Combine(context.ProjectDir(), "DimensionFiles.VNet", "_dimensionHashFile.json");
-                //var dimensionHashFileVNet = new FileComparer(fileNameVNet);
-                //dimensionHashFileVNet.Update();
-                //dimensionHashFileVNet.Save();
-
-                //foreach (var vNetFile in dimensionHashFileVNet.GetUpdatedEntries())
-                //{
-                //    var dimVNet = JsonSerializer.Deserialize<VNetDimension>(vNetFile.GetJson());
-                //    log.WriteLine($"  dimension = {dimVNet.Name}, default unit = {dimVNet.DefaultUnit}");
-                //    foreach (var u in dimVNet.Units)
-                //    {
-                //        log.WriteLine($"       before: {u}");
-                //    }
-                //    log.WriteLine("-------------------");
-                //    VNetDimension.ConversionPostProcess(dimVNet);
-                //    foreach (var u in dimVNet.Units)
-                //    {
-                //        log.WriteLine($"       after: {u}");
-                //    }
-                //    var saveFileName = context.ProjectDir() + @"DimensionFiles.VNet\" + dimVNet.Name + ".json";
-                //    dimVNet.Save(saveFileName);
-                //}
+                foreach (var vNetFile in dimensionHashFileVNet.GetUpdatedEntries())
+                {
+                    var dimVNet = VNetJsonSerializer.Deserialize<VNetDimension>(vNetFile.GetJson());
+                    log.WriteLine($"  dimension = {dimVNet.Name}, default unit = {dimVNet.DefaultUnit}");
+                    foreach (var u in dimVNet.Units)
+                    {
+                        log.WriteLine($"       before: {u}");
+                    }
+                    log.WriteLine("-------------------");
+                    VNetDimension.ConversionPostProcess(dimVNet);
+                    foreach (var u in dimVNet.Units)
+                    {
+                        log.WriteLine($"       after: {u}");
+                    }
+                    var saveFileName = context.ProjectDir() + @"DimensionFiles.VNet\" + dimVNet.Name + ".json";
+                    dimVNet.Save(saveFileName);
+                }
             }
             catch (Exception ex)
             {
-                //log.WriteLine($"EXCEPTION: {ex.Message}");
-                //log.WriteLine($"           {ex.GetType().Name}");
-                //log.WriteLine($"           {ex.InnerException}");
-                //log.WriteLine($"           {ex.StackTrace}");
+                log.WriteLine($"EXCEPTION: {ex.Message}");
+                log.WriteLine($"           {ex.GetType().Name}");
+                log.WriteLine($"           {ex.InnerException}");
+                log.WriteLine($"           {ex.StackTrace}");
             }
 
             //foreach (var dimension in dimensionHashFileVNet.GetUpdatedEntries())

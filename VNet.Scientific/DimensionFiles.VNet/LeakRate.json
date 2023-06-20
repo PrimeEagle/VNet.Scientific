@@ -1,89 +1,67 @@
 {
-  "name": "LeakRate",
-  "exponents": [
-    2,
-    1,
-    -3,
-    0,
-    0,
-    0,
-    0
-  ],
-  "default unit": "PascalCubicMeterPerSecond",
-  "units": [
-    "MillibarLiterPerSecond",
-    "TorrLiterPerSecond",
-    "YottapascalCubicMeterPerSecond",
-    "ZettapascalCubicMeterPerSecond",
-    "ExapascalCubicMeterPerSecond",
-    "PetapascalCubicMeterPerSecond",
-    "TerapascalCubicMeterPerSecond",
-    "GigapascalCubicMeterPerSecond",
-    "MegapascalCubicMeterPerSecond",
-    "KilopascalCubicMeterPerSecond",
-    "HectopascalCubicMeterPerSecond",
-    "DekapascalCubicMeterPerSecond",
-    "PascalCubicMeterPerSecond",
-    "DecipascalCubicMeterPerSecond",
-    "CentipascalCubicMeterPerSecond",
-    "MillipascalCubicMeterPerSecond",
-    "MicropascalCubicMeterPerSecond",
-    "NanopascalCubicMeterPerSecond",
-    "PicopascalCubicMeterPerSecond",
-    "FemtopascalCubicMeterPerSecond",
-    "AttopascalCubicMeterPerSecond",
-    "ZeptopascalCubicMeterPerSecond",
-    "YoctopascalCubicMeterPerSecond"
-  ],
-  "conversion functions": {
-    "MillibarLiterPerSecond": "x / 10",
-    "TorrLiterPerSecond": "x / 7.5",
-    "YottapascalCubicMeterPerSecond": "x * 10e24",
-    "ZettapascalCubicMeterPerSecond": "x * 10e21",
-    "ExapascalCubicMeterPerSecond": "x * 10e18",
-    "PetapascalCubicMeterPerSecond": "x * 10e15",
-    "TerapascalCubicMeterPerSecond": "x * 10e12",
-    "GigapascalCubicMeterPerSecond": "x * 10e9",
-    "MegapascalCubicMeterPerSecond": "x * 10e6",
-    "KilopascalCubicMeterPerSecond": "x * 10e3",
-    "HectopascalCubicMeterPerSecond": "x * 10e2",
-    "DekapascalCubicMeterPerSecond": "x * 10e1",
-    "PascalCubicMeterPerSecond": "x * 10e0",
-    "DecipascalCubicMeterPerSecond": "x * 10e-1",
-    "CentipascalCubicMeterPerSecond": "x * 10e-2",
-    "MillipascalCubicMeterPerSecond": "x * 10e-3",
-    "MicropascalCubicMeterPerSecond": "x * 10e-6",
-    "NanopascalCubicMeterPerSecond": "x * 10e-9",
-    "PicopascalCubicMeterPerSecond": "x * 10e-12",
-    "FemtopascalCubicMeterPerSecond": "x * 10e-15",
-    "AttopascalCubicMeterPerSecond": "x * 10e-18",
-    "ZeptopascalCubicMeterPerSecond": "x * 10e-21",
-    "YoctopascalCubicMeterPerSecond": "x * 10e-24"
-  },
-  "symbols": {
-    "MillibarLiterPerSecond": "mbar·l/s",
-    "TorrLiterPerSecond": "Torr·l/s",
-    "YottapascalCubicMeterPerSecond": "YPa·m³/s",
-    "ZettapascalCubicMeterPerSecond": "ZPa·m³/s",
-    "ExapascalCubicMeterPerSecond": "EPa·m³/s",
-    "PetapascalCubicMeterPerSecond": "PPa·m³/s",
-    "TerapascalCubicMeterPerSecond": "TPa·m³/s",
-    "GigapascalCubicMeterPerSecond": "GPa·m³/s",
-    "MegapascalCubicMeterPerSecond": "MPa·m³/s",
-    "KilopascalCubicMeterPerSecond": "kPa·m³/s",
-    "HectopascalCubicMeterPerSecond": "hPa·m³/s",
-    "DekapascalCubicMeterPerSecond": "daPa·m³/s",
-    "PascalCubicMeterPerSecond": "Pa·m³/s",
-    "DecipascalCubicMeterPerSecond": "dPa·m³/s",
-    "CentipascalCubicMeterPerSecond": "cPa·m³/s",
-    "MillipascalCubicMeterPerSecond": "mPa·m³/s",
-    "MicropascalCubicMeterPerSecond": "µPa·m³/s",
-    "NanopascalCubicMeterPerSecond": "nPa·m³/s",
-    "PicopascalCubicMeterPerSecond": "pPa·m³/s",
-    "FemtopascalCubicMeterPerSecond": "fPa·m³/s",
-    "AttopascalCubicMeterPerSecond": "aPa·m³/s",
-    "ZeptopascalCubicMeterPerSecond": "zPa·m³/s",
-    "YoctopascalCubicMeterPerSecond": "yPa·m³/s"
-  },
-  "plural symbols": {}
+    "name": "LeakRate",
+    "exponents": [
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        }
+    ],
+    "default unit": "PascalCubicMeterPerSecond",
+    "units": [
+        {
+            "Length": 25
+        },
+        {
+            "Length": 22
+        },
+        {
+            "Length": 18
+        }
+    ],
+    "conversion functions": [
+        {
+            "Key": "PascalCubicMeterPerSecond",
+            "Value": "x"
+        },
+        {
+            "Key": "MillibarLiterPerSecond",
+            "Value": "x / 10"
+        },
+        {
+            "Key": "TorrLiterPerSecond",
+            "Value": "x / 7.5"
+        }
+    ],
+    "symbols": [
+        {
+            "Key": "PascalCubicMeterPerSecond",
+            "Value": "
+            "Pa·m³/s"
+          "
+        },
+        {
+            "Key": "MillibarLiterPerSecond",
+            "Value": "
+            "mbar·l/s"
+          "
+        },
+        {
+            "Key": "TorrLiterPerSecond",
+            "Value": "
+            "Torr·l/s"
+          "
+        }
+    ],
+    "plural symbols": [
+    ]
 }

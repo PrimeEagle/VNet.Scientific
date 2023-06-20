@@ -1,113 +1,149 @@
 {
-  "name": "TorquePerLength",
-  "exponents": [
-    1,
-    1,
-    -2,
-    0,
-    0,
-    0,
-    0
-  ],
-  "default unit": "NewtonMeterPerMeter",
-  "units": [
-    "NewtonMillimeterPerMeter",
-    "NewtonCentimeterPerMeter",
-    "PoundForceInchPerFoot",
-    "PoundForceFootPerFoot",
-    "KilogramForceMillimeterPerMeter",
-    "KilogramForceCentimeterPerMeter",
-    "KilogramForceMeterPerMeter",
-    "TonneForceMillimeterPerMeter",
-    "TonneForceCentimeterPerMeter",
-    "TonneForceMeterPerMeter",
-    "YottanewtonMeterPerMeter",
-    "ZettanewtonMeterPerMeter",
-    "ExanewtonMeterPerMeter",
-    "PetanewtonMeterPerMeter",
-    "TeranewtonMeterPerMeter",
-    "GiganewtonMeterPerMeter",
-    "MeganewtonMeterPerMeter",
-    "KilonewtonMeterPerMeter",
-    "HectonewtonMeterPerMeter",
-    "DekanewtonMeterPerMeter",
-    "NewtonMeterPerMeter",
-    "DecinewtonMeterPerMeter",
-    "CentinewtonMeterPerMeter",
-    "MillinewtonMeterPerMeter",
-    "MicronewtonMeterPerMeter",
-    "NanonewtonMeterPerMeter",
-    "PiconewtonMeterPerMeter",
-    "FemtonewtonMeterPerMeter",
-    "AttonewtonMeterPerMeter",
-    "ZeptonewtonMeterPerMeter",
-    "YoctonewtonMeterPerMeter"
-  ],
-  "conversion functions": {
-    "NewtonMillimeterPerMeter": "x * 0.001",
-    "NewtonCentimeterPerMeter": "x * 0.01",
-    "PoundForceInchPerFoot": "x * 0.370685147638",
-    "PoundForceFootPerFoot": "x * 4.44822161526",
-    "KilogramForceMillimeterPerMeter": "x * 0.00980665019960652",
-    "KilogramForceCentimeterPerMeter": "x * 0.0980665019960652",
-    "KilogramForceMeterPerMeter": "x * 9.80665019960652",
-    "TonneForceMillimeterPerMeter": "x * 9.80665019960652",
-    "TonneForceCentimeterPerMeter": "x * 98.0665019960652",
-    "TonneForceMeterPerMeter": "x * 9806.65019960653",
-    "YottanewtonMeterPerMeter": "x * 10e24",
-    "ZettanewtonMeterPerMeter": "x * 10e21",
-    "ExanewtonMeterPerMeter": "x * 10e18",
-    "PetanewtonMeterPerMeter": "x * 10e15",
-    "TeranewtonMeterPerMeter": "x * 10e12",
-    "GiganewtonMeterPerMeter": "x * 10e9",
-    "MeganewtonMeterPerMeter": "x * 10e6",
-    "KilonewtonMeterPerMeter": "x * 10e3",
-    "HectonewtonMeterPerMeter": "x * 10e2",
-    "DekanewtonMeterPerMeter": "x * 10e1",
-    "NewtonMeterPerMeter": "x * 10e0",
-    "DecinewtonMeterPerMeter": "x * 10e-1",
-    "CentinewtonMeterPerMeter": "x * 10e-2",
-    "MillinewtonMeterPerMeter": "x * 10e-3",
-    "MicronewtonMeterPerMeter": "x * 10e-6",
-    "NanonewtonMeterPerMeter": "x * 10e-9",
-    "PiconewtonMeterPerMeter": "x * 10e-12",
-    "FemtonewtonMeterPerMeter": "x * 10e-15",
-    "AttonewtonMeterPerMeter": "x * 10e-18",
-    "ZeptonewtonMeterPerMeter": "x * 10e-21",
-    "YoctonewtonMeterPerMeter": "x * 10e-24"
-  },
-  "symbols": {
-    "NewtonMillimeterPerMeter": "N·mm/m",
-    "NewtonCentimeterPerMeter": "N·cm/m",
-    "PoundForceInchPerFoot": "lbf·in/ft",
-    "PoundForceFootPerFoot": "lbf·ft/ft",
-    "KilogramForceMillimeterPerMeter": "kgf·mm/m",
-    "KilogramForceCentimeterPerMeter": "kgf·cm/m",
-    "KilogramForceMeterPerMeter": "kgf·m/m",
-    "TonneForceMillimeterPerMeter": "tf·mm/m",
-    "TonneForceCentimeterPerMeter": "tf·cm/m",
-    "TonneForceMeterPerMeter": "tf·m/m",
-    "YottanewtonMeterPerMeter": "YN·m/m",
-    "ZettanewtonMeterPerMeter": "ZN·m/m",
-    "ExanewtonMeterPerMeter": "EN·m/m",
-    "PetanewtonMeterPerMeter": "PN·m/m",
-    "TeranewtonMeterPerMeter": "TN·m/m",
-    "GiganewtonMeterPerMeter": "GN·m/m",
-    "MeganewtonMeterPerMeter": "MN·m/m",
-    "KilonewtonMeterPerMeter": "kN·m/m",
-    "HectonewtonMeterPerMeter": "hN·m/m",
-    "DekanewtonMeterPerMeter": "daN·m/m",
-    "NewtonMeterPerMeter": "N·m/m",
-    "DecinewtonMeterPerMeter": "dN·m/m",
-    "CentinewtonMeterPerMeter": "cN·m/m",
-    "MillinewtonMeterPerMeter": "mN·m/m",
-    "MicronewtonMeterPerMeter": "µN·m/m",
-    "NanonewtonMeterPerMeter": "nN·m/m",
-    "PiconewtonMeterPerMeter": "pN·m/m",
-    "FemtonewtonMeterPerMeter": "fN·m/m",
-    "AttonewtonMeterPerMeter": "aN·m/m",
-    "ZeptonewtonMeterPerMeter": "zN·m/m",
-    "YoctonewtonMeterPerMeter": "yN·m/m"
-  },
-  "plural symbols": {}
+    "name": "TorquePerLength",
+    "exponents": [
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        }
+    ],
+    "default unit": "NewtonMeterPerMeter",
+    "units": [
+        {
+            "Length": 24
+        },
+        {
+            "Length": 24
+        },
+        {
+            "Length": 19
+        },
+        {
+            "Length": 21
+        },
+        {
+            "Length": 21
+        },
+        {
+            "Length": 31
+        },
+        {
+            "Length": 31
+        },
+        {
+            "Length": 26
+        },
+        {
+            "Length": 28
+        },
+        {
+            "Length": 28
+        },
+        {
+            "Length": 23
+        }
+    ],
+    "conversion functions": [
+        {
+            "Key": "NewtonMillimeterPerMeter",
+            "Value": "x * 0.001"
+        },
+        {
+            "Key": "NewtonCentimeterPerMeter",
+            "Value": "x * 0.01"
+        },
+        {
+            "Key": "NewtonMeterPerMeter",
+            "Value": "x"
+        },
+        {
+            "Key": "PoundForceInchPerFoot",
+            "Value": "x * 0.370685147638"
+        },
+        {
+            "Key": "PoundForceFootPerFoot",
+            "Value": "x * 4.44822161526"
+        },
+        {
+            "Key": "KilogramForceMillimeterPerMeter",
+            "Value": "x * 0.00980665019960652"
+        },
+        {
+            "Key": "KilogramForceCentimeterPerMeter",
+            "Value": "x * 0.0980665019960652"
+        },
+        {
+            "Key": "KilogramForceMeterPerMeter",
+            "Value": "x * 9.80665019960652"
+        },
+        {
+            "Key": "TonneForceMillimeterPerMeter",
+            "Value": "x * 9.80665019960652"
+        },
+        {
+            "Key": "TonneForceCentimeterPerMeter",
+            "Value": "x * 98.0665019960652"
+        },
+        {
+            "Key": "TonneForceMeterPerMeter",
+            "Value": "x * 9806.65019960653"
+        }
+    ],
+    "symbols": [
+        {
+            "Key": "NewtonMillimeterPerMeter",
+            "Value": " "N·mm/m" "
+        },
+        {
+            "Key": "NewtonCentimeterPerMeter",
+            "Value": " "N·cm/m" "
+        },
+        {
+            "Key": "NewtonMeterPerMeter",
+            "Value": " "N·m/m" "
+        },
+        {
+            "Key": "PoundForceInchPerFoot",
+            "Value": " "lbf·in/ft" "
+        },
+        {
+            "Key": "PoundForceFootPerFoot",
+            "Value": " "lbf·ft/ft" "
+        },
+        {
+            "Key": "KilogramForceMillimeterPerMeter",
+            "Value": " "kgf·mm/m" "
+        },
+        {
+            "Key": "KilogramForceCentimeterPerMeter",
+            "Value": " "kgf·cm/m" "
+        },
+        {
+            "Key": "KilogramForceMeterPerMeter",
+            "Value": " "kgf·m/m" "
+        },
+        {
+            "Key": "TonneForceMillimeterPerMeter",
+            "Value": " "tf·mm/m" "
+        },
+        {
+            "Key": "TonneForceCentimeterPerMeter",
+            "Value": " "tf·cm/m" "
+        },
+        {
+            "Key": "TonneForceMeterPerMeter",
+            "Value": " "tf·m/m" "
+        }
+    ],
+    "plural symbols": [
+    ]
 }

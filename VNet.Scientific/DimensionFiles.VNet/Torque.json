@@ -1,125 +1,193 @@
 {
-  "name": "Torque",
-  "exponents": [
-    2,
-    1,
-    -2,
-    0,
-    0,
-    0,
-    0
-  ],
-  "default unit": "NewtonMeter",
-  "units": [
-    "NewtonMillimeter",
-    "NewtonCentimeter",
-    "PoundalFoot",
-    "PoundForceInch",
-    "PoundForceFoot",
-    "GramForceMillimeter",
-    "GramForceCentimeter",
-    "GramForceMeter",
-    "KilogramForceMillimeter",
-    "KilogramForceCentimeter",
-    "KilogramForceMeter",
-    "TonneForceMillimeter",
-    "TonneForceCentimeter",
-    "TonneForceMeter",
-    "YottanewtonMeter",
-    "ZettanewtonMeter",
-    "ExanewtonMeter",
-    "PetanewtonMeter",
-    "TeranewtonMeter",
-    "GiganewtonMeter",
-    "MeganewtonMeter",
-    "KilonewtonMeter",
-    "HectonewtonMeter",
-    "DekanewtonMeter",
-    "NewtonMeter",
-    "DecinewtonMeter",
-    "CentinewtonMeter",
-    "MillinewtonMeter",
-    "MicronewtonMeter",
-    "NanonewtonMeter",
-    "PiconewtonMeter",
-    "FemtonewtonMeter",
-    "AttonewtonMeter",
-    "ZeptonewtonMeter",
-    "YoctonewtonMeter"
-  ],
-  "conversion functions": {
-    "NewtonMillimeter": "x * 0.001",
-    "NewtonCentimeter": "x * 0.01",
-    "PoundalFoot": "x * 4.21401100938048e-2",
-    "PoundForceInch": "x * 1.129848290276167e-1",
-    "PoundForceFoot": "x * 1.3558179483314",
-    "GramForceMillimeter": "x * 9.80665e-6",
-    "GramForceCentimeter": "x * 9.80665e-5",
-    "GramForceMeter": "x * 9.80665e-3",
-    "KilogramForceMillimeter": "x * 9.80665e-3",
-    "KilogramForceCentimeter": "x * 9.80665e-2",
-    "KilogramForceMeter": "x * 9.80665",
-    "TonneForceMillimeter": "x * 9.80665",
-    "TonneForceCentimeter": "x * 9.80665e1",
-    "TonneForceMeter": "x * 9.80665e3",
-    "YottanewtonMeter": "x * 10e24",
-    "ZettanewtonMeter": "x * 10e21",
-    "ExanewtonMeter": "x * 10e18",
-    "PetanewtonMeter": "x * 10e15",
-    "TeranewtonMeter": "x * 10e12",
-    "GiganewtonMeter": "x * 10e9",
-    "MeganewtonMeter": "x * 10e6",
-    "KilonewtonMeter": "x * 10e3",
-    "HectonewtonMeter": "x * 10e2",
-    "DekanewtonMeter": "x * 10e1",
-    "NewtonMeter": "x * 10e0",
-    "DecinewtonMeter": "x * 10e-1",
-    "CentinewtonMeter": "x * 10e-2",
-    "MillinewtonMeter": "x * 10e-3",
-    "MicronewtonMeter": "x * 10e-6",
-    "NanonewtonMeter": "x * 10e-9",
-    "PiconewtonMeter": "x * 10e-12",
-    "FemtonewtonMeter": "x * 10e-15",
-    "AttonewtonMeter": "x * 10e-18",
-    "ZeptonewtonMeter": "x * 10e-21",
-    "YoctonewtonMeter": "x * 10e-24"
-  },
-  "symbols": {
-    "NewtonMillimeter": "N·mm",
-    "NewtonCentimeter": "N·cm",
-    "PoundalFoot": "pdl·ft",
-    "PoundForceInch": "lbf·in",
-    "PoundForceFoot": "lbf·ft",
-    "GramForceMillimeter": "gf·mm",
-    "GramForceCentimeter": "gf·cm",
-    "GramForceMeter": "gf·m",
-    "KilogramForceMillimeter": "kgf·mm",
-    "KilogramForceCentimeter": "kgf·cm",
-    "KilogramForceMeter": "kgf·m",
-    "TonneForceMillimeter": "tf·mm",
-    "TonneForceCentimeter": "tf·cm",
-    "TonneForceMeter": "tf·m",
-    "YottanewtonMeter": "YN·m",
-    "ZettanewtonMeter": "ZN·m",
-    "ExanewtonMeter": "EN·m",
-    "PetanewtonMeter": "PN·m",
-    "TeranewtonMeter": "TN·m",
-    "GiganewtonMeter": "GN·m",
-    "MeganewtonMeter": "MN·m",
-    "KilonewtonMeter": "kN·m",
-    "HectonewtonMeter": "hN·m",
-    "DekanewtonMeter": "daN·m",
-    "NewtonMeter": "N·m",
-    "DecinewtonMeter": "dN·m",
-    "CentinewtonMeter": "cN·m",
-    "MillinewtonMeter": "mN·m",
-    "MicronewtonMeter": "µN·m",
-    "NanonewtonMeter": "nN·m",
-    "PiconewtonMeter": "pN·m",
-    "FemtonewtonMeter": "fN·m",
-    "AttonewtonMeter": "aN·m",
-    "ZeptonewtonMeter": "zN·m",
-    "YoctonewtonMeter": "yN·m"
-  },
-  "plural symbols": {}
+    "name": "Torque",
+    "exponents": [
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        }
+    ],
+    "default unit": "NewtonMeter",
+    "units": [
+        {
+            "Length": 16
+        },
+        {
+            "Length": 16
+        },
+        {
+            "Length": 11
+        },
+        {
+            "Length": 11
+        },
+        {
+            "Length": 14
+        },
+        {
+            "Length": 14
+        },
+        {
+            "Length": 19
+        },
+        {
+            "Length": 19
+        },
+        {
+            "Length": 14
+        },
+        {
+            "Length": 23
+        },
+        {
+            "Length": 23
+        },
+        {
+            "Length": 18
+        },
+        {
+            "Length": 20
+        },
+        {
+            "Length": 20
+        },
+        {
+            "Length": 15
+        }
+    ],
+    "conversion functions": [
+        {
+            "Key": "NewtonMillimeter",
+            "Value": "x * 0.001"
+        },
+        {
+            "Key": "NewtonCentimeter",
+            "Value": "x * 0.01"
+        },
+        {
+            "Key": "NewtonMeter",
+            "Value": "x"
+        },
+        {
+            "Key": "PoundalFoot",
+            "Value": "x * 4.21401100938048e-2"
+        },
+        {
+            "Key": "PoundForceInch",
+            "Value": "x * 1.129848290276167e-1"
+        },
+        {
+            "Key": "PoundForceFoot",
+            "Value": "x * 1.3558179483314"
+        },
+        {
+            "Key": "GramForceMillimeter",
+            "Value": "x * 9.80665e-6"
+        },
+        {
+            "Key": "GramForceCentimeter",
+            "Value": "x * 9.80665e-5"
+        },
+        {
+            "Key": "GramForceMeter",
+            "Value": "x * 9.80665e-3"
+        },
+        {
+            "Key": "KilogramForceMillimeter",
+            "Value": "x * 9.80665e-3"
+        },
+        {
+            "Key": "KilogramForceCentimeter",
+            "Value": "x * 9.80665e-2"
+        },
+        {
+            "Key": "KilogramForceMeter",
+            "Value": "x * 9.80665"
+        },
+        {
+            "Key": "TonneForceMillimeter",
+            "Value": "x * 9.80665"
+        },
+        {
+            "Key": "TonneForceCentimeter",
+            "Value": "x * 9.80665e1"
+        },
+        {
+            "Key": "TonneForceMeter",
+            "Value": "x * 9.80665e3"
+        }
+    ],
+    "symbols": [
+        {
+            "Key": "NewtonMillimeter",
+            "Value": " "N·mm" "
+        },
+        {
+            "Key": "NewtonCentimeter",
+            "Value": " "N·cm" "
+        },
+        {
+            "Key": "NewtonMeter",
+            "Value": " "N·m" "
+        },
+        {
+            "Key": "PoundalFoot",
+            "Value": " "pdl·ft" "
+        },
+        {
+            "Key": "PoundForceInch",
+            "Value": " "lbf·in" "
+        },
+        {
+            "Key": "PoundForceFoot",
+            "Value": " "lbf·ft" "
+        },
+        {
+            "Key": "GramForceMillimeter",
+            "Value": " "gf·mm" "
+        },
+        {
+            "Key": "GramForceCentimeter",
+            "Value": " "gf·cm" "
+        },
+        {
+            "Key": "GramForceMeter",
+            "Value": " "gf·m" "
+        },
+        {
+            "Key": "KilogramForceMillimeter",
+            "Value": " "kgf·mm" "
+        },
+        {
+            "Key": "KilogramForceCentimeter",
+            "Value": " "kgf·cm" "
+        },
+        {
+            "Key": "KilogramForceMeter",
+            "Value": " "kgf·m" "
+        },
+        {
+            "Key": "TonneForceMillimeter",
+            "Value": " "tf·mm" "
+        },
+        {
+            "Key": "TonneForceCentimeter",
+            "Value": " "tf·cm" "
+        },
+        {
+            "Key": "TonneForceMeter",
+            "Value": " "tf·m" "
+        }
+    ],
+    "plural symbols": [
+    ]
 }

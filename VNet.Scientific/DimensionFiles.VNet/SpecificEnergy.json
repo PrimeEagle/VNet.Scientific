@@ -1,107 +1,127 @@
 {
-  "name": "SpecificEnergy",
-  "exponents": [
-    2,
-    0,
-    -2,
-    0,
-    0,
-    0,
-    0
-  ],
-  "default unit": "JoulePerKilogram",
-  "units": [
-    "MegaJoulePerTonne",
-    "CaloriePerGram",
-    "WattHourPerKilogram",
-    "WattDayPerKilogram",
-    "WattDayPerTonne",
-    "WattDayPerShortTon",
-    "WattHourPerPound",
-    "BtuPerPound",
-    "YottajoulePerKilogram",
-    "ZettajoulePerKilogram",
-    "ExajoulePerKilogram",
-    "PetajoulePerKilogram",
-    "TerajoulePerKilogram",
-    "GigajoulePerKilogram",
-    "MegajoulePerKilogram",
-    "KilojoulePerKilogram",
-    "HectojoulePerKilogram",
-    "DekajoulePerKilogram",
-    "JoulePerKilogram",
-    "DecijoulePerKilogram",
-    "CentijoulePerKilogram",
-    "MillijoulePerKilogram",
-    "MicrojoulePerKilogram",
-    "NanojoulePerKilogram",
-    "PicojoulePerKilogram",
-    "FemtojoulePerKilogram",
-    "AttojoulePerKilogram",
-    "ZeptojoulePerKilogram",
-    "YoctojoulePerKilogram"
-  ],
-  "conversion functions": {
-    "MegaJoulePerTonne": "x * 1e3",
-    "CaloriePerGram": "x * 4.184e3",
-    "WattHourPerKilogram": "x * 3.6e3",
-    "WattDayPerKilogram": "x * (24 * 3.6e3)",
-    "WattDayPerTonne": "x * ((24 * 3.6e3) / 1e3)",
-    "WattDayPerShortTon": "x * ((24 * 3.6e3) / 9.0718474e2)",
-    "WattHourPerPound": "x * 7.93664e3",
-    "BtuPerPound": "x * 2326.000075362",
-    "YottajoulePerKilogram": "x * 10e24",
-    "ZettajoulePerKilogram": "x * 10e21",
-    "ExajoulePerKilogram": "x * 10e18",
-    "PetajoulePerKilogram": "x * 10e15",
-    "TerajoulePerKilogram": "x * 10e12",
-    "GigajoulePerKilogram": "x * 10e9",
-    "MegajoulePerKilogram": "x * 10e6",
-    "KilojoulePerKilogram": "x * 10e3",
-    "HectojoulePerKilogram": "x * 10e2",
-    "DekajoulePerKilogram": "x * 10e1",
-    "JoulePerKilogram": "x * 10e0",
-    "DecijoulePerKilogram": "x * 10e-1",
-    "CentijoulePerKilogram": "x * 10e-2",
-    "MillijoulePerKilogram": "x * 10e-3",
-    "MicrojoulePerKilogram": "x * 10e-6",
-    "NanojoulePerKilogram": "x * 10e-9",
-    "PicojoulePerKilogram": "x * 10e-12",
-    "FemtojoulePerKilogram": "x * 10e-15",
-    "AttojoulePerKilogram": "x * 10e-18",
-    "ZeptojoulePerKilogram": "x * 10e-21",
-    "YoctojoulePerKilogram": "x * 10e-24"
-  },
-  "symbols": {
-    "MegaJoulePerTonne": "MJ/t",
-    "CaloriePerGram": "cal/g",
-    "WattHourPerKilogram": "Wh/kg",
-    "WattDayPerKilogram": "Wd/kg",
-    "WattDayPerTonne": "Wd/t",
-    "WattDayPerShortTon": "Wd/ST",
-    "WattHourPerPound": "Wh/lbs",
-    "BtuPerPound": "btu/lb",
-    "YottajoulePerKilogram": "YJ/kg",
-    "ZettajoulePerKilogram": "ZJ/kg",
-    "ExajoulePerKilogram": "EJ/kg",
-    "PetajoulePerKilogram": "PJ/kg",
-    "TerajoulePerKilogram": "TJ/kg",
-    "GigajoulePerKilogram": "GJ/kg",
-    "MegajoulePerKilogram": "MJ/kg",
-    "KilojoulePerKilogram": "kJ/kg",
-    "HectojoulePerKilogram": "hJ/kg",
-    "DekajoulePerKilogram": "daJ/kg",
-    "JoulePerKilogram": "J/kg",
-    "DecijoulePerKilogram": "dJ/kg",
-    "CentijoulePerKilogram": "cJ/kg",
-    "MillijoulePerKilogram": "mJ/kg",
-    "MicrojoulePerKilogram": "µJ/kg",
-    "NanojoulePerKilogram": "nJ/kg",
-    "PicojoulePerKilogram": "pJ/kg",
-    "FemtojoulePerKilogram": "fJ/kg",
-    "AttojoulePerKilogram": "aJ/kg",
-    "ZeptojoulePerKilogram": "zJ/kg",
-    "YoctojoulePerKilogram": "yJ/kg"
-  },
-  "plural symbols": {}
+    "name": "SpecificEnergy",
+    "exponents": [
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        }
+    ],
+    "default unit": "JoulePerKilogram",
+    "units": [
+        {
+            "Length": 16
+        },
+        {
+            "Length": 17
+        },
+        {
+            "Length": 14
+        },
+        {
+            "Length": 19
+        },
+        {
+            "Length": 18
+        },
+        {
+            "Length": 15
+        },
+        {
+            "Length": 18
+        },
+        {
+            "Length": 16
+        },
+        {
+            "Length": 11
+        }
+    ],
+    "conversion functions": [
+        {
+            "Key": "JoulePerKilogram",
+            "Value": "x"
+        },
+        {
+            "Key": "MegaJoulePerTonne",
+            "Value": "x * 1e3"
+        },
+        {
+            "Key": "CaloriePerGram",
+            "Value": "x * 4.184e3"
+        },
+        {
+            "Key": "WattHourPerKilogram",
+            "Value": "x * 3.6e3"
+        },
+        {
+            "Key": "WattDayPerKilogram",
+            "Value": "x * (24 * 3.6e3)"
+        },
+        {
+            "Key": "WattDayPerTonne",
+            "Value": "x * ((24 * 3.6e3) / 1e3)"
+        },
+        {
+            "Key": "WattDayPerShortTon",
+            "Value": "x * ((24 * 3.6e3) / 9.0718474e2)"
+        },
+        {
+            "Key": "WattHourPerPound",
+            "Value": "x * 7.93664e3"
+        },
+        {
+            "Key": "BtuPerPound",
+            "Value": "x * 2326.000075362"
+        }
+    ],
+    "symbols": [
+        {
+            "Key": "JoulePerKilogram",
+            "Value": " "J/kg" "
+        },
+        {
+            "Key": "MegaJoulePerTonne",
+            "Value": " "MJ/t" "
+        },
+        {
+            "Key": "CaloriePerGram",
+            "Value": " "cal/g" "
+        },
+        {
+            "Key": "WattHourPerKilogram",
+            "Value": " "Wh/kg" "
+        },
+        {
+            "Key": "WattDayPerKilogram",
+            "Value": " "Wd/kg" "
+        },
+        {
+            "Key": "WattDayPerTonne",
+            "Value": " "Wd/t" "
+        },
+        {
+            "Key": "WattDayPerShortTon",
+            "Value": " "Wd/ST" "
+        },
+        {
+            "Key": "WattHourPerPound",
+            "Value": " "Wh/lbs" "
+        },
+        {
+            "Key": "BtuPerPound",
+            "Value": " "btu/lb" "
+        }
+    ],
+    "plural symbols": [
+    ]
 }

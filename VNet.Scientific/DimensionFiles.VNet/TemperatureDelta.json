@@ -1,44 +1,116 @@
 {
-  "name": "TemperatureDelta",
-  "exponents": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    1,
-    0
-  ],
-  "default unit": "Kelvin",
-  "units": [
-    "Kelvin",
-    "DegreeCelsius",
-    "DegreeDelisle",
-    "DegreeFahrenheit",
-    "DegreeNewton",
-    "DegreeRankine",
-    "DegreeReaumur",
-    "DegreeRoemer"
-  ],
-  "conversion functions": {
-    "Kelvin": "x",
-    "DegreeCelsius": "x",
-    "DegreeDelisle": "x * -2 / 3",
-    "DegreeFahrenheit": "x * 5 / 9",
-    "DegreeNewton": "x * 100 / 33",
-    "DegreeRankine": "x * 5 / 9",
-    "DegreeReaumur": "x * 5 / 4",
-    "DegreeRoemer": "x * 40 / 21"
-  },
-  "symbols": {
-    "Kelvin": "∆K",
-    "DegreeCelsius": "∆°C",
-    "DegreeDelisle": "∆°De",
-    "DegreeFahrenheit": "∆°F",
-    "DegreeNewton": "∆°N",
-    "DegreeRankine": "∆°R",
-    "DegreeReaumur": "∆°Ré",
-    "DegreeRoemer": "∆°Rø"
-  },
-  "plural symbols": {}
+    "name": "TemperatureDelta",
+    "exponents": [
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        }
+    ],
+    "default unit": "Kelvin",
+    "units": [
+        {
+            "Length": 6
+        },
+        {
+            "Length": 13
+        },
+        {
+            "Length": 13
+        },
+        {
+            "Length": 16
+        },
+        {
+            "Length": 12
+        },
+        {
+            "Length": 13
+        },
+        {
+            "Length": 13
+        },
+        {
+            "Length": 12
+        }
+    ],
+    "conversion functions": [
+        {
+            "Key": "Kelvin",
+            "Value": "x"
+        },
+        {
+            "Key": "DegreeCelsius",
+            "Value": "x"
+        },
+        {
+            "Key": "DegreeDelisle",
+            "Value": "x * -2 / 3"
+        },
+        {
+            "Key": "DegreeFahrenheit",
+            "Value": "x * 5 / 9"
+        },
+        {
+            "Key": "DegreeNewton",
+            "Value": "x * 100 / 33"
+        },
+        {
+            "Key": "DegreeRankine",
+            "Value": "x * 5 / 9"
+        },
+        {
+            "Key": "DegreeReaumur",
+            "Value": "x * 5 / 4"
+        },
+        {
+            "Key": "DegreeRoemer",
+            "Value": "x * 40 / 21"
+        }
+    ],
+    "symbols": [
+        {
+            "Key": "Kelvin",
+            "Value": " "∆K" "
+        },
+        {
+            "Key": "DegreeCelsius",
+            "Value": " "∆°C" "
+        },
+        {
+            "Key": "DegreeDelisle",
+            "Value": " "∆°De" "
+        },
+        {
+            "Key": "DegreeFahrenheit",
+            "Value": " "∆°F" "
+        },
+        {
+            "Key": "DegreeNewton",
+            "Value": " "∆°N" "
+        },
+        {
+            "Key": "DegreeRankine",
+            "Value": " "∆°R" "
+        },
+        {
+            "Key": "DegreeReaumur",
+            "Value": " "∆°Ré" "
+        },
+        {
+            "Key": "DegreeRoemer",
+            "Value": " "∆°Rø" "
+        }
+    ],
+    "plural symbols": [
+    ]
 }

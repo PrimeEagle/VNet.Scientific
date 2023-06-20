@@ -1,26 +1,50 @@
 {
-  "name": "RatioChangeRate",
-  "exponents": [
-    0,
-    0,
-    -1,
-    0,
-    0,
-    0,
-    0
-  ],
-  "default unit": "DecimalFractionPerSecond",
-  "units": [
-    "PercentPerSecond",
-    "DecimalFractionPerSecond"
-  ],
-  "conversion functions": {
-    "PercentPerSecond": "x / 1e2",
-    "DecimalFractionPerSecond": "x"
-  },
-  "symbols": {
-    "PercentPerSecond": "%/s",
-    "DecimalFractionPerSecond": "/s"
-  },
-  "plural symbols": {}
+    "name": "RatioChangeRate",
+    "exponents": [
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        }
+    ],
+    "default unit": "DecimalFractionPerSecond",
+    "units": [
+        {
+            "Length": 16
+        },
+        {
+            "Length": 24
+        }
+    ],
+    "conversion functions": [
+        {
+            "Key": "PercentPerSecond",
+            "Value": "x / 1e2"
+        },
+        {
+            "Key": "DecimalFractionPerSecond",
+            "Value": "x"
+        }
+    ],
+    "symbols": [
+        {
+            "Key": "PercentPerSecond",
+            "Value": " "%/s" "
+        },
+        {
+            "Key": "DecimalFractionPerSecond",
+            "Value": " "/s" "
+        }
+    ],
+    "plural symbols": [
+    ]
 }

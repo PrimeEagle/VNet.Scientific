@@ -1,83 +1,39 @@
 {
-  "name": "MolarEntropy",
-  "exponents": [
-    2,
-    1,
-    -2,
-    0,
-    0,
-    -1,
-    -1
-  ],
-  "default unit": "JoulePerMoleKelvin",
-  "units": [
-    "YottajoulePerMoleKelvin",
-    "ZettajoulePerMoleKelvin",
-    "ExajoulePerMoleKelvin",
-    "PetajoulePerMoleKelvin",
-    "TerajoulePerMoleKelvin",
-    "GigajoulePerMoleKelvin",
-    "MegajoulePerMoleKelvin",
-    "KilojoulePerMoleKelvin",
-    "HectojoulePerMoleKelvin",
-    "DekajoulePerMoleKelvin",
-    "JoulePerMoleKelvin",
-    "DecijoulePerMoleKelvin",
-    "CentijoulePerMoleKelvin",
-    "MillijoulePerMoleKelvin",
-    "MicrojoulePerMoleKelvin",
-    "NanojoulePerMoleKelvin",
-    "PicojoulePerMoleKelvin",
-    "FemtojoulePerMoleKelvin",
-    "AttojoulePerMoleKelvin",
-    "ZeptojoulePerMoleKelvin",
-    "YoctojoulePerMoleKelvin"
-  ],
-  "conversion functions": {
-    "YottajoulePerMoleKelvin": "x * 10e24",
-    "ZettajoulePerMoleKelvin": "x * 10e21",
-    "ExajoulePerMoleKelvin": "x * 10e18",
-    "PetajoulePerMoleKelvin": "x * 10e15",
-    "TerajoulePerMoleKelvin": "x * 10e12",
-    "GigajoulePerMoleKelvin": "x * 10e9",
-    "MegajoulePerMoleKelvin": "x * 10e6",
-    "KilojoulePerMoleKelvin": "x * 10e3",
-    "HectojoulePerMoleKelvin": "x * 10e2",
-    "DekajoulePerMoleKelvin": "x * 10e1",
-    "JoulePerMoleKelvin": "x * 10e0",
-    "DecijoulePerMoleKelvin": "x * 10e-1",
-    "CentijoulePerMoleKelvin": "x * 10e-2",
-    "MillijoulePerMoleKelvin": "x * 10e-3",
-    "MicrojoulePerMoleKelvin": "x * 10e-6",
-    "NanojoulePerMoleKelvin": "x * 10e-9",
-    "PicojoulePerMoleKelvin": "x * 10e-12",
-    "FemtojoulePerMoleKelvin": "x * 10e-15",
-    "AttojoulePerMoleKelvin": "x * 10e-18",
-    "ZeptojoulePerMoleKelvin": "x * 10e-21",
-    "YoctojoulePerMoleKelvin": "x * 10e-24"
-  },
-  "symbols": {
-    "YottajoulePerMoleKelvin": "YJ/(mol*K)",
-    "ZettajoulePerMoleKelvin": "ZJ/(mol*K)",
-    "ExajoulePerMoleKelvin": "EJ/(mol*K)",
-    "PetajoulePerMoleKelvin": "PJ/(mol*K)",
-    "TerajoulePerMoleKelvin": "TJ/(mol*K)",
-    "GigajoulePerMoleKelvin": "GJ/(mol*K)",
-    "MegajoulePerMoleKelvin": "MJ/(mol*K)",
-    "KilojoulePerMoleKelvin": "kJ/(mol*K)",
-    "HectojoulePerMoleKelvin": "hJ/(mol*K)",
-    "DekajoulePerMoleKelvin": "daJ/(mol*K)",
-    "JoulePerMoleKelvin": "J/(mol*K)",
-    "DecijoulePerMoleKelvin": "dJ/(mol*K)",
-    "CentijoulePerMoleKelvin": "cJ/(mol*K)",
-    "MillijoulePerMoleKelvin": "mJ/(mol*K)",
-    "MicrojoulePerMoleKelvin": "µJ/(mol*K)",
-    "NanojoulePerMoleKelvin": "nJ/(mol*K)",
-    "PicojoulePerMoleKelvin": "pJ/(mol*K)",
-    "FemtojoulePerMoleKelvin": "fJ/(mol*K)",
-    "AttojoulePerMoleKelvin": "aJ/(mol*K)",
-    "ZeptojoulePerMoleKelvin": "zJ/(mol*K)",
-    "YoctojoulePerMoleKelvin": "yJ/(mol*K)"
-  },
-  "plural symbols": {}
+    "name": "MolarEntropy",
+    "exponents": [
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        }
+    ],
+    "default unit": "JoulePerMoleKelvin",
+    "units": [
+        {
+            "Length": 18
+        }
+    ],
+    "conversion functions": [
+        {
+            "Key": "JoulePerMoleKelvin",
+            "Value": "x"
+        }
+    ],
+    "symbols": [
+        {
+            "Key": "JoulePerMoleKelvin",
+            "Value": " "J/(mol*K)" "
+        }
+    ],
+    "plural symbols": [
+    ]
 }

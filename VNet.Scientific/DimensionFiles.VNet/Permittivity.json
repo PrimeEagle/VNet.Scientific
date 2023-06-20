@@ -1,83 +1,39 @@
 {
-  "name": "Permittivity",
-  "exponents": [
-    -3,
-    -1,
-    4,
-    2,
-    0,
-    0,
-    0
-  ],
-  "default unit": "FaradPerMeter",
-  "units": [
-    "YottafaradPerMeter",
-    "ZettafaradPerMeter",
-    "ExafaradPerMeter",
-    "PetafaradPerMeter",
-    "TerafaradPerMeter",
-    "GigafaradPerMeter",
-    "MegafaradPerMeter",
-    "KilofaradPerMeter",
-    "HectofaradPerMeter",
-    "DekafaradPerMeter",
-    "FaradPerMeter",
-    "DecifaradPerMeter",
-    "CentifaradPerMeter",
-    "MillifaradPerMeter",
-    "MicrofaradPerMeter",
-    "NanofaradPerMeter",
-    "PicofaradPerMeter",
-    "FemtofaradPerMeter",
-    "AttofaradPerMeter",
-    "ZeptofaradPerMeter",
-    "YoctofaradPerMeter"
-  ],
-  "conversion functions": {
-    "YottafaradPerMeter": "x * 10e24",
-    "ZettafaradPerMeter": "x * 10e21",
-    "ExafaradPerMeter": "x * 10e18",
-    "PetafaradPerMeter": "x * 10e15",
-    "TerafaradPerMeter": "x * 10e12",
-    "GigafaradPerMeter": "x * 10e9",
-    "MegafaradPerMeter": "x * 10e6",
-    "KilofaradPerMeter": "x * 10e3",
-    "HectofaradPerMeter": "x * 10e2",
-    "DekafaradPerMeter": "x * 10e1",
-    "FaradPerMeter": "x * 10e0",
-    "DecifaradPerMeter": "x * 10e-1",
-    "CentifaradPerMeter": "x * 10e-2",
-    "MillifaradPerMeter": "x * 10e-3",
-    "MicrofaradPerMeter": "x * 10e-6",
-    "NanofaradPerMeter": "x * 10e-9",
-    "PicofaradPerMeter": "x * 10e-12",
-    "FemtofaradPerMeter": "x * 10e-15",
-    "AttofaradPerMeter": "x * 10e-18",
-    "ZeptofaradPerMeter": "x * 10e-21",
-    "YoctofaradPerMeter": "x * 10e-24"
-  },
-  "symbols": {
-    "YottafaradPerMeter": "YF/m",
-    "ZettafaradPerMeter": "ZF/m",
-    "ExafaradPerMeter": "EF/m",
-    "PetafaradPerMeter": "PF/m",
-    "TerafaradPerMeter": "TF/m",
-    "GigafaradPerMeter": "GF/m",
-    "MegafaradPerMeter": "MF/m",
-    "KilofaradPerMeter": "kF/m",
-    "HectofaradPerMeter": "hF/m",
-    "DekafaradPerMeter": "daF/m",
-    "FaradPerMeter": "F/m",
-    "DecifaradPerMeter": "dF/m",
-    "CentifaradPerMeter": "cF/m",
-    "MillifaradPerMeter": "mF/m",
-    "MicrofaradPerMeter": "µF/m",
-    "NanofaradPerMeter": "nF/m",
-    "PicofaradPerMeter": "pF/m",
-    "FemtofaradPerMeter": "fF/m",
-    "AttofaradPerMeter": "aF/m",
-    "ZeptofaradPerMeter": "zF/m",
-    "YoctofaradPerMeter": "yF/m"
-  },
-  "plural symbols": {}
+    "name": "Permittivity",
+    "exponents": [
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        }
+    ],
+    "default unit": "FaradPerMeter",
+    "units": [
+        {
+            "Length": 13
+        }
+    ],
+    "conversion functions": [
+        {
+            "Key": "FaradPerMeter",
+            "Value": "x"
+        }
+    ],
+    "symbols": [
+        {
+            "Key": "FaradPerMeter",
+            "Value": " "F/m" "
+        }
+    ],
+    "plural symbols": [
+    ]
 }

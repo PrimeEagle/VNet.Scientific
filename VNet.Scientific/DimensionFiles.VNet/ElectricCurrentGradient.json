@@ -1,92 +1,72 @@
 {
-  "name": "ElectricCurrentGradient",
-  "exponents": [
-    0,
-    0,
-    -1,
-    1,
-    0,
-    0,
-    0
-  ],
-  "default unit": "AmperePerSecond",
-  "units": [
-    "AmperePerMillisecond",
-    "AmperePerMicrosecond",
-    "AmperePerNanosecond",
-    "YottaamperePerSecond",
-    "ZettaamperePerSecond",
-    "ExaamperePerSecond",
-    "PetaamperePerSecond",
-    "TeraamperePerSecond",
-    "GigaamperePerSecond",
-    "MegaamperePerSecond",
-    "KiloamperePerSecond",
-    "HectoamperePerSecond",
-    "DekaamperePerSecond",
-    "AmperePerSecond",
-    "DeciamperePerSecond",
-    "CentiamperePerSecond",
-    "MilliamperePerSecond",
-    "MicroamperePerSecond",
-    "NanoamperePerSecond",
-    "PicoamperePerSecond",
-    "FemtoamperePerSecond",
-    "AttoamperePerSecond",
-    "ZeptoamperePerSecond",
-    "YoctoamperePerSecond"
-  ],
-  "conversion functions": {
-    "AmperePerMillisecond": "x * 1E3",
-    "AmperePerMicrosecond": "x * 1E6",
-    "AmperePerNanosecond": "x * 1E9",
-    "YottaamperePerSecond": "x * 10e24",
-    "ZettaamperePerSecond": "x * 10e21",
-    "ExaamperePerSecond": "x * 10e18",
-    "PetaamperePerSecond": "x * 10e15",
-    "TeraamperePerSecond": "x * 10e12",
-    "GigaamperePerSecond": "x * 10e9",
-    "MegaamperePerSecond": "x * 10e6",
-    "KiloamperePerSecond": "x * 10e3",
-    "HectoamperePerSecond": "x * 10e2",
-    "DekaamperePerSecond": "x * 10e1",
-    "AmperePerSecond": "x * 10e0",
-    "DeciamperePerSecond": "x * 10e-1",
-    "CentiamperePerSecond": "x * 10e-2",
-    "MilliamperePerSecond": "x * 10e-3",
-    "MicroamperePerSecond": "x * 10e-6",
-    "NanoamperePerSecond": "x * 10e-9",
-    "PicoamperePerSecond": "x * 10e-12",
-    "FemtoamperePerSecond": "x * 10e-15",
-    "AttoamperePerSecond": "x * 10e-18",
-    "ZeptoamperePerSecond": "x * 10e-21",
-    "YoctoamperePerSecond": "x * 10e-24"
-  },
-  "symbols": {
-    "AmperePerMillisecond": "A/ms",
-    "AmperePerMicrosecond": "A/μs",
-    "AmperePerNanosecond": "A/ns",
-    "YottaamperePerSecond": "YA/s",
-    "ZettaamperePerSecond": "ZA/s",
-    "ExaamperePerSecond": "EA/s",
-    "PetaamperePerSecond": "PA/s",
-    "TeraamperePerSecond": "TA/s",
-    "GigaamperePerSecond": "GA/s",
-    "MegaamperePerSecond": "MA/s",
-    "KiloamperePerSecond": "kA/s",
-    "HectoamperePerSecond": "hA/s",
-    "DekaamperePerSecond": "daA/s",
-    "AmperePerSecond": "A/s",
-    "DeciamperePerSecond": "dA/s",
-    "CentiamperePerSecond": "cA/s",
-    "MilliamperePerSecond": "mA/s",
-    "MicroamperePerSecond": "µA/s",
-    "NanoamperePerSecond": "nA/s",
-    "PicoamperePerSecond": "pA/s",
-    "FemtoamperePerSecond": "fA/s",
-    "AttoamperePerSecond": "aA/s",
-    "ZeptoamperePerSecond": "zA/s",
-    "YoctoamperePerSecond": "yA/s"
-  },
-  "plural symbols": {}
+    "name": "ElectricCurrentGradient",
+    "exponents": [
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        }
+    ],
+    "default unit": "AmperePerSecond",
+    "units": [
+        {
+            "Length": 15
+        },
+        {
+            "Length": 20
+        },
+        {
+            "Length": 20
+        },
+        {
+            "Length": 19
+        }
+    ],
+    "conversion functions": [
+        {
+            "Key": "AmperePerSecond",
+            "Value": "x"
+        },
+        {
+            "Key": "AmperePerMillisecond",
+            "Value": "x * 1E3"
+        },
+        {
+            "Key": "AmperePerMicrosecond",
+            "Value": "x * 1E6"
+        },
+        {
+            "Key": "AmperePerNanosecond",
+            "Value": "x * 1E9"
+        }
+    ],
+    "symbols": [
+        {
+            "Key": "AmperePerSecond",
+            "Value": " "A/s" "
+        },
+        {
+            "Key": "AmperePerMillisecond",
+            "Value": " "A/ms" "
+        },
+        {
+            "Key": "AmperePerMicrosecond",
+            "Value": " "A/μs" "
+        },
+        {
+            "Key": "AmperePerNanosecond",
+            "Value": " "A/ns" "
+        }
+    ],
+    "plural symbols": [
+    ]
 }

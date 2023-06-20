@@ -1,92 +1,80 @@
 {
-  "name": "FuelEfficiency",
-  "exponents": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
-  ],
-  "default unit": "LiterPer100Kilometers",
-  "units": [
-    "MilePerUsGallon",
-    "MilePerUkGallon",
-    "KilometerPerLiter",
-    "YottaliterPer100Kilometers",
-    "ZettaliterPer100Kilometers",
-    "ExaliterPer100Kilometers",
-    "PetaliterPer100Kilometers",
-    "TeraliterPer100Kilometers",
-    "GigaliterPer100Kilometers",
-    "MegaliterPer100Kilometers",
-    "KiloliterPer100Kilometers",
-    "HectoliterPer100Kilometers",
-    "DekaliterPer100Kilometers",
-    "LiterPer100Kilometers",
-    "DeciliterPer100Kilometers",
-    "CentiliterPer100Kilometers",
-    "MilliliterPer100Kilometers",
-    "MicroliterPer100Kilometers",
-    "NanoliterPer100Kilometers",
-    "PicoliterPer100Kilometers",
-    "FemtoliterPer100Kilometers",
-    "AttoliterPer100Kilometers",
-    "ZeptoliterPer100Kilometers",
-    "YoctoliterPer100Kilometers"
-  ],
-  "conversion functions": {
-    "MilePerUsGallon": "(100 * 3.785411784) / (1.609344 * x)",
-    "MilePerUkGallon": "(100 * 4.54609188) / (1.609344 * x)",
-    "KilometerPerLiter": "100 / x",
-    "YottaliterPer100Kilometers": "x * 10e24",
-    "ZettaliterPer100Kilometers": "x * 10e21",
-    "ExaliterPer100Kilometers": "x * 10e18",
-    "PetaliterPer100Kilometers": "x * 10e15",
-    "TeraliterPer100Kilometers": "x * 10e12",
-    "GigaliterPer100Kilometers": "x * 10e9",
-    "MegaliterPer100Kilometers": "x * 10e6",
-    "KiloliterPer100Kilometers": "x * 10e3",
-    "HectoliterPer100Kilometers": "x * 10e2",
-    "DekaliterPer100Kilometers": "x * 10e1",
-    "LiterPer100Kilometers": "x * 10e0",
-    "DeciliterPer100Kilometers": "x * 10e-1",
-    "CentiliterPer100Kilometers": "x * 10e-2",
-    "MilliliterPer100Kilometers": "x * 10e-3",
-    "MicroliterPer100Kilometers": "x * 10e-6",
-    "NanoliterPer100Kilometers": "x * 10e-9",
-    "PicoliterPer100Kilometers": "x * 10e-12",
-    "FemtoliterPer100Kilometers": "x * 10e-15",
-    "AttoliterPer100Kilometers": "x * 10e-18",
-    "ZeptoliterPer100Kilometers": "x * 10e-21",
-    "YoctoliterPer100Kilometers": "x * 10e-24"
-  },
-  "symbols": {
-    "MilePerUsGallon": "mpg (U.S.)",
-    "MilePerUkGallon": "mpg (imp.)",
-    "KilometerPerLiter": "km/L",
-    "YottaliterPer100Kilometers": "YL/100km",
-    "ZettaliterPer100Kilometers": "ZL/100km",
-    "ExaliterPer100Kilometers": "EL/100km",
-    "PetaliterPer100Kilometers": "PL/100km",
-    "TeraliterPer100Kilometers": "TL/100km",
-    "GigaliterPer100Kilometers": "GL/100km",
-    "MegaliterPer100Kilometers": "ML/100km",
-    "KiloliterPer100Kilometers": "kL/100km",
-    "HectoliterPer100Kilometers": "hL/100km",
-    "DekaliterPer100Kilometers": "daL/100km",
-    "LiterPer100Kilometers": "L/100km",
-    "DeciliterPer100Kilometers": "dL/100km",
-    "CentiliterPer100Kilometers": "cL/100km",
-    "MilliliterPer100Kilometers": "mL/100km",
-    "MicroliterPer100Kilometers": "µL/100km",
-    "NanoliterPer100Kilometers": "nL/100km",
-    "PicoliterPer100Kilometers": "pL/100km",
-    "FemtoliterPer100Kilometers": "fL/100km",
-    "AttoliterPer100Kilometers": "aL/100km",
-    "ZeptoliterPer100Kilometers": "zL/100km",
-    "YoctoliterPer100Kilometers": "yL/100km"
-  },
-  "plural symbols": {}
+    "name": "FuelEfficiency",
+    "exponents": [
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        }
+    ],
+    "default unit": "LiterPer100Kilometers",
+    "units": [
+        {
+            "Length": 21
+        },
+        {
+            "Length": 15
+        },
+        {
+            "Length": 15
+        },
+        {
+            "Length": 17
+        }
+    ],
+    "conversion functions": [
+        {
+            "Key": "LiterPer100Kilometers",
+            "Value": "x"
+        },
+        {
+            "Key": "MilePerUsGallon",
+            "Value": "(100 * 3.785411784) / (1.609344 * x)"
+        },
+        {
+            "Key": "MilePerUkGallon",
+            "Value": "(100 * 4.54609188) / (1.609344 * x)"
+        },
+        {
+            "Key": "KilometerPerLiter",
+            "Value": "100 / x"
+        }
+    ],
+    "symbols": [
+        {
+            "Key": "LiterPer100Kilometers",
+            "Value": "
+            "L/100km"
+          "
+        },
+        {
+            "Key": "MilePerUsGallon",
+            "Value": "
+            "mpg (U.S.)"
+          "
+        },
+        {
+            "Key": "MilePerUkGallon",
+            "Value": "
+            "mpg (imp.)"
+          "
+        },
+        {
+            "Key": "KilometerPerLiter",
+            "Value": "
+            "km/L"
+          "
+        }
+    ],
+    "plural symbols": [
+    ]
 }

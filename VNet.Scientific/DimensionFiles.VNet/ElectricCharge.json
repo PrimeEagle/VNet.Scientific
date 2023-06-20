@@ -1,88 +1,54 @@
 {
-  "name": "ElectricCharge",
-  "exponents": [
-    0,
-    0,
-    1,
-    1,
-    0,
-    0,
-    0
-  ],
-  "default unit": "Coulomb",
-  "units": [
-    "AmpereHour",
-    "Yottacoulomb",
-    "Zettacoulomb",
-    "Exacoulomb",
-    "Petacoulomb",
-    "Teracoulomb",
-    "Gigacoulomb",
-    "Megacoulomb",
-    "Kilocoulomb",
-    "Hectocoulomb",
-    "Dekacoulomb",
-    "Coulomb",
-    "Decicoulomb",
-    "Centicoulomb",
-    "Millicoulomb",
-    "Microcoulomb",
-    "Nanocoulomb",
-    "Picocoulomb",
-    "Femtocoulomb",
-    "Attocoulomb",
-    "Zeptocoulomb",
-    "Yoctocoulomb"
-  ],
-  "conversion functions": {
-    "AmpereHour": "x / 2.77777777777e-4",
-    "Yottacoulomb": "x * 10e24",
-    "Zettacoulomb": "x * 10e21",
-    "Exacoulomb": "x * 10e18",
-    "Petacoulomb": "x * 10e15",
-    "Teracoulomb": "x * 10e12",
-    "Gigacoulomb": "x * 10e9",
-    "Megacoulomb": "x * 10e6",
-    "Kilocoulomb": "x * 10e3",
-    "Hectocoulomb": "x * 10e2",
-    "Dekacoulomb": "x * 10e1",
-    "Coulomb": "x * 10e0",
-    "Decicoulomb": "x * 10e-1",
-    "Centicoulomb": "x * 10e-2",
-    "Millicoulomb": "x * 10e-3",
-    "Microcoulomb": "x * 10e-6",
-    "Nanocoulomb": "x * 10e-9",
-    "Picocoulomb": "x * 10e-12",
-    "Femtocoulomb": "x * 10e-15",
-    "Attocoulomb": "x * 10e-18",
-    "Zeptocoulomb": "x * 10e-21",
-    "Yoctocoulomb": "x * 10e-24"
-  },
-  "symbols": {
-    "AmpereHour": "A-h",
-    "Yottacoulomb": "YC",
-    "Zettacoulomb": "ZC",
-    "Exacoulomb": "EC",
-    "Petacoulomb": "PC",
-    "Teracoulomb": "TC",
-    "Gigacoulomb": "GC",
-    "Megacoulomb": "MC",
-    "Kilocoulomb": "kC",
-    "Hectocoulomb": "hC",
-    "Dekacoulomb": "daC",
-    "Coulomb": "C",
-    "Decicoulomb": "dC",
-    "Centicoulomb": "cC",
-    "Millicoulomb": "mC",
-    "Microcoulomb": "µC",
-    "Nanocoulomb": "nC",
-    "Picocoulomb": "pC",
-    "Femtocoulomb": "fC",
-    "Attocoulomb": "aC",
-    "Zeptocoulomb": "zC",
-    "Yoctocoulomb": "yC"
-  },
-  "plural symbols": {
-    "AmpereHour": "Ah"
-  }
+    "name": "ElectricCharge",
+    "exponents": [
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        }
+    ],
+    "default unit": "Coulomb",
+    "units": [
+        {
+            "Length": 7
+        },
+        {
+            "Length": 10
+        }
+    ],
+    "conversion functions": [
+        {
+            "Key": "Coulomb",
+            "Value": "x"
+        },
+        {
+            "Key": "AmpereHour",
+            "Value": "x / 2.77777777777e-4"
+        }
+    ],
+    "symbols": [
+        {
+            "Key": "Coulomb",
+            "Value": " "C" "
+        },
+        {
+            "Key": "AmpereHour",
+            "Value": " "A-h""
+        }
+    ],
+    "plural symbols": [
+        {
+            "Key": "AmpereHour",
+            "Value": " "Ah" "
+        }
+    ]
 }

@@ -1,112 +1,69 @@
 {
-  "name": "RotationalStiffnessPerLength",
-  "exponents": [
-    1,
-    1,
-    -2,
-    0,
-    0,
-    0,
-    0
-  ],
-  "default unit": "NewtonMeterPerRadianPerMeter",
-  "units": [
-    "PoundForceFootPerDegreesPerFoot",
-    "KilopoundForceFootPerDegreesPerFoot",
-    "YottanewtonMeterPerRadianPerMeter",
-    "ZettanewtonMeterPerRadianPerMeter",
-    "ExanewtonMeterPerRadianPerMeter",
-    "PetanewtonMeterPerRadianPerMeter",
-    "TeranewtonMeterPerRadianPerMeter",
-    "GiganewtonMeterPerRadianPerMeter",
-    "MeganewtonMeterPerRadianPerMeter",
-    "KilonewtonMeterPerRadianPerMeter",
-    "HectonewtonMeterPerRadianPerMeter",
-    "DekanewtonMeterPerRadianPerMeter",
-    "NewtonMeterPerRadianPerMeter",
-    "DecinewtonMeterPerRadianPerMeter",
-    "CentinewtonMeterPerRadianPerMeter",
-    "MillinewtonMeterPerRadianPerMeter",
-    "MicronewtonMeterPerRadianPerMeter",
-    "NanonewtonMeterPerRadianPerMeter",
-    "PiconewtonMeterPerRadianPerMeter",
-    "FemtonewtonMeterPerRadianPerMeter",
-    "AttonewtonMeterPerRadianPerMeter",
-    "ZeptonewtonMeterPerRadianPerMeter",
-    "YoctonewtonMeterPerRadianPerMeter"
-  ],
-  "conversion functions": {
-    "PoundForceFootPerDegreesPerFoot": "x * 254.864324570",
-    "KilopoundForceFootPerDegreesPerFoot": "x * 254864.324570",
-    "YottanewtonMeterPerRadianPerMeter": "x * 10e24",
-    "ZettanewtonMeterPerRadianPerMeter": "x * 10e21",
-    "ExanewtonMeterPerRadianPerMeter": "x * 10e18",
-    "PetanewtonMeterPerRadianPerMeter": "x * 10e15",
-    "TeranewtonMeterPerRadianPerMeter": "x * 10e12",
-    "GiganewtonMeterPerRadianPerMeter": "x * 10e9",
-    "MeganewtonMeterPerRadianPerMeter": "x * 10e6",
-    "KilonewtonMeterPerRadianPerMeter": "x * 10e3",
-    "HectonewtonMeterPerRadianPerMeter": "x * 10e2",
-    "DekanewtonMeterPerRadianPerMeter": "x * 10e1",
-    "NewtonMeterPerRadianPerMeter": "x * 10e0",
-    "DecinewtonMeterPerRadianPerMeter": "x * 10e-1",
-    "CentinewtonMeterPerRadianPerMeter": "x * 10e-2",
-    "MillinewtonMeterPerRadianPerMeter": "x * 10e-3",
-    "MicronewtonMeterPerRadianPerMeter": "x * 10e-6",
-    "NanonewtonMeterPerRadianPerMeter": "x * 10e-9",
-    "PiconewtonMeterPerRadianPerMeter": "x * 10e-12",
-    "FemtonewtonMeterPerRadianPerMeter": "x * 10e-15",
-    "AttonewtonMeterPerRadianPerMeter": "x * 10e-18",
-    "ZeptonewtonMeterPerRadianPerMeter": "x * 10e-21",
-    "YoctonewtonMeterPerRadianPerMeter": "x * 10e-24"
-  },
-  "symbols": {
-    "PoundForceFootPerDegreesPerFoot": "lbf·ft/deg/ft",
-    "KilopoundForceFootPerDegreesPerFoot": "kipf·ft/°/ft",
-    "YottanewtonMeterPerRadianPerMeter": "YN·m/rad/m",
-    "ZettanewtonMeterPerRadianPerMeter": "ZN·m/rad/m",
-    "ExanewtonMeterPerRadianPerMeter": "EN·m/rad/m",
-    "PetanewtonMeterPerRadianPerMeter": "PN·m/rad/m",
-    "TeranewtonMeterPerRadianPerMeter": "TN·m/rad/m",
-    "GiganewtonMeterPerRadianPerMeter": "GN·m/rad/m",
-    "MeganewtonMeterPerRadianPerMeter": "MN·m/rad/m",
-    "KilonewtonMeterPerRadianPerMeter": "kN·m/rad/m",
-    "HectonewtonMeterPerRadianPerMeter": "hN·m/rad/m",
-    "DekanewtonMeterPerRadianPerMeter": "daN·m/rad/m",
-    "NewtonMeterPerRadianPerMeter": "N·m/rad/m",
-    "DecinewtonMeterPerRadianPerMeter": "dN·m/rad/m",
-    "CentinewtonMeterPerRadianPerMeter": "cN·m/rad/m",
-    "MillinewtonMeterPerRadianPerMeter": "mN·m/rad/m",
-    "MicronewtonMeterPerRadianPerMeter": "µN·m/rad/m",
-    "NanonewtonMeterPerRadianPerMeter": "nN·m/rad/m",
-    "PiconewtonMeterPerRadianPerMeter": "pN·m/rad/m",
-    "FemtonewtonMeterPerRadianPerMeter": "fN·m/rad/m",
-    "AttonewtonMeterPerRadianPerMeter": "aN·m/rad/m",
-    "ZeptonewtonMeterPerRadianPerMeter": "zN·m/rad/m",
-    "YoctonewtonMeterPerRadianPerMeter": "yN·m/rad/m"
-  },
-  "plural symbols": {
-    "KilopoundForceFootPerDegreesPerFoot": "kip·ft/°/ft",
-    "YottanewtonMeterPerRadianPerMeter": "YNm/rad/m",
-    "ZettanewtonMeterPerRadianPerMeter": "ZNm/rad/m",
-    "ExanewtonMeterPerRadianPerMeter": "ENm/rad/m",
-    "PetanewtonMeterPerRadianPerMeter": "PNm/rad/m",
-    "TeranewtonMeterPerRadianPerMeter": "TNm/rad/m",
-    "GiganewtonMeterPerRadianPerMeter": "GNm/rad/m",
-    "MeganewtonMeterPerRadianPerMeter": "MNm/rad/m",
-    "KilonewtonMeterPerRadianPerMeter": "kNm/rad/m",
-    "HectonewtonMeterPerRadianPerMeter": "hNm/rad/m",
-    "DekanewtonMeterPerRadianPerMeter": "daNm/rad/m",
-    "NewtonMeterPerRadianPerMeter": "Nm/rad/m",
-    "DecinewtonMeterPerRadianPerMeter": "dNm/rad/m",
-    "CentinewtonMeterPerRadianPerMeter": "cNm/rad/m",
-    "MillinewtonMeterPerRadianPerMeter": "mNm/rad/m",
-    "MicronewtonMeterPerRadianPerMeter": "µNm/rad/m",
-    "NanonewtonMeterPerRadianPerMeter": "nNm/rad/m",
-    "PiconewtonMeterPerRadianPerMeter": "pNm/rad/m",
-    "FemtonewtonMeterPerRadianPerMeter": "fNm/rad/m",
-    "AttonewtonMeterPerRadianPerMeter": "aNm/rad/m",
-    "ZeptonewtonMeterPerRadianPerMeter": "zNm/rad/m",
-    "YoctonewtonMeterPerRadianPerMeter": "yNm/rad/m"
-  }
+    "name": "RotationalStiffnessPerLength",
+    "exponents": [
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        }
+    ],
+    "default unit": "NewtonMeterPerRadianPerMeter",
+    "units": [
+        {
+            "Length": 28
+        },
+        {
+            "Length": 31
+        },
+        {
+            "Length": 35
+        }
+    ],
+    "conversion functions": [
+        {
+            "Key": "NewtonMeterPerRadianPerMeter",
+            "Value": "x"
+        },
+        {
+            "Key": "PoundForceFootPerDegreesPerFoot",
+            "Value": "x * 254.864324570"
+        },
+        {
+            "Key": "KilopoundForceFootPerDegreesPerFoot",
+            "Value": "x * 254864.324570"
+        }
+    ],
+    "symbols": [
+        {
+            "Key": "NewtonMeterPerRadianPerMeter",
+            "Value": " "N·m/rad/m""
+        },
+        {
+            "Key": "PoundForceFootPerDegreesPerFoot",
+            "Value": " "lbf·ft/deg/ft" "
+        },
+        {
+            "Key": "KilopoundForceFootPerDegreesPerFoot",
+            "Value": " "kipf·ft/°/ft""
+        }
+    ],
+    "plural symbols": [
+        {
+            "Key": "NewtonMeterPerRadianPerMeter",
+            "Value": " "Nm/rad/m" "
+        },
+        {
+            "Key": "KilopoundForceFootPerDegreesPerFoot",
+            "Value": " "kip·ft/°/ft""
+        }
+    ]
 }

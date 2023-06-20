@@ -1,101 +1,105 @@
 {
-  "name": "Frequency",
-  "exponents": [
-    0,
-    0,
-    -1,
-    0,
-    0,
-    0,
-    0
-  ],
-  "default unit": "Hertz",
-  "units": [
-    "RadianPerSecond",
-    "CyclePerMinute",
-    "CyclePerHour",
-    "BeatPerMinute",
-    "PerSecond",
-    "BUnit",
-    "Yottahertz",
-    "Zettahertz",
-    "Exahertz",
-    "Petahertz",
-    "Terahertz",
-    "Gigahertz",
-    "Megahertz",
-    "Kilohertz",
-    "Hectohertz",
-    "Dekahertz",
-    "Hertz",
-    "Decihertz",
-    "Centihertz",
-    "Millihertz",
-    "Microhertz",
-    "Nanohertz",
-    "Picohertz",
-    "Femtohertz",
-    "Attohertz",
-    "Zeptohertz",
-    "Yoctohertz"
-  ],
-  "conversion functions": {
-    "RadianPerSecond": "x / 6.2831853072",
-    "CyclePerMinute": "x / 60",
-    "CyclePerHour": "x / 3600",
-    "BeatPerMinute": "x / 60",
-    "PerSecond": "x",
-    "BUnit": "Math.Sqrt(x * 1e3)",
-    "Yottahertz": "x * 10e24",
-    "Zettahertz": "x * 10e21",
-    "Exahertz": "x * 10e18",
-    "Petahertz": "x * 10e15",
-    "Terahertz": "x * 10e12",
-    "Gigahertz": "x * 10e9",
-    "Megahertz": "x * 10e6",
-    "Kilohertz": "x * 10e3",
-    "Hectohertz": "x * 10e2",
-    "Dekahertz": "x * 10e1",
-    "Hertz": "x * 10e0",
-    "Decihertz": "x * 10e-1",
-    "Centihertz": "x * 10e-2",
-    "Millihertz": "x * 10e-3",
-    "Microhertz": "x * 10e-6",
-    "Nanohertz": "x * 10e-9",
-    "Picohertz": "x * 10e-12",
-    "Femtohertz": "x * 10e-15",
-    "Attohertz": "x * 10e-18",
-    "Zeptohertz": "x * 10e-21",
-    "Yoctohertz": "x * 10e-24"
-  },
-  "symbols": {
-    "RadianPerSecond": "rad/s",
-    "CyclePerMinute": "cpm",
-    "CyclePerHour": "cph",
-    "BeatPerMinute": "bpm",
-    "PerSecond": "s⁻¹",
-    "BUnit": "B Units",
-    "Yottahertz": "YHz",
-    "Zettahertz": "ZHz",
-    "Exahertz": "EHz",
-    "Petahertz": "PHz",
-    "Terahertz": "THz",
-    "Gigahertz": "GHz",
-    "Megahertz": "MHz",
-    "Kilohertz": "kHz",
-    "Hectohertz": "hHz",
-    "Dekahertz": "daHz",
-    "Hertz": "Hz",
-    "Decihertz": "dHz",
-    "Centihertz": "cHz",
-    "Millihertz": "mHz",
-    "Microhertz": "µHz",
-    "Nanohertz": "nHz",
-    "Picohertz": "pHz",
-    "Femtohertz": "fHz",
-    "Attohertz": "aHz",
-    "Zeptohertz": "zHz",
-    "Yoctohertz": "yHz"
-  },
-  "plural symbols": {}
+    "name": "Frequency",
+    "exponents": [
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        }
+    ],
+    "default unit": "Hertz",
+    "units": [
+        {
+            "Length": 5
+        },
+        {
+            "Length": 15
+        },
+        {
+            "Length": 14
+        },
+        {
+            "Length": 12
+        },
+        {
+            "Length": 13
+        },
+        {
+            "Length": 9
+        },
+        {
+            "Length": 5
+        }
+    ],
+    "conversion functions": [
+        {
+            "Key": "Hertz",
+            "Value": "x"
+        },
+        {
+            "Key": "RadianPerSecond",
+            "Value": "x / 6.2831853072"
+        },
+        {
+            "Key": "CyclePerMinute",
+            "Value": "x / 60"
+        },
+        {
+            "Key": "CyclePerHour",
+            "Value": "x / 3600"
+        },
+        {
+            "Key": "BeatPerMinute",
+            "Value": "x / 60"
+        },
+        {
+            "Key": "PerSecond",
+            "Value": "x"
+        },
+        {
+            "Key": "BUnit",
+            "Value": "Math.Sqrt(x * 1e3)"
+        }
+    ],
+    "symbols": [
+        {
+            "Key": "Hertz",
+            "Value": " "Hz" "
+        },
+        {
+            "Key": "RadianPerSecond",
+            "Value": " "rad/s" "
+        },
+        {
+            "Key": "CyclePerMinute",
+            "Value": " "cpm" "
+        },
+        {
+            "Key": "CyclePerHour",
+            "Value": " "cph" "
+        },
+        {
+            "Key": "BeatPerMinute",
+            "Value": " "bpm" "
+        },
+        {
+            "Key": "PerSecond",
+            "Value": " "s⁻¹" "
+        },
+        {
+            "Key": "BUnit",
+            "Value": " "B Units" "
+        }
+    ],
+    "plural symbols": [
+    ]
 }

@@ -1,83 +1,39 @@
 {
-  "name": "Permeability",
-  "exponents": [
-    1,
-    1,
-    -2,
-    -2,
-    0,
-    0,
-    0
-  ],
-  "default unit": "HenryPerMeter",
-  "units": [
-    "YottahenryPerMeter",
-    "ZettahenryPerMeter",
-    "ExahenryPerMeter",
-    "PetahenryPerMeter",
-    "TerahenryPerMeter",
-    "GigahenryPerMeter",
-    "MegahenryPerMeter",
-    "KilohenryPerMeter",
-    "HectohenryPerMeter",
-    "DekahenryPerMeter",
-    "HenryPerMeter",
-    "DecihenryPerMeter",
-    "CentihenryPerMeter",
-    "MillihenryPerMeter",
-    "MicrohenryPerMeter",
-    "NanohenryPerMeter",
-    "PicohenryPerMeter",
-    "FemtohenryPerMeter",
-    "AttohenryPerMeter",
-    "ZeptohenryPerMeter",
-    "YoctohenryPerMeter"
-  ],
-  "conversion functions": {
-    "YottahenryPerMeter": "x * 10e24",
-    "ZettahenryPerMeter": "x * 10e21",
-    "ExahenryPerMeter": "x * 10e18",
-    "PetahenryPerMeter": "x * 10e15",
-    "TerahenryPerMeter": "x * 10e12",
-    "GigahenryPerMeter": "x * 10e9",
-    "MegahenryPerMeter": "x * 10e6",
-    "KilohenryPerMeter": "x * 10e3",
-    "HectohenryPerMeter": "x * 10e2",
-    "DekahenryPerMeter": "x * 10e1",
-    "HenryPerMeter": "x * 10e0",
-    "DecihenryPerMeter": "x * 10e-1",
-    "CentihenryPerMeter": "x * 10e-2",
-    "MillihenryPerMeter": "x * 10e-3",
-    "MicrohenryPerMeter": "x * 10e-6",
-    "NanohenryPerMeter": "x * 10e-9",
-    "PicohenryPerMeter": "x * 10e-12",
-    "FemtohenryPerMeter": "x * 10e-15",
-    "AttohenryPerMeter": "x * 10e-18",
-    "ZeptohenryPerMeter": "x * 10e-21",
-    "YoctohenryPerMeter": "x * 10e-24"
-  },
-  "symbols": {
-    "YottahenryPerMeter": "YH/m",
-    "ZettahenryPerMeter": "ZH/m",
-    "ExahenryPerMeter": "EH/m",
-    "PetahenryPerMeter": "PH/m",
-    "TerahenryPerMeter": "TH/m",
-    "GigahenryPerMeter": "GH/m",
-    "MegahenryPerMeter": "MH/m",
-    "KilohenryPerMeter": "kH/m",
-    "HectohenryPerMeter": "hH/m",
-    "DekahenryPerMeter": "daH/m",
-    "HenryPerMeter": "H/m",
-    "DecihenryPerMeter": "dH/m",
-    "CentihenryPerMeter": "cH/m",
-    "MillihenryPerMeter": "mH/m",
-    "MicrohenryPerMeter": "µH/m",
-    "NanohenryPerMeter": "nH/m",
-    "PicohenryPerMeter": "pH/m",
-    "FemtohenryPerMeter": "fH/m",
-    "AttohenryPerMeter": "aH/m",
-    "ZeptohenryPerMeter": "zH/m",
-    "YoctohenryPerMeter": "yH/m"
-  },
-  "plural symbols": {}
+    "name": "Permeability",
+    "exponents": [
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        }
+    ],
+    "default unit": "HenryPerMeter",
+    "units": [
+        {
+            "Length": 13
+        }
+    ],
+    "conversion functions": [
+        {
+            "Key": "HenryPerMeter",
+            "Value": "x"
+        }
+    ],
+    "symbols": [
+        {
+            "Key": "HenryPerMeter",
+            "Value": " "H/m" "
+        }
+    ],
+    "plural symbols": [
+    ]
 }

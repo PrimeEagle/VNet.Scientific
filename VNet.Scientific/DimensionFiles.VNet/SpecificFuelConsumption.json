@@ -1,89 +1,61 @@
 {
-  "name": "SpecificFuelConsumption",
-  "exponents": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
-  ],
-  "default unit": "GramPerKiloNewtonSecond",
-  "units": [
-    "PoundMassPerPoundForceHour",
-    "KilogramPerKilogramForceHour",
-    "YottagramPerKiloNewtonSecond",
-    "ZettagramPerKiloNewtonSecond",
-    "ExagramPerKiloNewtonSecond",
-    "PetagramPerKiloNewtonSecond",
-    "TeragramPerKiloNewtonSecond",
-    "GigagramPerKiloNewtonSecond",
-    "MegagramPerKiloNewtonSecond",
-    "KilogramPerKiloNewtonSecond",
-    "HectogramPerKiloNewtonSecond",
-    "DekagramPerKiloNewtonSecond",
-    "GramPerKiloNewtonSecond",
-    "DecigramPerKiloNewtonSecond",
-    "CentigramPerKiloNewtonSecond",
-    "MilligramPerKiloNewtonSecond",
-    "MicrogramPerKiloNewtonSecond",
-    "NanogramPerKiloNewtonSecond",
-    "PicogramPerKiloNewtonSecond",
-    "FemtogramPerKiloNewtonSecond",
-    "AttogramPerKiloNewtonSecond",
-    "ZeptogramPerKiloNewtonSecond",
-    "YoctogramPerKiloNewtonSecond"
-  ],
-  "conversion functions": {
-    "PoundMassPerPoundForceHour": "x * 28.33",
-    "KilogramPerKilogramForceHour": "x * 28.33",
-    "YottagramPerKiloNewtonSecond": "x * 10e24",
-    "ZettagramPerKiloNewtonSecond": "x * 10e21",
-    "ExagramPerKiloNewtonSecond": "x * 10e18",
-    "PetagramPerKiloNewtonSecond": "x * 10e15",
-    "TeragramPerKiloNewtonSecond": "x * 10e12",
-    "GigagramPerKiloNewtonSecond": "x * 10e9",
-    "MegagramPerKiloNewtonSecond": "x * 10e6",
-    "KilogramPerKiloNewtonSecond": "x * 10e3",
-    "HectogramPerKiloNewtonSecond": "x * 10e2",
-    "DekagramPerKiloNewtonSecond": "x * 10e1",
-    "GramPerKiloNewtonSecond": "x * 10e0",
-    "DecigramPerKiloNewtonSecond": "x * 10e-1",
-    "CentigramPerKiloNewtonSecond": "x * 10e-2",
-    "MilligramPerKiloNewtonSecond": "x * 10e-3",
-    "MicrogramPerKiloNewtonSecond": "x * 10e-6",
-    "NanogramPerKiloNewtonSecond": "x * 10e-9",
-    "PicogramPerKiloNewtonSecond": "x * 10e-12",
-    "FemtogramPerKiloNewtonSecond": "x * 10e-15",
-    "AttogramPerKiloNewtonSecond": "x * 10e-18",
-    "ZeptogramPerKiloNewtonSecond": "x * 10e-21",
-    "YoctogramPerKiloNewtonSecond": "x * 10e-24"
-  },
-  "symbols": {
-    "PoundMassPerPoundForceHour": "lb/(lbf·h)",
-    "KilogramPerKilogramForceHour": "kg/(kgf�h)",
-    "YottagramPerKiloNewtonSecond": "Yg/(kN�s)",
-    "ZettagramPerKiloNewtonSecond": "Zg/(kN�s)",
-    "ExagramPerKiloNewtonSecond": "Eg/(kN�s)",
-    "PetagramPerKiloNewtonSecond": "Pg/(kN�s)",
-    "TeragramPerKiloNewtonSecond": "Tg/(kN�s)",
-    "GigagramPerKiloNewtonSecond": "Gg/(kN�s)",
-    "MegagramPerKiloNewtonSecond": "Mg/(kN�s)",
-    "KilogramPerKiloNewtonSecond": "kg/(kN�s)",
-    "HectogramPerKiloNewtonSecond": "hg/(kN�s)",
-    "DekagramPerKiloNewtonSecond": "dag/(kN�s)",
-    "GramPerKiloNewtonSecond": "g/(kN�s)",
-    "DecigramPerKiloNewtonSecond": "dg/(kN�s)",
-    "CentigramPerKiloNewtonSecond": "cg/(kN�s)",
-    "MilligramPerKiloNewtonSecond": "mg/(kN�s)",
-    "MicrogramPerKiloNewtonSecond": "µg/(kN�s)",
-    "NanogramPerKiloNewtonSecond": "ng/(kN�s)",
-    "PicogramPerKiloNewtonSecond": "pg/(kN�s)",
-    "FemtogramPerKiloNewtonSecond": "fg/(kN�s)",
-    "AttogramPerKiloNewtonSecond": "ag/(kN�s)",
-    "ZeptogramPerKiloNewtonSecond": "zg/(kN�s)",
-    "YoctogramPerKiloNewtonSecond": "yg/(kN�s)"
-  },
-  "plural symbols": {}
+    "name": "SpecificFuelConsumption",
+    "exponents": [
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        }
+    ],
+    "default unit": "GramPerKiloNewtonSecond",
+    "units": [
+        {
+            "Length": 26
+        },
+        {
+            "Length": 28
+        },
+        {
+            "Length": 23
+        }
+    ],
+    "conversion functions": [
+        {
+            "Key": "PoundMassPerPoundForceHour",
+            "Value": "x * 28.33"
+        },
+        {
+            "Key": "KilogramPerKilogramForceHour",
+            "Value": "x * 28.33"
+        },
+        {
+            "Key": "GramPerKiloNewtonSecond",
+            "Value": "x"
+        }
+    ],
+    "symbols": [
+        {
+            "Key": "PoundMassPerPoundForceHour",
+            "Value": " "lb/(lbf·h)" "
+        },
+        {
+            "Key": "KilogramPerKilogramForceHour",
+            "Value": " "kg/(kgf�h)" "
+        },
+        {
+            "Key": "GramPerKiloNewtonSecond",
+            "Value": " "g/(kN�s)" "
+        }
+    ],
+    "plural symbols": [
+    ]
 }

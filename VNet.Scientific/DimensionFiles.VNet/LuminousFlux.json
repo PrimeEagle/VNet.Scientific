@@ -1,83 +1,39 @@
 {
-  "name": "LuminousFlux",
-  "exponents": [
-    0,
-    0,
-    0,
-    0,
-    1,
-    0,
-    0
-  ],
-  "default unit": "Lumen",
-  "units": [
-    "Yottalumen",
-    "Zettalumen",
-    "Exalumen",
-    "Petalumen",
-    "Teralumen",
-    "Gigalumen",
-    "Megalumen",
-    "Kilolumen",
-    "Hectolumen",
-    "Dekalumen",
-    "Lumen",
-    "Decilumen",
-    "Centilumen",
-    "Millilumen",
-    "Microlumen",
-    "Nanolumen",
-    "Picolumen",
-    "Femtolumen",
-    "Attolumen",
-    "Zeptolumen",
-    "Yoctolumen"
-  ],
-  "conversion functions": {
-    "Yottalumen": "x * 10e24",
-    "Zettalumen": "x * 10e21",
-    "Exalumen": "x * 10e18",
-    "Petalumen": "x * 10e15",
-    "Teralumen": "x * 10e12",
-    "Gigalumen": "x * 10e9",
-    "Megalumen": "x * 10e6",
-    "Kilolumen": "x * 10e3",
-    "Hectolumen": "x * 10e2",
-    "Dekalumen": "x * 10e1",
-    "Lumen": "x * 10e0",
-    "Decilumen": "x * 10e-1",
-    "Centilumen": "x * 10e-2",
-    "Millilumen": "x * 10e-3",
-    "Microlumen": "x * 10e-6",
-    "Nanolumen": "x * 10e-9",
-    "Picolumen": "x * 10e-12",
-    "Femtolumen": "x * 10e-15",
-    "Attolumen": "x * 10e-18",
-    "Zeptolumen": "x * 10e-21",
-    "Yoctolumen": "x * 10e-24"
-  },
-  "symbols": {
-    "Yottalumen": "Ylm",
-    "Zettalumen": "Zlm",
-    "Exalumen": "Elm",
-    "Petalumen": "Plm",
-    "Teralumen": "Tlm",
-    "Gigalumen": "Glm",
-    "Megalumen": "Mlm",
-    "Kilolumen": "klm",
-    "Hectolumen": "hlm",
-    "Dekalumen": "dalm",
-    "Lumen": "lm",
-    "Decilumen": "dlm",
-    "Centilumen": "clm",
-    "Millilumen": "mlm",
-    "Microlumen": "µlm",
-    "Nanolumen": "nlm",
-    "Picolumen": "plm",
-    "Femtolumen": "flm",
-    "Attolumen": "alm",
-    "Zeptolumen": "zlm",
-    "Yoctolumen": "ylm"
-  },
-  "plural symbols": {}
+    "name": "LuminousFlux",
+    "exponents": [
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        }
+    ],
+    "default unit": "Lumen",
+    "units": [
+        {
+            "Length": 5
+        }
+    ],
+    "conversion functions": [
+        {
+            "Key": "Lumen",
+            "Value": "x"
+        }
+    ],
+    "symbols": [
+        {
+            "Key": "Lumen",
+            "Value": " "lm" "
+        }
+    ],
+    "plural symbols": [
+    ]
 }

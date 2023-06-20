@@ -1,86 +1,50 @@
 {
-  "name": "Irradiance",
-  "exponents": [
-    0,
-    1,
-    -3,
-    0,
-    0,
-    0,
-    0
-  ],
-  "default unit": "WattPerSquareMeter",
-  "units": [
-    "WattPerSquareCentimeter",
-    "YottawattPerSquareMeter",
-    "ZettawattPerSquareMeter",
-    "ExawattPerSquareMeter",
-    "PetawattPerSquareMeter",
-    "TerawattPerSquareMeter",
-    "GigawattPerSquareMeter",
-    "MegawattPerSquareMeter",
-    "KilowattPerSquareMeter",
-    "HectowattPerSquareMeter",
-    "DekawattPerSquareMeter",
-    "WattPerSquareMeter",
-    "DeciwattPerSquareMeter",
-    "CentiwattPerSquareMeter",
-    "MilliwattPerSquareMeter",
-    "MicrowattPerSquareMeter",
-    "NanowattPerSquareMeter",
-    "PicowattPerSquareMeter",
-    "FemtowattPerSquareMeter",
-    "AttowattPerSquareMeter",
-    "ZeptowattPerSquareMeter",
-    "YoctowattPerSquareMeter"
-  ],
-  "conversion functions": {
-    "WattPerSquareCentimeter": "x * 10000",
-    "YottawattPerSquareMeter": "x * 10e24",
-    "ZettawattPerSquareMeter": "x * 10e21",
-    "ExawattPerSquareMeter": "x * 10e18",
-    "PetawattPerSquareMeter": "x * 10e15",
-    "TerawattPerSquareMeter": "x * 10e12",
-    "GigawattPerSquareMeter": "x * 10e9",
-    "MegawattPerSquareMeter": "x * 10e6",
-    "KilowattPerSquareMeter": "x * 10e3",
-    "HectowattPerSquareMeter": "x * 10e2",
-    "DekawattPerSquareMeter": "x * 10e1",
-    "WattPerSquareMeter": "x * 10e0",
-    "DeciwattPerSquareMeter": "x * 10e-1",
-    "CentiwattPerSquareMeter": "x * 10e-2",
-    "MilliwattPerSquareMeter": "x * 10e-3",
-    "MicrowattPerSquareMeter": "x * 10e-6",
-    "NanowattPerSquareMeter": "x * 10e-9",
-    "PicowattPerSquareMeter": "x * 10e-12",
-    "FemtowattPerSquareMeter": "x * 10e-15",
-    "AttowattPerSquareMeter": "x * 10e-18",
-    "ZeptowattPerSquareMeter": "x * 10e-21",
-    "YoctowattPerSquareMeter": "x * 10e-24"
-  },
-  "symbols": {
-    "WattPerSquareCentimeter": "W/cm²",
-    "YottawattPerSquareMeter": "YW/m²",
-    "ZettawattPerSquareMeter": "ZW/m²",
-    "ExawattPerSquareMeter": "EW/m²",
-    "PetawattPerSquareMeter": "PW/m²",
-    "TerawattPerSquareMeter": "TW/m²",
-    "GigawattPerSquareMeter": "GW/m²",
-    "MegawattPerSquareMeter": "MW/m²",
-    "KilowattPerSquareMeter": "kW/m²",
-    "HectowattPerSquareMeter": "hW/m²",
-    "DekawattPerSquareMeter": "daW/m²",
-    "WattPerSquareMeter": "W/m²",
-    "DeciwattPerSquareMeter": "dW/m²",
-    "CentiwattPerSquareMeter": "cW/m²",
-    "MilliwattPerSquareMeter": "mW/m²",
-    "MicrowattPerSquareMeter": "µW/m²",
-    "NanowattPerSquareMeter": "nW/m²",
-    "PicowattPerSquareMeter": "pW/m²",
-    "FemtowattPerSquareMeter": "fW/m²",
-    "AttowattPerSquareMeter": "aW/m²",
-    "ZeptowattPerSquareMeter": "zW/m²",
-    "YoctowattPerSquareMeter": "yW/m²"
-  },
-  "plural symbols": {}
+    "name": "Irradiance",
+    "exponents": [
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        }
+    ],
+    "default unit": "WattPerSquareMeter",
+    "units": [
+        {
+            "Length": 18
+        },
+        {
+            "Length": 23
+        }
+    ],
+    "conversion functions": [
+        {
+            "Key": "WattPerSquareMeter",
+            "Value": "x"
+        },
+        {
+            "Key": "WattPerSquareCentimeter",
+            "Value": "x * 10000"
+        }
+    ],
+    "symbols": [
+        {
+            "Key": "WattPerSquareMeter",
+            "Value": " "W/m²" "
+        },
+        {
+            "Key": "WattPerSquareCentimeter",
+            "Value": " "W/cm²" "
+        }
+    ],
+    "plural symbols": [
+    ]
 }

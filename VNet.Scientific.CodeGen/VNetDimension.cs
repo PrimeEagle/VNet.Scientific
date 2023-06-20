@@ -281,10 +281,5 @@ namespace VNet.Scientific.CodeGen
 
             return $"1e{exponent * factor}";
         }
-
-        public static List<UnitNetVNetMappingEntry> Do(string mappingJson)
-        {
-            return VNetJsonSerializer.Deserialize<List<UnitNetVNetMappingEntry>>(mappingJson.Trim());
-        }
     }
 }

@@ -1,94 +1,76 @@
 {
-  "name": "RotationalAcceleration",
-  "exponents": [
-    0,
-    0,
-    -2,
-    0,
-    0,
-    0,
-    0
-  ],
-  "default unit": "RadianPerSecondSquared",
-  "units": [
-    "DegreePerSecondSquared",
-    "RevolutionPerMinutePerSecond",
-    "RevolutionPerSecondSquared",
-    "YottaradianPerSecondSquared",
-    "ZettaradianPerSecondSquared",
-    "ExaradianPerSecondSquared",
-    "PetaradianPerSecondSquared",
-    "TeraradianPerSecondSquared",
-    "GigaradianPerSecondSquared",
-    "MegaradianPerSecondSquared",
-    "KiloradianPerSecondSquared",
-    "HectoradianPerSecondSquared",
-    "DekaradianPerSecondSquared",
-    "RadianPerSecondSquared",
-    "DeciradianPerSecondSquared",
-    "CentiradianPerSecondSquared",
-    "MilliradianPerSecondSquared",
-    "MicroradianPerSecondSquared",
-    "NanoradianPerSecondSquared",
-    "PicoradianPerSecondSquared",
-    "FemtoradianPerSecondSquared",
-    "AttoradianPerSecondSquared",
-    "ZeptoradianPerSecondSquared",
-    "YoctoradianPerSecondSquared"
-  ],
-  "conversion functions": {
-    "DegreePerSecondSquared": "(Math.PI / 180) * x",
-    "RevolutionPerMinutePerSecond": "((2 * Math.PI) / 60) * x",
-    "RevolutionPerSecondSquared": "(2 * Math.PI) * x",
-    "YottaradianPerSecondSquared": "x * 10e24",
-    "ZettaradianPerSecondSquared": "x * 10e21",
-    "ExaradianPerSecondSquared": "x * 10e18",
-    "PetaradianPerSecondSquared": "x * 10e15",
-    "TeraradianPerSecondSquared": "x * 10e12",
-    "GigaradianPerSecondSquared": "x * 10e9",
-    "MegaradianPerSecondSquared": "x * 10e6",
-    "KiloradianPerSecondSquared": "x * 10e3",
-    "HectoradianPerSecondSquared": "x * 10e2",
-    "DekaradianPerSecondSquared": "x * 10e1",
-    "RadianPerSecondSquared": "x * 10e0",
-    "DeciradianPerSecondSquared": "x * 10e-1",
-    "CentiradianPerSecondSquared": "x * 10e-2",
-    "MilliradianPerSecondSquared": "x * 10e-3",
-    "MicroradianPerSecondSquared": "x * 10e-6",
-    "NanoradianPerSecondSquared": "x * 10e-9",
-    "PicoradianPerSecondSquared": "x * 10e-12",
-    "FemtoradianPerSecondSquared": "x * 10e-15",
-    "AttoradianPerSecondSquared": "x * 10e-18",
-    "ZeptoradianPerSecondSquared": "x * 10e-21",
-    "YoctoradianPerSecondSquared": "x * 10e-24"
-  },
-  "symbols": {
-    "DegreePerSecondSquared": "°/s²",
-    "RevolutionPerMinutePerSecond": "rpm/s",
-    "RevolutionPerSecondSquared": "r/s²",
-    "YottaradianPerSecondSquared": "Yrad/s²",
-    "ZettaradianPerSecondSquared": "Zrad/s²",
-    "ExaradianPerSecondSquared": "Erad/s²",
-    "PetaradianPerSecondSquared": "Prad/s²",
-    "TeraradianPerSecondSquared": "Trad/s²",
-    "GigaradianPerSecondSquared": "Grad/s²",
-    "MegaradianPerSecondSquared": "Mrad/s²",
-    "KiloradianPerSecondSquared": "krad/s²",
-    "HectoradianPerSecondSquared": "hrad/s²",
-    "DekaradianPerSecondSquared": "darad/s²",
-    "RadianPerSecondSquared": "rad/s²",
-    "DeciradianPerSecondSquared": "drad/s²",
-    "CentiradianPerSecondSquared": "crad/s²",
-    "MilliradianPerSecondSquared": "mrad/s²",
-    "MicroradianPerSecondSquared": "µrad/s²",
-    "NanoradianPerSecondSquared": "nrad/s²",
-    "PicoradianPerSecondSquared": "prad/s²",
-    "FemtoradianPerSecondSquared": "frad/s²",
-    "AttoradianPerSecondSquared": "arad/s²",
-    "ZeptoradianPerSecondSquared": "zrad/s²",
-    "YoctoradianPerSecondSquared": "yrad/s²"
-  },
-  "plural symbols": {
-    "DegreePerSecondSquared": "deg/s²"
-  }
+    "name": "RotationalAcceleration",
+    "exponents": [
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        }
+    ],
+    "default unit": "RadianPerSecondSquared",
+    "units": [
+        {
+            "Length": 22
+        },
+        {
+            "Length": 22
+        },
+        {
+            "Length": 28
+        },
+        {
+            "Length": 26
+        }
+    ],
+    "conversion functions": [
+        {
+            "Key": "RadianPerSecondSquared",
+            "Value": "x"
+        },
+        {
+            "Key": "DegreePerSecondSquared",
+            "Value": "(Math.PI / 180) * x"
+        },
+        {
+            "Key": "RevolutionPerMinutePerSecond",
+            "Value": "((2 * Math.PI) / 60) * x"
+        },
+        {
+            "Key": "RevolutionPerSecondSquared",
+            "Value": "(2 * Math.PI) * x"
+        }
+    ],
+    "symbols": [
+        {
+            "Key": "RadianPerSecondSquared",
+            "Value": " "rad/s²" "
+        },
+        {
+            "Key": "DegreePerSecondSquared",
+            "Value": " "°/s²""
+        },
+        {
+            "Key": "RevolutionPerMinutePerSecond",
+            "Value": " "rpm/s" "
+        },
+        {
+            "Key": "RevolutionPerSecondSquared",
+            "Value": " "r/s²" "
+        }
+    ],
+    "plural symbols": [
+        {
+            "Key": "DegreePerSecondSquared",
+            "Value": " "deg/s²" "
+        }
+    ]
 }

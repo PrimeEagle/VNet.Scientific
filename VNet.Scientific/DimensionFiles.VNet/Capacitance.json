@@ -1,83 +1,39 @@
 {
-  "name": "Capacitance",
-  "exponents": [
-    -2,
-    -1,
-    4,
-    2,
-    0,
-    0,
-    0
-  ],
-  "default unit": "Farad",
-  "units": [
-    "Yottafarad",
-    "Zettafarad",
-    "Exafarad",
-    "Petafarad",
-    "Terafarad",
-    "Gigafarad",
-    "Megafarad",
-    "Kilofarad",
-    "Hectofarad",
-    "Dekafarad",
-    "Farad",
-    "Decifarad",
-    "Centifarad",
-    "Millifarad",
-    "Microfarad",
-    "Nanofarad",
-    "Picofarad",
-    "Femtofarad",
-    "Attofarad",
-    "Zeptofarad",
-    "Yoctofarad"
-  ],
-  "conversion functions": {
-    "Yottafarad": "x * 10e24",
-    "Zettafarad": "x * 10e21",
-    "Exafarad": "x * 10e18",
-    "Petafarad": "x * 10e15",
-    "Terafarad": "x * 10e12",
-    "Gigafarad": "x * 10e9",
-    "Megafarad": "x * 10e6",
-    "Kilofarad": "x * 10e3",
-    "Hectofarad": "x * 10e2",
-    "Dekafarad": "x * 10e1",
-    "Farad": "x * 10e0",
-    "Decifarad": "x * 10e-1",
-    "Centifarad": "x * 10e-2",
-    "Millifarad": "x * 10e-3",
-    "Microfarad": "x * 10e-6",
-    "Nanofarad": "x * 10e-9",
-    "Picofarad": "x * 10e-12",
-    "Femtofarad": "x * 10e-15",
-    "Attofarad": "x * 10e-18",
-    "Zeptofarad": "x * 10e-21",
-    "Yoctofarad": "x * 10e-24"
-  },
-  "symbols": {
-    "Yottafarad": "YF",
-    "Zettafarad": "ZF",
-    "Exafarad": "EF",
-    "Petafarad": "PF",
-    "Terafarad": "TF",
-    "Gigafarad": "GF",
-    "Megafarad": "MF",
-    "Kilofarad": "kF",
-    "Hectofarad": "hF",
-    "Dekafarad": "daF",
-    "Farad": "F",
-    "Decifarad": "dF",
-    "Centifarad": "cF",
-    "Millifarad": "mF",
-    "Microfarad": "µF",
-    "Nanofarad": "nF",
-    "Picofarad": "pF",
-    "Femtofarad": "fF",
-    "Attofarad": "aF",
-    "Zeptofarad": "zF",
-    "Yoctofarad": "yF"
-  },
-  "plural symbols": {}
+    "name": "Capacitance",
+    "exponents": [
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        }
+    ],
+    "default unit": "Farad",
+    "units": [
+        {
+            "Length": 5
+        }
+    ],
+    "conversion functions": [
+        {
+            "Key": "Farad",
+            "Value": "x"
+        }
+    ],
+    "symbols": [
+        {
+            "Key": "Farad",
+            "Value": " "F" "
+        }
+    ],
+    "plural symbols": [
+    ]
 }

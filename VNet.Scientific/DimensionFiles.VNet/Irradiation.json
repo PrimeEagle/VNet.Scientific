@@ -1,92 +1,72 @@
 {
-  "name": "Irradiation",
-  "exponents": [
-    0,
-    1,
-    -2,
-    0,
-    0,
-    0,
-    0
-  ],
-  "default unit": "JoulePerSquareMeter",
-  "units": [
-    "JoulePerSquareCentimeter",
-    "JoulePerSquareMillimeter",
-    "WattHourPerSquareMeter",
-    "YottajoulePerSquareMeter",
-    "ZettajoulePerSquareMeter",
-    "ExajoulePerSquareMeter",
-    "PetajoulePerSquareMeter",
-    "TerajoulePerSquareMeter",
-    "GigajoulePerSquareMeter",
-    "MegajoulePerSquareMeter",
-    "KilojoulePerSquareMeter",
-    "HectojoulePerSquareMeter",
-    "DekajoulePerSquareMeter",
-    "JoulePerSquareMeter",
-    "DecijoulePerSquareMeter",
-    "CentijoulePerSquareMeter",
-    "MillijoulePerSquareMeter",
-    "MicrojoulePerSquareMeter",
-    "NanojoulePerSquareMeter",
-    "PicojoulePerSquareMeter",
-    "FemtojoulePerSquareMeter",
-    "AttojoulePerSquareMeter",
-    "ZeptojoulePerSquareMeter",
-    "YoctojoulePerSquareMeter"
-  ],
-  "conversion functions": {
-    "JoulePerSquareCentimeter": "x * 1e4",
-    "JoulePerSquareMillimeter": "x * 1e6",
-    "WattHourPerSquareMeter": "x * 3600d",
-    "YottajoulePerSquareMeter": "x * 10e24",
-    "ZettajoulePerSquareMeter": "x * 10e21",
-    "ExajoulePerSquareMeter": "x * 10e18",
-    "PetajoulePerSquareMeter": "x * 10e15",
-    "TerajoulePerSquareMeter": "x * 10e12",
-    "GigajoulePerSquareMeter": "x * 10e9",
-    "MegajoulePerSquareMeter": "x * 10e6",
-    "KilojoulePerSquareMeter": "x * 10e3",
-    "HectojoulePerSquareMeter": "x * 10e2",
-    "DekajoulePerSquareMeter": "x * 10e1",
-    "JoulePerSquareMeter": "x * 10e0",
-    "DecijoulePerSquareMeter": "x * 10e-1",
-    "CentijoulePerSquareMeter": "x * 10e-2",
-    "MillijoulePerSquareMeter": "x * 10e-3",
-    "MicrojoulePerSquareMeter": "x * 10e-6",
-    "NanojoulePerSquareMeter": "x * 10e-9",
-    "PicojoulePerSquareMeter": "x * 10e-12",
-    "FemtojoulePerSquareMeter": "x * 10e-15",
-    "AttojoulePerSquareMeter": "x * 10e-18",
-    "ZeptojoulePerSquareMeter": "x * 10e-21",
-    "YoctojoulePerSquareMeter": "x * 10e-24"
-  },
-  "symbols": {
-    "JoulePerSquareCentimeter": "J/cm²",
-    "JoulePerSquareMillimeter": "J/mm²",
-    "WattHourPerSquareMeter": "Wh/m²",
-    "YottajoulePerSquareMeter": "YJ/m²",
-    "ZettajoulePerSquareMeter": "ZJ/m²",
-    "ExajoulePerSquareMeter": "EJ/m²",
-    "PetajoulePerSquareMeter": "PJ/m²",
-    "TerajoulePerSquareMeter": "TJ/m²",
-    "GigajoulePerSquareMeter": "GJ/m²",
-    "MegajoulePerSquareMeter": "MJ/m²",
-    "KilojoulePerSquareMeter": "kJ/m²",
-    "HectojoulePerSquareMeter": "hJ/m²",
-    "DekajoulePerSquareMeter": "daJ/m²",
-    "JoulePerSquareMeter": "J/m²",
-    "DecijoulePerSquareMeter": "dJ/m²",
-    "CentijoulePerSquareMeter": "cJ/m²",
-    "MillijoulePerSquareMeter": "mJ/m²",
-    "MicrojoulePerSquareMeter": "µJ/m²",
-    "NanojoulePerSquareMeter": "nJ/m²",
-    "PicojoulePerSquareMeter": "pJ/m²",
-    "FemtojoulePerSquareMeter": "fJ/m²",
-    "AttojoulePerSquareMeter": "aJ/m²",
-    "ZeptojoulePerSquareMeter": "zJ/m²",
-    "YoctojoulePerSquareMeter": "yJ/m²"
-  },
-  "plural symbols": {}
+    "name": "Irradiation",
+    "exponents": [
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        }
+    ],
+    "default unit": "JoulePerSquareMeter",
+    "units": [
+        {
+            "Length": 19
+        },
+        {
+            "Length": 24
+        },
+        {
+            "Length": 24
+        },
+        {
+            "Length": 22
+        }
+    ],
+    "conversion functions": [
+        {
+            "Key": "JoulePerSquareMeter",
+            "Value": "x"
+        },
+        {
+            "Key": "JoulePerSquareCentimeter",
+            "Value": "x * 1e4"
+        },
+        {
+            "Key": "JoulePerSquareMillimeter",
+            "Value": "x * 1e6"
+        },
+        {
+            "Key": "WattHourPerSquareMeter",
+            "Value": "x * 3600d"
+        }
+    ],
+    "symbols": [
+        {
+            "Key": "JoulePerSquareMeter",
+            "Value": " "J/m²" "
+        },
+        {
+            "Key": "JoulePerSquareCentimeter",
+            "Value": " "J/cm²" "
+        },
+        {
+            "Key": "JoulePerSquareMillimeter",
+            "Value": " "J/mm²" "
+        },
+        {
+            "Key": "WattHourPerSquareMeter",
+            "Value": " "Wh/m²" "
+        }
+    ],
+    "plural symbols": [
+    ]
 }

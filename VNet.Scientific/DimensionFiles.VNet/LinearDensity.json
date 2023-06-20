@@ -1,35 +1,83 @@
 {
-  "name": "LinearDensity",
-  "exponents": [
-    -1,
-    1,
-    0,
-    0,
-    0,
-    0,
-    0
-  ],
-  "default unit": "KilogramPerMeter",
-  "units": [
-    "GramPerMillimeter",
-    "GramPerCentimeter",
-    "GramPerMeter",
-    "PoundPerInch",
-    "PoundPerFoot"
-  ],
-  "conversion functions": {
-    "GramPerMillimeter": "x",
-    "GramPerCentimeter": "x * 1e-1",
-    "GramPerMeter": "x * 1e-3",
-    "PoundPerInch": "x / 5.5997415e-2",
-    "PoundPerFoot": "x * 1.48816394"
-  },
-  "symbols": {
-    "GramPerMillimeter": "g/mm",
-    "GramPerCentimeter": "g/cm",
-    "GramPerMeter": "g/m",
-    "PoundPerInch": "lb/in",
-    "PoundPerFoot": "lb/ft"
-  },
-  "plural symbols": {}
+    "name": "LinearDensity",
+    "exponents": [
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        }
+    ],
+    "default unit": "KilogramPerMeter",
+    "units": [
+        {
+            "Length": 17
+        },
+        {
+            "Length": 17
+        },
+        {
+            "Length": 12
+        },
+        {
+            "Length": 12
+        },
+        {
+            "Length": 12
+        }
+    ],
+    "conversion functions": [
+        {
+            "Key": "GramPerMillimeter",
+            "Value": "x"
+        },
+        {
+            "Key": "GramPerCentimeter",
+            "Value": "x * 1e-1"
+        },
+        {
+            "Key": "GramPerMeter",
+            "Value": "x * 1e-3"
+        },
+        {
+            "Key": "PoundPerInch",
+            "Value": "x / 5.5997415e-2"
+        },
+        {
+            "Key": "PoundPerFoot",
+            "Value": "x * 1.48816394"
+        }
+    ],
+    "symbols": [
+        {
+            "Key": "GramPerMillimeter",
+            "Value": " "g/mm" "
+        },
+        {
+            "Key": "GramPerCentimeter",
+            "Value": " "g/cm" "
+        },
+        {
+            "Key": "GramPerMeter",
+            "Value": " "g/m" "
+        },
+        {
+            "Key": "PoundPerInch",
+            "Value": " "lb/in" "
+        },
+        {
+            "Key": "PoundPerFoot",
+            "Value": " "lb/ft" "
+        }
+    ],
+    "plural symbols": [
+    ]
 }

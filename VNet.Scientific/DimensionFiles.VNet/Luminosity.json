@@ -1,86 +1,50 @@
 {
-  "name": "Luminosity",
-  "exponents": [
-    2,
-    1,
-    -3,
-    0,
-    0,
-    0,
-    0
-  ],
-  "default unit": "Watt",
-  "units": [
-    "SolarLuminosity",
-    "Yottawatt",
-    "Zettawatt",
-    "Exawatt",
-    "Petawatt",
-    "Terawatt",
-    "Gigawatt",
-    "Megawatt",
-    "Kilowatt",
-    "Hectowatt",
-    "Dekawatt",
-    "Watt",
-    "Deciwatt",
-    "Centiwatt",
-    "Milliwatt",
-    "Microwatt",
-    "Nanowatt",
-    "Picowatt",
-    "Femtowatt",
-    "Attowatt",
-    "Zeptowatt",
-    "Yoctowatt"
-  ],
-  "conversion functions": {
-    "SolarLuminosity": "x * 3.846e26",
-    "Yottawatt": "x * 10e24",
-    "Zettawatt": "x * 10e21",
-    "Exawatt": "x * 10e18",
-    "Petawatt": "x * 10e15",
-    "Terawatt": "x * 10e12",
-    "Gigawatt": "x * 10e9",
-    "Megawatt": "x * 10e6",
-    "Kilowatt": "x * 10e3",
-    "Hectowatt": "x * 10e2",
-    "Dekawatt": "x * 10e1",
-    "Watt": "x * 10e0",
-    "Deciwatt": "x * 10e-1",
-    "Centiwatt": "x * 10e-2",
-    "Milliwatt": "x * 10e-3",
-    "Microwatt": "x * 10e-6",
-    "Nanowatt": "x * 10e-9",
-    "Picowatt": "x * 10e-12",
-    "Femtowatt": "x * 10e-15",
-    "Attowatt": "x * 10e-18",
-    "Zeptowatt": "x * 10e-21",
-    "Yoctowatt": "x * 10e-24"
-  },
-  "symbols": {
-    "SolarLuminosity": "L⊙",
-    "Yottawatt": "YW",
-    "Zettawatt": "ZW",
-    "Exawatt": "EW",
-    "Petawatt": "PW",
-    "Terawatt": "TW",
-    "Gigawatt": "GW",
-    "Megawatt": "MW",
-    "Kilowatt": "kW",
-    "Hectowatt": "hW",
-    "Dekawatt": "daW",
-    "Watt": "W",
-    "Deciwatt": "dW",
-    "Centiwatt": "cW",
-    "Milliwatt": "mW",
-    "Microwatt": "µW",
-    "Nanowatt": "nW",
-    "Picowatt": "pW",
-    "Femtowatt": "fW",
-    "Attowatt": "aW",
-    "Zeptowatt": "zW",
-    "Yoctowatt": "yW"
-  },
-  "plural symbols": {}
+    "name": "Luminosity",
+    "exponents": [
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        }
+    ],
+    "default unit": "Watt",
+    "units": [
+        {
+            "Length": 4
+        },
+        {
+            "Length": 15
+        }
+    ],
+    "conversion functions": [
+        {
+            "Key": "Watt",
+            "Value": "x"
+        },
+        {
+            "Key": "SolarLuminosity",
+            "Value": "x * 3.846e26"
+        }
+    ],
+    "symbols": [
+        {
+            "Key": "Watt",
+            "Value": " "W" "
+        },
+        {
+            "Key": "SolarLuminosity",
+            "Value": " "L⊙" "
+        }
+    ],
+    "plural symbols": [
+    ]
 }

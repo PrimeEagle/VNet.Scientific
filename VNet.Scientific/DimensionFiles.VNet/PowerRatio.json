@@ -1,28 +1,54 @@
 {
-  "name": "PowerRatio",
-  "exponents": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
-  ],
-  "default unit": "DecibelWatt",
-  "units": [
-    "DecibelWatt",
-    "DecibelMilliwatt"
-  ],
-  "conversion functions": {
-    "DecibelWatt": "x",
-    "DecibelMilliwatt": "x - 30"
-  },
-  "symbols": {
-    "DecibelWatt": "dBW",
-    "DecibelMilliwatt": "dBmW"
-  },
-  "plural symbols": {
-    "DecibelMilliwatt": "dBm"
-  }
+    "name": "PowerRatio",
+    "exponents": [
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        }
+    ],
+    "default unit": "DecibelWatt",
+    "units": [
+        {
+            "Length": 11
+        },
+        {
+            "Length": 16
+        }
+    ],
+    "conversion functions": [
+        {
+            "Key": "DecibelWatt",
+            "Value": "x"
+        },
+        {
+            "Key": "DecibelMilliwatt",
+            "Value": "x - 30"
+        }
+    ],
+    "symbols": [
+        {
+            "Key": "DecibelWatt",
+            "Value": " "dBW" "
+        },
+        {
+            "Key": "DecibelMilliwatt",
+            "Value": " "dBmW""
+        }
+    ],
+    "plural symbols": [
+        {
+            "Key": "DecibelMilliwatt",
+            "Value": " "dBm" "
+        }
+    ]
 }

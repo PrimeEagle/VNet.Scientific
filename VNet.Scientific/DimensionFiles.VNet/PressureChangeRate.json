@@ -1,101 +1,102 @@
 {
-  "name": "PressureChangeRate",
-  "exponents": [
-    -1,
-    1,
-    -3,
-    0,
-    0,
-    0,
-    0
-  ],
-  "default unit": "PascalPerSecond",
-  "units": [
-    "PascalPerMinute",
-    "MillimeterOfMercuryPerSecond",
-    "AtmospherePerSecond",
-    "PoundForcePerSquareInchPerSecond",
-    "PoundForcePerSquareInchPerMinute",
-    "YottapascalPerSecond",
-    "ZettapascalPerSecond",
-    "ExapascalPerSecond",
-    "PetapascalPerSecond",
-    "TerapascalPerSecond",
-    "GigapascalPerSecond",
-    "MegapascalPerSecond",
-    "KilopascalPerSecond",
-    "HectopascalPerSecond",
-    "DekapascalPerSecond",
-    "PascalPerSecond",
-    "DecipascalPerSecond",
-    "CentipascalPerSecond",
-    "MillipascalPerSecond",
-    "MicropascalPerSecond",
-    "NanopascalPerSecond",
-    "PicopascalPerSecond",
-    "FemtopascalPerSecond",
-    "AttopascalPerSecond",
-    "ZeptopascalPerSecond",
-    "YoctopascalPerSecond"
-  ],
-  "conversion functions": {
-    "PascalPerMinute": "x / 60",
-    "MillimeterOfMercuryPerSecond": "x * 133.322",
-    "AtmospherePerSecond": "x * 1.01325 * 1e5",
-    "PoundForcePerSquareInchPerSecond": "x * 6.894757293168361e3",
-    "PoundForcePerSquareInchPerMinute": "x * 6.894757293168361e3 / 60",
-    "YottapascalPerSecond": "x * 10e24",
-    "ZettapascalPerSecond": "x * 10e21",
-    "ExapascalPerSecond": "x * 10e18",
-    "PetapascalPerSecond": "x * 10e15",
-    "TerapascalPerSecond": "x * 10e12",
-    "GigapascalPerSecond": "x * 10e9",
-    "MegapascalPerSecond": "x * 10e6",
-    "KilopascalPerSecond": "x * 10e3",
-    "HectopascalPerSecond": "x * 10e2",
-    "DekapascalPerSecond": "x * 10e1",
-    "PascalPerSecond": "x * 10e0",
-    "DecipascalPerSecond": "x * 10e-1",
-    "CentipascalPerSecond": "x * 10e-2",
-    "MillipascalPerSecond": "x * 10e-3",
-    "MicropascalPerSecond": "x * 10e-6",
-    "NanopascalPerSecond": "x * 10e-9",
-    "PicopascalPerSecond": "x * 10e-12",
-    "FemtopascalPerSecond": "x * 10e-15",
-    "AttopascalPerSecond": "x * 10e-18",
-    "ZeptopascalPerSecond": "x * 10e-21",
-    "YoctopascalPerSecond": "x * 10e-24"
-  },
-  "symbols": {
-    "PascalPerMinute": "Pa/min",
-    "MillimeterOfMercuryPerSecond": "mmHg/s",
-    "AtmospherePerSecond": "atm/s",
-    "PoundForcePerSquareInchPerSecond": "psi/s",
-    "PoundForcePerSquareInchPerMinute": "psi/min",
-    "YottapascalPerSecond": "YPa/s",
-    "ZettapascalPerSecond": "ZPa/s",
-    "ExapascalPerSecond": "EPa/s",
-    "PetapascalPerSecond": "PPa/s",
-    "TerapascalPerSecond": "TPa/s",
-    "GigapascalPerSecond": "GPa/s",
-    "MegapascalPerSecond": "MPa/s",
-    "KilopascalPerSecond": "kPa/s",
-    "HectopascalPerSecond": "hPa/s",
-    "DekapascalPerSecond": "daPa/s",
-    "PascalPerSecond": "Pa/s",
-    "DecipascalPerSecond": "dPa/s",
-    "CentipascalPerSecond": "cPa/s",
-    "MillipascalPerSecond": "mPa/s",
-    "MicropascalPerSecond": "µPa/s",
-    "NanopascalPerSecond": "nPa/s",
-    "PicopascalPerSecond": "pPa/s",
-    "FemtopascalPerSecond": "fPa/s",
-    "AttopascalPerSecond": "aPa/s",
-    "ZeptopascalPerSecond": "zPa/s",
-    "YoctopascalPerSecond": "yPa/s"
-  },
-  "plural symbols": {
-    "PoundForcePerSquareInchPerSecond": "lb/in²/s",
-    "PoundForcePerSquareInchPerMinute": "lb/in²/min"
-  }
+    "name": "PressureChangeRate",
+    "exponents": [
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        }
+    ],
+    "default unit": "PascalPerSecond",
+    "units": [
+        {
+            "Length": 15
+        },
+        {
+            "Length": 15
+        },
+        {
+            "Length": 28
+        },
+        {
+            "Length": 19
+        },
+        {
+            "Length": 32
+        },
+        {
+            "Length": 32
+        }
+    ],
+    "conversion functions": [
+        {
+            "Key": "PascalPerSecond",
+            "Value": "x"
+        },
+        {
+            "Key": "PascalPerMinute",
+            "Value": "x / 60"
+        },
+        {
+            "Key": "MillimeterOfMercuryPerSecond",
+            "Value": "x * 133.322"
+        },
+        {
+            "Key": "AtmospherePerSecond",
+            "Value": "x * 1.01325 * 1e5"
+        },
+        {
+            "Key": "PoundForcePerSquareInchPerSecond",
+            "Value": "x * 6.894757293168361e3"
+        },
+        {
+            "Key": "PoundForcePerSquareInchPerMinute",
+            "Value": "x * 6.894757293168361e3 / 60"
+        }
+    ],
+    "symbols": [
+        {
+            "Key": "PascalPerSecond",
+            "Value": " "Pa/s" "
+        },
+        {
+            "Key": "PascalPerMinute",
+            "Value": " "Pa/min" "
+        },
+        {
+            "Key": "MillimeterOfMercuryPerSecond",
+            "Value": " "mmHg/s" "
+        },
+        {
+            "Key": "AtmospherePerSecond",
+            "Value": " "atm/s" "
+        },
+        {
+            "Key": "PoundForcePerSquareInchPerSecond",
+            "Value": " "psi/s""
+        },
+        {
+            "Key": "PoundForcePerSquareInchPerMinute",
+            "Value": " "psi/min""
+        }
+    ],
+    "plural symbols": [
+        {
+            "Key": "PoundForcePerSquareInchPerSecond",
+            "Value": " "lb/in²/s" "
+        },
+        {
+            "Key": "PoundForcePerSquareInchPerMinute",
+            "Value": " "lb/in²/min" "
+        }
+    ]
 }
