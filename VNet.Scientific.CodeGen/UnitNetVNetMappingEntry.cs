@@ -1,15 +1,15 @@
 ﻿// ReSharper disable ClassNeverInstantiated.Global
-using VNet.CodeGeneration.Json;
+using VNet.CodeGeneration.ZeroDepJson;
 
 
 namespace VNet.Scientific.CodeGen
 {
     public class UnitNetVNetMappingEntry
     {
-        [VNetJsonProperty("unitNetName")]
+        [Json("unitNetName")]
         public string UnitNetName { get; set; }
 
-        [VNetJsonProperty("vNetName")]
+        [Json("vNetName")]
         public string VNetName { get; set; }
     }
 }

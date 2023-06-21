@@ -35,31 +35,60 @@ namespace VNet.Scientific.CodeGen.UnitNet
                                                                 })
                                                                     .ToDictionary(u => u.Key, u => u.Value);
 
-        public Dictionary<string, string> Symbols =>
-                                                                Units.Select(u => new
-                                                                {
-                                                                    Key = u.SingularName,
-                                                                    Value = u.Localization
-                                                                        .FirstOrDefault(l => l.Culture == "en-US")?
-                                                                        .Abbreviations
-                                                                        .FirstOrDefault()
-                                                                })
-                                                                .Where(u => u.Value != null)
-                                                                .ToDictionary(u => u.Key, u => u.Value);
+        public Dictionary<string, string> Symbols
+        {
+            get
+            {
+                var localizations = Units.Select(u => new
+                {
+                    Key = u.SingularName,
+                    Value = u.Localization.FirstOrDefault(l => l.Culture == "en-US")
+                }
+                ).Where(u => u.Value != null);
+
+                if (localizations != null)
+                {
 
 
+                    var a = localizations.Select(l => new
+                    {
+                        Key = l.Key,
+                        Value = l.Value.Abbreviations == null ? null : l.Value.Abbreviations.FirstOrDefault()
+                    }).Where(u => u.Value != null);
+                    
+                    if(a != null && a.First().Key != null && a.First().Value != null) return a.ToDictionary(u => u.Key, u => u.Value);
 
-        public Dictionary<string, string> PluralSymbols =>
-                                                                Units.Select(u => new
-                                                                {
-                                                                    Key = u.SingularName,
-                                                                    Value = u.Localization
-                                                                        .FirstOrDefault(l => l.Culture == "en-US")?
-                                                                        .Abbreviations.Skip(1)
-                                                                        .FirstOrDefault()
-                                                                })
-                                                                .Where(u => u.Value != null)
-                                                                .ToDictionary(u => u.Key, u => u.Value);
+                }
 
+                return new Dictionary<string, string>();
+            }
+        }
+
+
+        public Dictionary<string, string> PluralSymbols
+        {
+            get
+            {
+                var localizations = Units.Select(u => new
+                {
+                    Key = u.SingularName,
+                    Value = u.Localization.FirstOrDefault(l => l.Culture == "en-US")
+                }
+                ).Where(u => u.Value != null);
+
+                if (localizations != null)
+                {
+
+                    return localizations.Select(l => new
+                    {
+                        Key = l.Key,
+                        Value = l.Value.Abbreviations == null ? null : l.Value.Abbreviations.Skip(1).FirstOrDefault()
+                    }).Where(u => u.Value != null).ToDictionary(u => u.Key, u => u.Value);
+
+                }
+
+                return new Dictionary<string, string>();
+            }
+        }
     }
 }

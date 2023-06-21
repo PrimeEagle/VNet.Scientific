@@ -5,7 +5,7 @@ using System.IO;
 using System.Text;
 using VNet.CodeGeneration.Extensions;
 using VNet.CodeGeneration.FileComparer;
-using VNet.CodeGeneration.Json;
+using VNet.CodeGeneration.ZeroDepJson;
 //using VNet.CodeGeneration.Extensions;
 //using VNet.CodeGeneration.FileComparer;
 //using VNet.CodeGeneration.Log;
@@ -71,7 +71,7 @@ namespace VNet.Scientific.CodeGen
                 }
                 log.WriteLine($"{mappingJson}");
 
-                var mapping = VNetJsonSerializer.Deserialize<List<UnitNetVNetMappingEntry>>(mappingJson.Trim());
+                var mapping = Json.Deserialize<List<UnitNetVNetMappingEntry>>(mappingJson.Trim());
 
 
                 var fileNameUnitNet = Path.Combine(context.ProjectDir(), "DimensionFiles.UnitNet", "_dimensionHashFile.json");
@@ -82,7 +82,7 @@ namespace VNet.Scientific.CodeGen
                 foreach (var unitNetFile in dimensionHashFileUnitNet.GetUpdatedEntries())
                 {
                     log.WriteLine($"{unitNetFile.FileName}");
-                    var dimUnitNet = VNetJsonSerializer.Deserialize<UnitNetDimension>(unitNetFile.GetJson());
+                    var dimUnitNet = Json.Deserialize<UnitNetDimension>(unitNetFile.GetJson());
                     var dimVNet = VNetDimension.ConvertFrom(dimUnitNet, mapping);
 
                     var saveFileName = context.ProjectDir() + @"DimensionFiles.VNet\" + dimVNet.Name + ".json";
@@ -99,7 +99,7 @@ namespace VNet.Scientific.CodeGen
 
                 foreach (var vNetFile in dimensionHashFileVNet.GetUpdatedEntries())
                 {
-                    var dimVNet = VNetJsonSerializer.Deserialize<VNetDimension>(vNetFile.GetJson());
+                    var dimVNet = Json.Deserialize<VNetDimension>(vNetFile.GetJson());
                     log.WriteLine($"  dimension = {dimVNet.Name}, default unit = {dimVNet.DefaultUnit}");
                     foreach (var u in dimVNet.Units)
                     {

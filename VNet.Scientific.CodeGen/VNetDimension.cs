@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
-using VNet.CodeGeneration.Json;
+using VNet.CodeGeneration.Log;
+using VNet.CodeGeneration.ZeroDepJson;
 //using VNet.CodeGeneration.Log;
 
 // ReSharper disable CollectionNeverQueried.Global
@@ -13,25 +14,25 @@ namespace VNet.Scientific.CodeGen
 {
     public class VNetDimension
     {
-        [VNetJsonProperty("name")] 
+        [Json("name")] 
         public string Name { get; set; }
 
-        [VNetJsonProperty("exponents")] 
+        [Json("exponents")] 
         public List<float> Exponents { get; set; }
 
-        [VNetJsonProperty("default unit")] 
+        [Json("default unit")] 
         public string DefaultUnit { get; set; }
 
-        [VNetJsonProperty("units")] 
+        [Json("units")] 
         public List<string> Units { get; set; }
 
-        [VNetJsonProperty("conversion functions")]
+        [Json("conversion functions")]
         public Dictionary<string, string> ConversionFunctions { get; set; }
 
-        [VNetJsonProperty("symbols")] 
+        [Json("symbols")] 
         public Dictionary<string, string> Symbols { get; set; }
 
-        [VNetJsonProperty("plural symbols")] 
+        [Json("plural symbols")] 
         public Dictionary<string, string> PluralSymbols { get; set; }
 
 
@@ -83,9 +84,9 @@ namespace VNet.Scientific.CodeGen
 
         private static void AddOrUpdateMetricPrefixes(VNetDimension dimVNet)
         {
-           //var log = new Logger();
-            //log.Initialize(@"D:\generator_add.log");
-            //log.WriteLine($"AddOrUpdate for {dimVNet.Name}");
+            var log = new Logger();
+            log.Initialize(@"D:\generator_add.log");
+            log.WriteLine($"AddOrUpdate for {dimVNet.Name}");
 
             var metricPrefixes = new Dictionary<string, Tuple<string, string>>
             {
@@ -132,7 +133,7 @@ namespace VNet.Scientific.CodeGen
 
             string defaultSymbol = null;
             string defaultPluralSymbol = null;
-            //log.WriteLine($"  default unit = {dimVNet.DefaultUnit}");
+            log.WriteLine($"  default unit = {dimVNet.DefaultUnit}");
 
             var baseDefaultUnit = dimVNet.DefaultUnit;
             var lowerDefaultUnit = baseDefaultUnit.ToLower();
@@ -159,12 +160,15 @@ namespace VNet.Scientific.CodeGen
                 case "kilogramsquaremeter":
                 case "kilogrampermole":
                 case "kilogrammeterpersecondsquare":
+
+                    log.WriteLine("2");
+                    log.WriteLine($"lowerDefaultUnit = {lowerDefaultUnit}");
+                    log.WriteLine($"baseDefaultUnit = {baseDefaultUnit}");
+                    suffix = baseDefaultUnit.Substring(8);
                     baseDefaultUnit = "Gram";
                     //log.WriteLine("1");
                     lowerDefaultUnit = "gram";
-                    //log.WriteLine("2");
-                    suffix = baseDefaultUnit.Substring(8);
-                    //log.WriteLine("3");
+                    log.WriteLine("3");
                     defaultSymbol = "g";
                     //log.WriteLine("4");
                     scalingFactor = 1000d;
@@ -204,57 +208,74 @@ namespace VNet.Scientific.CodeGen
             //log.WriteLine("6");
             if (prePrefix.Length > 0)
             {
-                //log.WriteLine("7");
+                log.WriteLine("7");
                 baseDefaultUnit = baseDefaultUnit.Substring(prePrefix.Length);
-                //log.WriteLine("8");
+                log.WriteLine("8");
                 lowerDefaultUnit = baseDefaultUnit.ToLower();
                 //log.WriteLine("9");
             }
 
-           // log.WriteLine($"   baseDefaultUnit = {baseDefaultUnit}");
-           //log.WriteLine($"   lowerDefaultUnit = {lowerDefaultUnit}");
+            // log.WriteLine($"   baseDefaultUnit = {baseDefaultUnit}");
+            //log.WriteLine($"   lowerDefaultUnit = {lowerDefaultUnit}");
 
             // remove any existing metric prefixes for default unit, for unit names
-            dimVNet.Units.RemoveAll(u => u.ToLower() == prePrefix + lowerDefaultUnit);
-            dimVNet.Units.RemoveAll(u => metricPrefixes.Keys.Any(prefix => u.ToLower() == prePrefix + prefix.ToLower() + lowerDefaultUnit));
-            foreach (var u in dimVNet.Units)
-            {
-                //log.WriteLine($"   remaining unit = {u}");
-            }
-            dimVNet.ConversionFunctions = dimVNet.ConversionFunctions.Where(kv => dimVNet.Units.Contains(kv.Key)).ToDictionary(kv => kv.Key, kv => kv.Value);
-            dimVNet.Symbols = dimVNet.Symbols.Where(kv => dimVNet.Units.Contains(kv.Key)).ToDictionary(kv => kv.Key, kv => kv.Value);
-            dimVNet.PluralSymbols = dimVNet.PluralSymbols.Where(kv => dimVNet.Units.Contains(kv.Key)).ToDictionary(kv => kv.Key, kv => kv.Value);
+
 
             // add all metric prefixes for unit names
+            int p = 0;
             foreach (var prefix in metricPrefixes.Keys)
             {
-                var unitName = Capitalize(prePrefix)  + Capitalize(prefix) + (string.IsNullOrEmpty(prefix) ? dimVNet.DefaultUnit : Capitalize(baseDefaultUnit) + Capitalize(suffix));
-               // log.WriteLine($"  unitName = {unitName}");
+                var unitName = Capitalize(prePrefix) + Capitalize(prefix) + (string.IsNullOrEmpty(prefix) ? dimVNet.DefaultUnit : Capitalize(baseDefaultUnit) + Capitalize(suffix));
+
+                log.WriteLine("  A");
+                dimVNet.Units.RemoveAll(u => u.ToLower() == unitName.ToLower());
+                //dimVNet.Units.RemoveAll(u => metricPrefixes.Keys.Any(prefix => u.ToLower() == prePrefix + prefix.ToLower() + lowerDefaultUnit));
+
+                dimVNet.ConversionFunctions = dimVNet.ConversionFunctions.Where(kv => dimVNet.Units.Contains(kv.Key)).ToDictionary(kv => kv.Key, kv => kv.Value);
+                dimVNet.Symbols = dimVNet.Symbols.Where(kv => dimVNet.Units.Contains(kv.Key)).ToDictionary(kv => kv.Key, kv => kv.Value);
+                dimVNet.PluralSymbols = dimVNet.PluralSymbols.Where(kv => dimVNet.Units.Contains(kv.Key)).ToDictionary(kv => kv.Key, kv => kv.Value);
+                //log.WriteLine($"  p = {p++}");
+                
+                // log.WriteLine($"  unitName = {unitName}");
                 //log.WriteLine($"   prePrefix = {prePrefix}");
                 //log.WriteLine($"   prefix = {prefix}");
                 //log.WriteLine($"   Capitalize(prefix) = {Capitalize(prefix)}");
+                log.WriteLine("  adding unit");
                 dimVNet.Units.Add(unitName);
 
                 //log.WriteLine($"   metricPrefix value = {metricPrefixes[prefix].Item2}");
                 //log.WriteLine($"   exponentFactor = {exponentFactor}");
                 //log.WriteLine($"   calc = x {calcOperator} { AdjustExponent(metricPrefixes[prefix].Item2, exponentFactor) }");
-                dimVNet.ConversionFunctions.Add(unitName, $"x {calcOperator} {AdjustExponent(metricPrefixes[prefix].Item2, exponentFactor)}");
+                log.WriteLine("  adding conversion function");
+                var func = $"x {calcOperator} {AdjustExponent(metricPrefixes[prefix].Item2, exponentFactor)}";
+                log.WriteLine($"    adding: {unitName}");
+
+                foreach(var c in dimVNet.ConversionFunctions.Keys)
+                {
+                    log.WriteLine($"  existing entry key: {c}");
+                }
+                dimVNet.ConversionFunctions.Add(unitName, func);
 
                 if (!string.IsNullOrEmpty(defaultSymbol))
                 {
+                    log.WriteLine("  adding symbol");
                     dimVNet.Symbols.Add(unitName, $"{metricPrefixes[prefix].Item1}{defaultSymbol}");
+                    log.WriteLine("  done");
                 }
 
                 if (!string.IsNullOrEmpty(defaultPluralSymbol))
                 {
+                    log.WriteLine("  adding plural symbol");
                     dimVNet.PluralSymbols.Add(unitName, $"{metricPrefixes[prefix].Item1}{defaultPluralSymbol}");
+                    log.WriteLine("  done");
                 }
             }
 
             if (scalingFactor != 1.0d)
             {
-                foreach (var cfk in dimVNet.ConversionFunctions.Keys)
+                foreach (var cfk in dimVNet.ConversionFunctions.Keys.ToArray())
                 {
+                    log.WriteLine($"  scaling {cfk}");
                     dimVNet.ConversionFunctions[cfk] =  $"{scalingFactor} * ({dimVNet.ConversionFunctions[cfk]})";
                 }
             }
@@ -262,7 +283,7 @@ namespace VNet.Scientific.CodeGen
 
         public void Save(string fileName)
         {
-            var json = VNetJsonSerializer.Serialize(this, true);
+            var json = Json.Serialize(this);
             json = Regex.Unescape(json);
 
             File.WriteAllText(fileName, json);
