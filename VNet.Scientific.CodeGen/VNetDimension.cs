@@ -69,10 +69,10 @@ namespace VNet.Scientific.CodeGen
             foreach (var unitName in source.UnitNames)
             {
                 if (!dimVNet.Units.Contains(unitName)) dimVNet.Units.Add(unitName);
-                dimVNet.ConversionFunctions = new Dictionary<string, string>(source.ConversionFunctions);
-                dimVNet.Symbols = new Dictionary<string, string>(source.Symbols);
-                dimVNet.PluralSymbols = new Dictionary<string, string>(source.PluralSymbols);
             }
+            dimVNet.ConversionFunctions = new Dictionary<string, string>(source.ConversionFunctions);
+            dimVNet.Symbols = new Dictionary<string, string>(source.Symbols);
+            dimVNet.PluralSymbols = new Dictionary<string, string>(source.PluralSymbols);
 
             return dimVNet;
         }
@@ -84,10 +84,6 @@ namespace VNet.Scientific.CodeGen
 
         private static void AddOrUpdateMetricPrefixes(VNetDimension dimVNet)
         {
-            var log = new Logger();
-            log.Initialize(@"D:\generator_add.log");
-            log.WriteLine($"AddOrUpdate for {dimVNet.Name}");
-
             var metricPrefixes = new Dictionary<string, Tuple<string, string>>
             {
                 { "yotta", new Tuple<string, string>("Y", "1e24") },
@@ -133,7 +129,6 @@ namespace VNet.Scientific.CodeGen
 
             string defaultSymbol = null;
             string defaultPluralSymbol = null;
-            log.WriteLine($"  default unit = {dimVNet.DefaultUnit}");
 
             var baseDefaultUnit = dimVNet.DefaultUnit;
             var lowerDefaultUnit = baseDefaultUnit.ToLower();
@@ -161,18 +156,11 @@ namespace VNet.Scientific.CodeGen
                 case "kilogrampermole":
                 case "kilogrammeterpersecondsquare":
 
-                    log.WriteLine("2");
-                    log.WriteLine($"lowerDefaultUnit = {lowerDefaultUnit}");
-                    log.WriteLine($"baseDefaultUnit = {baseDefaultUnit}");
                     suffix = baseDefaultUnit.Substring(8);
                     baseDefaultUnit = "Gram";
-                    //log.WriteLine("1");
                     lowerDefaultUnit = "gram";
-                    log.WriteLine("3");
                     defaultSymbol = "g";
-                    //log.WriteLine("4");
                     scalingFactor = 1000d;
-                   //log.WriteLine("5");
                     break;
                 case "squaremeter":
                 case "squaremeterkelvinperkilowatt":
@@ -205,21 +193,11 @@ namespace VNet.Scientific.CodeGen
                     break;
             }
 
-            //log.WriteLine("6");
             if (prePrefix.Length > 0)
             {
-                log.WriteLine("7");
                 baseDefaultUnit = baseDefaultUnit.Substring(prePrefix.Length);
-                log.WriteLine("8");
                 lowerDefaultUnit = baseDefaultUnit.ToLower();
-                //log.WriteLine("9");
             }
-
-            // log.WriteLine($"   baseDefaultUnit = {baseDefaultUnit}");
-            //log.WriteLine($"   lowerDefaultUnit = {lowerDefaultUnit}");
-
-            // remove any existing metric prefixes for default unit, for unit names
-
 
             // add all metric prefixes for unit names
             int p = 0;
@@ -227,47 +205,24 @@ namespace VNet.Scientific.CodeGen
             {
                 var unitName = Capitalize(prePrefix) + Capitalize(prefix) + (string.IsNullOrEmpty(prefix) ? dimVNet.DefaultUnit : Capitalize(baseDefaultUnit) + Capitalize(suffix));
 
-                log.WriteLine("  A");
                 dimVNet.Units.RemoveAll(u => u.ToLower() == unitName.ToLower());
-                //dimVNet.Units.RemoveAll(u => metricPrefixes.Keys.Any(prefix => u.ToLower() == prePrefix + prefix.ToLower() + lowerDefaultUnit));
-
                 dimVNet.ConversionFunctions = dimVNet.ConversionFunctions.Where(kv => dimVNet.Units.Contains(kv.Key)).ToDictionary(kv => kv.Key, kv => kv.Value);
                 dimVNet.Symbols = dimVNet.Symbols.Where(kv => dimVNet.Units.Contains(kv.Key)).ToDictionary(kv => kv.Key, kv => kv.Value);
                 dimVNet.PluralSymbols = dimVNet.PluralSymbols.Where(kv => dimVNet.Units.Contains(kv.Key)).ToDictionary(kv => kv.Key, kv => kv.Value);
-                //log.WriteLine($"  p = {p++}");
-                
-                // log.WriteLine($"  unitName = {unitName}");
-                //log.WriteLine($"   prePrefix = {prePrefix}");
-                //log.WriteLine($"   prefix = {prefix}");
-                //log.WriteLine($"   Capitalize(prefix) = {Capitalize(prefix)}");
-                log.WriteLine("  adding unit");
+
                 dimVNet.Units.Add(unitName);
 
-                //log.WriteLine($"   metricPrefix value = {metricPrefixes[prefix].Item2}");
-                //log.WriteLine($"   exponentFactor = {exponentFactor}");
-                //log.WriteLine($"   calc = x {calcOperator} { AdjustExponent(metricPrefixes[prefix].Item2, exponentFactor) }");
-                log.WriteLine("  adding conversion function");
                 var func = $"x {calcOperator} {AdjustExponent(metricPrefixes[prefix].Item2, exponentFactor)}";
-                log.WriteLine($"    adding: {unitName}");
-
-                foreach(var c in dimVNet.ConversionFunctions.Keys)
-                {
-                    log.WriteLine($"  existing entry key: {c}");
-                }
                 dimVNet.ConversionFunctions.Add(unitName, func);
 
                 if (!string.IsNullOrEmpty(defaultSymbol))
                 {
-                    log.WriteLine("  adding symbol");
                     dimVNet.Symbols.Add(unitName, $"{metricPrefixes[prefix].Item1}{defaultSymbol}");
-                    log.WriteLine("  done");
                 }
 
                 if (!string.IsNullOrEmpty(defaultPluralSymbol))
                 {
-                    log.WriteLine("  adding plural symbol");
                     dimVNet.PluralSymbols.Add(unitName, $"{metricPrefixes[prefix].Item1}{defaultPluralSymbol}");
-                    log.WriteLine("  done");
                 }
             }
 
@@ -275,7 +230,6 @@ namespace VNet.Scientific.CodeGen
             {
                 foreach (var cfk in dimVNet.ConversionFunctions.Keys.ToArray())
                 {
-                    log.WriteLine($"  scaling {cfk}");
                     dimVNet.ConversionFunctions[cfk] =  $"{scalingFactor} * ({dimVNet.ConversionFunctions[cfk]})";
                 }
             }

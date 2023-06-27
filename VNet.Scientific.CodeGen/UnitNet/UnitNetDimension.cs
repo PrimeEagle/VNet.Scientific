@@ -39,28 +39,47 @@ namespace VNet.Scientific.CodeGen.UnitNet
         {
             get
             {
-                var localizations = Units.Select(u => new
+                var result = new Dictionary<string, string>();
+
+                foreach (var unit in Units)
                 {
-                    Key = u.SingularName,
-                    Value = u.Localization.FirstOrDefault(l => l.Culture == "en-US")
-                }
-                ).Where(u => u.Value != null);
-
-                if (localizations != null)
-                {
-
-
-                    var a = localizations.Select(l => new
+                    foreach (var loc in unit.Localization)
                     {
-                        Key = l.Key,
-                        Value = l.Value.Abbreviations == null ? null : l.Value.Abbreviations.FirstOrDefault()
-                    }).Where(u => u.Value != null);
-                    
-                    if(a != null && a.First().Key != null && a.First().Value != null) return a.ToDictionary(u => u.Key, u => u.Value);
-
+                        if (loc.Culture == "en-US" && loc.Abbreviations != null && loc.Abbreviations.Count > 0)
+                        {
+                            var val = loc.Abbreviations[0].Replace("\\'", "").Replace("\\\"", "").Replace("'", "").Replace("\"", "").Trim();
+                            if (!string.IsNullOrEmpty(val))
+                            {
+                                result.Add(unit.SingularName, val);
+                            }
+                        }
+                    }
                 }
 
-                return new Dictionary<string, string>();
+                return result;
+
+                //var localizations = Units.Select(u => new
+                //{
+                //    Key = u.SingularName,
+                //    Value = u.Localization.FirstOrDefault(l => l.Culture == "en-US")
+                //}
+                //).Where(u => u.Value != null);
+
+                //if (localizations != null)
+                //{
+
+
+                //    var a = localizations.Select(l => new
+                //    {
+                //        Key = l.Key,
+                //        Value = l.Value.Abbreviations == null ? null : l.Value.Abbreviations.FirstOrDefault()
+                //    }).Where(u => u.Value != null);
+
+                //    if (a != null && a.First().Key != null && a.First().Value != null) return a.ToDictionary(u => u.Key, u => u.Value);
+
+                //}
+
+                //return new Dictionary<string, string>();
             }
         }
 
@@ -69,25 +88,44 @@ namespace VNet.Scientific.CodeGen.UnitNet
         {
             get
             {
-                var localizations = Units.Select(u => new
-                {
-                    Key = u.SingularName,
-                    Value = u.Localization.FirstOrDefault(l => l.Culture == "en-US")
-                }
-                ).Where(u => u.Value != null);
+                var result = new Dictionary<string, string>();
 
-                if (localizations != null)
+                foreach (var unit in Units)
                 {
-
-                    return localizations.Select(l => new
+                    foreach (var loc in unit.Localization)
                     {
-                        Key = l.Key,
-                        Value = l.Value.Abbreviations == null ? null : l.Value.Abbreviations.Skip(1).FirstOrDefault()
-                    }).Where(u => u.Value != null).ToDictionary(u => u.Key, u => u.Value);
-
+                        if (loc.Culture == "en-US" && loc.Abbreviations != null && loc.Abbreviations.Count > 1)
+                        {
+                            var val = loc.Abbreviations[1].Replace("\\'", "").Replace("\\\"", "").Replace("'", "").Replace("\"", "").Trim();
+                            if (!string.IsNullOrEmpty(val))
+                            {
+                                result.Add(unit.SingularName, val);
+                            }
+                        }
+                    }
                 }
 
-                return new Dictionary<string, string>();
+                return result;
+
+                //var localizations = Units.Select(u => new
+                //{
+                //    Key = u.SingularName,
+                //    Value = u.Localization.FirstOrDefault(l => l.Culture == "en-US")
+                //}
+                //).Where(u => u.Value != null);
+
+                //if (localizations != null)
+                //{
+
+                //    return localizations.Select(l => new
+                //    {
+                //        Key = l.Key,
+                //        Value = l.Value.Abbreviations == null ? null : (l.Value.Abbreviations.Count > 1 ? l.Value.Abbreviations.Skip(1).FirstOrDefault() : null)
+                //    }).Where(u => u.Value != null).ToDictionary(u => u.Key, u => u.Value);
+
+                //}
+
+                //return new Dictionary<string, string>();
             }
         }
     }

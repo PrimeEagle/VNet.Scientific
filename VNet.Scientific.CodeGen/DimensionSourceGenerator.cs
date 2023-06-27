@@ -6,11 +6,10 @@ using System.Text;
 using VNet.CodeGeneration.Extensions;
 using VNet.CodeGeneration.FileComparer;
 using VNet.CodeGeneration.ZeroDepJson;
-//using VNet.CodeGeneration.Extensions;
-//using VNet.CodeGeneration.FileComparer;
-//using VNet.CodeGeneration.Log;
 using VNet.CodeGeneration.Log;
 using VNet.Scientific.CodeGen.UnitNet;
+using VNet.CodeGeneration.Writers.CodeWriter;
+using VNet.CodeGeneration.Writers.CodeWriter.Languages.CSharp;
 
 namespace VNet.Scientific.CodeGen
 {
@@ -30,33 +29,11 @@ namespace VNet.Scientific.CodeGen
                 System.Diagnostics.Debugger.Launch();
             }
 #endif
-
-            //context.RegisterForSyntaxNotifications(() => new TestSyntaxReceiver());
         }
 
         public void Execute(GeneratorExecutionContext context)
         {
-            //#if DEBUG
-            //            if (!System.Diagnostics.Debugger.IsAttached)
-            //            {
-            //                System.Diagnostics.Debugger.Launch();
-            //            }
-            //#endif
-            //if (!(context.SyntaxContextReceiver is TestSyntaxReceiver receiver))
-            //{
-            //    return;
-            //}
-
-            // convert UnitNet JSON files to VNet JSON files
-
-            //string testJson;
-            //using (var reader = new StreamReader(@"D:\test.json", Encoding.UTF8))
-            //{
-            //    testJson = reader.ReadToEnd();
-            //}
-            //var test = VNetJsonSerializer.Deserialize<List<UnitNetUnit>>(testJson);
-
-            var log = new Logger();
+           var log = new Logger();
 
             try
             {
@@ -85,7 +62,7 @@ namespace VNet.Scientific.CodeGen
                     var dimUnitNet = Json.Deserialize<UnitNetDimension>(unitNetFile.GetJson());
                     var dimVNet = VNetDimension.ConvertFrom(dimUnitNet, mapping);
 
-                    var saveFileName = context.ProjectDir() + @"DimensionFiles.VNet\" + dimVNet.Name + ".json";
+                    var saveFileName = Path.Combine(context.ProjectDir(), "DimensionFiles.VNet", dimVNet.Name + ".json");
                     dimVNet.Save(saveFileName);
                 }
 
@@ -100,19 +77,61 @@ namespace VNet.Scientific.CodeGen
                 foreach (var vNetFile in dimensionHashFileVNet.GetUpdatedEntries())
                 {
                     var dimVNet = Json.Deserialize<VNetDimension>(vNetFile.GetJson());
-                    log.WriteLine($"  dimension = {dimVNet.Name}, default unit = {dimVNet.DefaultUnit}");
-                    foreach (var u in dimVNet.Units)
-                    {
-                        log.WriteLine($"       before: {u}");
-                    }
-                    log.WriteLine("-------------------");
                     VNetDimension.ConversionPostProcess(dimVNet);
-                    foreach (var u in dimVNet.Units)
-                    {
-                        log.WriteLine($"       after: {u}");
-                    }
-                    var saveFileName = context.ProjectDir() + @"DimensionFiles.VNet\" + dimVNet.Name + ".json";
+                    var saveFileName = Path.Combine(context.ProjectDir(), "DimensionFiles.VNet", dimVNet.Name + ".json");
                     dimVNet.Save(saveFileName);
+                }
+
+                foreach (var dimension in dimensionHashFileVNet.GetUpdatedEntries())
+                {
+                    var fileName = Path.Combine(context.ProjectDir(), "DimensionFiles.VNet", dimension.FileName);
+                    var dimVNet = Json.Deserialize<VNetDimension>(dimension.GetJson());
+
+                    var targetFileName = Path.Combine(context.ProjectDir(), "Measurement", "Dimensions", dimVNet.Name + "Unit.g.cs");
+                    if(File.Exists(targetFileName)) File.Delete(targetFileName);
+
+                    var lang = new CSharpLanguageSettings(new CSharpDefaultStyle());
+
+                    log.WriteLine($"generating unit class for {dimVNet.Name}");
+                    //CodeWriter.CreateCodeFile()
+                    //          .WithLanguageSettings(lang)
+                    //          .AddComment($"Auto-generated VNet code, {DateTime.Now.ToString("yyyy-MM-dd")}")
+                    //            .Up()
+                    //          .AddModule("VNet.Scientific.Measurement.Dimensions")
+                    //            .AddEnumeration($"{dimVNet.Name}Unit")
+                    //                .Up()
+                    //            .Up()
+                    //          .ToFile(targetFileName);
+
+                    targetFileName = Path.Combine(context.ProjectDir(), "Measurement", "Dimensions", dimVNet.Name + ".g.cs");
+                    if (File.Exists(targetFileName)) File.Delete(targetFileName);
+
+                    log.WriteLine($"generating class for {dimVNet.Name}");
+                    //CodeWriter.CreateCodeFile()
+                    //          .WithLanguageSettings(lang)
+                    //          .AddComment($"Auto-generated VNet code, {DateTime.Now.ToString("yyyy-MM-dd")}")
+                    //          .Up()
+                    //          .AddModule("VNet.Scientific.Measurement.Dimensions")
+                    //            .AddClass(dimVNet.Name)
+                    //                .WithModifier("public")
+                    //                .WithModifier("sealed")
+                    //                .DerivedFrom($"DimensionBase<{dimVNet.Name}Unit, TVal>")
+                    //                .WithGenericType("TVal")
+                    //                .WithGenericConstraint("TVal : notnull, INumber<TVal>")
+                    //                    .AddCodeBlock($"string IdTag => nameof({dimVNet.Name}<TVal>);")
+                    //                        .WithModifier("public")
+                    //                        .WithModifier("override")
+                    //                        .Up()
+                    //                    .AddFunction(dimVNet.Name)
+                    //                        .WithModifier("public")
+                    //                        .AddCodeBlock($"Initialize(IdTag);")
+                    //                        .AddCodeBlock("base();")
+                    //                        .Up()
+                    //                .Up()
+                    //            .Up()
+                    //          .ToFile(targetFileName);
+
+                    log.WriteLine("done");
                 }
             }
             catch (Exception ex)
@@ -122,96 +141,6 @@ namespace VNet.Scientific.CodeGen
                 log.WriteLine($"           {ex.InnerException}");
                 log.WriteLine($"           {ex.StackTrace}");
             }
-
-            //foreach (var dimension in dimensionHashFileVNet.GetUpdatedEntries())
-            //{
-
-            //}
-
-            //foreach (var dimension in receiver.Dimensions)
-            //{
-            //    if (dimension == "Scalar") continue;
-
-            //    var filename = context.ProjectDir() + dimension + ".g.cs";
-
-            //    try
-            //    {
-            //        var cSharp = new CSharpLanguageSettings(new CSharpDefaultStyle());
-
-            //       CodeWriter.CreateCodeFile()
-            //                 .UsingLanguageSettings(cSharp)
-            //                    .AddNamespace("test.name.space").WithScopedStyle()
-            //                        .AddComment("this is a comment").ThatIsSingleLine()
-            //                        .AddClass("TestClass")
-            //                            .AddMethod("TestMethod")
-            //                        .Up()
-            //                    .Up()
-            //                .Up()
-            //                .ToFile(filename);
-
-            //        //context.AddSource(fileName, SourceText.From(code, Encoding.UTF8));
-            //    }
-            //    catch (Exception e)
-            //    {
-            //        Console.WriteLine(e.Message);
-            //    }
-            //}
         }
-
-
-        //public class TestSyntaxReceiver : ISyntaxContextReceiver
-        //{
-        //    public readonly List<string> Dimensions = new List<string>();
-
-        //    public void OnVisitSyntaxNode(GeneratorSyntaxContext context)
-        //    {
-        //        try
-        //        {
-        //            if (!(context.Node is ClassDeclarationSyntax classDeclarationSyntax) || !classDeclarationSyntax.Modifiers.Any(SyntaxKind.PartialKeyword) || classDeclarationSyntax.Identifier.Text != "UnitDefinition") return;
-        //            // Get all of the FieldDeclarationSyntax nodes
-        //            var fieldDeclarations = classDeclarationSyntax.DescendantNodes().OfType<FieldDeclarationSyntax>();
-
-        //            // Filter the fields to only include public static fields
-        //            var publicStaticFields = fieldDeclarations.Where(f =>
-        //                f.Modifiers.Any(m => m.ValueText == "public") &&
-        //                f.Modifiers.Any(m => m.ValueText == "static"));
-
-        //            // Loop through the public static fields
-        //            foreach (var field in publicStaticFields)
-        //            {
-        //                // Get the type of the field
-        //                var fieldType = field.Declaration.Type;
-
-        //                // Check if the field is a Dictionary
-        //                if (!(fieldType is GenericNameSyntax genericNameSyntax) ||
-        //                    genericNameSyntax.Identifier.Text != "Dictionary") continue;
-        //                // Loop through the variables (fields) in the declaration.
-        //                foreach (var variable in field.Declaration.Variables)
-        //                {
-        //                    var fieldName = variable.Identifier.Text;
-
-        //                    if (fieldName != "Components" || variable.Initializer == null) continue;
-        //                    if (!(variable.Initializer.Value is ImplicitObjectCreationExpressionSyntax objCreation)
-        //                        || !(objCreation.Initializer is InitializerExpressionSyntax initializer)) continue;
-        //                    foreach (var expression in initializer.Expressions)
-        //                    {
-        //                        if (!(expression is InitializerExpressionSyntax dictInitializer)) continue;
-        //                        if (!(dictInitializer.Expressions[0] is LiteralExpressionSyntax key)) continue;
-
-        //                        var keyValue = key.Token.Value?.ToString();
-        //                        lock (Dimensions)
-        //                        {
-        //                            Dimensions.Add(keyValue);
-        //                        }
-        //                    }
-        //                }
-        //            }
-        //        }
-        //        catch (Exception e)
-        //        {
-        //            throw;
-        //        }
-        //    }
-        //}
     }
 }
