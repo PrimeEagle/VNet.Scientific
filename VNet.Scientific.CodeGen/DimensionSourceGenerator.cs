@@ -5,11 +5,10 @@ using System.IO;
 using System.Text;
 using VNet.CodeGeneration.Extensions;
 using VNet.CodeGeneration.FileComparer;
-using VNet.CodeGeneration.ZeroDepJson;
 using VNet.CodeGeneration.Log;
-using VNet.Scientific.CodeGen.UnitNet;
-using VNet.CodeGeneration.Writers.CodeWriter;
 using VNet.CodeGeneration.Writers.CodeWriter.Languages.CSharp;
+using VNet.CodeGeneration.ZeroDepJson;
+using VNet.Scientific.CodeGen.UnitNet;
 
 namespace VNet.Scientific.CodeGen
 {
@@ -93,15 +92,17 @@ namespace VNet.Scientific.CodeGen
                     var lang = new CSharpLanguageSettings(new CSharpDefaultStyle());
 
                     log.WriteLine($"generating unit class for {dimVNet.Name}");
-                    //CodeWriter.CreateCodeFile()
-                    //          .WithLanguageSettings(lang)
-                    //          .AddComment($"Auto-generated VNet code, {DateTime.Now.ToString("yyyy-MM-dd")}")
-                    //            .Up()
-                    //          .AddModule("VNet.Scientific.Measurement.Dimensions")
-                    //            .AddEnumeration($"{dimVNet.Name}Unit")
-                    //                .Up()
-                    //            .Up()
-                    //          .ToFile(targetFileName);
+
+                    new CSharpCodeFile()
+                        .AddComment($"Auto-generated VNet code, {DateTime.Now.ToString("yyyy-MM-dd")}")
+                        .AddBlankLines(2)
+                        .AddScopedNamespace("VNet.Scientific.Measurement.Dimensions")
+                            .AddEnum($"{dimVNet.Name}Unit")
+                                .WithMembers(dimVNet.Units)
+                                .Sort()
+                            .Up<NamespaceScope>()
+                        .Up<CSharpCodeFile>()
+                    .ToFile(targetFileName);
 
                     targetFileName = Path.Combine(context.ProjectDir(), "Measurement", "Dimensions", dimVNet.Name + ".g.cs");
                     if (File.Exists(targetFileName)) File.Delete(targetFileName);
