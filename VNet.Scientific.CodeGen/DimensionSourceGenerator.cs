@@ -98,8 +98,7 @@ namespace VNet.Scientific.CodeGen
                         .AddBlankLines(2)
                         .AddScopedNamespace("VNet.Scientific.Measurement.Dimensions")
                             .AddEnum($"{dimVNet.Name}Unit")
-                                .WithMembers(dimVNet.Units)
-                                .Sort()
+                                .AddMembers(dimVNet.Units)
                             .Up<NamespaceScope>()
                         .Up<CSharpCodeFile>()
                     .ToFile(targetFileName);
