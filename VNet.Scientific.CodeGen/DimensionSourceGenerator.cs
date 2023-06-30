@@ -93,43 +93,41 @@ namespace VNet.Scientific.CodeGen
 
                     log.WriteLine($"generating unit class for {dimVNet.Name}");
 
-                    new CSharpCodeFile()
-                        .AddComment($"Auto-generated VNet code, {DateTime.Now.ToString("yyyy-MM-dd")}")
+                    CSharpCodeFile.Create()
+                        .AddComment($"Auto-generated for VNet on {DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss")}")
                         .AddBlankLines(2)
                         .AddScopedNamespace("VNet.Scientific.Measurement.Dimensions")
                             .AddEnum($"{dimVNet.Name}Unit")
                                 .AddMembers(dimVNet.Units)
-                            .Up<NamespaceScope>()
-                        .Up<CSharpCodeFile>()
-                    .ToFile(targetFileName);
+                                .Sort()
+                            .UpTo<NamespaceScope>()
+                        .UpTo<CSharpCodeFile>()
+                    .Save(targetFileName);
 
                     targetFileName = Path.Combine(context.ProjectDir(), "Measurement", "Dimensions", dimVNet.Name + ".g.cs");
                     if (File.Exists(targetFileName)) File.Delete(targetFileName);
 
                     log.WriteLine($"generating class for {dimVNet.Name}");
-                    //CodeWriter.CreateCodeFile()
-                    //          .WithLanguageSettings(lang)
-                    //          .AddComment($"Auto-generated VNet code, {DateTime.Now.ToString("yyyy-MM-dd")}")
-                    //          .Up()
-                    //          .AddModule("VNet.Scientific.Measurement.Dimensions")
-                    //            .AddClass(dimVNet.Name)
-                    //                .WithModifier("public")
-                    //                .WithModifier("sealed")
-                    //                .DerivedFrom($"DimensionBase<{dimVNet.Name}Unit, TVal>")
-                    //                .WithGenericType("TVal")
-                    //                .WithGenericConstraint("TVal : notnull, INumber<TVal>")
-                    //                    .AddCodeBlock($"string IdTag => nameof({dimVNet.Name}<TVal>);")
-                    //                        .WithModifier("public")
-                    //                        .WithModifier("override")
-                    //                        .Up()
-                    //                    .AddFunction(dimVNet.Name)
-                    //                        .WithModifier("public")
-                    //                        .AddCodeBlock($"Initialize(IdTag);")
-                    //                        .AddCodeBlock("base();")
-                    //                        .Up()
-                    //                .Up()
-                    //            .Up()
-                    //          .ToFile(targetFileName);
+                    CSharpCodeFile.Create()
+                              .AddComment($"Auto-generated for VNet on {DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss")}")
+                              .AddBlankLines(2)
+                              .AddScopedNamespace("VNet.Scientific.Measurement.Dimensions")
+                                .AddClass(dimVNet.Name)
+                                    .WithModifier("public")
+                                    .WithModifier("sealed")
+                                    .DerivedFrom($"DimensionBase<{dimVNet.Name}Unit, TVal>")
+                                    .WithGenericType("TVal")
+                                    .WithGenericConstraint("TVal : notnull, INumber<TVal>")
+                                    .AddCodeLine($"public override string IdTag => nameof({dimVNet.Name}<TVal>);")
+                                    .AddBlankLine()
+                                    .AddMethod(dimVNet.Name)
+                                        .ThatIsAConstructor()
+                                        .WithModifier("public")
+                                        .AddCodeLine($"Initialize(IdTag);")
+                                        .UpTo<ClassScope>()
+                                    .UpTo<NamespaceScope>()
+                                .UpTo<CSharpCodeFile>()
+                              .Save(targetFileName);
 
                     log.WriteLine("done");
                 }
