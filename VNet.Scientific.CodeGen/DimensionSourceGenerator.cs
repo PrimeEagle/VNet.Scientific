@@ -120,7 +120,7 @@ namespace VNet.Scientific.CodeGen
                                     .WithGenericConstraint("TVal : notnull, INumber<TVal>")
                                     .AddCodeLine($"public override string IdTag => nameof({dimVNet.Name}<TVal>);")
                                     .AddBlankLine()
-                                    .AddMethod(dimVNet.Name)
+                                    .AddMethod()
                                         .ThatIsAConstructor()
                                         .WithModifier("public")
                                         .AddCodeLine($"Initialize(IdTag);")
