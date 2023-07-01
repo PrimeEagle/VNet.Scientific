@@ -86,7 +86,7 @@ namespace VNet.Scientific.CodeGen
                     var fileName = Path.Combine(context.ProjectDir(), "DimensionFiles.VNet", dimension.FileName);
                     var dimVNet = Json.Deserialize<VNetDimension>(dimension.GetJson());
 
-                    var targetFileName = Path.Combine(context.ProjectDir(), "Measurement", "Dimensions", dimVNet.Name + "Unit.g.cs");
+                    var targetFileName = Path.Combine(context.ProjectDir(), "Measurement", "Dimensions", dimVNet.Name + "Unit");
                     if(File.Exists(targetFileName)) File.Delete(targetFileName);
 
                     var lang = new CSharpLanguageSettings(new CSharpDefaultStyle());
@@ -104,7 +104,7 @@ namespace VNet.Scientific.CodeGen
                         .UpTo<CSharpCodeFile>()
                     .Save(targetFileName);
 
-                    targetFileName = Path.Combine(context.ProjectDir(), "Measurement", "Dimensions", dimVNet.Name + ".g.cs");
+                    targetFileName = Path.Combine(context.ProjectDir(), "Measurement", "Dimensions", dimVNet.Name);
                     if (File.Exists(targetFileName)) File.Delete(targetFileName);
 
                     log.WriteLine($"generating class for {dimVNet.Name}");
