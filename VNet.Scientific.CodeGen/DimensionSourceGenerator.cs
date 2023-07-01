@@ -7,7 +7,7 @@ using VNet.CodeGeneration.Extensions;
 using VNet.CodeGeneration.FileComparer;
 using VNet.CodeGeneration.Log;
 using VNet.CodeGeneration.Writers.CodeWriter.Languages.CSharp;
-using VNet.CodeGeneration.ZeroDepJson;
+using VNet.CodeGeneration.Json;
 using VNet.Scientific.CodeGen.UnitNet;
 
 namespace VNet.Scientific.CodeGen

@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using VNet.CodeGeneration.Log;
-using VNet.CodeGeneration.ZeroDepJson;
+using VNet.CodeGeneration.Json;
 //using VNet.CodeGeneration.Log;
 
 // ReSharper disable CollectionNeverQueried.Global

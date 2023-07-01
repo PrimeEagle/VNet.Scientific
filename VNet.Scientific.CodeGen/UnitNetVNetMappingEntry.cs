@@ -1,5 +1,5 @@
 ﻿// ReSharper disable ClassNeverInstantiated.Global
-using VNet.CodeGeneration.ZeroDepJson;
+using VNet.CodeGeneration.Json;
 
 
 namespace VNet.Scientific.CodeGen
