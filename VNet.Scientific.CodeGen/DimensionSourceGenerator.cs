@@ -9,7 +9,6 @@ using VNet.CodeGeneration.Log;
 using VNet.CodeGeneration.Writers.CodeWriter.Languages.CSharp;
 using VNet.CodeGeneration.ZeroDepJson;
 using VNet.Scientific.CodeGen.UnitNet;
-using VNet.CodeGeneration.Writers.CodeWriter.Languages.CSharp;
 
 namespace VNet.Scientific.CodeGen
 {
