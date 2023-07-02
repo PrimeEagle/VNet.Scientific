@@ -9,6 +9,7 @@ using VNet.CodeGeneration.Log;
 using VNet.CodeGeneration.Writers.CodeWriter.Languages.CSharp;
 using VNet.CodeGeneration.Json;
 using VNet.Scientific.CodeGen.UnitNet;
+using VNet.CodeGeneration.Writers.CodeWriter;
 
 namespace VNet.Scientific.CodeGen
 {
@@ -89,11 +90,8 @@ namespace VNet.Scientific.CodeGen
                     var targetFileName = Path.Combine(context.ProjectDir(), "Measurement", "Dimensions", dimVNet.Name + "Unit");
                     if(File.Exists(targetFileName)) File.Delete(targetFileName);
 
-                    var lang = new CSharpLanguageSettings(new CSharpDefaultStyle());
-
                     log.WriteLine($"generating unit class for {dimVNet.Name}");
-
-                    CSharpCodeFile.Create()
+                    CodeWriter.For<CSharpCodeFile>()
                         .AddComment($"Auto-generated for VNet on {DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss")}")
                         .AddBlankLines(2)
                         .AddScopedNamespace("VNet.Scientific.Measurement.Dimensions")
@@ -108,7 +106,8 @@ namespace VNet.Scientific.CodeGen
                     if (File.Exists(targetFileName)) File.Delete(targetFileName);
 
                     log.WriteLine($"generating class for {dimVNet.Name}");
-                    CSharpCodeFile.Create()
+
+                    CodeWriter.For<CSharpCodeFile>()
                               .AddComment($"Auto-generated for VNet on {DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss")}")
                               .AddBlankLines(2)
                               .AddScopedNamespace("VNet.Scientific.Measurement.Dimensions")
