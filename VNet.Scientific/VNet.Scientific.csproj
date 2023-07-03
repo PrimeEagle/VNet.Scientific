@@ -31,6 +31,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Folder Include="DimensionFiles.VNet\" />
+		<Folder Include="Measurement\DimensionFiles.VNet\" />
 	</ItemGroup>
 </Project>

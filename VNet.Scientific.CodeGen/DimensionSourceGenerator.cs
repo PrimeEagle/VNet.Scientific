@@ -24,10 +24,10 @@ namespace VNet.Scientific.CodeGen
         public void Initialize(GeneratorInitializationContext context)
         {
 #if DEBUG
-            if (!System.Diagnostics.Debugger.IsAttached)
-            {
-                System.Diagnostics.Debugger.Launch();
-            }
+            //if (!System.Diagnostics.Debugger.IsAttached)
+            //{
+            //    System.Diagnostics.Debugger.Launch();
+            //}
 #endif
         }
 
@@ -39,7 +39,7 @@ namespace VNet.Scientific.CodeGen
             {
                 log.Initialize(@"D:\generator.log");
                 log.Clear();
-                var fileNameMapping = Path.Combine(context.ProjectDir(), "DimensionFiles.VNet", "_unitNetToVNetMappings.json");
+                var fileNameMapping = Path.Combine(context.ProjectDir(), "Measurement", "DimensionFiles.VNet", "_unitNetToVNetMappings.json");
                 string mappingJson;
 
                 using (var reader = new StreamReader(fileNameMapping, Encoding.UTF8))
@@ -51,7 +51,7 @@ namespace VNet.Scientific.CodeGen
                 var mapping = Json.Deserialize<List<UnitNetVNetMappingEntry>>(mappingJson.Trim());
 
 
-                var fileNameUnitNet = Path.Combine(context.ProjectDir(), "DimensionFiles.UnitNet", "_dimensionHashFile.json");
+                var fileNameUnitNet = Path.Combine(context.ProjectDir(), "Measurement", "DimensionFiles.UnitNet", "_dimensionHashFile.json");
                 var dimensionHashFileUnitNet = new FileComparer(fileNameUnitNet);
                 dimensionHashFileUnitNet.Update();
                 dimensionHashFileUnitNet.Save();
@@ -62,14 +62,21 @@ namespace VNet.Scientific.CodeGen
                     var dimUnitNet = Json.Deserialize<UnitNetDimension>(unitNetFile.GetJson());
                     var dimVNet = VNetDimension.ConvertFrom(dimUnitNet, mapping);
 
-                    var saveFileName = Path.Combine(context.ProjectDir(), "DimensionFiles.VNet", dimVNet.Name + ".json");
+                    var saveFileName = Path.Combine(context.ProjectDir(), "Measurement", "DimensionFiles.VNet", dimVNet.Name + ".json");
                     dimVNet.Save(saveFileName);
                 }
 
 
+                var targetPath = Path.Combine(context.ProjectDir(), "Measurement", "Dimensions");
+                var di = new DirectoryInfo(targetPath);
+
+                foreach (FileInfo file in di.GetFiles())
+                {
+                    file.Delete();
+                }
 
                 // code gen VNet JSON files
-                var fileNameVNet = Path.Combine(context.ProjectDir(), "DimensionFiles.VNet", "_dimensionHashFile.json");
+                var fileNameVNet = Path.Combine(context.ProjectDir(), "Measurement", "DimensionFiles.VNet", "_dimensionHashFile.json");
                 var dimensionHashFileVNet = new FileComparer(fileNameVNet);
                 dimensionHashFileVNet.Update();
                 dimensionHashFileVNet.Save();
@@ -78,13 +85,13 @@ namespace VNet.Scientific.CodeGen
                 {
                     var dimVNet = Json.Deserialize<VNetDimension>(vNetFile.GetJson());
                     VNetDimension.ConversionPostProcess(dimVNet);
-                    var saveFileName = Path.Combine(context.ProjectDir(), "DimensionFiles.VNet", dimVNet.Name + ".json");
+                    var saveFileName = Path.Combine(context.ProjectDir(), "Measurement", "DimensionFiles.VNet", dimVNet.Name + ".json");
                     dimVNet.Save(saveFileName);
                 }
 
                 foreach (var dimension in dimensionHashFileVNet.GetUpdatedEntries())
                 {
-                    var fileName = Path.Combine(context.ProjectDir(), "DimensionFiles.VNet", dimension.FileName);
+                    var fileName = Path.Combine(context.ProjectDir(), "Measurement", "DimensionFiles.VNet", dimension.FileName);
                     var dimVNet = Json.Deserialize<VNetDimension>(dimension.GetJson());
 
                     var targetFileName = Path.Combine(context.ProjectDir(), "Measurement", "Dimensions", dimVNet.Name + "Unit");
@@ -96,6 +103,7 @@ namespace VNet.Scientific.CodeGen
                         .AddBlankLines(2)
                         .AddScopedNamespace("VNet.Scientific.Measurement.Dimensions")
                             .AddEnum($"{dimVNet.Name}Unit")
+                                .WithModifier("public")
                                 .AddMembers(dimVNet.Units)
                                 .Sort()
                             .UpTo<NamespaceScope>()
@@ -109,6 +117,7 @@ namespace VNet.Scientific.CodeGen
 
                     CodeWriter.For<CSharpCodeFile>()
                               .AddComment($"Auto-generated for VNet on {DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss")}")
+                              .AddUsing("System.Numerics")
                               .AddBlankLines(2)
                               .AddScopedNamespace("VNet.Scientific.Measurement.Dimensions")
                                 .AddClass(dimVNet.Name)

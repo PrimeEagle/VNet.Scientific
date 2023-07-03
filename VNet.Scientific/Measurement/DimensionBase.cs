@@ -11,7 +11,7 @@ public abstract class DimensionBase<TUnit, TVal> : IDimension<TUnit, TVal> where
 
 
 
-    protected DimensionBase()
+    public DimensionBase()
     {
         DimensionComponent = new DimensionComponent();
     }
