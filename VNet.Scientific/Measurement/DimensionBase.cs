@@ -16,23 +16,23 @@ public abstract class DimensionBase<TUnit, TVal> : IDimension<TUnit, TVal> where
         DimensionComponent = new DimensionComponent();
     }
 
-    protected void Initialize(string idTag)
-    {
-        if (!UnitDefinition.Components.ContainsKey(idTag)) throw new InvalidOperationException($"Value '{idTag}' was not found in UnitDefinition.Components");
+    //protected void Initialize(string idTag)
+    //{
+    //    if (!UnitDefinition.Components.ContainsKey(idTag)) throw new InvalidOperationException($"Value '{idTag}' was not found in UnitDefinition.Components");
 
-        var definition = UnitDefinition.Components[idTag];
+    //    var definition = UnitDefinition.Components[idTag];
 
-        DimensionComponent.Exponents.Length = definition.Item1[0];
-        DimensionComponent.Exponents.Mass = definition.Item1[1];
-        DimensionComponent.Exponents.Time = definition.Item1[2];
-        DimensionComponent.Exponents.ElectricalCurrent = definition.Item1[3];
-        DimensionComponent.Exponents.LuminousIntensity = definition.Item1[4];
-        DimensionComponent.Exponents.Temperature = definition.Item1[5];
-        DimensionComponent.Exponents.Amount = definition.Item1[6];
+    //    DimensionComponent.Exponents.Length = definition.Item1[0];
+    //    DimensionComponent.Exponents.Mass = definition.Item1[1];
+    //    DimensionComponent.Exponents.Time = definition.Item1[2];
+    //    DimensionComponent.Exponents.ElectricalCurrent = definition.Item1[3];
+    //    DimensionComponent.Exponents.LuminousIntensity = definition.Item1[4];
+    //    DimensionComponent.Exponents.Temperature = definition.Item1[5];
+    //    DimensionComponent.Exponents.Amount = definition.Item1[6];
 
 
-        DefaultUnit = (TUnit)definition.Item2;
-    }
+    //    DefaultUnit = (TUnit)definition.Item2;
+    //}
 
     public virtual void ValidateUnit(Enum unit)
     {
@@ -56,15 +56,16 @@ public abstract class DimensionBase<TUnit, TVal> : IDimension<TUnit, TVal> where
 
     protected virtual TVal Convert(TVal value, Enum fromUnit, Enum toUnit)
     {
-        if (!UnitDefinition.ConversionFactors.ContainsKey(IdTag) || !UnitDefinition.ConversionFactors[IdTag].ContainsKey(fromUnit) || 
-            !UnitDefinition.ConversionFactors[IdTag].ContainsKey(toUnit))
-        {
-            throw new ArgumentException("Invalid unit specified");
-        }
+        //if (!UnitDefinition.ConversionFactors.ContainsKey(IdTag) || !UnitDefinition.ConversionFactors[IdTag].ContainsKey(fromUnit) || 
+        //    !UnitDefinition.ConversionFactors[IdTag].ContainsKey(toUnit))
+        //{
+        //    throw new ArgumentException("Invalid unit specified");
+        //}
 
-        var valueInMeters = value * GenericNumber<TVal>.FromDouble(UnitDefinition.ConversionFactors[IdTag][(TUnit)fromUnit]);
-        var convertedValue = valueInMeters / GenericNumber<TVal>.FromDouble(UnitDefinition.ConversionFactors[IdTag][(TUnit)toUnit]);
+        //var valueInMeters = value * GenericNumber<TVal>.FromDouble(UnitDefinition.ConversionFactors[IdTag][(TUnit)fromUnit]);
+        //var convertedValue = valueInMeters / GenericNumber<TVal>.FromDouble(UnitDefinition.ConversionFactors[IdTag][(TUnit)toUnit]);
 
-        return convertedValue;
+        //return convertedValue;
+        return value;
     }
 }

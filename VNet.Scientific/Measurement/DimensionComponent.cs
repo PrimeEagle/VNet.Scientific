@@ -102,21 +102,21 @@
 
             // ReSharper disable once ForeachCanBePartlyConvertedToQueryUsingAnotherGetEExponents
             // ReSharper disable once ForeachCanBeConvertedToQueryUsingAnotherGetEExponents
-            foreach (var definition in UnitDefinition.Components)
-            {
-                if (definition.Value.Item1[0] != Exponents.Length) continue;
-                if (definition.Value.Item1[1] != Exponents.Mass) continue;
-                if (definition.Value.Item1[2] != Exponents.Time) continue;
-                if (definition.Value.Item1[3] != Exponents.ElectricalCurrent) continue;
-                if (definition.Value.Item1[4] != Exponents.LuminousIntensity) continue;
-                if (definition.Value.Item1[5] != Exponents.Temperature) continue;
-                if (definition.Value.Item1[6] != Exponents.Amount) continue;
+            //foreach (var definition in UnitDefinition.Components)
+            //{
+            //    if (definition.Value.Item1[0] != Exponents.Length) continue;
+            //    if (definition.Value.Item1[1] != Exponents.Mass) continue;
+            //    if (definition.Value.Item1[2] != Exponents.Time) continue;
+            //    if (definition.Value.Item1[3] != Exponents.ElectricalCurrent) continue;
+            //    if (definition.Value.Item1[4] != Exponents.LuminousIntensity) continue;
+            //    if (definition.Value.Item1[5] != Exponents.Temperature) continue;
+            //    if (definition.Value.Item1[6] != Exponents.Amount) continue;
 
-                matchedIdTag = definition.Key;
-                break;
-            }
+            //    matchedIdTag = definition.Key;
+            //    break;
+            //}
 
-            if (string.IsNullOrEmpty(matchedIdTag)) matchedIdTag = "UndefinedDimension";
+            //if (string.IsNullOrEmpty(matchedIdTag)) matchedIdTag = "UndefinedDimension";
 
             return matchedIdTag;
         }

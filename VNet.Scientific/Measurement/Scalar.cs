@@ -7,12 +7,12 @@
 
 namespace VNet.Scientific.Measurement;
 
-public sealed class Scalar<TVal> : DimensionBase<LengthUnit, TVal> where TVal : notnull, INumber<TVal>
-{
-    public override string IdTag => nameof(Scalar<TVal>);
+//public sealed class Scalar<TVal> : DimensionBase<LengthUnit, TVal> where TVal : notnull, INumber<TVal>
+//{
+//    public override string IdTag => nameof(Scalar<TVal>);
 
-    public Scalar() : base()
-    {
+//    public Scalar() : base()
+//    {
 
-    }
-}
+//    }
+//}
