@@ -1,5 +1,4 @@
 ﻿using System.Numerics;
-using VNet.System.Conversion;
 
 namespace VNet.Scientific.Measurement;
 
@@ -8,12 +7,23 @@ public abstract class DimensionBase<TUnit, TVal> : IDimension<TUnit, TVal> where
     public abstract string IdTag { get; }
     public DimensionComponent DimensionComponent { get; init; }
     public TUnit DefaultUnit { get; set; }
+    public Dictionary<string, string> ConversionFunctions => _conversionFunctions;
 
+    private readonly Dictionary<string, string> _conversionFunctions;
 
 
     public DimensionBase()
     {
         DimensionComponent = new DimensionComponent();
+        _conversionFunctions = new Dictionary<string, string>();
+    }
+
+    public string GetConversionFactor(TUnit unit)
+    {
+        var unitStr = unit.ToString();
+        if (_conversionFunctions == null || !_conversionFunctions.TryGetValue(unitStr, out var exp)) throw new ArgumentOutOfRangeException();
+
+        return exp;
     }
 
     //protected void Initialize(string idTag)

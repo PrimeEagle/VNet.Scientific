@@ -24,10 +24,10 @@ namespace VNet.Scientific.CodeGen
         public void Initialize(GeneratorInitializationContext context)
         {
 #if DEBUG
-            //if (!System.Diagnostics.Debugger.IsAttached)
-            //{
-            //    System.Diagnostics.Debugger.Launch();
-            //}
+            if (!System.Diagnostics.Debugger.IsAttached)
+            {
+                System.Diagnostics.Debugger.Launch();
+            }
 #endif
         }
 
@@ -87,12 +87,6 @@ namespace VNet.Scientific.CodeGen
                     VNetDimension.ConversionPostProcess(dimVNet);
                     var saveFileName = Path.Combine(context.ProjectDir(), "Measurement", "DimensionFiles.VNet", dimVNet.Name + ".json");
                     dimVNet.Save(saveFileName);
-                }
-
-                foreach (var dimension in dimensionHashFileVNet.GetUpdatedEntries())
-                {
-                    var fileName = Path.Combine(context.ProjectDir(), "Measurement", "DimensionFiles.VNet", dimension.FileName);
-                    var dimVNet = Json.Deserialize<VNetDimension>(dimension.GetJson());
 
                     var targetFileName = Path.Combine(context.ProjectDir(), "Measurement", "Dimensions", dimVNet.Name + "Unit");
                     if(File.Exists(targetFileName)) File.Delete(targetFileName);
@@ -114,6 +108,13 @@ namespace VNet.Scientific.CodeGen
                     if (File.Exists(targetFileName)) File.Delete(targetFileName);
 
                     log.WriteLine($"generating class for {dimVNet.Name}");
+
+                    var dictLines = new List<string>();
+                    foreach(var key in dimVNet.ConversionFunctions.Keys)
+                    {
+    ;
+                        dictLines.Add($"_conversionFunctions.Add(\"{key}\", \"{dimVNet.ConversionFunctions[key]}\");");
+                    }
 
                     CodeWriter.For<CSharpCodeFile>()
                               .AddComment($"Auto-generated for VNet on {DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss")}")
@@ -138,6 +139,11 @@ namespace VNet.Scientific.CodeGen
                                         .AddCodeLine($"DimensionComponent.Exponents.LuminousIntensity = {dimVNet.Exponents[4]};")
                                         .AddCodeLine($"DimensionComponent.Exponents.Temperature = {dimVNet.Exponents[5]};")
                                         .AddCodeLine($"DimensionComponent.Exponents.Amount = {dimVNet.Exponents[6]};")
+                                        .AddBlankLine()
+                                        .AddCodeLine($"DefaultUnit = {dimVNet.Name}Unit.{dimVNet.DefaultUnit};")
+                                        .AddBlankLine()
+                                        .AddCodeLine($"")
+                                        .AddCodeLines(dictLines)
                                         .UpTo<ClassScope>()
                                     .UpTo<NamespaceScope>()
                                 .UpTo<CSharpCodeFile>()
