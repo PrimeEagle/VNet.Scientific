@@ -1,5 +1,5 @@
 
-    // Auto-generated for VNet on 2023-07-05 10:24:46
+    // Auto-generated for VNet on 2023-07-05 10:35:43
     using System.Numerics;
     
     
@@ -20,6 +20,28 @@
                 DimensionComponent.Exponents.Amount = 0;
                 
                 DefaultUnit = ReactiveEnergyUnit.VoltampereReactiveHour;
+                
+                Symbols.Add(ReactiveEnergyUnit.Yottavoltamperereactivehour, "Yvarh");
+                Symbols.Add(ReactiveEnergyUnit.Zettavoltamperereactivehour, "Zvarh");
+                Symbols.Add(ReactiveEnergyUnit.Exavoltamperereactivehour, "Evarh");
+                Symbols.Add(ReactiveEnergyUnit.Petavoltamperereactivehour, "Pvarh");
+                Symbols.Add(ReactiveEnergyUnit.Teravoltamperereactivehour, "Tvarh");
+                Symbols.Add(ReactiveEnergyUnit.Gigavoltamperereactivehour, "Gvarh");
+                Symbols.Add(ReactiveEnergyUnit.Megavoltamperereactivehour, "Mvarh");
+                Symbols.Add(ReactiveEnergyUnit.Kilovoltamperereactivehour, "kvarh");
+                Symbols.Add(ReactiveEnergyUnit.Hectovoltamperereactivehour, "hvarh");
+                Symbols.Add(ReactiveEnergyUnit.Dekavoltamperereactivehour, "davarh");
+                Symbols.Add(ReactiveEnergyUnit.VoltampereReactiveHour, "varh");
+                Symbols.Add(ReactiveEnergyUnit.Decivoltamperereactivehour, "dvarh");
+                Symbols.Add(ReactiveEnergyUnit.Centivoltamperereactivehour, "cvarh");
+                Symbols.Add(ReactiveEnergyUnit.Millivoltamperereactivehour, "mvarh");
+                Symbols.Add(ReactiveEnergyUnit.Microvoltamperereactivehour, "µvarh");
+                Symbols.Add(ReactiveEnergyUnit.Nanovoltamperereactivehour, "nvarh");
+                Symbols.Add(ReactiveEnergyUnit.Picovoltamperereactivehour, "pvarh");
+                Symbols.Add(ReactiveEnergyUnit.Femtovoltamperereactivehour, "fvarh");
+                Symbols.Add(ReactiveEnergyUnit.Attovoltamperereactivehour, "avarh");
+                Symbols.Add(ReactiveEnergyUnit.Zeptovoltamperereactivehour, "zvarh");
+                Symbols.Add(ReactiveEnergyUnit.Yoctovoltamperereactivehour, "yvarh");
                 
                 
                 ConversionFunctions.Add(ReactiveEnergyUnit.Yottavoltamperereactivehour, "x * 1e24");

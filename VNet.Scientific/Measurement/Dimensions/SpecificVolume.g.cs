@@ -1,5 +1,5 @@
 
-    // Auto-generated for VNet on 2023-07-05 10:24:46
+    // Auto-generated for VNet on 2023-07-05 10:35:43
     using System.Numerics;
     
     
@@ -20,6 +20,29 @@
                 DimensionComponent.Exponents.Amount = 0;
                 
                 DefaultUnit = SpecificVolumeUnit.CubicMeterPerKilogram;
+                
+                Symbols.Add(SpecificVolumeUnit.CubicFootPerPound, "ft³/lb");
+                Symbols.Add(SpecificVolumeUnit.CubicYottameterperkilogram, "Ym³/kg");
+                Symbols.Add(SpecificVolumeUnit.CubicZettameterperkilogram, "Zm³/kg");
+                Symbols.Add(SpecificVolumeUnit.CubicExameterperkilogram, "Em³/kg");
+                Symbols.Add(SpecificVolumeUnit.CubicPetameterperkilogram, "Pm³/kg");
+                Symbols.Add(SpecificVolumeUnit.CubicTerameterperkilogram, "Tm³/kg");
+                Symbols.Add(SpecificVolumeUnit.CubicGigameterperkilogram, "Gm³/kg");
+                Symbols.Add(SpecificVolumeUnit.CubicMegameterperkilogram, "Mm³/kg");
+                Symbols.Add(SpecificVolumeUnit.CubicKilometerperkilogram, "km³/kg");
+                Symbols.Add(SpecificVolumeUnit.CubicHectometerperkilogram, "hm³/kg");
+                Symbols.Add(SpecificVolumeUnit.CubicDekameterperkilogram, "dam³/kg");
+                Symbols.Add(SpecificVolumeUnit.CubicMeterPerKilogram, "m³/kg");
+                Symbols.Add(SpecificVolumeUnit.CubicDecimeterperkilogram, "dm³/kg");
+                Symbols.Add(SpecificVolumeUnit.CubicCentimeterperkilogram, "cm³/kg");
+                Symbols.Add(SpecificVolumeUnit.CubicMillimeterperkilogram, "mm³/kg");
+                Symbols.Add(SpecificVolumeUnit.CubicMicrometerperkilogram, "µm³/kg");
+                Symbols.Add(SpecificVolumeUnit.CubicNanometerperkilogram, "nm³/kg");
+                Symbols.Add(SpecificVolumeUnit.CubicPicometerperkilogram, "pm³/kg");
+                Symbols.Add(SpecificVolumeUnit.CubicFemtometerperkilogram, "fm³/kg");
+                Symbols.Add(SpecificVolumeUnit.CubicAttometerperkilogram, "am³/kg");
+                Symbols.Add(SpecificVolumeUnit.CubicZeptometerperkilogram, "zm³/kg");
+                Symbols.Add(SpecificVolumeUnit.CubicYoctometerperkilogram, "ym³/kg");
                 
                 
                 ConversionFunctions.Add(SpecificVolumeUnit.CubicFootPerPound, "x / 16.01846353");

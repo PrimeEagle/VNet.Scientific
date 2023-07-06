@@ -1,5 +1,5 @@
 
-    // Auto-generated for VNet on 2023-07-05 10:24:46
+    // Auto-generated for VNet on 2023-07-05 10:35:43
     using System.Numerics;
     
     
@@ -20,6 +20,31 @@
                 DimensionComponent.Exponents.Amount = 0;
                 
                 DefaultUnit = VolumetricHeatCapacityUnit.JoulePerCubicMeterKelvin;
+                
+                Symbols.Add(VolumetricHeatCapacityUnit.JoulePerCubicMeterDegreeCelsius, "J/m³·°C");
+                Symbols.Add(VolumetricHeatCapacityUnit.CaloriePerCubicCentimeterDegreeCelsius, "cal/cm³·°C");
+                Symbols.Add(VolumetricHeatCapacityUnit.BtuPerCubicFootDegreeFahrenheit, "BTU/ft³·°F");
+                Symbols.Add(VolumetricHeatCapacityUnit.Yottajoulepercubicmeterkelvin, "YJ/m³·K");
+                Symbols.Add(VolumetricHeatCapacityUnit.Zettajoulepercubicmeterkelvin, "ZJ/m³·K");
+                Symbols.Add(VolumetricHeatCapacityUnit.Exajoulepercubicmeterkelvin, "EJ/m³·K");
+                Symbols.Add(VolumetricHeatCapacityUnit.Petajoulepercubicmeterkelvin, "PJ/m³·K");
+                Symbols.Add(VolumetricHeatCapacityUnit.Terajoulepercubicmeterkelvin, "TJ/m³·K");
+                Symbols.Add(VolumetricHeatCapacityUnit.Gigajoulepercubicmeterkelvin, "GJ/m³·K");
+                Symbols.Add(VolumetricHeatCapacityUnit.Megajoulepercubicmeterkelvin, "MJ/m³·K");
+                Symbols.Add(VolumetricHeatCapacityUnit.Kilojoulepercubicmeterkelvin, "kJ/m³·K");
+                Symbols.Add(VolumetricHeatCapacityUnit.Hectojoulepercubicmeterkelvin, "hJ/m³·K");
+                Symbols.Add(VolumetricHeatCapacityUnit.Dekajoulepercubicmeterkelvin, "daJ/m³·K");
+                Symbols.Add(VolumetricHeatCapacityUnit.JoulePerCubicMeterKelvin, "J/m³·K");
+                Symbols.Add(VolumetricHeatCapacityUnit.Decijoulepercubicmeterkelvin, "dJ/m³·K");
+                Symbols.Add(VolumetricHeatCapacityUnit.Centijoulepercubicmeterkelvin, "cJ/m³·K");
+                Symbols.Add(VolumetricHeatCapacityUnit.Millijoulepercubicmeterkelvin, "mJ/m³·K");
+                Symbols.Add(VolumetricHeatCapacityUnit.Microjoulepercubicmeterkelvin, "µJ/m³·K");
+                Symbols.Add(VolumetricHeatCapacityUnit.Nanojoulepercubicmeterkelvin, "nJ/m³·K");
+                Symbols.Add(VolumetricHeatCapacityUnit.Picojoulepercubicmeterkelvin, "pJ/m³·K");
+                Symbols.Add(VolumetricHeatCapacityUnit.Femtojoulepercubicmeterkelvin, "fJ/m³·K");
+                Symbols.Add(VolumetricHeatCapacityUnit.Attojoulepercubicmeterkelvin, "aJ/m³·K");
+                Symbols.Add(VolumetricHeatCapacityUnit.Zeptojoulepercubicmeterkelvin, "zJ/m³·K");
+                Symbols.Add(VolumetricHeatCapacityUnit.Yoctojoulepercubicmeterkelvin, "yJ/m³·K");
                 
                 
                 ConversionFunctions.Add(VolumetricHeatCapacityUnit.JoulePerCubicMeterDegreeCelsius, "x");

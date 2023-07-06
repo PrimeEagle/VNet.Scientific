@@ -1,5 +1,5 @@
 
-    // Auto-generated for VNet on 2023-07-05 10:24:46
+    // Auto-generated for VNet on 2023-07-05 10:35:43
     using System.Numerics;
     
     
@@ -21,6 +21,36 @@
                 
                 DefaultUnit = PowerUnit.Watt;
                 
+                Symbols.Add(PowerUnit.MechanicalHorsepower, "hp(I)");
+                Symbols.Add(PowerUnit.MetricHorsepower, "hp(M)");
+                Symbols.Add(PowerUnit.ElectricalHorsepower, "hp(E)");
+                Symbols.Add(PowerUnit.BoilerHorsepower, "hp(S)");
+                Symbols.Add(PowerUnit.HydraulicHorsepower, "hp(H)");
+                Symbols.Add(PowerUnit.BritishThermalUnitPerHour, "Btu/h");
+                Symbols.Add(PowerUnit.JoulePerHour, "J/h");
+                Symbols.Add(PowerUnit.Yottawatt, "YW");
+                Symbols.Add(PowerUnit.Zettawatt, "ZW");
+                Symbols.Add(PowerUnit.Exawatt, "EW");
+                Symbols.Add(PowerUnit.Petawatt, "PW");
+                Symbols.Add(PowerUnit.Terawatt, "TW");
+                Symbols.Add(PowerUnit.Gigawatt, "GW");
+                Symbols.Add(PowerUnit.Megawatt, "MW");
+                Symbols.Add(PowerUnit.Kilowatt, "kW");
+                Symbols.Add(PowerUnit.Hectowatt, "hW");
+                Symbols.Add(PowerUnit.Dekawatt, "daW");
+                Symbols.Add(PowerUnit.Watt, "W");
+                Symbols.Add(PowerUnit.Deciwatt, "dW");
+                Symbols.Add(PowerUnit.Centiwatt, "cW");
+                Symbols.Add(PowerUnit.Milliwatt, "mW");
+                Symbols.Add(PowerUnit.Microwatt, "µW");
+                Symbols.Add(PowerUnit.Nanowatt, "nW");
+                Symbols.Add(PowerUnit.Picowatt, "pW");
+                Symbols.Add(PowerUnit.Femtowatt, "fW");
+                Symbols.Add(PowerUnit.Attowatt, "aW");
+                Symbols.Add(PowerUnit.Zeptowatt, "zW");
+                Symbols.Add(PowerUnit.Yoctowatt, "yW");
+                
+                PluralSymbols.Add(PowerUnit.BritishThermalUnitPerHour, "Btu/hr");
                 
                 ConversionFunctions.Add(PowerUnit.MechanicalHorsepower, "x * 745.69m");
                 ConversionFunctions.Add(PowerUnit.MetricHorsepower, "x * 735.49875m");

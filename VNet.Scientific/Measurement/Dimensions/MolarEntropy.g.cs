@@ -1,5 +1,5 @@
 
-    // Auto-generated for VNet on 2023-07-05 10:24:46
+    // Auto-generated for VNet on 2023-07-05 10:35:43
     using System.Numerics;
     
     
@@ -20,6 +20,28 @@
                 DimensionComponent.Exponents.Amount = -1;
                 
                 DefaultUnit = MolarEntropyUnit.JoulePerMoleKelvin;
+                
+                Symbols.Add(MolarEntropyUnit.Yottajoulepermolekelvin, "YJ/(mol*K)");
+                Symbols.Add(MolarEntropyUnit.Zettajoulepermolekelvin, "ZJ/(mol*K)");
+                Symbols.Add(MolarEntropyUnit.Exajoulepermolekelvin, "EJ/(mol*K)");
+                Symbols.Add(MolarEntropyUnit.Petajoulepermolekelvin, "PJ/(mol*K)");
+                Symbols.Add(MolarEntropyUnit.Terajoulepermolekelvin, "TJ/(mol*K)");
+                Symbols.Add(MolarEntropyUnit.Gigajoulepermolekelvin, "GJ/(mol*K)");
+                Symbols.Add(MolarEntropyUnit.Megajoulepermolekelvin, "MJ/(mol*K)");
+                Symbols.Add(MolarEntropyUnit.Kilojoulepermolekelvin, "kJ/(mol*K)");
+                Symbols.Add(MolarEntropyUnit.Hectojoulepermolekelvin, "hJ/(mol*K)");
+                Symbols.Add(MolarEntropyUnit.Dekajoulepermolekelvin, "daJ/(mol*K)");
+                Symbols.Add(MolarEntropyUnit.JoulePerMoleKelvin, "J/(mol*K)");
+                Symbols.Add(MolarEntropyUnit.Decijoulepermolekelvin, "dJ/(mol*K)");
+                Symbols.Add(MolarEntropyUnit.Centijoulepermolekelvin, "cJ/(mol*K)");
+                Symbols.Add(MolarEntropyUnit.Millijoulepermolekelvin, "mJ/(mol*K)");
+                Symbols.Add(MolarEntropyUnit.Microjoulepermolekelvin, "µJ/(mol*K)");
+                Symbols.Add(MolarEntropyUnit.Nanojoulepermolekelvin, "nJ/(mol*K)");
+                Symbols.Add(MolarEntropyUnit.Picojoulepermolekelvin, "pJ/(mol*K)");
+                Symbols.Add(MolarEntropyUnit.Femtojoulepermolekelvin, "fJ/(mol*K)");
+                Symbols.Add(MolarEntropyUnit.Attojoulepermolekelvin, "aJ/(mol*K)");
+                Symbols.Add(MolarEntropyUnit.Zeptojoulepermolekelvin, "zJ/(mol*K)");
+                Symbols.Add(MolarEntropyUnit.Yoctojoulepermolekelvin, "yJ/(mol*K)");
                 
                 
                 ConversionFunctions.Add(MolarEntropyUnit.Yottajoulepermolekelvin, "x * 1e24");

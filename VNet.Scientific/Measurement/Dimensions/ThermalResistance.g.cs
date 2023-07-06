@@ -1,5 +1,5 @@
 
-    // Auto-generated for VNet on 2023-07-05 10:24:46
+    // Auto-generated for VNet on 2023-07-05 10:35:43
     using System.Numerics;
     
     
@@ -20,6 +20,33 @@
                 DimensionComponent.Exponents.Amount = 0;
                 
                 DefaultUnit = ThermalResistanceUnit.SquareMeterKelvinPerKilowatt;
+                
+                Symbols.Add(ThermalResistanceUnit.SquareMeterKelvinPerWatt, "m²K/W");
+                Symbols.Add(ThermalResistanceUnit.SquareMeterDegreeCelsiusPerWatt, "m²°C/W");
+                Symbols.Add(ThermalResistanceUnit.SquareCentimeterKelvinPerWatt, "cm²K/W");
+                Symbols.Add(ThermalResistanceUnit.SquareCentimeterHourDegreeCelsiusPerKilocalorie, "cm²Hr°C/kcal");
+                Symbols.Add(ThermalResistanceUnit.HourSquareFeetDegreeFahrenheitPerBtu, "Hrft²°F/Btu");
+                Symbols.Add(ThermalResistanceUnit.SquareYottameterkelvinperkilowatt, "Ym²K/kW");
+                Symbols.Add(ThermalResistanceUnit.SquareZettameterkelvinperkilowatt, "Zm²K/kW");
+                Symbols.Add(ThermalResistanceUnit.SquareExameterkelvinperkilowatt, "Em²K/kW");
+                Symbols.Add(ThermalResistanceUnit.SquarePetameterkelvinperkilowatt, "Pm²K/kW");
+                Symbols.Add(ThermalResistanceUnit.SquareTerameterkelvinperkilowatt, "Tm²K/kW");
+                Symbols.Add(ThermalResistanceUnit.SquareGigameterkelvinperkilowatt, "Gm²K/kW");
+                Symbols.Add(ThermalResistanceUnit.SquareMegameterkelvinperkilowatt, "Mm²K/kW");
+                Symbols.Add(ThermalResistanceUnit.SquareKilometerkelvinperkilowatt, "km²K/kW");
+                Symbols.Add(ThermalResistanceUnit.SquareHectometerkelvinperkilowatt, "hm²K/kW");
+                Symbols.Add(ThermalResistanceUnit.SquareDekameterkelvinperkilowatt, "dam²K/kW");
+                Symbols.Add(ThermalResistanceUnit.SquareMeterKelvinPerKilowatt, "m²K/kW");
+                Symbols.Add(ThermalResistanceUnit.SquareDecimeterkelvinperkilowatt, "dm²K/kW");
+                Symbols.Add(ThermalResistanceUnit.SquareCentimeterkelvinperkilowatt, "cm²K/kW");
+                Symbols.Add(ThermalResistanceUnit.SquareMillimeterkelvinperkilowatt, "mm²K/kW");
+                Symbols.Add(ThermalResistanceUnit.SquareMicrometerkelvinperkilowatt, "µm²K/kW");
+                Symbols.Add(ThermalResistanceUnit.SquareNanometerkelvinperkilowatt, "nm²K/kW");
+                Symbols.Add(ThermalResistanceUnit.SquarePicometerkelvinperkilowatt, "pm²K/kW");
+                Symbols.Add(ThermalResistanceUnit.SquareFemtometerkelvinperkilowatt, "fm²K/kW");
+                Symbols.Add(ThermalResistanceUnit.SquareAttometerkelvinperkilowatt, "am²K/kW");
+                Symbols.Add(ThermalResistanceUnit.SquareZeptometerkelvinperkilowatt, "zm²K/kW");
+                Symbols.Add(ThermalResistanceUnit.SquareYoctometerkelvinperkilowatt, "ym²K/kW");
                 
                 
                 ConversionFunctions.Add(ThermalResistanceUnit.SquareMeterKelvinPerWatt, "x * 1000");

@@ -1,5 +1,5 @@
 
-    // Auto-generated for VNet on 2023-07-05 10:24:46
+    // Auto-generated for VNet on 2023-07-05 10:35:43
     using System.Numerics;
     
     
@@ -21,6 +21,35 @@
                 
                 DefaultUnit = RotationalSpeedUnit.RadianPerSecond;
                 
+                Symbols.Add(RotationalSpeedUnit.DegreePerSecond, "°/s");
+                Symbols.Add(RotationalSpeedUnit.DegreePerMinute, "°/min");
+                Symbols.Add(RotationalSpeedUnit.RevolutionPerSecond, "r/s");
+                Symbols.Add(RotationalSpeedUnit.RevolutionPerMinute, "rpm");
+                Symbols.Add(RotationalSpeedUnit.Yottaradianpersecond, "Yrad/s");
+                Symbols.Add(RotationalSpeedUnit.Zettaradianpersecond, "Zrad/s");
+                Symbols.Add(RotationalSpeedUnit.Exaradianpersecond, "Erad/s");
+                Symbols.Add(RotationalSpeedUnit.Petaradianpersecond, "Prad/s");
+                Symbols.Add(RotationalSpeedUnit.Teraradianpersecond, "Trad/s");
+                Symbols.Add(RotationalSpeedUnit.Gigaradianpersecond, "Grad/s");
+                Symbols.Add(RotationalSpeedUnit.Megaradianpersecond, "Mrad/s");
+                Symbols.Add(RotationalSpeedUnit.Kiloradianpersecond, "krad/s");
+                Symbols.Add(RotationalSpeedUnit.Hectoradianpersecond, "hrad/s");
+                Symbols.Add(RotationalSpeedUnit.Dekaradianpersecond, "darad/s");
+                Symbols.Add(RotationalSpeedUnit.RadianPerSecond, "rad/s");
+                Symbols.Add(RotationalSpeedUnit.Deciradianpersecond, "drad/s");
+                Symbols.Add(RotationalSpeedUnit.Centiradianpersecond, "crad/s");
+                Symbols.Add(RotationalSpeedUnit.Milliradianpersecond, "mrad/s");
+                Symbols.Add(RotationalSpeedUnit.Microradianpersecond, "µrad/s");
+                Symbols.Add(RotationalSpeedUnit.Nanoradianpersecond, "nrad/s");
+                Symbols.Add(RotationalSpeedUnit.Picoradianpersecond, "prad/s");
+                Symbols.Add(RotationalSpeedUnit.Femtoradianpersecond, "frad/s");
+                Symbols.Add(RotationalSpeedUnit.Attoradianpersecond, "arad/s");
+                Symbols.Add(RotationalSpeedUnit.Zeptoradianpersecond, "zrad/s");
+                Symbols.Add(RotationalSpeedUnit.Yoctoradianpersecond, "yrad/s");
+                
+                PluralSymbols.Add(RotationalSpeedUnit.DegreePerSecond, "deg/s");
+                PluralSymbols.Add(RotationalSpeedUnit.DegreePerMinute, "deg/min");
+                PluralSymbols.Add(RotationalSpeedUnit.RevolutionPerMinute, "r/min");
                 
                 ConversionFunctions.Add(RotationalSpeedUnit.DegreePerSecond, "(Math.PI / 180) * x");
                 ConversionFunctions.Add(RotationalSpeedUnit.DegreePerMinute, "(Math.PI / (180 * 60)) * x");

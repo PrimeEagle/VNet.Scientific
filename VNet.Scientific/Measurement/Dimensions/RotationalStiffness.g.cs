@@ -1,5 +1,5 @@
 
-    // Auto-generated for VNet on 2023-07-05 10:24:46
+    // Auto-generated for VNet on 2023-07-05 10:35:43
     using System.Numerics;
     
     
@@ -21,6 +21,59 @@
                 
                 DefaultUnit = RotationalStiffnessUnit.NewtonMeterPerRadian;
                 
+                Symbols.Add(RotationalStiffnessUnit.PoundForceFootPerDegrees, "lbf·ft/deg");
+                Symbols.Add(RotationalStiffnessUnit.KilopoundForceFootPerDegrees, "kipf·ft/°");
+                Symbols.Add(RotationalStiffnessUnit.NewtonMillimeterPerDegree, "N·mm/deg");
+                Symbols.Add(RotationalStiffnessUnit.NewtonMeterPerDegree, "N·m/deg");
+                Symbols.Add(RotationalStiffnessUnit.NewtonMillimeterPerRadian, "N·mm/rad");
+                Symbols.Add(RotationalStiffnessUnit.PoundForceFeetPerRadian, "lbf·ft/rad");
+                Symbols.Add(RotationalStiffnessUnit.Yottanewtonmeterperradian, "YN·m/rad");
+                Symbols.Add(RotationalStiffnessUnit.Zettanewtonmeterperradian, "ZN·m/rad");
+                Symbols.Add(RotationalStiffnessUnit.Exanewtonmeterperradian, "EN·m/rad");
+                Symbols.Add(RotationalStiffnessUnit.Petanewtonmeterperradian, "PN·m/rad");
+                Symbols.Add(RotationalStiffnessUnit.Teranewtonmeterperradian, "TN·m/rad");
+                Symbols.Add(RotationalStiffnessUnit.Giganewtonmeterperradian, "GN·m/rad");
+                Symbols.Add(RotationalStiffnessUnit.Meganewtonmeterperradian, "MN·m/rad");
+                Symbols.Add(RotationalStiffnessUnit.Kilonewtonmeterperradian, "kN·m/rad");
+                Symbols.Add(RotationalStiffnessUnit.Hectonewtonmeterperradian, "hN·m/rad");
+                Symbols.Add(RotationalStiffnessUnit.Dekanewtonmeterperradian, "daN·m/rad");
+                Symbols.Add(RotationalStiffnessUnit.NewtonMeterPerRadian, "N·m/rad");
+                Symbols.Add(RotationalStiffnessUnit.Decinewtonmeterperradian, "dN·m/rad");
+                Symbols.Add(RotationalStiffnessUnit.Centinewtonmeterperradian, "cN·m/rad");
+                Symbols.Add(RotationalStiffnessUnit.Millinewtonmeterperradian, "mN·m/rad");
+                Symbols.Add(RotationalStiffnessUnit.Micronewtonmeterperradian, "µN·m/rad");
+                Symbols.Add(RotationalStiffnessUnit.Nanonewtonmeterperradian, "nN·m/rad");
+                Symbols.Add(RotationalStiffnessUnit.Piconewtonmeterperradian, "pN·m/rad");
+                Symbols.Add(RotationalStiffnessUnit.Femtonewtonmeterperradian, "fN·m/rad");
+                Symbols.Add(RotationalStiffnessUnit.Attonewtonmeterperradian, "aN·m/rad");
+                Symbols.Add(RotationalStiffnessUnit.Zeptonewtonmeterperradian, "zN·m/rad");
+                Symbols.Add(RotationalStiffnessUnit.Yoctonewtonmeterperradian, "yN·m/rad");
+                
+                PluralSymbols.Add(RotationalStiffnessUnit.KilopoundForceFootPerDegrees, "kip·ft/°g");
+                PluralSymbols.Add(RotationalStiffnessUnit.NewtonMillimeterPerDegree, "Nmm/deg");
+                PluralSymbols.Add(RotationalStiffnessUnit.NewtonMeterPerDegree, "Nm/deg");
+                PluralSymbols.Add(RotationalStiffnessUnit.NewtonMillimeterPerRadian, "Nmm/rad");
+                PluralSymbols.Add(RotationalStiffnessUnit.Yottanewtonmeterperradian, "YNm/rad");
+                PluralSymbols.Add(RotationalStiffnessUnit.Zettanewtonmeterperradian, "ZNm/rad");
+                PluralSymbols.Add(RotationalStiffnessUnit.Exanewtonmeterperradian, "ENm/rad");
+                PluralSymbols.Add(RotationalStiffnessUnit.Petanewtonmeterperradian, "PNm/rad");
+                PluralSymbols.Add(RotationalStiffnessUnit.Teranewtonmeterperradian, "TNm/rad");
+                PluralSymbols.Add(RotationalStiffnessUnit.Giganewtonmeterperradian, "GNm/rad");
+                PluralSymbols.Add(RotationalStiffnessUnit.Meganewtonmeterperradian, "MNm/rad");
+                PluralSymbols.Add(RotationalStiffnessUnit.Kilonewtonmeterperradian, "kNm/rad");
+                PluralSymbols.Add(RotationalStiffnessUnit.Hectonewtonmeterperradian, "hNm/rad");
+                PluralSymbols.Add(RotationalStiffnessUnit.Dekanewtonmeterperradian, "daNm/rad");
+                PluralSymbols.Add(RotationalStiffnessUnit.NewtonMeterPerRadian, "Nm/rad");
+                PluralSymbols.Add(RotationalStiffnessUnit.Decinewtonmeterperradian, "dNm/rad");
+                PluralSymbols.Add(RotationalStiffnessUnit.Centinewtonmeterperradian, "cNm/rad");
+                PluralSymbols.Add(RotationalStiffnessUnit.Millinewtonmeterperradian, "mNm/rad");
+                PluralSymbols.Add(RotationalStiffnessUnit.Micronewtonmeterperradian, "µNm/rad");
+                PluralSymbols.Add(RotationalStiffnessUnit.Nanonewtonmeterperradian, "nNm/rad");
+                PluralSymbols.Add(RotationalStiffnessUnit.Piconewtonmeterperradian, "pNm/rad");
+                PluralSymbols.Add(RotationalStiffnessUnit.Femtonewtonmeterperradian, "fNm/rad");
+                PluralSymbols.Add(RotationalStiffnessUnit.Attonewtonmeterperradian, "aNm/rad");
+                PluralSymbols.Add(RotationalStiffnessUnit.Zeptonewtonmeterperradian, "zNm/rad");
+                PluralSymbols.Add(RotationalStiffnessUnit.Yoctonewtonmeterperradian, "yNm/rad");
                 
                 ConversionFunctions.Add(RotationalStiffnessUnit.PoundForceFootPerDegrees, "x * 77.6826");
                 ConversionFunctions.Add(RotationalStiffnessUnit.KilopoundForceFootPerDegrees, "x * 77682.6");

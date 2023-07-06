@@ -1,5 +1,5 @@
 
-    // Auto-generated for VNet on 2023-07-05 10:24:46
+    // Auto-generated for VNet on 2023-07-05 10:35:43
     using System.Numerics;
     
     
@@ -20,6 +20,33 @@
                 DimensionComponent.Exponents.Amount = 0;
                 
                 DefaultUnit = MassFluxUnit.KilogramPerSecondPerSquareMeter;
+                
+                Symbols.Add(MassFluxUnit.GramPerSecondPerSquareMeter, "g·s⁻¹·m⁻²");
+                Symbols.Add(MassFluxUnit.GramPerSecondPerSquareCentimeter, "g·s⁻¹·cm⁻²");
+                Symbols.Add(MassFluxUnit.GramPerSecondPerSquareMillimeter, "g·s⁻¹·mm⁻²");
+                Symbols.Add(MassFluxUnit.GramPerHourPerSquareMeter, "g·h⁻¹·m⁻²");
+                Symbols.Add(MassFluxUnit.GramPerHourPerSquareCentimeter, "g·h⁻¹·cm⁻²");
+                Symbols.Add(MassFluxUnit.GramPerHourPerSquareMillimeter, "g·h⁻¹·mm⁻²");
+                Symbols.Add(MassFluxUnit.YottagramPerSecondPerSquareMeter, "Yg");
+                Symbols.Add(MassFluxUnit.ZettagramPerSecondPerSquareMeter, "Zg");
+                Symbols.Add(MassFluxUnit.ExagramPerSecondPerSquareMeter, "Eg");
+                Symbols.Add(MassFluxUnit.PetagramPerSecondPerSquareMeter, "Pg");
+                Symbols.Add(MassFluxUnit.TeragramPerSecondPerSquareMeter, "Tg");
+                Symbols.Add(MassFluxUnit.GigagramPerSecondPerSquareMeter, "Gg");
+                Symbols.Add(MassFluxUnit.MegagramPerSecondPerSquareMeter, "Mg");
+                Symbols.Add(MassFluxUnit.HectogramPerSecondPerSquareMeter, "hg");
+                Symbols.Add(MassFluxUnit.DekagramPerSecondPerSquareMeter, "dag");
+                Symbols.Add(MassFluxUnit.KilogramPerSecondPerSquareMeter, "g");
+                Symbols.Add(MassFluxUnit.DecigramPerSecondPerSquareMeter, "dg");
+                Symbols.Add(MassFluxUnit.CentigramPerSecondPerSquareMeter, "cg");
+                Symbols.Add(MassFluxUnit.MilligramPerSecondPerSquareMeter, "mg");
+                Symbols.Add(MassFluxUnit.MicrogramPerSecondPerSquareMeter, "µg");
+                Symbols.Add(MassFluxUnit.NanogramPerSecondPerSquareMeter, "ng");
+                Symbols.Add(MassFluxUnit.PicogramPerSecondPerSquareMeter, "pg");
+                Symbols.Add(MassFluxUnit.FemtogramPerSecondPerSquareMeter, "fg");
+                Symbols.Add(MassFluxUnit.AttogramPerSecondPerSquareMeter, "ag");
+                Symbols.Add(MassFluxUnit.ZeptogramPerSecondPerSquareMeter, "zg");
+                Symbols.Add(MassFluxUnit.YoctogramPerSecondPerSquareMeter, "yg");
                 
                 
                 ConversionFunctions.Add(MassFluxUnit.GramPerSecondPerSquareMeter, "1000 * (x / 1e3)");

@@ -1,5 +1,5 @@
 
-    // Auto-generated for VNet on 2023-07-05 10:24:46
+    // Auto-generated for VNet on 2023-07-05 10:35:43
     using System.Numerics;
     
     
@@ -20,6 +20,33 @@
                 DimensionComponent.Exponents.Amount = 0;
                 
                 DefaultUnit = ReciprocalAreaUnit.InverseSquareMeter;
+                
+                Symbols.Add(ReciprocalAreaUnit.InverseSquareMile, "mi⁻²");
+                Symbols.Add(ReciprocalAreaUnit.InverseSquareYard, "yd⁻²");
+                Symbols.Add(ReciprocalAreaUnit.InverseSquareFoot, "ft⁻²");
+                Symbols.Add(ReciprocalAreaUnit.InverseUsSurveySquareFoot, "ft⁻² (US)");
+                Symbols.Add(ReciprocalAreaUnit.InverseSquareInch, "in⁻²");
+                Symbols.Add(ReciprocalAreaUnit.InversesquareYottameter, "Ym⁻²");
+                Symbols.Add(ReciprocalAreaUnit.InversesquareZettameter, "Zm⁻²");
+                Symbols.Add(ReciprocalAreaUnit.InversesquareExameter, "Em⁻²");
+                Symbols.Add(ReciprocalAreaUnit.InversesquarePetameter, "Pm⁻²");
+                Symbols.Add(ReciprocalAreaUnit.InversesquareTerameter, "Tm⁻²");
+                Symbols.Add(ReciprocalAreaUnit.InversesquareGigameter, "Gm⁻²");
+                Symbols.Add(ReciprocalAreaUnit.InversesquareMegameter, "Mm⁻²");
+                Symbols.Add(ReciprocalAreaUnit.InversesquareKilometer, "km⁻²");
+                Symbols.Add(ReciprocalAreaUnit.InversesquareHectometer, "hm⁻²");
+                Symbols.Add(ReciprocalAreaUnit.InversesquareDekameter, "dam⁻²");
+                Symbols.Add(ReciprocalAreaUnit.InverseSquareMeter, "m⁻²");
+                Symbols.Add(ReciprocalAreaUnit.InversesquareDecimeter, "dm⁻²");
+                Symbols.Add(ReciprocalAreaUnit.InversesquareCentimeter, "cm⁻²");
+                Symbols.Add(ReciprocalAreaUnit.InversesquareMillimeter, "mm⁻²");
+                Symbols.Add(ReciprocalAreaUnit.InversesquareMicrometer, "µm⁻²");
+                Symbols.Add(ReciprocalAreaUnit.InversesquareNanometer, "nm⁻²");
+                Symbols.Add(ReciprocalAreaUnit.InversesquarePicometer, "pm⁻²");
+                Symbols.Add(ReciprocalAreaUnit.InversesquareFemtometer, "fm⁻²");
+                Symbols.Add(ReciprocalAreaUnit.InversesquareAttometer, "am⁻²");
+                Symbols.Add(ReciprocalAreaUnit.InversesquareZeptometer, "zm⁻²");
+                Symbols.Add(ReciprocalAreaUnit.InversesquareYoctometer, "ym⁻²");
                 
                 
                 ConversionFunctions.Add(ReciprocalAreaUnit.InverseSquareMile, "x / 2.59e6");

@@ -1,5 +1,5 @@
 
-    // Auto-generated for VNet on 2023-07-05 10:24:46
+    // Auto-generated for VNet on 2023-07-05 10:35:43
     using System.Numerics;
     
     
@@ -20,6 +20,36 @@
                 DimensionComponent.Exponents.Amount = 0;
                 
                 DefaultUnit = VolumePerLengthUnit.CubicMeterPerMeter;
+                
+                Symbols.Add(VolumePerLengthUnit.LiterPerMeter, "l/m");
+                Symbols.Add(VolumePerLengthUnit.LiterPerKilometer, "l/km");
+                Symbols.Add(VolumePerLengthUnit.LiterPerMillimeter, "l/mm");
+                Symbols.Add(VolumePerLengthUnit.OilBarrelPerFoot, "bbl/ft");
+                Symbols.Add(VolumePerLengthUnit.CubicYardPerFoot, "yd³/ft");
+                Symbols.Add(VolumePerLengthUnit.CubicYardPerUsSurveyFoot, "yd³/ftUS");
+                Symbols.Add(VolumePerLengthUnit.UsGallonPerMile, "gal (U.S.)/mi");
+                Symbols.Add(VolumePerLengthUnit.ImperialGallonPerMile, "gal (imp.)/mi");
+                Symbols.Add(VolumePerLengthUnit.CubicYottameterpermeter, "Ym³/m");
+                Symbols.Add(VolumePerLengthUnit.CubicZettameterpermeter, "Zm³/m");
+                Symbols.Add(VolumePerLengthUnit.CubicExameterpermeter, "Em³/m");
+                Symbols.Add(VolumePerLengthUnit.CubicPetameterpermeter, "Pm³/m");
+                Symbols.Add(VolumePerLengthUnit.CubicTerameterpermeter, "Tm³/m");
+                Symbols.Add(VolumePerLengthUnit.CubicGigameterpermeter, "Gm³/m");
+                Symbols.Add(VolumePerLengthUnit.CubicMegameterpermeter, "Mm³/m");
+                Symbols.Add(VolumePerLengthUnit.CubicKilometerpermeter, "km³/m");
+                Symbols.Add(VolumePerLengthUnit.CubicHectometerpermeter, "hm³/m");
+                Symbols.Add(VolumePerLengthUnit.CubicDekameterpermeter, "dam³/m");
+                Symbols.Add(VolumePerLengthUnit.CubicMeterPerMeter, "m³/m");
+                Symbols.Add(VolumePerLengthUnit.CubicDecimeterpermeter, "dm³/m");
+                Symbols.Add(VolumePerLengthUnit.CubicCentimeterpermeter, "cm³/m");
+                Symbols.Add(VolumePerLengthUnit.CubicMillimeterpermeter, "mm³/m");
+                Symbols.Add(VolumePerLengthUnit.CubicMicrometerpermeter, "µm³/m");
+                Symbols.Add(VolumePerLengthUnit.CubicNanometerpermeter, "nm³/m");
+                Symbols.Add(VolumePerLengthUnit.CubicPicometerpermeter, "pm³/m");
+                Symbols.Add(VolumePerLengthUnit.CubicFemtometerpermeter, "fm³/m");
+                Symbols.Add(VolumePerLengthUnit.CubicAttometerpermeter, "am³/m");
+                Symbols.Add(VolumePerLengthUnit.CubicZeptometerpermeter, "zm³/m");
+                Symbols.Add(VolumePerLengthUnit.CubicYoctometerpermeter, "ym³/m");
                 
                 
                 ConversionFunctions.Add(VolumePerLengthUnit.LiterPerMeter, "x / 1000");

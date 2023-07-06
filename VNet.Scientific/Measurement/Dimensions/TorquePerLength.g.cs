@@ -1,5 +1,5 @@
 
-    // Auto-generated for VNet on 2023-07-05 10:24:46
+    // Auto-generated for VNet on 2023-07-05 10:35:43
     using System.Numerics;
     
     
@@ -20,6 +20,38 @@
                 DimensionComponent.Exponents.Amount = 0;
                 
                 DefaultUnit = TorquePerLengthUnit.NewtonMeterPerMeter;
+                
+                Symbols.Add(TorquePerLengthUnit.NewtonMillimeterPerMeter, "N·mm/m");
+                Symbols.Add(TorquePerLengthUnit.NewtonCentimeterPerMeter, "N·cm/m");
+                Symbols.Add(TorquePerLengthUnit.PoundForceInchPerFoot, "lbf·in/ft");
+                Symbols.Add(TorquePerLengthUnit.PoundForceFootPerFoot, "lbf·ft/ft");
+                Symbols.Add(TorquePerLengthUnit.KilogramForceMillimeterPerMeter, "kgf·mm/m");
+                Symbols.Add(TorquePerLengthUnit.KilogramForceCentimeterPerMeter, "kgf·cm/m");
+                Symbols.Add(TorquePerLengthUnit.KilogramForceMeterPerMeter, "kgf·m/m");
+                Symbols.Add(TorquePerLengthUnit.TonneForceMillimeterPerMeter, "tf·mm/m");
+                Symbols.Add(TorquePerLengthUnit.TonneForceCentimeterPerMeter, "tf·cm/m");
+                Symbols.Add(TorquePerLengthUnit.TonneForceMeterPerMeter, "tf·m/m");
+                Symbols.Add(TorquePerLengthUnit.Yottanewtonmeterpermeter, "YN·m/m");
+                Symbols.Add(TorquePerLengthUnit.Zettanewtonmeterpermeter, "ZN·m/m");
+                Symbols.Add(TorquePerLengthUnit.Exanewtonmeterpermeter, "EN·m/m");
+                Symbols.Add(TorquePerLengthUnit.Petanewtonmeterpermeter, "PN·m/m");
+                Symbols.Add(TorquePerLengthUnit.Teranewtonmeterpermeter, "TN·m/m");
+                Symbols.Add(TorquePerLengthUnit.Giganewtonmeterpermeter, "GN·m/m");
+                Symbols.Add(TorquePerLengthUnit.Meganewtonmeterpermeter, "MN·m/m");
+                Symbols.Add(TorquePerLengthUnit.Kilonewtonmeterpermeter, "kN·m/m");
+                Symbols.Add(TorquePerLengthUnit.Hectonewtonmeterpermeter, "hN·m/m");
+                Symbols.Add(TorquePerLengthUnit.Dekanewtonmeterpermeter, "daN·m/m");
+                Symbols.Add(TorquePerLengthUnit.NewtonMeterPerMeter, "N·m/m");
+                Symbols.Add(TorquePerLengthUnit.Decinewtonmeterpermeter, "dN·m/m");
+                Symbols.Add(TorquePerLengthUnit.Centinewtonmeterpermeter, "cN·m/m");
+                Symbols.Add(TorquePerLengthUnit.Millinewtonmeterpermeter, "mN·m/m");
+                Symbols.Add(TorquePerLengthUnit.Micronewtonmeterpermeter, "µN·m/m");
+                Symbols.Add(TorquePerLengthUnit.Nanonewtonmeterpermeter, "nN·m/m");
+                Symbols.Add(TorquePerLengthUnit.Piconewtonmeterpermeter, "pN·m/m");
+                Symbols.Add(TorquePerLengthUnit.Femtonewtonmeterpermeter, "fN·m/m");
+                Symbols.Add(TorquePerLengthUnit.Attonewtonmeterpermeter, "aN·m/m");
+                Symbols.Add(TorquePerLengthUnit.Zeptonewtonmeterpermeter, "zN·m/m");
+                Symbols.Add(TorquePerLengthUnit.Yoctonewtonmeterpermeter, "yN·m/m");
                 
                 
                 ConversionFunctions.Add(TorquePerLengthUnit.NewtonMillimeterPerMeter, "x * 0.001");

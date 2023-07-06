@@ -1,5 +1,5 @@
 
-    // Auto-generated for VNet on 2023-07-05 10:24:46
+    // Auto-generated for VNet on 2023-07-05 10:35:43
     using System.Numerics;
     
     
@@ -20,6 +20,28 @@
                 DimensionComponent.Exponents.Amount = 0;
                 
                 DefaultUnit = PermittivityUnit.FaradPerMeter;
+                
+                Symbols.Add(PermittivityUnit.Yottafaradpermeter, "YF/m");
+                Symbols.Add(PermittivityUnit.Zettafaradpermeter, "ZF/m");
+                Symbols.Add(PermittivityUnit.Exafaradpermeter, "EF/m");
+                Symbols.Add(PermittivityUnit.Petafaradpermeter, "PF/m");
+                Symbols.Add(PermittivityUnit.Terafaradpermeter, "TF/m");
+                Symbols.Add(PermittivityUnit.Gigafaradpermeter, "GF/m");
+                Symbols.Add(PermittivityUnit.Megafaradpermeter, "MF/m");
+                Symbols.Add(PermittivityUnit.Kilofaradpermeter, "kF/m");
+                Symbols.Add(PermittivityUnit.Hectofaradpermeter, "hF/m");
+                Symbols.Add(PermittivityUnit.Dekafaradpermeter, "daF/m");
+                Symbols.Add(PermittivityUnit.FaradPerMeter, "F/m");
+                Symbols.Add(PermittivityUnit.Decifaradpermeter, "dF/m");
+                Symbols.Add(PermittivityUnit.Centifaradpermeter, "cF/m");
+                Symbols.Add(PermittivityUnit.Millifaradpermeter, "mF/m");
+                Symbols.Add(PermittivityUnit.Microfaradpermeter, "µF/m");
+                Symbols.Add(PermittivityUnit.Nanofaradpermeter, "nF/m");
+                Symbols.Add(PermittivityUnit.Picofaradpermeter, "pF/m");
+                Symbols.Add(PermittivityUnit.Femtofaradpermeter, "fF/m");
+                Symbols.Add(PermittivityUnit.Attofaradpermeter, "aF/m");
+                Symbols.Add(PermittivityUnit.Zeptofaradpermeter, "zF/m");
+                Symbols.Add(PermittivityUnit.Yoctofaradpermeter, "yF/m");
                 
                 
                 ConversionFunctions.Add(PermittivityUnit.Yottafaradpermeter, "x * 1e24");

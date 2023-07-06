@@ -1,5 +1,5 @@
 
-    // Auto-generated for VNet on 2023-07-05 10:24:46
+    // Auto-generated for VNet on 2023-07-05 10:35:43
     using System.Numerics;
     
     
@@ -20,6 +20,31 @@
                 DimensionComponent.Exponents.Amount = 0;
                 
                 DefaultUnit = PowerDensityUnit.WattPerCubicMeter;
+                
+                Symbols.Add(PowerDensityUnit.WattPerCubicInch, "W/in³");
+                Symbols.Add(PowerDensityUnit.WattPerCubicFoot, "W/ft³");
+                Symbols.Add(PowerDensityUnit.WattPerLiter, "W/l");
+                Symbols.Add(PowerDensityUnit.Yottawattpercubicmeter, "YW/m³");
+                Symbols.Add(PowerDensityUnit.Zettawattpercubicmeter, "ZW/m³");
+                Symbols.Add(PowerDensityUnit.Exawattpercubicmeter, "EW/m³");
+                Symbols.Add(PowerDensityUnit.Petawattpercubicmeter, "PW/m³");
+                Symbols.Add(PowerDensityUnit.Terawattpercubicmeter, "TW/m³");
+                Symbols.Add(PowerDensityUnit.Gigawattpercubicmeter, "GW/m³");
+                Symbols.Add(PowerDensityUnit.Megawattpercubicmeter, "MW/m³");
+                Symbols.Add(PowerDensityUnit.Kilowattpercubicmeter, "kW/m³");
+                Symbols.Add(PowerDensityUnit.Hectowattpercubicmeter, "hW/m³");
+                Symbols.Add(PowerDensityUnit.Dekawattpercubicmeter, "daW/m³");
+                Symbols.Add(PowerDensityUnit.WattPerCubicMeter, "W/m³");
+                Symbols.Add(PowerDensityUnit.Deciwattpercubicmeter, "dW/m³");
+                Symbols.Add(PowerDensityUnit.Centiwattpercubicmeter, "cW/m³");
+                Symbols.Add(PowerDensityUnit.Milliwattpercubicmeter, "mW/m³");
+                Symbols.Add(PowerDensityUnit.Microwattpercubicmeter, "µW/m³");
+                Symbols.Add(PowerDensityUnit.Nanowattpercubicmeter, "nW/m³");
+                Symbols.Add(PowerDensityUnit.Picowattpercubicmeter, "pW/m³");
+                Symbols.Add(PowerDensityUnit.Femtowattpercubicmeter, "fW/m³");
+                Symbols.Add(PowerDensityUnit.Attowattpercubicmeter, "aW/m³");
+                Symbols.Add(PowerDensityUnit.Zeptowattpercubicmeter, "zW/m³");
+                Symbols.Add(PowerDensityUnit.Yoctowattpercubicmeter, "yW/m³");
                 
                 
                 ConversionFunctions.Add(PowerDensityUnit.WattPerCubicInch, "x * 6.102374409473228e4");

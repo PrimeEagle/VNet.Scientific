@@ -1,5 +1,5 @@
 
-    // Auto-generated for VNet on 2023-07-05 10:24:46
+    // Auto-generated for VNet on 2023-07-05 10:35:43
     using System.Numerics;
     
     
@@ -20,6 +20,36 @@
                 DimensionComponent.Exponents.Amount = 0;
                 
                 DefaultUnit = SpecificEnergyUnit.JoulePerKilogram;
+                
+                Symbols.Add(SpecificEnergyUnit.MegaJoulePerTonne, "MJ/t");
+                Symbols.Add(SpecificEnergyUnit.CaloriePerGram, "cal/g");
+                Symbols.Add(SpecificEnergyUnit.WattHourPerKilogram, "Wh/kg");
+                Symbols.Add(SpecificEnergyUnit.WattDayPerKilogram, "Wd/kg");
+                Symbols.Add(SpecificEnergyUnit.WattDayPerTonne, "Wd/t");
+                Symbols.Add(SpecificEnergyUnit.WattDayPerShortTon, "Wd/ST");
+                Symbols.Add(SpecificEnergyUnit.WattHourPerPound, "Wh/lbs");
+                Symbols.Add(SpecificEnergyUnit.BtuPerPound, "btu/lb");
+                Symbols.Add(SpecificEnergyUnit.Yottajouleperkilogram, "YJ/kg");
+                Symbols.Add(SpecificEnergyUnit.Zettajouleperkilogram, "ZJ/kg");
+                Symbols.Add(SpecificEnergyUnit.Exajouleperkilogram, "EJ/kg");
+                Symbols.Add(SpecificEnergyUnit.Petajouleperkilogram, "PJ/kg");
+                Symbols.Add(SpecificEnergyUnit.Terajouleperkilogram, "TJ/kg");
+                Symbols.Add(SpecificEnergyUnit.Gigajouleperkilogram, "GJ/kg");
+                Symbols.Add(SpecificEnergyUnit.Megajouleperkilogram, "MJ/kg");
+                Symbols.Add(SpecificEnergyUnit.Kilojouleperkilogram, "kJ/kg");
+                Symbols.Add(SpecificEnergyUnit.Hectojouleperkilogram, "hJ/kg");
+                Symbols.Add(SpecificEnergyUnit.Dekajouleperkilogram, "daJ/kg");
+                Symbols.Add(SpecificEnergyUnit.JoulePerKilogram, "J/kg");
+                Symbols.Add(SpecificEnergyUnit.Decijouleperkilogram, "dJ/kg");
+                Symbols.Add(SpecificEnergyUnit.Centijouleperkilogram, "cJ/kg");
+                Symbols.Add(SpecificEnergyUnit.Millijouleperkilogram, "mJ/kg");
+                Symbols.Add(SpecificEnergyUnit.Microjouleperkilogram, "µJ/kg");
+                Symbols.Add(SpecificEnergyUnit.Nanojouleperkilogram, "nJ/kg");
+                Symbols.Add(SpecificEnergyUnit.Picojouleperkilogram, "pJ/kg");
+                Symbols.Add(SpecificEnergyUnit.Femtojouleperkilogram, "fJ/kg");
+                Symbols.Add(SpecificEnergyUnit.Attojouleperkilogram, "aJ/kg");
+                Symbols.Add(SpecificEnergyUnit.Zeptojouleperkilogram, "zJ/kg");
+                Symbols.Add(SpecificEnergyUnit.Yoctojouleperkilogram, "yJ/kg");
                 
                 
                 ConversionFunctions.Add(SpecificEnergyUnit.MegaJoulePerTonne, "x * 1e3");

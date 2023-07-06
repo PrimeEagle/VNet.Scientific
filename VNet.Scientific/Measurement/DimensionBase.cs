@@ -7,14 +7,20 @@ public abstract class DimensionBase<TUnit, TVal> : IDimension<TUnit, TVal> where
     public abstract string IdTag { get; }
     public DimensionComponent DimensionComponent { get; init; }
     public TUnit DefaultUnit { get; set; }
+    public Dictionary<TUnit, string> Symbols => _symbols;
+    public Dictionary<TUnit, string> PluralSymbols => _pluralSymbols;
     public Dictionary<TUnit, string> ConversionFunctions => _conversionFunctions;
 
+    private readonly Dictionary<TUnit, string> _symbols;
+    private readonly Dictionary<TUnit, string> _pluralSymbols; 
     private readonly Dictionary<TUnit, string> _conversionFunctions;
 
 
     public DimensionBase()
     {
         DimensionComponent = new DimensionComponent();
+        _symbols = new Dictionary<TUnit, string>();
+        _pluralSymbols = new Dictionary<TUnit, string>(); 
         _conversionFunctions = new Dictionary<TUnit, string>();
     }
 
@@ -24,24 +30,6 @@ public abstract class DimensionBase<TUnit, TVal> : IDimension<TUnit, TVal> where
 
         return exp;
     }
-
-    //protected void Initialize(string idTag)
-    //{
-    //    if (!UnitDefinition.Components.ContainsKey(idTag)) throw new InvalidOperationException($"Value '{idTag}' was not found in UnitDefinition.Components");
-
-    //    var definition = UnitDefinition.Components[idTag];
-
-    //    DimensionComponent.Exponents.Length = definition.Item1[0];
-    //    DimensionComponent.Exponents.Mass = definition.Item1[1];
-    //    DimensionComponent.Exponents.Time = definition.Item1[2];
-    //    DimensionComponent.Exponents.ElectricalCurrent = definition.Item1[3];
-    //    DimensionComponent.Exponents.LuminousIntensity = definition.Item1[4];
-    //    DimensionComponent.Exponents.Temperature = definition.Item1[5];
-    //    DimensionComponent.Exponents.Amount = definition.Item1[6];
-
-
-    //    DefaultUnit = (TUnit)definition.Item2;
-    //}
 
     public virtual void ValidateUnit(Enum unit)
     {

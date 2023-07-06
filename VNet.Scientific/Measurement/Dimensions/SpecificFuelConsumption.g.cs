@@ -1,5 +1,5 @@
 
-    // Auto-generated for VNet on 2023-07-05 10:24:46
+    // Auto-generated for VNet on 2023-07-05 10:35:43
     using System.Numerics;
     
     
@@ -20,6 +20,30 @@
                 DimensionComponent.Exponents.Amount = 0;
                 
                 DefaultUnit = SpecificFuelConsumptionUnit.GramPerKiloNewtonSecond;
+                
+                Symbols.Add(SpecificFuelConsumptionUnit.PoundMassPerPoundForceHour, "lb/(lbf·h)");
+                Symbols.Add(SpecificFuelConsumptionUnit.KilogramPerKilogramForceHour, "kg/(kgf�h)");
+                Symbols.Add(SpecificFuelConsumptionUnit.Yottagramperkilonewtonsecond, "Yg/(kN�s)");
+                Symbols.Add(SpecificFuelConsumptionUnit.Zettagramperkilonewtonsecond, "Zg/(kN�s)");
+                Symbols.Add(SpecificFuelConsumptionUnit.Exagramperkilonewtonsecond, "Eg/(kN�s)");
+                Symbols.Add(SpecificFuelConsumptionUnit.Petagramperkilonewtonsecond, "Pg/(kN�s)");
+                Symbols.Add(SpecificFuelConsumptionUnit.Teragramperkilonewtonsecond, "Tg/(kN�s)");
+                Symbols.Add(SpecificFuelConsumptionUnit.Gigagramperkilonewtonsecond, "Gg/(kN�s)");
+                Symbols.Add(SpecificFuelConsumptionUnit.Megagramperkilonewtonsecond, "Mg/(kN�s)");
+                Symbols.Add(SpecificFuelConsumptionUnit.Kilogramperkilonewtonsecond, "kg/(kN�s)");
+                Symbols.Add(SpecificFuelConsumptionUnit.Hectogramperkilonewtonsecond, "hg/(kN�s)");
+                Symbols.Add(SpecificFuelConsumptionUnit.Dekagramperkilonewtonsecond, "dag/(kN�s)");
+                Symbols.Add(SpecificFuelConsumptionUnit.GramPerKiloNewtonSecond, "g/(kN�s)");
+                Symbols.Add(SpecificFuelConsumptionUnit.Decigramperkilonewtonsecond, "dg/(kN�s)");
+                Symbols.Add(SpecificFuelConsumptionUnit.Centigramperkilonewtonsecond, "cg/(kN�s)");
+                Symbols.Add(SpecificFuelConsumptionUnit.Milligramperkilonewtonsecond, "mg/(kN�s)");
+                Symbols.Add(SpecificFuelConsumptionUnit.Microgramperkilonewtonsecond, "µg/(kN�s)");
+                Symbols.Add(SpecificFuelConsumptionUnit.Nanogramperkilonewtonsecond, "ng/(kN�s)");
+                Symbols.Add(SpecificFuelConsumptionUnit.Picogramperkilonewtonsecond, "pg/(kN�s)");
+                Symbols.Add(SpecificFuelConsumptionUnit.Femtogramperkilonewtonsecond, "fg/(kN�s)");
+                Symbols.Add(SpecificFuelConsumptionUnit.Attogramperkilonewtonsecond, "ag/(kN�s)");
+                Symbols.Add(SpecificFuelConsumptionUnit.Zeptogramperkilonewtonsecond, "zg/(kN�s)");
+                Symbols.Add(SpecificFuelConsumptionUnit.Yoctogramperkilonewtonsecond, "yg/(kN�s)");
                 
                 
                 ConversionFunctions.Add(SpecificFuelConsumptionUnit.PoundMassPerPoundForceHour, "x * 28.33");

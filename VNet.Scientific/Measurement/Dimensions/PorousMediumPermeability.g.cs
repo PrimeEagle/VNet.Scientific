@@ -1,5 +1,5 @@
 
-    // Auto-generated for VNet on 2023-07-05 10:24:46
+    // Auto-generated for VNet on 2023-07-05 10:35:43
     using System.Numerics;
     
     
@@ -20,6 +20,29 @@
                 DimensionComponent.Exponents.Amount = 0;
                 
                 DefaultUnit = PorousMediumPermeabilityUnit.SquareMeter;
+                
+                Symbols.Add(PorousMediumPermeabilityUnit.Darcy, "D");
+                Symbols.Add(PorousMediumPermeabilityUnit.SquareYottameter, "Ym²");
+                Symbols.Add(PorousMediumPermeabilityUnit.SquareZettameter, "Zm²");
+                Symbols.Add(PorousMediumPermeabilityUnit.SquareExameter, "Em²");
+                Symbols.Add(PorousMediumPermeabilityUnit.SquarePetameter, "Pm²");
+                Symbols.Add(PorousMediumPermeabilityUnit.SquareTerameter, "Tm²");
+                Symbols.Add(PorousMediumPermeabilityUnit.SquareGigameter, "Gm²");
+                Symbols.Add(PorousMediumPermeabilityUnit.SquareMegameter, "Mm²");
+                Symbols.Add(PorousMediumPermeabilityUnit.SquareKilometer, "km²");
+                Symbols.Add(PorousMediumPermeabilityUnit.SquareHectometer, "hm²");
+                Symbols.Add(PorousMediumPermeabilityUnit.SquareDekameter, "dam²");
+                Symbols.Add(PorousMediumPermeabilityUnit.SquareMeter, "m²");
+                Symbols.Add(PorousMediumPermeabilityUnit.SquareDecimeter, "dm²");
+                Symbols.Add(PorousMediumPermeabilityUnit.SquareCentimeter, "cm²");
+                Symbols.Add(PorousMediumPermeabilityUnit.SquareMillimeter, "mm²");
+                Symbols.Add(PorousMediumPermeabilityUnit.SquareMicrometer, "µm²");
+                Symbols.Add(PorousMediumPermeabilityUnit.SquareNanometer, "nm²");
+                Symbols.Add(PorousMediumPermeabilityUnit.SquarePicometer, "pm²");
+                Symbols.Add(PorousMediumPermeabilityUnit.SquareFemtometer, "fm²");
+                Symbols.Add(PorousMediumPermeabilityUnit.SquareAttometer, "am²");
+                Symbols.Add(PorousMediumPermeabilityUnit.SquareZeptometer, "zm²");
+                Symbols.Add(PorousMediumPermeabilityUnit.SquareYoctometer, "ym²");
                 
                 
                 ConversionFunctions.Add(PorousMediumPermeabilityUnit.Darcy, "x * 9.869233e-13");

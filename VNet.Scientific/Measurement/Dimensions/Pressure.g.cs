@@ -1,5 +1,5 @@
 
-    // Auto-generated for VNet on 2023-07-05 10:24:46
+    // Auto-generated for VNet on 2023-07-05 10:35:43
     using System.Numerics;
     
     
@@ -21,6 +21,59 @@
                 
                 DefaultUnit = PressureUnit.Pascal;
                 
+                Symbols.Add(PressureUnit.Atmosphere, "atm");
+                Symbols.Add(PressureUnit.Bar, "bar");
+                Symbols.Add(PressureUnit.KilogramForcePerSquareMeter, "kgf/m²");
+                Symbols.Add(PressureUnit.KilogramForcePerSquareCentimeter, "kgf/cm²");
+                Symbols.Add(PressureUnit.KilogramForcePerSquareMillimeter, "kgf/mm²");
+                Symbols.Add(PressureUnit.NewtonPerSquareMeter, "N/m²");
+                Symbols.Add(PressureUnit.NewtonPerSquareCentimeter, "N/cm²");
+                Symbols.Add(PressureUnit.NewtonPerSquareMillimeter, "N/mm²");
+                Symbols.Add(PressureUnit.TechnicalAtmosphere, "at");
+                Symbols.Add(PressureUnit.Torr, "torr");
+                Symbols.Add(PressureUnit.PoundForcePerSquareInch, "psi");
+                Symbols.Add(PressureUnit.PoundForcePerSquareMil, "lb/mil²");
+                Symbols.Add(PressureUnit.PoundForcePerSquareFoot, "lb/ft²");
+                Symbols.Add(PressureUnit.TonneForcePerSquareMillimeter, "tf/mm²");
+                Symbols.Add(PressureUnit.TonneForcePerSquareMeter, "tf/m²");
+                Symbols.Add(PressureUnit.MeterOfHead, "m of head");
+                Symbols.Add(PressureUnit.TonneForcePerSquareCentimeter, "tf/cm²");
+                Symbols.Add(PressureUnit.FootOfHead, "ft of head");
+                Symbols.Add(PressureUnit.MillimeterOfMercury, "mmHg");
+                Symbols.Add(PressureUnit.InchOfMercury, "inHg");
+                Symbols.Add(PressureUnit.DynePerSquareCentimeter, "dyn/cm²");
+                Symbols.Add(PressureUnit.PoundPerInchSecondSquared, "lbm/(in·s²)");
+                Symbols.Add(PressureUnit.MeterOfWaterColumn, "mH₂O");
+                Symbols.Add(PressureUnit.InchOfWaterColumn, "inH2O");
+                Symbols.Add(PressureUnit.MeterOfElevation, "m of elevation");
+                Symbols.Add(PressureUnit.FootOfElevation, "ft of elevation");
+                Symbols.Add(PressureUnit.Yottapascal, "YPa");
+                Symbols.Add(PressureUnit.Zettapascal, "ZPa");
+                Symbols.Add(PressureUnit.Exapascal, "EPa");
+                Symbols.Add(PressureUnit.Petapascal, "PPa");
+                Symbols.Add(PressureUnit.Terapascal, "TPa");
+                Symbols.Add(PressureUnit.Gigapascal, "GPa");
+                Symbols.Add(PressureUnit.Megapascal, "MPa");
+                Symbols.Add(PressureUnit.Kilopascal, "kPa");
+                Symbols.Add(PressureUnit.Hectopascal, "hPa");
+                Symbols.Add(PressureUnit.Dekapascal, "daPa");
+                Symbols.Add(PressureUnit.Pascal, "Pa");
+                Symbols.Add(PressureUnit.Decipascal, "dPa");
+                Symbols.Add(PressureUnit.Centipascal, "cPa");
+                Symbols.Add(PressureUnit.Millipascal, "mPa");
+                Symbols.Add(PressureUnit.Micropascal, "µPa");
+                Symbols.Add(PressureUnit.Nanopascal, "nPa");
+                Symbols.Add(PressureUnit.Picopascal, "pPa");
+                Symbols.Add(PressureUnit.Femtopascal, "fPa");
+                Symbols.Add(PressureUnit.Attopascal, "aPa");
+                Symbols.Add(PressureUnit.Zeptopascal, "zPa");
+                Symbols.Add(PressureUnit.Yoctopascal, "yPa");
+                
+                PluralSymbols.Add(PressureUnit.PoundForcePerSquareInch, "lb/in²");
+                PluralSymbols.Add(PressureUnit.PoundForcePerSquareMil, "lbs/mil²");
+                PluralSymbols.Add(PressureUnit.PoundPerInchSecondSquared, "lb/(in·s²)");
+                PluralSymbols.Add(PressureUnit.MeterOfWaterColumn, "mH2O");
+                PluralSymbols.Add(PressureUnit.InchOfWaterColumn, "inch wc");
                 
                 ConversionFunctions.Add(PressureUnit.Atmosphere, "x * 1.01325 * 1e5");
                 ConversionFunctions.Add(PressureUnit.Bar, "x * 1e5");

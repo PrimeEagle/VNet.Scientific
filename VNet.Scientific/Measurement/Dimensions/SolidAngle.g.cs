@@ -1,5 +1,5 @@
 
-    // Auto-generated for VNet on 2023-07-05 10:24:46
+    // Auto-generated for VNet on 2023-07-05 10:35:43
     using System.Numerics;
     
     
@@ -20,6 +20,28 @@
                 DimensionComponent.Exponents.Amount = 0;
                 
                 DefaultUnit = SolidAngleUnit.Steradian;
+                
+                Symbols.Add(SolidAngleUnit.Yottasteradian, "Ysr");
+                Symbols.Add(SolidAngleUnit.Zettasteradian, "Zsr");
+                Symbols.Add(SolidAngleUnit.Exasteradian, "Esr");
+                Symbols.Add(SolidAngleUnit.Petasteradian, "Psr");
+                Symbols.Add(SolidAngleUnit.Terasteradian, "Tsr");
+                Symbols.Add(SolidAngleUnit.Gigasteradian, "Gsr");
+                Symbols.Add(SolidAngleUnit.Megasteradian, "Msr");
+                Symbols.Add(SolidAngleUnit.Kilosteradian, "ksr");
+                Symbols.Add(SolidAngleUnit.Hectosteradian, "hsr");
+                Symbols.Add(SolidAngleUnit.Dekasteradian, "dasr");
+                Symbols.Add(SolidAngleUnit.Steradian, "sr");
+                Symbols.Add(SolidAngleUnit.Decisteradian, "dsr");
+                Symbols.Add(SolidAngleUnit.Centisteradian, "csr");
+                Symbols.Add(SolidAngleUnit.Millisteradian, "msr");
+                Symbols.Add(SolidAngleUnit.Microsteradian, "µsr");
+                Symbols.Add(SolidAngleUnit.Nanosteradian, "nsr");
+                Symbols.Add(SolidAngleUnit.Picosteradian, "psr");
+                Symbols.Add(SolidAngleUnit.Femtosteradian, "fsr");
+                Symbols.Add(SolidAngleUnit.Attosteradian, "asr");
+                Symbols.Add(SolidAngleUnit.Zeptosteradian, "zsr");
+                Symbols.Add(SolidAngleUnit.Yoctosteradian, "ysr");
                 
                 
                 ConversionFunctions.Add(SolidAngleUnit.Yottasteradian, "x * 1e24");

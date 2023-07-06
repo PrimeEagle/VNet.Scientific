@@ -1,5 +1,5 @@
 
-    // Auto-generated for VNet on 2023-07-05 10:24:46
+    // Auto-generated for VNet on 2023-07-05 10:35:43
     using System.Numerics;
     
     
@@ -20,6 +20,33 @@
                 DimensionComponent.Exponents.Amount = 1;
                 
                 DefaultUnit = MolarFlowUnit.MolePerSecond;
+                
+                Symbols.Add(MolarFlowUnit.MolePerMinute, "mol/min");
+                Symbols.Add(MolarFlowUnit.MolePerHour, "kmol/h");
+                Symbols.Add(MolarFlowUnit.PoundMolePerSecond, "lbmol/s");
+                Symbols.Add(MolarFlowUnit.PoundMolePerMinute, "lbmol/min");
+                Symbols.Add(MolarFlowUnit.PoundMolePerHour, "lbmol/h");
+                Symbols.Add(MolarFlowUnit.Yottamolepersecond, "Ymol/s");
+                Symbols.Add(MolarFlowUnit.Zettamolepersecond, "Zmol/s");
+                Symbols.Add(MolarFlowUnit.Examolepersecond, "Emol/s");
+                Symbols.Add(MolarFlowUnit.Petamolepersecond, "Pmol/s");
+                Symbols.Add(MolarFlowUnit.Teramolepersecond, "Tmol/s");
+                Symbols.Add(MolarFlowUnit.Gigamolepersecond, "Gmol/s");
+                Symbols.Add(MolarFlowUnit.Megamolepersecond, "Mmol/s");
+                Symbols.Add(MolarFlowUnit.Kilomolepersecond, "kmol/s");
+                Symbols.Add(MolarFlowUnit.Hectomolepersecond, "hmol/s");
+                Symbols.Add(MolarFlowUnit.Dekamolepersecond, "damol/s");
+                Symbols.Add(MolarFlowUnit.MolePerSecond, "mol/s");
+                Symbols.Add(MolarFlowUnit.Decimolepersecond, "dmol/s");
+                Symbols.Add(MolarFlowUnit.Centimolepersecond, "cmol/s");
+                Symbols.Add(MolarFlowUnit.Millimolepersecond, "mmol/s");
+                Symbols.Add(MolarFlowUnit.Micromolepersecond, "µmol/s");
+                Symbols.Add(MolarFlowUnit.Nanomolepersecond, "nmol/s");
+                Symbols.Add(MolarFlowUnit.Picomolepersecond, "pmol/s");
+                Symbols.Add(MolarFlowUnit.Femtomolepersecond, "fmol/s");
+                Symbols.Add(MolarFlowUnit.Attomolepersecond, "amol/s");
+                Symbols.Add(MolarFlowUnit.Zeptomolepersecond, "zmol/s");
+                Symbols.Add(MolarFlowUnit.Yoctomolepersecond, "ymol/s");
                 
                 
                 ConversionFunctions.Add(MolarFlowUnit.MolePerMinute, "x / 60");

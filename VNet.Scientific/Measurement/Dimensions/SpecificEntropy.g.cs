@@ -1,5 +1,5 @@
 
-    // Auto-generated for VNet on 2023-07-05 10:24:46
+    // Auto-generated for VNet on 2023-07-05 10:35:43
     using System.Numerics;
     
     
@@ -21,6 +21,32 @@
                 
                 DefaultUnit = SpecificEntropyUnit.JoulePerKilogramKelvin;
                 
+                Symbols.Add(SpecificEntropyUnit.JoulePerKilogramDegreeCelsius, "J/kg.C");
+                Symbols.Add(SpecificEntropyUnit.CaloriePerGramKelvin, "cal/g.K");
+                Symbols.Add(SpecificEntropyUnit.BtuPerPoundFahrenheit, "BTU/lb·°F");
+                Symbols.Add(SpecificEntropyUnit.Yottajouleperkilogramkelvin, "YJ/kg.K");
+                Symbols.Add(SpecificEntropyUnit.Zettajouleperkilogramkelvin, "ZJ/kg.K");
+                Symbols.Add(SpecificEntropyUnit.Exajouleperkilogramkelvin, "EJ/kg.K");
+                Symbols.Add(SpecificEntropyUnit.Petajouleperkilogramkelvin, "PJ/kg.K");
+                Symbols.Add(SpecificEntropyUnit.Terajouleperkilogramkelvin, "TJ/kg.K");
+                Symbols.Add(SpecificEntropyUnit.Gigajouleperkilogramkelvin, "GJ/kg.K");
+                Symbols.Add(SpecificEntropyUnit.Megajouleperkilogramkelvin, "MJ/kg.K");
+                Symbols.Add(SpecificEntropyUnit.Kilojouleperkilogramkelvin, "kJ/kg.K");
+                Symbols.Add(SpecificEntropyUnit.Hectojouleperkilogramkelvin, "hJ/kg.K");
+                Symbols.Add(SpecificEntropyUnit.Dekajouleperkilogramkelvin, "daJ/kg.K");
+                Symbols.Add(SpecificEntropyUnit.JoulePerKilogramKelvin, "J/kg.K");
+                Symbols.Add(SpecificEntropyUnit.Decijouleperkilogramkelvin, "dJ/kg.K");
+                Symbols.Add(SpecificEntropyUnit.Centijouleperkilogramkelvin, "cJ/kg.K");
+                Symbols.Add(SpecificEntropyUnit.Millijouleperkilogramkelvin, "mJ/kg.K");
+                Symbols.Add(SpecificEntropyUnit.Microjouleperkilogramkelvin, "µJ/kg.K");
+                Symbols.Add(SpecificEntropyUnit.Nanojouleperkilogramkelvin, "nJ/kg.K");
+                Symbols.Add(SpecificEntropyUnit.Picojouleperkilogramkelvin, "pJ/kg.K");
+                Symbols.Add(SpecificEntropyUnit.Femtojouleperkilogramkelvin, "fJ/kg.K");
+                Symbols.Add(SpecificEntropyUnit.Attojouleperkilogramkelvin, "aJ/kg.K");
+                Symbols.Add(SpecificEntropyUnit.Zeptojouleperkilogramkelvin, "zJ/kg.K");
+                Symbols.Add(SpecificEntropyUnit.Yoctojouleperkilogramkelvin, "yJ/kg.K");
+                
+                PluralSymbols.Add(SpecificEntropyUnit.BtuPerPoundFahrenheit, "BTU/lbm·°F");
                 
                 ConversionFunctions.Add(SpecificEntropyUnit.JoulePerKilogramDegreeCelsius, "x");
                 ConversionFunctions.Add(SpecificEntropyUnit.CaloriePerGramKelvin, "x * 4.184e3");

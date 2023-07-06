@@ -1,5 +1,5 @@
 
-    // Auto-generated for VNet on 2023-07-05 10:24:46
+    // Auto-generated for VNet on 2023-07-05 10:35:43
     using System.Numerics;
     
     
@@ -20,6 +20,30 @@
                 DimensionComponent.Exponents.Amount = -1;
                 
                 DefaultUnit = MolarMassUnit.KilogramPerMole;
+                
+                Symbols.Add(MolarMassUnit.GramPerMole, "g/mol");
+                Symbols.Add(MolarMassUnit.KilogramPerKilomole, "kg/kmol");
+                Symbols.Add(MolarMassUnit.PoundPerMole, "lb/mol");
+                Symbols.Add(MolarMassUnit.YottagramPerMole, "Yg");
+                Symbols.Add(MolarMassUnit.ZettagramPerMole, "Zg");
+                Symbols.Add(MolarMassUnit.ExagramPerMole, "Eg");
+                Symbols.Add(MolarMassUnit.PetagramPerMole, "Pg");
+                Symbols.Add(MolarMassUnit.TeragramPerMole, "Tg");
+                Symbols.Add(MolarMassUnit.GigagramPerMole, "Gg");
+                Symbols.Add(MolarMassUnit.MegagramPerMole, "Mg");
+                Symbols.Add(MolarMassUnit.HectogramPerMole, "hg");
+                Symbols.Add(MolarMassUnit.DekagramPerMole, "dag");
+                Symbols.Add(MolarMassUnit.KilogramPerMole, "g");
+                Symbols.Add(MolarMassUnit.DecigramPerMole, "dg");
+                Symbols.Add(MolarMassUnit.CentigramPerMole, "cg");
+                Symbols.Add(MolarMassUnit.MilligramPerMole, "mg");
+                Symbols.Add(MolarMassUnit.MicrogramPerMole, "µg");
+                Symbols.Add(MolarMassUnit.NanogramPerMole, "ng");
+                Symbols.Add(MolarMassUnit.PicogramPerMole, "pg");
+                Symbols.Add(MolarMassUnit.FemtogramPerMole, "fg");
+                Symbols.Add(MolarMassUnit.AttogramPerMole, "ag");
+                Symbols.Add(MolarMassUnit.ZeptogramPerMole, "zg");
+                Symbols.Add(MolarMassUnit.YoctogramPerMole, "yg");
                 
                 
                 ConversionFunctions.Add(MolarMassUnit.GramPerMole, "1000 * (x / 1e3)");

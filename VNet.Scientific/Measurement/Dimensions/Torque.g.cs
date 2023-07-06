@@ -1,5 +1,5 @@
 
-    // Auto-generated for VNet on 2023-07-05 10:24:46
+    // Auto-generated for VNet on 2023-07-05 10:35:43
     using System.Numerics;
     
     
@@ -20,6 +20,42 @@
                 DimensionComponent.Exponents.Amount = 0;
                 
                 DefaultUnit = TorqueUnit.NewtonMeter;
+                
+                Symbols.Add(TorqueUnit.NewtonMillimeter, "N·mm");
+                Symbols.Add(TorqueUnit.NewtonCentimeter, "N·cm");
+                Symbols.Add(TorqueUnit.PoundalFoot, "pdl·ft");
+                Symbols.Add(TorqueUnit.PoundForceInch, "lbf·in");
+                Symbols.Add(TorqueUnit.PoundForceFoot, "lbf·ft");
+                Symbols.Add(TorqueUnit.GramForceMillimeter, "gf·mm");
+                Symbols.Add(TorqueUnit.GramForceCentimeter, "gf·cm");
+                Symbols.Add(TorqueUnit.GramForceMeter, "gf·m");
+                Symbols.Add(TorqueUnit.KilogramForceMillimeter, "kgf·mm");
+                Symbols.Add(TorqueUnit.KilogramForceCentimeter, "kgf·cm");
+                Symbols.Add(TorqueUnit.KilogramForceMeter, "kgf·m");
+                Symbols.Add(TorqueUnit.TonneForceMillimeter, "tf·mm");
+                Symbols.Add(TorqueUnit.TonneForceCentimeter, "tf·cm");
+                Symbols.Add(TorqueUnit.TonneForceMeter, "tf·m");
+                Symbols.Add(TorqueUnit.Yottanewtonmeter, "YN·m");
+                Symbols.Add(TorqueUnit.Zettanewtonmeter, "ZN·m");
+                Symbols.Add(TorqueUnit.Exanewtonmeter, "EN·m");
+                Symbols.Add(TorqueUnit.Petanewtonmeter, "PN·m");
+                Symbols.Add(TorqueUnit.Teranewtonmeter, "TN·m");
+                Symbols.Add(TorqueUnit.Giganewtonmeter, "GN·m");
+                Symbols.Add(TorqueUnit.Meganewtonmeter, "MN·m");
+                Symbols.Add(TorqueUnit.Kilonewtonmeter, "kN·m");
+                Symbols.Add(TorqueUnit.Hectonewtonmeter, "hN·m");
+                Symbols.Add(TorqueUnit.Dekanewtonmeter, "daN·m");
+                Symbols.Add(TorqueUnit.NewtonMeter, "N·m");
+                Symbols.Add(TorqueUnit.Decinewtonmeter, "dN·m");
+                Symbols.Add(TorqueUnit.Centinewtonmeter, "cN·m");
+                Symbols.Add(TorqueUnit.Millinewtonmeter, "mN·m");
+                Symbols.Add(TorqueUnit.Micronewtonmeter, "µN·m");
+                Symbols.Add(TorqueUnit.Nanonewtonmeter, "nN·m");
+                Symbols.Add(TorqueUnit.Piconewtonmeter, "pN·m");
+                Symbols.Add(TorqueUnit.Femtonewtonmeter, "fN·m");
+                Symbols.Add(TorqueUnit.Attonewtonmeter, "aN·m");
+                Symbols.Add(TorqueUnit.Zeptonewtonmeter, "zN·m");
+                Symbols.Add(TorqueUnit.Yoctonewtonmeter, "yN·m");
                 
                 
                 ConversionFunctions.Add(TorqueUnit.NewtonMillimeter, "x * 0.001");

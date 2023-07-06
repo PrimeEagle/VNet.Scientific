@@ -1,5 +1,5 @@
 
-    // Auto-generated for VNet on 2023-07-05 10:24:46
+    // Auto-generated for VNet on 2023-07-05 10:35:43
     using System.Numerics;
     
     
@@ -21,6 +21,51 @@
                 
                 DefaultUnit = VolumeUnit.CubicMeter;
                 
+                Symbols.Add(VolumeUnit.Liter, "l");
+                Symbols.Add(VolumeUnit.CubicMile, "mi³");
+                Symbols.Add(VolumeUnit.CubicYard, "yd³");
+                Symbols.Add(VolumeUnit.CubicFoot, "ft³");
+                Symbols.Add(VolumeUnit.CubicInch, "in³");
+                Symbols.Add(VolumeUnit.ImperialGallon, "gal (imp.)");
+                Symbols.Add(VolumeUnit.ImperialOunce, "oz (imp.)");
+                Symbols.Add(VolumeUnit.UsGallon, "gal (U.S.)");
+                Symbols.Add(VolumeUnit.UsOunce, "oz (U.S.)");
+                Symbols.Add(VolumeUnit.MetricTeaspoon, "tsp");
+                Symbols.Add(VolumeUnit.OilBarrel, "bbl");
+                Symbols.Add(VolumeUnit.UsBeerBarrel, "bl (U.S.)");
+                Symbols.Add(VolumeUnit.ImperialBeerBarrel, "bl (imp.)");
+                Symbols.Add(VolumeUnit.UsQuart, "qt (U.S.)");
+                Symbols.Add(VolumeUnit.ImperialQuart, "qt (imp.)");
+                Symbols.Add(VolumeUnit.UsPint, "pt (U.S.)");
+                Symbols.Add(VolumeUnit.AcreFoot, "ac-ft");
+                Symbols.Add(VolumeUnit.ImperialPint, "pt (imp.)");
+                Symbols.Add(VolumeUnit.BoardFoot, "bf");
+                Symbols.Add(VolumeUnit.CubicYottameter, "Ym³");
+                Symbols.Add(VolumeUnit.CubicZettameter, "Zm³");
+                Symbols.Add(VolumeUnit.CubicExameter, "Em³");
+                Symbols.Add(VolumeUnit.CubicPetameter, "Pm³");
+                Symbols.Add(VolumeUnit.CubicTerameter, "Tm³");
+                Symbols.Add(VolumeUnit.CubicGigameter, "Gm³");
+                Symbols.Add(VolumeUnit.CubicMegameter, "Mm³");
+                Symbols.Add(VolumeUnit.CubicKilometer, "km³");
+                Symbols.Add(VolumeUnit.CubicHectometer, "hm³");
+                Symbols.Add(VolumeUnit.CubicDekameter, "dam³");
+                Symbols.Add(VolumeUnit.CubicMeter, "m³");
+                Symbols.Add(VolumeUnit.CubicDecimeter, "dm³");
+                Symbols.Add(VolumeUnit.CubicCentimeter, "cm³");
+                Symbols.Add(VolumeUnit.CubicMillimeter, "mm³");
+                Symbols.Add(VolumeUnit.CubicMicrometer, "µm³");
+                Symbols.Add(VolumeUnit.CubicNanometer, "nm³");
+                Symbols.Add(VolumeUnit.CubicPicometer, "pm³");
+                Symbols.Add(VolumeUnit.CubicFemtometer, "fm³");
+                Symbols.Add(VolumeUnit.CubicAttometer, "am³");
+                Symbols.Add(VolumeUnit.CubicZeptometer, "zm³");
+                Symbols.Add(VolumeUnit.CubicYoctometer, "ym³");
+                
+                PluralSymbols.Add(VolumeUnit.MetricTeaspoon, "t");
+                PluralSymbols.Add(VolumeUnit.AcreFoot, "acre-foot");
+                PluralSymbols.Add(VolumeUnit.ImperialPint, "UK pt");
+                PluralSymbols.Add(VolumeUnit.BoardFoot, "board foot");
                 
                 ConversionFunctions.Add(VolumeUnit.Liter, "x / 1e3");
                 ConversionFunctions.Add(VolumeUnit.CubicMile, "x * 4.16818182544058e9");

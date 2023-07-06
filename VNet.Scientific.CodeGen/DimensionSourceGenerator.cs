@@ -93,10 +93,22 @@ namespace VNet.Scientific.CodeGen
                     targetFileName = Path.Combine(context.ProjectDir(), "Measurement", "Dimensions", dimVNet.Name);
                     if (File.Exists($"{targetFileName}.g.cs")) File.Delete($"{targetFileName}.g.cs");
 
-                    var dictLines = new List<string>();
+                    var conversionDictLines = new List<string>();
                     foreach (var key in dimVNet.ConversionFunctions.Keys)
                     {
-                        dictLines.Add($"ConversionFunctions.Add({dimVNet.Name}Unit.{key}, \"{dimVNet.ConversionFunctions[key]}\");");
+                        conversionDictLines.Add($"ConversionFunctions.Add({dimVNet.Name}Unit.{key}, \"{dimVNet.ConversionFunctions[key]}\");");
+                    }
+
+                    var symbolsDictLines = new List<string>();
+                    foreach (var key in dimVNet.Symbols.Keys)
+                    {
+                        symbolsDictLines.Add($"Symbols.Add({dimVNet.Name}Unit.{key}, \"{dimVNet.Symbols[key]}\");");
+                    }
+
+                    var pluralSymbolsDictLines = new List<string>();
+                    foreach (var key in dimVNet.PluralSymbols.Keys)
+                    {
+                        pluralSymbolsDictLines.Add($"PluralSymbols.Add({dimVNet.Name}Unit.{key}, \"{dimVNet.PluralSymbols[key]}\");");
                     }
 
                     CodeWriter.For<CSharpCodeFile>()
@@ -125,8 +137,11 @@ namespace VNet.Scientific.CodeGen
                                         .AddBlankLine()
                                         .AddCodeLine($"DefaultUnit = {dimVNet.Name}Unit.{dimVNet.DefaultUnit};")
                                         .AddBlankLine()
-                                        .AddCodeLine($"")
-                                        .AddCodeLines(dictLines)
+                                        .AddCodeLines(symbolsDictLines)
+                                        .AddBlankLine()
+                                        .AddCodeLines(pluralSymbolsDictLines)
+                                        .AddBlankLine()
+                                        .AddCodeLines(conversionDictLines)
                                         .UpTo<ClassScope>()
                                     .UpTo<NamespaceScope>()
                                 .UpTo<CSharpCodeFile>()

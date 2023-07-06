@@ -1,5 +1,5 @@
 
-    // Auto-generated for VNet on 2023-07-05 10:24:46
+    // Auto-generated for VNet on 2023-07-05 10:35:43
     using System.Numerics;
     
     
@@ -21,6 +21,74 @@
                 
                 DefaultUnit = VolumeFlowUnit.CubicMeterPerSecond;
                 
+                Symbols.Add(VolumeFlowUnit.CubicMeterPerMinute, "m³/min");
+                Symbols.Add(VolumeFlowUnit.CubicMeterPerHour, "m³/h");
+                Symbols.Add(VolumeFlowUnit.CubicMeterPerDay, "m³/d");
+                Symbols.Add(VolumeFlowUnit.CubicFootPerSecond, "ft³/s");
+                Symbols.Add(VolumeFlowUnit.CubicFootPerMinute, "ft³/min");
+                Symbols.Add(VolumeFlowUnit.CubicFootPerHour, "ft³/h");
+                Symbols.Add(VolumeFlowUnit.CubicYardPerSecond, "yd³/s");
+                Symbols.Add(VolumeFlowUnit.CubicYardPerMinute, "yd³/min");
+                Symbols.Add(VolumeFlowUnit.CubicYardPerHour, "yd³/h");
+                Symbols.Add(VolumeFlowUnit.CubicYardPerDay, "cy/day");
+                Symbols.Add(VolumeFlowUnit.MillionUsGallonPerDay, "MGD");
+                Symbols.Add(VolumeFlowUnit.UsGallonPerDay, "gpd");
+                Symbols.Add(VolumeFlowUnit.LiterPerSecond, "L/s");
+                Symbols.Add(VolumeFlowUnit.LiterPerMinute, "L/min");
+                Symbols.Add(VolumeFlowUnit.LiterPerHour, "L/h");
+                Symbols.Add(VolumeFlowUnit.LiterPerDay, "l/day");
+                Symbols.Add(VolumeFlowUnit.UsGallonPerSecond, "gal (U.S.)/s");
+                Symbols.Add(VolumeFlowUnit.UsGallonPerMinute, "gal (U.S.)/min");
+                Symbols.Add(VolumeFlowUnit.UkGallonPerDay, "gal (U. K.)/d");
+                Symbols.Add(VolumeFlowUnit.UkGallonPerHour, "gal (imp.)/h");
+                Symbols.Add(VolumeFlowUnit.UkGallonPerMinute, "gal (imp.)/min");
+                Symbols.Add(VolumeFlowUnit.UkGallonPerSecond, "gal (imp.)/s");
+                Symbols.Add(VolumeFlowUnit.KilousGallonPerMinute, "kgal (U.S.)/min");
+                Symbols.Add(VolumeFlowUnit.UsGallonPerHour, "gal (U.S.)/h");
+                Symbols.Add(VolumeFlowUnit.CubicDecimeterPerMinute, "dm³/min");
+                Symbols.Add(VolumeFlowUnit.OilBarrelPerDay, "bbl/d");
+                Symbols.Add(VolumeFlowUnit.OilBarrelPerMinute, "bbl/min");
+                Symbols.Add(VolumeFlowUnit.OilBarrelPerHour, "bbl/hr");
+                Symbols.Add(VolumeFlowUnit.OilBarrelPerSecond, "bbl/s");
+                Symbols.Add(VolumeFlowUnit.AcreFootPerSecond, "af/s");
+                Symbols.Add(VolumeFlowUnit.AcreFootPerMinute, "af/m");
+                Symbols.Add(VolumeFlowUnit.AcreFootPerHour, "af/h");
+                Symbols.Add(VolumeFlowUnit.AcreFootPerDay, "af/d");
+                Symbols.Add(VolumeFlowUnit.CubicCentimeterPerMinute, "cm³/min");
+                Symbols.Add(VolumeFlowUnit.CubicYottameterpersecond, "Ym³/s");
+                Symbols.Add(VolumeFlowUnit.CubicZettameterpersecond, "Zm³/s");
+                Symbols.Add(VolumeFlowUnit.CubicExameterpersecond, "Em³/s");
+                Symbols.Add(VolumeFlowUnit.CubicPetameterpersecond, "Pm³/s");
+                Symbols.Add(VolumeFlowUnit.CubicTerameterpersecond, "Tm³/s");
+                Symbols.Add(VolumeFlowUnit.CubicGigameterpersecond, "Gm³/s");
+                Symbols.Add(VolumeFlowUnit.CubicMegameterpersecond, "Mm³/s");
+                Symbols.Add(VolumeFlowUnit.CubicKilometerpersecond, "km³/s");
+                Symbols.Add(VolumeFlowUnit.CubicHectometerpersecond, "hm³/s");
+                Symbols.Add(VolumeFlowUnit.CubicDekameterpersecond, "dam³/s");
+                Symbols.Add(VolumeFlowUnit.CubicMeterPerSecond, "m³/s");
+                Symbols.Add(VolumeFlowUnit.CubicDecimeterpersecond, "dm³/s");
+                Symbols.Add(VolumeFlowUnit.CubicCentimeterpersecond, "cm³/s");
+                Symbols.Add(VolumeFlowUnit.CubicMillimeterpersecond, "mm³/s");
+                Symbols.Add(VolumeFlowUnit.CubicMicrometerpersecond, "µm³/s");
+                Symbols.Add(VolumeFlowUnit.CubicNanometerpersecond, "nm³/s");
+                Symbols.Add(VolumeFlowUnit.CubicPicometerpersecond, "pm³/s");
+                Symbols.Add(VolumeFlowUnit.CubicFemtometerpersecond, "fm³/s");
+                Symbols.Add(VolumeFlowUnit.CubicAttometerpersecond, "am³/s");
+                Symbols.Add(VolumeFlowUnit.CubicZeptometerpersecond, "zm³/s");
+                Symbols.Add(VolumeFlowUnit.CubicYoctometerpersecond, "ym³/s");
+                
+                PluralSymbols.Add(VolumeFlowUnit.CubicFootPerMinute, "CFM");
+                PluralSymbols.Add(VolumeFlowUnit.CubicFootPerHour, "cf/hr");
+                PluralSymbols.Add(VolumeFlowUnit.UsGallonPerDay, "gal/d");
+                PluralSymbols.Add(VolumeFlowUnit.LiterPerSecond, "LPS");
+                PluralSymbols.Add(VolumeFlowUnit.LiterPerMinute, "LPM");
+                PluralSymbols.Add(VolumeFlowUnit.LiterPerHour, "LPH");
+                PluralSymbols.Add(VolumeFlowUnit.LiterPerDay, "L/d");
+                PluralSymbols.Add(VolumeFlowUnit.UsGallonPerMinute, "GPM");
+                PluralSymbols.Add(VolumeFlowUnit.KilousGallonPerMinute, "KGPM");
+                PluralSymbols.Add(VolumeFlowUnit.OilBarrelPerDay, "BOPD");
+                PluralSymbols.Add(VolumeFlowUnit.OilBarrelPerMinute, "bpm");
+                PluralSymbols.Add(VolumeFlowUnit.OilBarrelPerHour, "bph");
                 
                 ConversionFunctions.Add(VolumeFlowUnit.CubicMeterPerMinute, "x / 60");
                 ConversionFunctions.Add(VolumeFlowUnit.CubicMeterPerHour, "x / 3600");

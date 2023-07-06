@@ -1,5 +1,5 @@
 
-    // Auto-generated for VNet on 2023-07-05 10:24:46
+    // Auto-generated for VNet on 2023-07-05 10:35:43
     using System.Numerics;
     
     
@@ -20,6 +20,29 @@
                 DimensionComponent.Exponents.Amount = 0;
                 
                 DefaultUnit = TemperatureChangeRateUnit.DegreeCelsiusPerSecond;
+                
+                Symbols.Add(TemperatureChangeRateUnit.DegreeCelsiusPerMinute, "°C/min");
+                Symbols.Add(TemperatureChangeRateUnit.Yottadegreecelsiuspersecond, "Y°C/s");
+                Symbols.Add(TemperatureChangeRateUnit.Zettadegreecelsiuspersecond, "Z°C/s");
+                Symbols.Add(TemperatureChangeRateUnit.Exadegreecelsiuspersecond, "E°C/s");
+                Symbols.Add(TemperatureChangeRateUnit.Petadegreecelsiuspersecond, "P°C/s");
+                Symbols.Add(TemperatureChangeRateUnit.Teradegreecelsiuspersecond, "T°C/s");
+                Symbols.Add(TemperatureChangeRateUnit.Gigadegreecelsiuspersecond, "G°C/s");
+                Symbols.Add(TemperatureChangeRateUnit.Megadegreecelsiuspersecond, "M°C/s");
+                Symbols.Add(TemperatureChangeRateUnit.Kilodegreecelsiuspersecond, "k°C/s");
+                Symbols.Add(TemperatureChangeRateUnit.Hectodegreecelsiuspersecond, "h°C/s");
+                Symbols.Add(TemperatureChangeRateUnit.Dekadegreecelsiuspersecond, "da°C/s");
+                Symbols.Add(TemperatureChangeRateUnit.DegreeCelsiusPerSecond, "°C/s");
+                Symbols.Add(TemperatureChangeRateUnit.Decidegreecelsiuspersecond, "d°C/s");
+                Symbols.Add(TemperatureChangeRateUnit.Centidegreecelsiuspersecond, "c°C/s");
+                Symbols.Add(TemperatureChangeRateUnit.Millidegreecelsiuspersecond, "m°C/s");
+                Symbols.Add(TemperatureChangeRateUnit.Microdegreecelsiuspersecond, "µ°C/s");
+                Symbols.Add(TemperatureChangeRateUnit.Nanodegreecelsiuspersecond, "n°C/s");
+                Symbols.Add(TemperatureChangeRateUnit.Picodegreecelsiuspersecond, "p°C/s");
+                Symbols.Add(TemperatureChangeRateUnit.Femtodegreecelsiuspersecond, "f°C/s");
+                Symbols.Add(TemperatureChangeRateUnit.Attodegreecelsiuspersecond, "a°C/s");
+                Symbols.Add(TemperatureChangeRateUnit.Zeptodegreecelsiuspersecond, "z°C/s");
+                Symbols.Add(TemperatureChangeRateUnit.Yoctodegreecelsiuspersecond, "y°C/s");
                 
                 
                 ConversionFunctions.Add(TemperatureChangeRateUnit.DegreeCelsiusPerMinute, "x / 60");
