@@ -1,0 +1,57 @@
+
+    // Auto-generated for VNet on 2023-07-05 10:35:43
+    
+    
+    namespace VNet.Scientific.Measurement.Dimensions
+    {
+        public enum PressureUnit
+        {
+            Atmosphere,
+            Attopascal,
+            Bar,
+            Centipascal,
+            Decipascal,
+            Dekapascal,
+            DynePerSquareCentimeter,
+            Exapascal,
+            Femtopascal,
+            FootOfElevation,
+            FootOfHead,
+            Gigapascal,
+            Hectopascal,
+            InchOfMercury,
+            InchOfWaterColumn,
+            KilogramForcePerSquareCentimeter,
+            KilogramForcePerSquareMeter,
+            KilogramForcePerSquareMillimeter,
+            Kilopascal,
+            Megapascal,
+            MeterOfElevation,
+            MeterOfHead,
+            MeterOfWaterColumn,
+            Micropascal,
+            MillimeterOfMercury,
+            Millipascal,
+            Nanopascal,
+            NewtonPerSquareCentimeter,
+            NewtonPerSquareMeter,
+            NewtonPerSquareMillimeter,
+            Pascal,
+            Petapascal,
+            Picopascal,
+            PoundForcePerSquareFoot,
+            PoundForcePerSquareInch,
+            PoundForcePerSquareMil,
+            PoundPerInchSecondSquared,
+            TechnicalAtmosphere,
+            Terapascal,
+            TonneForcePerSquareCentimeter,
+            TonneForcePerSquareMeter,
+            TonneForcePerSquareMillimeter,
+            Torr,
+            Yoctopascal,
+            Yottapascal,
+            Zeptopascal,
+            Zettapascal,
+        }
+    }

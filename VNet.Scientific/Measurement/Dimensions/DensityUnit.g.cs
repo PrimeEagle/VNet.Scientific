@@ -1,0 +1,56 @@
+
+    // Auto-generated for VNet on 2023-07-05 10:35:43
+    
+    
+    namespace VNet.Scientific.Measurement.Dimensions
+    {
+        public enum DensityUnit
+        {
+            AttogramPerCubicMeter,
+            CentigramPerCubicMeter,
+            DecigramPerCubicMeter,
+            DekagramPerCubicMeter,
+            ExagramPerCubicMeter,
+            FemtogramPerCubicMeter,
+            GigagramPerCubicMeter,
+            GramPerCubicCentimeter,
+            GramPerCubicFoot,
+            GramPerCubicInch,
+            GramPerCubicMeter,
+            GramPerCubicMillimeter,
+            GramPerDeciliter,
+            GramPerLiter,
+            GramPerMilliliter,
+            HectogramPerCubicMeter,
+            KilogramPerCubicMeter,
+            KilogramPerLiter,
+            MegagramPerCubicMeter,
+            MicrogramPerCubicMeter,
+            MilligramPerCubicMeter,
+            NanogramPerCubicMeter,
+            PetagramPerCubicMeter,
+            PicogramPerCubicMeter,
+            PoundPerCubicCentimeter,
+            PoundPerCubicFoot,
+            PoundPerCubicInch,
+            PoundPerCubicMeter,
+            PoundPerCubicMillimeter,
+            PoundPerImperialGallon,
+            PoundPerUSGallon,
+            SlugPerCubicCentimeter,
+            SlugPerCubicFoot,
+            SlugPerCubicInch,
+            SlugPerCubicMeter,
+            SlugPerCubicMillimeter,
+            TeragramPerCubicMeter,
+            TonnePerCubicCentimeter,
+            TonnePerCubicFoot,
+            TonnePerCubicInch,
+            TonnePerCubicMeter,
+            TonnePerCubicMillimeter,
+            YoctogramPerCubicMeter,
+            YottagramPerCubicMeter,
+            ZeptogramPerCubicMeter,
+            ZettagramPerCubicMeter,
+        }
+    }

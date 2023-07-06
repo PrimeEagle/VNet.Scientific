@@ -1,0 +1,1 @@
+{"name":"Level","exponents":[0,0,0,0,0,0,0],"default unit":"Decibel","units":["Decibel","Neper"],"conversion functions":{"Decibel":"x","Neper":"(1 / 0.115129254) * x"},"symbols":{"Decibel":"dB","Neper":"Np"},"plural symbols":{}}
