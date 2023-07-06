@@ -7,21 +7,20 @@ public abstract class DimensionBase<TUnit, TVal> : IDimension<TUnit, TVal> where
     public abstract string IdTag { get; }
     public DimensionComponent DimensionComponent { get; init; }
     public TUnit DefaultUnit { get; set; }
-    public Dictionary<string, string> ConversionFunctions => _conversionFunctions;
+    public Dictionary<TUnit, string> ConversionFunctions => _conversionFunctions;
 
-    private readonly Dictionary<string, string> _conversionFunctions;
+    private readonly Dictionary<TUnit, string> _conversionFunctions;
 
 
     public DimensionBase()
     {
         DimensionComponent = new DimensionComponent();
-        _conversionFunctions = new Dictionary<string, string>();
+        _conversionFunctions = new Dictionary<TUnit, string>();
     }
 
     public string GetConversionFactor(TUnit unit)
     {
-        var unitStr = unit.ToString();
-        if (_conversionFunctions == null || !_conversionFunctions.TryGetValue(unitStr, out var exp)) throw new ArgumentOutOfRangeException();
+        if (_conversionFunctions == null || !_conversionFunctions.TryGetValue(unit, out var exp)) throw new ArgumentOutOfRangeException();
 
         return exp;
     }
@@ -66,16 +65,16 @@ public abstract class DimensionBase<TUnit, TVal> : IDimension<TUnit, TVal> where
 
     protected virtual TVal Convert(TVal value, Enum fromUnit, Enum toUnit)
     {
-        //if (!UnitDefinition.ConversionFactors.ContainsKey(IdTag) || !UnitDefinition.ConversionFactors[IdTag].ContainsKey(fromUnit) || 
-        //    !UnitDefinition.ConversionFactors[IdTag].ContainsKey(toUnit))
+        //if (!_conversionFunctions.ContainsKey(fromUnit) || !_conversionFunctions.ContainsKey(toUnit))
         //{
         //    throw new ArgumentException("Invalid unit specified");
         //}
 
-        //var valueInMeters = value * GenericNumber<TVal>.FromDouble(UnitDefinition.ConversionFactors[IdTag][(TUnit)fromUnit]);
-        //var convertedValue = valueInMeters / GenericNumber<TVal>.FromDouble(UnitDefinition.ConversionFactors[IdTag][(TUnit)toUnit]);
+        //var func = value * GenericNumber<TVal>.FromDouble(_conversionFunctions[(TUnit)fromUnit]);
+        //var valueInDefaultUnits = InlineFunctionEvaluator.Evaluate(func, new Dictionary<string, object>() { { "x", value } });
+        //var convertedValue = valueInDefaultUnits / GenericNumber<TVal>.FromDouble(InlineFunctionEvaluator.Evaluate(func, new Dictionary<string, object>() { { "x", valueInDefaultUnits } }));
 
         //return convertedValue;
         return value;
-    }
+     }
 }

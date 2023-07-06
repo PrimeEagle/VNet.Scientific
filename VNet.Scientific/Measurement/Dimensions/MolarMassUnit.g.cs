@@ -1,33 +1,33 @@
 
-    // Auto-generated for VNet on 2023-07-03 11:25:32
+    // Auto-generated for VNet on 2023-07-05 10:24:46
     
     
     namespace VNet.Scientific.Measurement.Dimensions
     {
         public enum MolarMassUnit
         {
-            AttoGramPerMole,
-            CentiGramPerMole,
-            DeciGramPerMole,
-            DekaGramPerMole,
-            ExaGramPerMole,
-            FemtoGramPerMole,
-            GigaGramPerMole,
+            AttogramPerMole,
+            CentigramPerMole,
+            DecigramPerMole,
+            DekagramPerMole,
+            ExagramPerMole,
+            FemtogramPerMole,
+            GigagramPerMole,
             GramPerMole,
-            HectoGramPerMole,
+            HectogramPerMole,
             KilogramPerKilomole,
-            KiloGramPerMole,
-            MegaGramPerMole,
-            MicroGramPerMole,
-            MilliGramPerMole,
-            NanoGramPerMole,
-            PetaGramPerMole,
-            PicoGramPerMole,
+            KilogramPerMole,
+            MegagramPerMole,
+            MicrogramPerMole,
+            MilligramPerMole,
+            NanogramPerMole,
+            PetagramPerMole,
+            PicogramPerMole,
             PoundPerMole,
-            TeraGramPerMole,
-            YoctoGramPerMole,
-            YottaGramPerMole,
-            ZeptoGramPerMole,
-            ZettaGramPerMole,
+            TeragramPerMole,
+            YoctogramPerMole,
+            YottagramPerMole,
+            ZeptogramPerMole,
+            ZettagramPerMole,
         }
     }

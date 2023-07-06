@@ -1,5 +1,5 @@
 
-    // Auto-generated for VNet on 2023-07-03 11:25:32
+    // Auto-generated for VNet on 2023-07-05 10:24:46
     using System.Numerics;
     
     
@@ -22,34 +22,34 @@
                 DefaultUnit = PowerUnit.Watt;
                 
                 
-                _conversionFunctions.Add("MechanicalHorsepower", "x * 745.69m");
-                _conversionFunctions.Add("MetricHorsepower", "x * 735.49875m");
-                _conversionFunctions.Add("ElectricalHorsepower", "x * 746m");
-                _conversionFunctions.Add("BoilerHorsepower", "x * 9812.5m");
-                _conversionFunctions.Add("HydraulicHorsepower", "x * 745.69988145m");
-                _conversionFunctions.Add("BritishThermalUnitPerHour", "x * 0.29307107017m");
-                _conversionFunctions.Add("JoulePerHour", "x / 3600m");
-                _conversionFunctions.Add("YottaWatt", "x * 1e24");
-                _conversionFunctions.Add("ZettaWatt", "x * 1e21");
-                _conversionFunctions.Add("ExaWatt", "x * 1e18");
-                _conversionFunctions.Add("PetaWatt", "x * 1e15");
-                _conversionFunctions.Add("TeraWatt", "x * 1e12");
-                _conversionFunctions.Add("GigaWatt", "x * 1e9");
-                _conversionFunctions.Add("MegaWatt", "x * 1e6");
-                _conversionFunctions.Add("KiloWatt", "x * 1e3");
-                _conversionFunctions.Add("HectoWatt", "x * 1e2");
-                _conversionFunctions.Add("DekaWatt", "x * 1e1");
-                _conversionFunctions.Add("Watt", "x * 1e0");
-                _conversionFunctions.Add("DeciWatt", "x * 1e-1");
-                _conversionFunctions.Add("CentiWatt", "x * 1e-2");
-                _conversionFunctions.Add("MilliWatt", "x * 1e-3");
-                _conversionFunctions.Add("MicroWatt", "x * 1e-6");
-                _conversionFunctions.Add("NanoWatt", "x * 1e-9");
-                _conversionFunctions.Add("PicoWatt", "x * 1e-12");
-                _conversionFunctions.Add("FemtoWatt", "x * 1e-15");
-                _conversionFunctions.Add("AttoWatt", "x * 1e-18");
-                _conversionFunctions.Add("ZeptoWatt", "x * 1e-21");
-                _conversionFunctions.Add("YoctoWatt", "x * 1e-24");
+                ConversionFunctions.Add(PowerUnit.MechanicalHorsepower, "x * 745.69m");
+                ConversionFunctions.Add(PowerUnit.MetricHorsepower, "x * 735.49875m");
+                ConversionFunctions.Add(PowerUnit.ElectricalHorsepower, "x * 746m");
+                ConversionFunctions.Add(PowerUnit.BoilerHorsepower, "x * 9812.5m");
+                ConversionFunctions.Add(PowerUnit.HydraulicHorsepower, "x * 745.69988145m");
+                ConversionFunctions.Add(PowerUnit.BritishThermalUnitPerHour, "x * 0.29307107017m");
+                ConversionFunctions.Add(PowerUnit.JoulePerHour, "x / 3600m");
+                ConversionFunctions.Add(PowerUnit.Yottawatt, "x * 1e24");
+                ConversionFunctions.Add(PowerUnit.Zettawatt, "x * 1e21");
+                ConversionFunctions.Add(PowerUnit.Exawatt, "x * 1e18");
+                ConversionFunctions.Add(PowerUnit.Petawatt, "x * 1e15");
+                ConversionFunctions.Add(PowerUnit.Terawatt, "x * 1e12");
+                ConversionFunctions.Add(PowerUnit.Gigawatt, "x * 1e9");
+                ConversionFunctions.Add(PowerUnit.Megawatt, "x * 1e6");
+                ConversionFunctions.Add(PowerUnit.Kilowatt, "x * 1e3");
+                ConversionFunctions.Add(PowerUnit.Hectowatt, "x * 1e2");
+                ConversionFunctions.Add(PowerUnit.Dekawatt, "x * 1e1");
+                ConversionFunctions.Add(PowerUnit.Watt, "x * 1e0");
+                ConversionFunctions.Add(PowerUnit.Deciwatt, "x * 1e-1");
+                ConversionFunctions.Add(PowerUnit.Centiwatt, "x * 1e-2");
+                ConversionFunctions.Add(PowerUnit.Milliwatt, "x * 1e-3");
+                ConversionFunctions.Add(PowerUnit.Microwatt, "x * 1e-6");
+                ConversionFunctions.Add(PowerUnit.Nanowatt, "x * 1e-9");
+                ConversionFunctions.Add(PowerUnit.Picowatt, "x * 1e-12");
+                ConversionFunctions.Add(PowerUnit.Femtowatt, "x * 1e-15");
+                ConversionFunctions.Add(PowerUnit.Attowatt, "x * 1e-18");
+                ConversionFunctions.Add(PowerUnit.Zeptowatt, "x * 1e-21");
+                ConversionFunctions.Add(PowerUnit.Yoctowatt, "x * 1e-24");
             }
         }
     }

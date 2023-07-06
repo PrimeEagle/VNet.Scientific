@@ -1,42 +1,42 @@
 
-    // Auto-generated for VNet on 2023-07-03 11:25:32
+    // Auto-generated for VNet on 2023-07-05 10:24:46
     
     
     namespace VNet.Scientific.Measurement.Dimensions
     {
         public enum MassMomentOfInertiaUnit
         {
-            AttoGramSquareMeter,
-            CentiGramSquareMeter,
-            DeciGramSquareMeter,
-            DekaGramSquareMeter,
-            ExaGramSquareMeter,
-            FemtoGramSquareMeter,
-            GigaGramSquareMeter,
+            AttogramSquareMeter,
+            CentigramSquareMeter,
+            DecigramSquareMeter,
+            DekagramSquareMeter,
+            ExagramSquareMeter,
+            FemtogramSquareMeter,
+            GigagramSquareMeter,
             GramSquareCentimeter,
             GramSquareDecimeter,
             GramSquareMeter,
             GramSquareMillimeter,
-            HectoGramSquareMeter,
-            KiloGramSquareMeter,
-            MegaGramSquareMeter,
-            MicroGramSquareMeter,
-            MilliGramSquareMeter,
-            NanoGramSquareMeter,
-            PetaGramSquareMeter,
-            PicoGramSquareMeter,
+            HectogramSquareMeter,
+            KilogramSquareMeter,
+            MegagramSquareMeter,
+            MicrogramSquareMeter,
+            MilligramSquareMeter,
+            NanogramSquareMeter,
+            PetagramSquareMeter,
+            PicogramSquareMeter,
             PoundSquareFoot,
             PoundSquareInch,
             SlugSquareFoot,
             SlugSquareInch,
-            TeraGramSquareMeter,
+            TeragramSquareMeter,
             TonneSquareCentimeter,
             TonneSquareDecimeter,
             TonneSquareMeter,
             TonneSquareMilimeter,
-            YoctoGramSquareMeter,
-            YottaGramSquareMeter,
-            ZeptoGramSquareMeter,
-            ZettaGramSquareMeter,
+            YoctogramSquareMeter,
+            YottagramSquareMeter,
+            ZeptogramSquareMeter,
+            ZettagramSquareMeter,
         }
     }

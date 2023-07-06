@@ -1,32 +1,32 @@
 
-    // Auto-generated for VNet on 2023-07-03 11:25:32
+    // Auto-generated for VNet on 2023-07-05 10:24:46
     
     
     namespace VNet.Scientific.Measurement.Dimensions
     {
         public enum SpecificVolumeUnit
         {
-            CubicAttoMeterPerKilogram,
-            CubicCentiMeterPerKilogram,
-            CubicDeciMeterPerKilogram,
-            CubicDekaMeterPerKilogram,
-            CubicExaMeterPerKilogram,
-            CubicFemtoMeterPerKilogram,
+            CubicAttometerperkilogram,
+            CubicCentimeterperkilogram,
+            CubicDecimeterperkilogram,
+            CubicDekameterperkilogram,
+            CubicExameterperkilogram,
+            CubicFemtometerperkilogram,
             CubicFootPerPound,
-            CubicGigaMeterPerKilogram,
-            CubicHectoMeterPerKilogram,
-            CubicKiloMeterPerKilogram,
-            CubicMegaMeterPerKilogram,
+            CubicGigameterperkilogram,
+            CubicHectometerperkilogram,
+            CubicKilometerperkilogram,
+            CubicMegameterperkilogram,
             CubicMeterPerKilogram,
-            CubicMicroMeterPerKilogram,
-            CubicMilliMeterPerKilogram,
-            CubicNanoMeterPerKilogram,
-            CubicPetaMeterPerKilogram,
-            CubicPicoMeterPerKilogram,
-            CubicTeraMeterPerKilogram,
-            CubicYoctoMeterPerKilogram,
-            CubicYottaMeterPerKilogram,
-            CubicZeptoMeterPerKilogram,
-            CubicZettaMeterPerKilogram,
+            CubicMicrometerperkilogram,
+            CubicMillimeterperkilogram,
+            CubicNanometerperkilogram,
+            CubicPetameterperkilogram,
+            CubicPicometerperkilogram,
+            CubicTerameterperkilogram,
+            CubicYoctometerperkilogram,
+            CubicYottameterperkilogram,
+            CubicZeptometerperkilogram,
+            CubicZettameterperkilogram,
         }
     }

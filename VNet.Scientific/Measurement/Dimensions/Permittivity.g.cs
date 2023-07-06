@@ -1,5 +1,5 @@
 
-    // Auto-generated for VNet on 2023-07-03 11:25:32
+    // Auto-generated for VNet on 2023-07-05 10:24:46
     using System.Numerics;
     
     
@@ -22,27 +22,27 @@
                 DefaultUnit = PermittivityUnit.FaradPerMeter;
                 
                 
-                _conversionFunctions.Add("YottaFaradPerMeter", "x * 1e24");
-                _conversionFunctions.Add("ZettaFaradPerMeter", "x * 1e21");
-                _conversionFunctions.Add("ExaFaradPerMeter", "x * 1e18");
-                _conversionFunctions.Add("PetaFaradPerMeter", "x * 1e15");
-                _conversionFunctions.Add("TeraFaradPerMeter", "x * 1e12");
-                _conversionFunctions.Add("GigaFaradPerMeter", "x * 1e9");
-                _conversionFunctions.Add("MegaFaradPerMeter", "x * 1e6");
-                _conversionFunctions.Add("KiloFaradPerMeter", "x * 1e3");
-                _conversionFunctions.Add("HectoFaradPerMeter", "x * 1e2");
-                _conversionFunctions.Add("DekaFaradPerMeter", "x * 1e1");
-                _conversionFunctions.Add("FaradPerMeter", "x * 1e0");
-                _conversionFunctions.Add("DeciFaradPerMeter", "x * 1e-1");
-                _conversionFunctions.Add("CentiFaradPerMeter", "x * 1e-2");
-                _conversionFunctions.Add("MilliFaradPerMeter", "x * 1e-3");
-                _conversionFunctions.Add("MicroFaradPerMeter", "x * 1e-6");
-                _conversionFunctions.Add("NanoFaradPerMeter", "x * 1e-9");
-                _conversionFunctions.Add("PicoFaradPerMeter", "x * 1e-12");
-                _conversionFunctions.Add("FemtoFaradPerMeter", "x * 1e-15");
-                _conversionFunctions.Add("AttoFaradPerMeter", "x * 1e-18");
-                _conversionFunctions.Add("ZeptoFaradPerMeter", "x * 1e-21");
-                _conversionFunctions.Add("YoctoFaradPerMeter", "x * 1e-24");
+                ConversionFunctions.Add(PermittivityUnit.Yottafaradpermeter, "x * 1e24");
+                ConversionFunctions.Add(PermittivityUnit.Zettafaradpermeter, "x * 1e21");
+                ConversionFunctions.Add(PermittivityUnit.Exafaradpermeter, "x * 1e18");
+                ConversionFunctions.Add(PermittivityUnit.Petafaradpermeter, "x * 1e15");
+                ConversionFunctions.Add(PermittivityUnit.Terafaradpermeter, "x * 1e12");
+                ConversionFunctions.Add(PermittivityUnit.Gigafaradpermeter, "x * 1e9");
+                ConversionFunctions.Add(PermittivityUnit.Megafaradpermeter, "x * 1e6");
+                ConversionFunctions.Add(PermittivityUnit.Kilofaradpermeter, "x * 1e3");
+                ConversionFunctions.Add(PermittivityUnit.Hectofaradpermeter, "x * 1e2");
+                ConversionFunctions.Add(PermittivityUnit.Dekafaradpermeter, "x * 1e1");
+                ConversionFunctions.Add(PermittivityUnit.FaradPerMeter, "x * 1e0");
+                ConversionFunctions.Add(PermittivityUnit.Decifaradpermeter, "x * 1e-1");
+                ConversionFunctions.Add(PermittivityUnit.Centifaradpermeter, "x * 1e-2");
+                ConversionFunctions.Add(PermittivityUnit.Millifaradpermeter, "x * 1e-3");
+                ConversionFunctions.Add(PermittivityUnit.Microfaradpermeter, "x * 1e-6");
+                ConversionFunctions.Add(PermittivityUnit.Nanofaradpermeter, "x * 1e-9");
+                ConversionFunctions.Add(PermittivityUnit.Picofaradpermeter, "x * 1e-12");
+                ConversionFunctions.Add(PermittivityUnit.Femtofaradpermeter, "x * 1e-15");
+                ConversionFunctions.Add(PermittivityUnit.Attofaradpermeter, "x * 1e-18");
+                ConversionFunctions.Add(PermittivityUnit.Zeptofaradpermeter, "x * 1e-21");
+                ConversionFunctions.Add(PermittivityUnit.Yoctofaradpermeter, "x * 1e-24");
             }
         }
     }

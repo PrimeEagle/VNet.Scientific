@@ -1,5 +1,5 @@
 
-    // Auto-generated for VNet on 2023-07-03 11:25:32
+    // Auto-generated for VNet on 2023-07-05 10:24:46
     using System.Numerics;
     
     
@@ -22,32 +22,32 @@
                 DefaultUnit = MolarFlowUnit.MolePerSecond;
                 
                 
-                _conversionFunctions.Add("MolePerMinute", "x / 60");
-                _conversionFunctions.Add("MolePerHour", "x / 3600");
-                _conversionFunctions.Add("PoundMolePerSecond", "x * 453.59237");
-                _conversionFunctions.Add("PoundMolePerMinute", "(x * 453.59237) / 60");
-                _conversionFunctions.Add("PoundMolePerHour", "(x * 453.59237) / 3600");
-                _conversionFunctions.Add("YottaMolePerSecond", "x * 1e24");
-                _conversionFunctions.Add("ZettaMolePerSecond", "x * 1e21");
-                _conversionFunctions.Add("ExaMolePerSecond", "x * 1e18");
-                _conversionFunctions.Add("PetaMolePerSecond", "x * 1e15");
-                _conversionFunctions.Add("TeraMolePerSecond", "x * 1e12");
-                _conversionFunctions.Add("GigaMolePerSecond", "x * 1e9");
-                _conversionFunctions.Add("MegaMolePerSecond", "x * 1e6");
-                _conversionFunctions.Add("KiloMolePerSecond", "x * 1e3");
-                _conversionFunctions.Add("HectoMolePerSecond", "x * 1e2");
-                _conversionFunctions.Add("DekaMolePerSecond", "x * 1e1");
-                _conversionFunctions.Add("MolePerSecond", "x * 1e0");
-                _conversionFunctions.Add("DeciMolePerSecond", "x * 1e-1");
-                _conversionFunctions.Add("CentiMolePerSecond", "x * 1e-2");
-                _conversionFunctions.Add("MilliMolePerSecond", "x * 1e-3");
-                _conversionFunctions.Add("MicroMolePerSecond", "x * 1e-6");
-                _conversionFunctions.Add("NanoMolePerSecond", "x * 1e-9");
-                _conversionFunctions.Add("PicoMolePerSecond", "x * 1e-12");
-                _conversionFunctions.Add("FemtoMolePerSecond", "x * 1e-15");
-                _conversionFunctions.Add("AttoMolePerSecond", "x * 1e-18");
-                _conversionFunctions.Add("ZeptoMolePerSecond", "x * 1e-21");
-                _conversionFunctions.Add("YoctoMolePerSecond", "x * 1e-24");
+                ConversionFunctions.Add(MolarFlowUnit.MolePerMinute, "x / 60");
+                ConversionFunctions.Add(MolarFlowUnit.MolePerHour, "x / 3600");
+                ConversionFunctions.Add(MolarFlowUnit.PoundMolePerSecond, "x * 453.59237");
+                ConversionFunctions.Add(MolarFlowUnit.PoundMolePerMinute, "(x * 453.59237) / 60");
+                ConversionFunctions.Add(MolarFlowUnit.PoundMolePerHour, "(x * 453.59237) / 3600");
+                ConversionFunctions.Add(MolarFlowUnit.Yottamolepersecond, "x * 1e24");
+                ConversionFunctions.Add(MolarFlowUnit.Zettamolepersecond, "x * 1e21");
+                ConversionFunctions.Add(MolarFlowUnit.Examolepersecond, "x * 1e18");
+                ConversionFunctions.Add(MolarFlowUnit.Petamolepersecond, "x * 1e15");
+                ConversionFunctions.Add(MolarFlowUnit.Teramolepersecond, "x * 1e12");
+                ConversionFunctions.Add(MolarFlowUnit.Gigamolepersecond, "x * 1e9");
+                ConversionFunctions.Add(MolarFlowUnit.Megamolepersecond, "x * 1e6");
+                ConversionFunctions.Add(MolarFlowUnit.Kilomolepersecond, "x * 1e3");
+                ConversionFunctions.Add(MolarFlowUnit.Hectomolepersecond, "x * 1e2");
+                ConversionFunctions.Add(MolarFlowUnit.Dekamolepersecond, "x * 1e1");
+                ConversionFunctions.Add(MolarFlowUnit.MolePerSecond, "x * 1e0");
+                ConversionFunctions.Add(MolarFlowUnit.Decimolepersecond, "x * 1e-1");
+                ConversionFunctions.Add(MolarFlowUnit.Centimolepersecond, "x * 1e-2");
+                ConversionFunctions.Add(MolarFlowUnit.Millimolepersecond, "x * 1e-3");
+                ConversionFunctions.Add(MolarFlowUnit.Micromolepersecond, "x * 1e-6");
+                ConversionFunctions.Add(MolarFlowUnit.Nanomolepersecond, "x * 1e-9");
+                ConversionFunctions.Add(MolarFlowUnit.Picomolepersecond, "x * 1e-12");
+                ConversionFunctions.Add(MolarFlowUnit.Femtomolepersecond, "x * 1e-15");
+                ConversionFunctions.Add(MolarFlowUnit.Attomolepersecond, "x * 1e-18");
+                ConversionFunctions.Add(MolarFlowUnit.Zeptomolepersecond, "x * 1e-21");
+                ConversionFunctions.Add(MolarFlowUnit.Yoctomolepersecond, "x * 1e-24");
             }
         }
     }

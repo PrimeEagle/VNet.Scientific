@@ -1,31 +1,31 @@
 
-    // Auto-generated for VNet on 2023-07-03 11:25:32
+    // Auto-generated for VNet on 2023-07-05 10:24:46
     
     
     namespace VNet.Scientific.Measurement.Dimensions
     {
         public enum ReactivePowerUnit
         {
-            AttoVoltampereReactive,
-            CentiVoltampereReactive,
-            DeciVoltampereReactive,
-            DekaVoltampereReactive,
-            ExaVoltampereReactive,
-            FemtoVoltampereReactive,
-            GigaVoltampereReactive,
-            HectoVoltampereReactive,
-            KiloVoltampereReactive,
-            MegaVoltampereReactive,
-            MicroVoltampereReactive,
-            MilliVoltampereReactive,
-            NanoVoltampereReactive,
-            PetaVoltampereReactive,
-            PicoVoltampereReactive,
-            TeraVoltampereReactive,
+            Attovoltamperereactive,
+            Centivoltamperereactive,
+            Decivoltamperereactive,
+            Dekavoltamperereactive,
+            Exavoltamperereactive,
+            Femtovoltamperereactive,
+            Gigavoltamperereactive,
+            Hectovoltamperereactive,
+            Kilovoltamperereactive,
+            Megavoltamperereactive,
+            Microvoltamperereactive,
+            Millivoltamperereactive,
+            Nanovoltamperereactive,
+            Petavoltamperereactive,
+            Picovoltamperereactive,
+            Teravoltamperereactive,
             VoltampereReactive,
-            YoctoVoltampereReactive,
-            YottaVoltampereReactive,
-            ZeptoVoltampereReactive,
-            ZettaVoltampereReactive,
+            Yoctovoltamperereactive,
+            Yottavoltamperereactive,
+            Zeptovoltamperereactive,
+            Zettavoltamperereactive,
         }
     }

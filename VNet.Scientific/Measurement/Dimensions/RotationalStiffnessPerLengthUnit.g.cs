@@ -1,33 +1,33 @@
 
-    // Auto-generated for VNet on 2023-07-03 11:25:32
+    // Auto-generated for VNet on 2023-07-05 10:24:46
     
     
     namespace VNet.Scientific.Measurement.Dimensions
     {
         public enum RotationalStiffnessPerLengthUnit
         {
-            AttoNewtonMeterPerRadianPerMeter,
-            CentiNewtonMeterPerRadianPerMeter,
-            DeciNewtonMeterPerRadianPerMeter,
-            DekaNewtonMeterPerRadianPerMeter,
-            ExaNewtonMeterPerRadianPerMeter,
-            FemtoNewtonMeterPerRadianPerMeter,
-            GigaNewtonMeterPerRadianPerMeter,
-            HectoNewtonMeterPerRadianPerMeter,
-            KiloNewtonMeterPerRadianPerMeter,
+            Attonewtonmeterperradianpermeter,
+            Centinewtonmeterperradianpermeter,
+            Decinewtonmeterperradianpermeter,
+            Dekanewtonmeterperradianpermeter,
+            Exanewtonmeterperradianpermeter,
+            Femtonewtonmeterperradianpermeter,
+            Giganewtonmeterperradianpermeter,
+            Hectonewtonmeterperradianpermeter,
+            Kilonewtonmeterperradianpermeter,
             KilopoundForceFootPerDegreesPerFoot,
-            MegaNewtonMeterPerRadianPerMeter,
-            MicroNewtonMeterPerRadianPerMeter,
-            MilliNewtonMeterPerRadianPerMeter,
-            NanoNewtonMeterPerRadianPerMeter,
+            Meganewtonmeterperradianpermeter,
+            Micronewtonmeterperradianpermeter,
+            Millinewtonmeterperradianpermeter,
+            Nanonewtonmeterperradianpermeter,
             NewtonMeterPerRadianPerMeter,
-            PetaNewtonMeterPerRadianPerMeter,
-            PicoNewtonMeterPerRadianPerMeter,
+            Petanewtonmeterperradianpermeter,
+            Piconewtonmeterperradianpermeter,
             PoundForceFootPerDegreesPerFoot,
-            TeraNewtonMeterPerRadianPerMeter,
-            YoctoNewtonMeterPerRadianPerMeter,
-            YottaNewtonMeterPerRadianPerMeter,
-            ZeptoNewtonMeterPerRadianPerMeter,
-            ZettaNewtonMeterPerRadianPerMeter,
+            Teranewtonmeterperradianpermeter,
+            Yoctonewtonmeterperradianpermeter,
+            Yottanewtonmeterperradianpermeter,
+            Zeptonewtonmeterperradianpermeter,
+            Zettanewtonmeterperradianpermeter,
         }
     }

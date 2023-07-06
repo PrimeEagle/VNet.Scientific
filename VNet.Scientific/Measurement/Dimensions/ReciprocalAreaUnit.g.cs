@@ -1,36 +1,36 @@
 
-    // Auto-generated for VNet on 2023-07-03 11:25:32
+    // Auto-generated for VNet on 2023-07-05 10:24:46
     
     
     namespace VNet.Scientific.Measurement.Dimensions
     {
         public enum ReciprocalAreaUnit
         {
-            InversesquareAttoMeter,
-            InversesquareCentiMeter,
-            InversesquareDeciMeter,
-            InversesquareDekaMeter,
-            InversesquareExaMeter,
-            InversesquareFemtoMeter,
+            InversesquareAttometer,
+            InversesquareCentimeter,
+            InversesquareDecimeter,
+            InversesquareDekameter,
+            InversesquareExameter,
+            InversesquareFemtometer,
             InverseSquareFoot,
-            InversesquareGigaMeter,
-            InversesquareHectoMeter,
+            InversesquareGigameter,
+            InversesquareHectometer,
             InverseSquareInch,
-            InversesquareKiloMeter,
-            InversesquareMegaMeter,
-            InversesquareMeter,
-            InversesquareMicroMeter,
+            InversesquareKilometer,
+            InversesquareMegameter,
+            InverseSquareMeter,
+            InversesquareMicrometer,
             InverseSquareMile,
-            InversesquareMilliMeter,
-            InversesquareNanoMeter,
-            InversesquarePetaMeter,
-            InversesquarePicoMeter,
-            InversesquareTeraMeter,
+            InversesquareMillimeter,
+            InversesquareNanometer,
+            InversesquarePetameter,
+            InversesquarePicometer,
+            InversesquareTerameter,
             InverseSquareYard,
-            InversesquareYoctoMeter,
-            InversesquareYottaMeter,
-            InversesquareZeptoMeter,
-            InversesquareZettaMeter,
+            InversesquareYoctometer,
+            InversesquareYottameter,
+            InversesquareZeptometer,
+            InversesquareZettameter,
             InverseUsSurveySquareFoot,
         }
     }

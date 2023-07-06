@@ -1,5 +1,5 @@
 
-    // Auto-generated for VNet on 2023-07-03 11:25:32
+    // Auto-generated for VNet on 2023-07-05 10:24:46
     using System.Numerics;
     
     
@@ -22,29 +22,29 @@
                 DefaultUnit = SpecificFuelConsumptionUnit.GramPerKiloNewtonSecond;
                 
                 
-                _conversionFunctions.Add("PoundMassPerPoundForceHour", "x * 28.33");
-                _conversionFunctions.Add("KilogramPerKilogramForceHour", "x * 28.33");
-                _conversionFunctions.Add("YottaGramPerKiloNewtonSecond", "x * 1e24");
-                _conversionFunctions.Add("ZettaGramPerKiloNewtonSecond", "x * 1e21");
-                _conversionFunctions.Add("ExaGramPerKiloNewtonSecond", "x * 1e18");
-                _conversionFunctions.Add("PetaGramPerKiloNewtonSecond", "x * 1e15");
-                _conversionFunctions.Add("TeraGramPerKiloNewtonSecond", "x * 1e12");
-                _conversionFunctions.Add("GigaGramPerKiloNewtonSecond", "x * 1e9");
-                _conversionFunctions.Add("MegaGramPerKiloNewtonSecond", "x * 1e6");
-                _conversionFunctions.Add("KiloGramPerKiloNewtonSecond", "x * 1e3");
-                _conversionFunctions.Add("HectoGramPerKiloNewtonSecond", "x * 1e2");
-                _conversionFunctions.Add("DekaGramPerKiloNewtonSecond", "x * 1e1");
-                _conversionFunctions.Add("GramPerKiloNewtonSecond", "x * 1e0");
-                _conversionFunctions.Add("DeciGramPerKiloNewtonSecond", "x * 1e-1");
-                _conversionFunctions.Add("CentiGramPerKiloNewtonSecond", "x * 1e-2");
-                _conversionFunctions.Add("MilliGramPerKiloNewtonSecond", "x * 1e-3");
-                _conversionFunctions.Add("MicroGramPerKiloNewtonSecond", "x * 1e-6");
-                _conversionFunctions.Add("NanoGramPerKiloNewtonSecond", "x * 1e-9");
-                _conversionFunctions.Add("PicoGramPerKiloNewtonSecond", "x * 1e-12");
-                _conversionFunctions.Add("FemtoGramPerKiloNewtonSecond", "x * 1e-15");
-                _conversionFunctions.Add("AttoGramPerKiloNewtonSecond", "x * 1e-18");
-                _conversionFunctions.Add("ZeptoGramPerKiloNewtonSecond", "x * 1e-21");
-                _conversionFunctions.Add("YoctoGramPerKiloNewtonSecond", "x * 1e-24");
+                ConversionFunctions.Add(SpecificFuelConsumptionUnit.PoundMassPerPoundForceHour, "x * 28.33");
+                ConversionFunctions.Add(SpecificFuelConsumptionUnit.KilogramPerKilogramForceHour, "x * 28.33");
+                ConversionFunctions.Add(SpecificFuelConsumptionUnit.Yottagramperkilonewtonsecond, "x * 1e24");
+                ConversionFunctions.Add(SpecificFuelConsumptionUnit.Zettagramperkilonewtonsecond, "x * 1e21");
+                ConversionFunctions.Add(SpecificFuelConsumptionUnit.Exagramperkilonewtonsecond, "x * 1e18");
+                ConversionFunctions.Add(SpecificFuelConsumptionUnit.Petagramperkilonewtonsecond, "x * 1e15");
+                ConversionFunctions.Add(SpecificFuelConsumptionUnit.Teragramperkilonewtonsecond, "x * 1e12");
+                ConversionFunctions.Add(SpecificFuelConsumptionUnit.Gigagramperkilonewtonsecond, "x * 1e9");
+                ConversionFunctions.Add(SpecificFuelConsumptionUnit.Megagramperkilonewtonsecond, "x * 1e6");
+                ConversionFunctions.Add(SpecificFuelConsumptionUnit.Kilogramperkilonewtonsecond, "x * 1e3");
+                ConversionFunctions.Add(SpecificFuelConsumptionUnit.Hectogramperkilonewtonsecond, "x * 1e2");
+                ConversionFunctions.Add(SpecificFuelConsumptionUnit.Dekagramperkilonewtonsecond, "x * 1e1");
+                ConversionFunctions.Add(SpecificFuelConsumptionUnit.GramPerKiloNewtonSecond, "x * 1e0");
+                ConversionFunctions.Add(SpecificFuelConsumptionUnit.Decigramperkilonewtonsecond, "x * 1e-1");
+                ConversionFunctions.Add(SpecificFuelConsumptionUnit.Centigramperkilonewtonsecond, "x * 1e-2");
+                ConversionFunctions.Add(SpecificFuelConsumptionUnit.Milligramperkilonewtonsecond, "x * 1e-3");
+                ConversionFunctions.Add(SpecificFuelConsumptionUnit.Microgramperkilonewtonsecond, "x * 1e-6");
+                ConversionFunctions.Add(SpecificFuelConsumptionUnit.Nanogramperkilonewtonsecond, "x * 1e-9");
+                ConversionFunctions.Add(SpecificFuelConsumptionUnit.Picogramperkilonewtonsecond, "x * 1e-12");
+                ConversionFunctions.Add(SpecificFuelConsumptionUnit.Femtogramperkilonewtonsecond, "x * 1e-15");
+                ConversionFunctions.Add(SpecificFuelConsumptionUnit.Attogramperkilonewtonsecond, "x * 1e-18");
+                ConversionFunctions.Add(SpecificFuelConsumptionUnit.Zeptogramperkilonewtonsecond, "x * 1e-21");
+                ConversionFunctions.Add(SpecificFuelConsumptionUnit.Yoctogramperkilonewtonsecond, "x * 1e-24");
             }
         }
     }

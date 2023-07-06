@@ -202,7 +202,8 @@ namespace VNet.Scientific.CodeGen
             int p = 0;
             foreach (var prefix in metricPrefixes.Keys)
             {
-                var unitName = Capitalize(prePrefix) + Capitalize(prefix) + (string.IsNullOrEmpty(prefix) ? dimVNet.DefaultUnit : Capitalize(baseDefaultUnit) + Capitalize(suffix));
+                var unitName = Capitalize(prePrefix) + Capitalize(prefix) + (string.IsNullOrEmpty(prefix) ? Capitalize(dimVNet.DefaultUnit) : baseDefaultUnit.ToLower() + Capitalize(suffix));
+                if(prefix == "_") unitName = dimVNet.DefaultUnit;
 
                 dimVNet.Units.RemoveAll(u => u.ToLower() == unitName.ToLower());
                 dimVNet.ConversionFunctions = dimVNet.ConversionFunctions.Where(kv => dimVNet.Units.Contains(kv.Key)).ToDictionary(kv => kv.Key, kv => kv.Value);

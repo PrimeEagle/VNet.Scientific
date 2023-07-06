@@ -1,5 +1,5 @@
 
-    // Auto-generated for VNet on 2023-07-03 11:25:32
+    // Auto-generated for VNet on 2023-07-05 10:24:46
     using System.Numerics;
     
     
@@ -22,29 +22,29 @@
                 DefaultUnit = MolarMassUnit.KilogramPerMole;
                 
                 
-                _conversionFunctions.Add("KilogramPerKilomole", "1000 * (1000 * (1000 * (1000 * (1000 * (1000 * (1000 * (1000 * (x / 1e3))))))))");
-                _conversionFunctions.Add("PoundPerMole", "1000 * (1000 * (1000 * (1000 * (1000 * (1000 * (1000 * (1000 * (x * 0.45359237))))))))");
-                _conversionFunctions.Add("YottaGramPerMole", "1000 * (x * 1e24)");
-                _conversionFunctions.Add("ZettaGramPerMole", "1000 * (x * 1e21)");
-                _conversionFunctions.Add("ExaGramPerMole", "1000 * (x * 1e18)");
-                _conversionFunctions.Add("PetaGramPerMole", "1000 * (x * 1e15)");
-                _conversionFunctions.Add("TeraGramPerMole", "1000 * (x * 1e12)");
-                _conversionFunctions.Add("GigaGramPerMole", "1000 * (x * 1e9)");
-                _conversionFunctions.Add("MegaGramPerMole", "1000 * (x * 1e6)");
-                _conversionFunctions.Add("KiloGramPerMole", "1000 * (x * 1e3)");
-                _conversionFunctions.Add("HectoGramPerMole", "1000 * (x * 1e2)");
-                _conversionFunctions.Add("DekaGramPerMole", "1000 * (x * 1e1)");
-                _conversionFunctions.Add("GramPerMole", "1000 * (x * 1e0)");
-                _conversionFunctions.Add("DeciGramPerMole", "1000 * (x * 1e-1)");
-                _conversionFunctions.Add("CentiGramPerMole", "1000 * (x * 1e-2)");
-                _conversionFunctions.Add("MilliGramPerMole", "1000 * (x * 1e-3)");
-                _conversionFunctions.Add("MicroGramPerMole", "1000 * (x * 1e-6)");
-                _conversionFunctions.Add("NanoGramPerMole", "1000 * (x * 1e-9)");
-                _conversionFunctions.Add("PicoGramPerMole", "1000 * (x * 1e-12)");
-                _conversionFunctions.Add("FemtoGramPerMole", "1000 * (x * 1e-15)");
-                _conversionFunctions.Add("AttoGramPerMole", "1000 * (x * 1e-18)");
-                _conversionFunctions.Add("ZeptoGramPerMole", "1000 * (x * 1e-21)");
-                _conversionFunctions.Add("YoctoGramPerMole", "1000 * (x * 1e-24)");
+                ConversionFunctions.Add(MolarMassUnit.GramPerMole, "1000 * (x / 1e3)");
+                ConversionFunctions.Add(MolarMassUnit.KilogramPerKilomole, "1000 * (x / 1e3)");
+                ConversionFunctions.Add(MolarMassUnit.PoundPerMole, "1000 * (x * 0.45359237)");
+                ConversionFunctions.Add(MolarMassUnit.YottagramPerMole, "1000 * (x * 1e24)");
+                ConversionFunctions.Add(MolarMassUnit.ZettagramPerMole, "1000 * (x * 1e21)");
+                ConversionFunctions.Add(MolarMassUnit.ExagramPerMole, "1000 * (x * 1e18)");
+                ConversionFunctions.Add(MolarMassUnit.PetagramPerMole, "1000 * (x * 1e15)");
+                ConversionFunctions.Add(MolarMassUnit.TeragramPerMole, "1000 * (x * 1e12)");
+                ConversionFunctions.Add(MolarMassUnit.GigagramPerMole, "1000 * (x * 1e9)");
+                ConversionFunctions.Add(MolarMassUnit.MegagramPerMole, "1000 * (x * 1e6)");
+                ConversionFunctions.Add(MolarMassUnit.HectogramPerMole, "1000 * (x * 1e2)");
+                ConversionFunctions.Add(MolarMassUnit.DekagramPerMole, "1000 * (x * 1e1)");
+                ConversionFunctions.Add(MolarMassUnit.KilogramPerMole, "1000 * (x * 1e0)");
+                ConversionFunctions.Add(MolarMassUnit.DecigramPerMole, "1000 * (x * 1e-1)");
+                ConversionFunctions.Add(MolarMassUnit.CentigramPerMole, "1000 * (x * 1e-2)");
+                ConversionFunctions.Add(MolarMassUnit.MilligramPerMole, "1000 * (x * 1e-3)");
+                ConversionFunctions.Add(MolarMassUnit.MicrogramPerMole, "1000 * (x * 1e-6)");
+                ConversionFunctions.Add(MolarMassUnit.NanogramPerMole, "1000 * (x * 1e-9)");
+                ConversionFunctions.Add(MolarMassUnit.PicogramPerMole, "1000 * (x * 1e-12)");
+                ConversionFunctions.Add(MolarMassUnit.FemtogramPerMole, "1000 * (x * 1e-15)");
+                ConversionFunctions.Add(MolarMassUnit.AttogramPerMole, "1000 * (x * 1e-18)");
+                ConversionFunctions.Add(MolarMassUnit.ZeptogramPerMole, "1000 * (x * 1e-21)");
+                ConversionFunctions.Add(MolarMassUnit.YoctogramPerMole, "1000 * (x * 1e-24)");
             }
         }
     }

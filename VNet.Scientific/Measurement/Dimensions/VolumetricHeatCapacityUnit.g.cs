@@ -1,34 +1,34 @@
 
-    // Auto-generated for VNet on 2023-07-03 11:25:32
+    // Auto-generated for VNet on 2023-07-05 10:24:46
     
     
     namespace VNet.Scientific.Measurement.Dimensions
     {
         public enum VolumetricHeatCapacityUnit
         {
-            AttoJoulePerCubicMeterKelvin,
+            Attojoulepercubicmeterkelvin,
             BtuPerCubicFootDegreeFahrenheit,
             CaloriePerCubicCentimeterDegreeCelsius,
-            CentiJoulePerCubicMeterKelvin,
-            DeciJoulePerCubicMeterKelvin,
-            DekaJoulePerCubicMeterKelvin,
-            ExaJoulePerCubicMeterKelvin,
-            FemtoJoulePerCubicMeterKelvin,
-            GigaJoulePerCubicMeterKelvin,
-            HectoJoulePerCubicMeterKelvin,
+            Centijoulepercubicmeterkelvin,
+            Decijoulepercubicmeterkelvin,
+            Dekajoulepercubicmeterkelvin,
+            Exajoulepercubicmeterkelvin,
+            Femtojoulepercubicmeterkelvin,
+            Gigajoulepercubicmeterkelvin,
+            Hectojoulepercubicmeterkelvin,
             JoulePerCubicMeterDegreeCelsius,
             JoulePerCubicMeterKelvin,
-            KiloJoulePerCubicMeterKelvin,
-            MegaJoulePerCubicMeterKelvin,
-            MicroJoulePerCubicMeterKelvin,
-            MilliJoulePerCubicMeterKelvin,
-            NanoJoulePerCubicMeterKelvin,
-            PetaJoulePerCubicMeterKelvin,
-            PicoJoulePerCubicMeterKelvin,
-            TeraJoulePerCubicMeterKelvin,
-            YoctoJoulePerCubicMeterKelvin,
-            YottaJoulePerCubicMeterKelvin,
-            ZeptoJoulePerCubicMeterKelvin,
-            ZettaJoulePerCubicMeterKelvin,
+            Kilojoulepercubicmeterkelvin,
+            Megajoulepercubicmeterkelvin,
+            Microjoulepercubicmeterkelvin,
+            Millijoulepercubicmeterkelvin,
+            Nanojoulepercubicmeterkelvin,
+            Petajoulepercubicmeterkelvin,
+            Picojoulepercubicmeterkelvin,
+            Terajoulepercubicmeterkelvin,
+            Yoctojoulepercubicmeterkelvin,
+            Yottajoulepercubicmeterkelvin,
+            Zeptojoulepercubicmeterkelvin,
+            Zettajoulepercubicmeterkelvin,
         }
     }

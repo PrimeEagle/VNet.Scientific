@@ -1,41 +1,41 @@
 
-    // Auto-generated for VNet on 2023-07-03 11:25:32
+    // Auto-generated for VNet on 2023-07-05 10:24:46
     
     
     namespace VNet.Scientific.Measurement.Dimensions
     {
         public enum SpecificWeightUnit
         {
-            AttoNewtonPerCubicMeter,
-            CentiNewtonPerCubicMeter,
-            DeciNewtonPerCubicMeter,
-            DekaNewtonPerCubicMeter,
-            ExaNewtonPerCubicMeter,
-            FemtoNewtonPerCubicMeter,
-            GigaNewtonPerCubicMeter,
-            HectoNewtonPerCubicMeter,
+            Attonewtonpercubicmeter,
+            Centinewtonpercubicmeter,
+            Decinewtonpercubicmeter,
+            Dekanewtonpercubicmeter,
+            Exanewtonpercubicmeter,
+            Femtonewtonpercubicmeter,
+            Giganewtonpercubicmeter,
+            Hectonewtonpercubicmeter,
             KilogramForcePerCubicCentimeter,
             KilogramForcePerCubicMeter,
             KilogramForcePerCubicMillimeter,
-            KiloNewtonPerCubicMeter,
-            MegaNewtonPerCubicMeter,
-            MicroNewtonPerCubicMeter,
-            MilliNewtonPerCubicMeter,
-            NanoNewtonPerCubicMeter,
+            Kilonewtonpercubicmeter,
+            Meganewtonpercubicmeter,
+            Micronewtonpercubicmeter,
+            Millinewtonpercubicmeter,
+            Nanonewtonpercubicmeter,
             NewtonPerCubicCentimeter,
             NewtonPerCubicMeter,
             NewtonPerCubicMillimeter,
-            PetaNewtonPerCubicMeter,
-            PicoNewtonPerCubicMeter,
+            Petanewtonpercubicmeter,
+            Piconewtonpercubicmeter,
             PoundForcePerCubicFoot,
             PoundForcePerCubicInch,
-            TeraNewtonPerCubicMeter,
+            Teranewtonpercubicmeter,
             TonneForcePerCubicCentimeter,
             TonneForcePerCubicMeter,
             TonneForcePerCubicMillimeter,
-            YoctoNewtonPerCubicMeter,
-            YottaNewtonPerCubicMeter,
-            ZeptoNewtonPerCubicMeter,
-            ZettaNewtonPerCubicMeter,
+            Yoctonewtonpercubicmeter,
+            Yottanewtonpercubicmeter,
+            Zeptonewtonpercubicmeter,
+            Zettanewtonpercubicmeter,
         }
     }

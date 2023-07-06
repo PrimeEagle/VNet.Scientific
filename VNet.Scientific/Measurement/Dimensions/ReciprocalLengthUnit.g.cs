@@ -1,38 +1,38 @@
 
-    // Auto-generated for VNet on 2023-07-03 11:25:32
+    // Auto-generated for VNet on 2023-07-05 10:24:46
     
     
     namespace VNet.Scientific.Measurement.Dimensions
     {
         public enum ReciprocalLengthUnit
         {
-            InverseAttoMeter,
-            InverseCentiMeter,
-            InverseDeciMeter,
-            InverseDekaMeter,
-            InverseExaMeter,
-            InverseFemtoMeter,
+            InverseAttometer,
+            InverseCentimeter,
+            InverseDecimeter,
+            InverseDekameter,
+            InverseExameter,
+            InverseFemtometer,
             InverseFoot,
-            InverseGigaMeter,
-            InverseHectoMeter,
+            InverseGigameter,
+            InverseHectometer,
             InverseInch,
-            InverseKiloMeter,
-            InverseMegaMeter,
+            InverseKilometer,
+            InverseMegameter,
             InverseMeter,
             InverseMicroinch,
-            InverseMicroMeter,
+            InverseMicrometer,
             InverseMil,
             InverseMile,
-            InverseMilliMeter,
-            InverseNanoMeter,
-            InversePetaMeter,
-            InversePicoMeter,
-            InverseTeraMeter,
+            InverseMillimeter,
+            InverseNanometer,
+            InversePetameter,
+            InversePicometer,
+            InverseTerameter,
             InverseUsSurveyFoot,
             InverseYard,
-            InverseYoctoMeter,
-            InverseYottaMeter,
-            InverseZeptoMeter,
-            InverseZettaMeter,
+            InverseYoctometer,
+            InverseYottameter,
+            InverseZeptometer,
+            InverseZettameter,
         }
     }

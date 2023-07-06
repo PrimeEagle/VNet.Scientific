@@ -1,5 +1,5 @@
 
-    // Auto-generated for VNet on 2023-07-03 11:25:32
+    // Auto-generated for VNet on 2023-07-05 10:24:46
     using System.Numerics;
     
     
@@ -22,32 +22,32 @@
                 DefaultUnit = MassFluxUnit.KilogramPerSecondPerSquareMeter;
                 
                 
-                _conversionFunctions.Add("GramPerSecondPerSquareCentimeter", "1000 * (1000 * (1000 * (1000 * (1000 * (1000 * (1000 * (1000 * (x / 1e-1))))))))");
-                _conversionFunctions.Add("GramPerSecondPerSquareMillimeter", "1000 * (1000 * (1000 * (1000 * (1000 * (1000 * (1000 * (1000 * (x / 1e-3))))))))");
-                _conversionFunctions.Add("GramPerHourPerSquareMeter", "1000 * (1000 * (1000 * (1000 * (1000 * (1000 * (1000 * (1000 * (x / 3.6e6))))))))");
-                _conversionFunctions.Add("GramPerHourPerSquareCentimeter", "1000 * (1000 * (1000 * (1000 * (1000 * (1000 * (1000 * (1000 * (x / 3.6e2))))))))");
-                _conversionFunctions.Add("GramPerHourPerSquareMillimeter", "1000 * (1000 * (1000 * (1000 * (1000 * (1000 * (1000 * (1000 * (x / 3.6e0))))))))");
-                _conversionFunctions.Add("YottaGramPerSecondPerSquareMeter", "1000 * (x * 1e24)");
-                _conversionFunctions.Add("ZettaGramPerSecondPerSquareMeter", "1000 * (x * 1e21)");
-                _conversionFunctions.Add("ExaGramPerSecondPerSquareMeter", "1000 * (x * 1e18)");
-                _conversionFunctions.Add("PetaGramPerSecondPerSquareMeter", "1000 * (x * 1e15)");
-                _conversionFunctions.Add("TeraGramPerSecondPerSquareMeter", "1000 * (x * 1e12)");
-                _conversionFunctions.Add("GigaGramPerSecondPerSquareMeter", "1000 * (x * 1e9)");
-                _conversionFunctions.Add("MegaGramPerSecondPerSquareMeter", "1000 * (x * 1e6)");
-                _conversionFunctions.Add("KiloGramPerSecondPerSquareMeter", "1000 * (x * 1e3)");
-                _conversionFunctions.Add("HectoGramPerSecondPerSquareMeter", "1000 * (x * 1e2)");
-                _conversionFunctions.Add("DekaGramPerSecondPerSquareMeter", "1000 * (x * 1e1)");
-                _conversionFunctions.Add("GramPerSecondPerSquareMeter", "1000 * (x * 1e0)");
-                _conversionFunctions.Add("DeciGramPerSecondPerSquareMeter", "1000 * (x * 1e-1)");
-                _conversionFunctions.Add("CentiGramPerSecondPerSquareMeter", "1000 * (x * 1e-2)");
-                _conversionFunctions.Add("MilliGramPerSecondPerSquareMeter", "1000 * (x * 1e-3)");
-                _conversionFunctions.Add("MicroGramPerSecondPerSquareMeter", "1000 * (x * 1e-6)");
-                _conversionFunctions.Add("NanoGramPerSecondPerSquareMeter", "1000 * (x * 1e-9)");
-                _conversionFunctions.Add("PicoGramPerSecondPerSquareMeter", "1000 * (x * 1e-12)");
-                _conversionFunctions.Add("FemtoGramPerSecondPerSquareMeter", "1000 * (x * 1e-15)");
-                _conversionFunctions.Add("AttoGramPerSecondPerSquareMeter", "1000 * (x * 1e-18)");
-                _conversionFunctions.Add("ZeptoGramPerSecondPerSquareMeter", "1000 * (x * 1e-21)");
-                _conversionFunctions.Add("YoctoGramPerSecondPerSquareMeter", "1000 * (x * 1e-24)");
+                ConversionFunctions.Add(MassFluxUnit.GramPerSecondPerSquareMeter, "1000 * (x / 1e3)");
+                ConversionFunctions.Add(MassFluxUnit.GramPerSecondPerSquareCentimeter, "1000 * (x / 1e-1)");
+                ConversionFunctions.Add(MassFluxUnit.GramPerSecondPerSquareMillimeter, "1000 * (x / 1e-3)");
+                ConversionFunctions.Add(MassFluxUnit.GramPerHourPerSquareMeter, "1000 * (x / 3.6e6)");
+                ConversionFunctions.Add(MassFluxUnit.GramPerHourPerSquareCentimeter, "1000 * (x / 3.6e2)");
+                ConversionFunctions.Add(MassFluxUnit.GramPerHourPerSquareMillimeter, "1000 * (x / 3.6e0)");
+                ConversionFunctions.Add(MassFluxUnit.YottagramPerSecondPerSquareMeter, "1000 * (x * 1e24)");
+                ConversionFunctions.Add(MassFluxUnit.ZettagramPerSecondPerSquareMeter, "1000 * (x * 1e21)");
+                ConversionFunctions.Add(MassFluxUnit.ExagramPerSecondPerSquareMeter, "1000 * (x * 1e18)");
+                ConversionFunctions.Add(MassFluxUnit.PetagramPerSecondPerSquareMeter, "1000 * (x * 1e15)");
+                ConversionFunctions.Add(MassFluxUnit.TeragramPerSecondPerSquareMeter, "1000 * (x * 1e12)");
+                ConversionFunctions.Add(MassFluxUnit.GigagramPerSecondPerSquareMeter, "1000 * (x * 1e9)");
+                ConversionFunctions.Add(MassFluxUnit.MegagramPerSecondPerSquareMeter, "1000 * (x * 1e6)");
+                ConversionFunctions.Add(MassFluxUnit.HectogramPerSecondPerSquareMeter, "1000 * (x * 1e2)");
+                ConversionFunctions.Add(MassFluxUnit.DekagramPerSecondPerSquareMeter, "1000 * (x * 1e1)");
+                ConversionFunctions.Add(MassFluxUnit.KilogramPerSecondPerSquareMeter, "1000 * (x * 1e0)");
+                ConversionFunctions.Add(MassFluxUnit.DecigramPerSecondPerSquareMeter, "1000 * (x * 1e-1)");
+                ConversionFunctions.Add(MassFluxUnit.CentigramPerSecondPerSquareMeter, "1000 * (x * 1e-2)");
+                ConversionFunctions.Add(MassFluxUnit.MilligramPerSecondPerSquareMeter, "1000 * (x * 1e-3)");
+                ConversionFunctions.Add(MassFluxUnit.MicrogramPerSecondPerSquareMeter, "1000 * (x * 1e-6)");
+                ConversionFunctions.Add(MassFluxUnit.NanogramPerSecondPerSquareMeter, "1000 * (x * 1e-9)");
+                ConversionFunctions.Add(MassFluxUnit.PicogramPerSecondPerSquareMeter, "1000 * (x * 1e-12)");
+                ConversionFunctions.Add(MassFluxUnit.FemtogramPerSecondPerSquareMeter, "1000 * (x * 1e-15)");
+                ConversionFunctions.Add(MassFluxUnit.AttogramPerSecondPerSquareMeter, "1000 * (x * 1e-18)");
+                ConversionFunctions.Add(MassFluxUnit.ZeptogramPerSecondPerSquareMeter, "1000 * (x * 1e-21)");
+                ConversionFunctions.Add(MassFluxUnit.YoctogramPerSecondPerSquareMeter, "1000 * (x * 1e-24)");
             }
         }
     }

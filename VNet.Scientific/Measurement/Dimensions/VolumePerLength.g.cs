@@ -1,5 +1,5 @@
 
-    // Auto-generated for VNet on 2023-07-03 11:25:32
+    // Auto-generated for VNet on 2023-07-05 10:24:46
     using System.Numerics;
     
     
@@ -22,35 +22,35 @@
                 DefaultUnit = VolumePerLengthUnit.CubicMeterPerMeter;
                 
                 
-                _conversionFunctions.Add("LiterPerMeter", "x / 1000");
-                _conversionFunctions.Add("LiterPerKilometer", "x / 1e6");
-                _conversionFunctions.Add("LiterPerMillimeter", "x");
-                _conversionFunctions.Add("OilBarrelPerFoot", "x / 1.91713408");
-                _conversionFunctions.Add("CubicYardPerFoot", "x * 2.50838208");
-                _conversionFunctions.Add("CubicYardPerUsSurveyFoot", "x * 2.50837706323584");
-                _conversionFunctions.Add("UsGallonPerMile", "x / (1000 * 1609.344 / 3.785411784)");
-                _conversionFunctions.Add("ImperialGallonPerMile", "x / (1000 * 1609.344 / 4.54609)");
-                _conversionFunctions.Add("CubicYottaMeterPerMeter", "x * 1e72");
-                _conversionFunctions.Add("CubicZettaMeterPerMeter", "x * 1e63");
-                _conversionFunctions.Add("CubicExaMeterPerMeter", "x * 1e54");
-                _conversionFunctions.Add("CubicPetaMeterPerMeter", "x * 1e45");
-                _conversionFunctions.Add("CubicTeraMeterPerMeter", "x * 1e36");
-                _conversionFunctions.Add("CubicGigaMeterPerMeter", "x * 1e27");
-                _conversionFunctions.Add("CubicMegaMeterPerMeter", "x * 1e18");
-                _conversionFunctions.Add("CubicKiloMeterPerMeter", "x * 1e9");
-                _conversionFunctions.Add("CubicHectoMeterPerMeter", "x * 1e6");
-                _conversionFunctions.Add("CubicDekaMeterPerMeter", "x * 1e3");
-                _conversionFunctions.Add("CubicMeterPerMeter", "x * 1e0");
-                _conversionFunctions.Add("CubicDeciMeterPerMeter", "x * 1e-3");
-                _conversionFunctions.Add("CubicCentiMeterPerMeter", "x * 1e-6");
-                _conversionFunctions.Add("CubicMilliMeterPerMeter", "x * 1e-9");
-                _conversionFunctions.Add("CubicMicroMeterPerMeter", "x * 1e-18");
-                _conversionFunctions.Add("CubicNanoMeterPerMeter", "x * 1e-27");
-                _conversionFunctions.Add("CubicPicoMeterPerMeter", "x * 1e-36");
-                _conversionFunctions.Add("CubicFemtoMeterPerMeter", "x * 1e-45");
-                _conversionFunctions.Add("CubicAttoMeterPerMeter", "x * 1e-54");
-                _conversionFunctions.Add("CubicZeptoMeterPerMeter", "x * 1e-63");
-                _conversionFunctions.Add("CubicYoctoMeterPerMeter", "x * 1e-72");
+                ConversionFunctions.Add(VolumePerLengthUnit.LiterPerMeter, "x / 1000");
+                ConversionFunctions.Add(VolumePerLengthUnit.LiterPerKilometer, "x / 1e6");
+                ConversionFunctions.Add(VolumePerLengthUnit.LiterPerMillimeter, "x");
+                ConversionFunctions.Add(VolumePerLengthUnit.OilBarrelPerFoot, "x / 1.91713408");
+                ConversionFunctions.Add(VolumePerLengthUnit.CubicYardPerFoot, "x * 2.50838208");
+                ConversionFunctions.Add(VolumePerLengthUnit.CubicYardPerUsSurveyFoot, "x * 2.50837706323584");
+                ConversionFunctions.Add(VolumePerLengthUnit.UsGallonPerMile, "x / (1000 * 1609.344 / 3.785411784)");
+                ConversionFunctions.Add(VolumePerLengthUnit.ImperialGallonPerMile, "x / (1000 * 1609.344 / 4.54609)");
+                ConversionFunctions.Add(VolumePerLengthUnit.CubicYottameterpermeter, "x * 1e72");
+                ConversionFunctions.Add(VolumePerLengthUnit.CubicZettameterpermeter, "x * 1e63");
+                ConversionFunctions.Add(VolumePerLengthUnit.CubicExameterpermeter, "x * 1e54");
+                ConversionFunctions.Add(VolumePerLengthUnit.CubicPetameterpermeter, "x * 1e45");
+                ConversionFunctions.Add(VolumePerLengthUnit.CubicTerameterpermeter, "x * 1e36");
+                ConversionFunctions.Add(VolumePerLengthUnit.CubicGigameterpermeter, "x * 1e27");
+                ConversionFunctions.Add(VolumePerLengthUnit.CubicMegameterpermeter, "x * 1e18");
+                ConversionFunctions.Add(VolumePerLengthUnit.CubicKilometerpermeter, "x * 1e9");
+                ConversionFunctions.Add(VolumePerLengthUnit.CubicHectometerpermeter, "x * 1e6");
+                ConversionFunctions.Add(VolumePerLengthUnit.CubicDekameterpermeter, "x * 1e3");
+                ConversionFunctions.Add(VolumePerLengthUnit.CubicMeterPerMeter, "x * 1e0");
+                ConversionFunctions.Add(VolumePerLengthUnit.CubicDecimeterpermeter, "x * 1e-3");
+                ConversionFunctions.Add(VolumePerLengthUnit.CubicCentimeterpermeter, "x * 1e-6");
+                ConversionFunctions.Add(VolumePerLengthUnit.CubicMillimeterpermeter, "x * 1e-9");
+                ConversionFunctions.Add(VolumePerLengthUnit.CubicMicrometerpermeter, "x * 1e-18");
+                ConversionFunctions.Add(VolumePerLengthUnit.CubicNanometerpermeter, "x * 1e-27");
+                ConversionFunctions.Add(VolumePerLengthUnit.CubicPicometerpermeter, "x * 1e-36");
+                ConversionFunctions.Add(VolumePerLengthUnit.CubicFemtometerpermeter, "x * 1e-45");
+                ConversionFunctions.Add(VolumePerLengthUnit.CubicAttometerpermeter, "x * 1e-54");
+                ConversionFunctions.Add(VolumePerLengthUnit.CubicZeptometerpermeter, "x * 1e-63");
+                ConversionFunctions.Add(VolumePerLengthUnit.CubicYoctometerpermeter, "x * 1e-72");
             }
         }
     }

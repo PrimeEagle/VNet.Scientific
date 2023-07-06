@@ -1,31 +1,31 @@
 
-    // Auto-generated for VNet on 2023-07-03 11:25:32
+    // Auto-generated for VNet on 2023-07-05 10:24:46
     
     
     namespace VNet.Scientific.Measurement.Dimensions
     {
         public enum ReactiveEnergyUnit
         {
-            AttoVoltampereReactiveHour,
-            CentiVoltampereReactiveHour,
-            DeciVoltampereReactiveHour,
-            DekaVoltampereReactiveHour,
-            ExaVoltampereReactiveHour,
-            FemtoVoltampereReactiveHour,
-            GigaVoltampereReactiveHour,
-            HectoVoltampereReactiveHour,
-            KiloVoltampereReactiveHour,
-            MegaVoltampereReactiveHour,
-            MicroVoltampereReactiveHour,
-            MilliVoltampereReactiveHour,
-            NanoVoltampereReactiveHour,
-            PetaVoltampereReactiveHour,
-            PicoVoltampereReactiveHour,
-            TeraVoltampereReactiveHour,
+            Attovoltamperereactivehour,
+            Centivoltamperereactivehour,
+            Decivoltamperereactivehour,
+            Dekavoltamperereactivehour,
+            Exavoltamperereactivehour,
+            Femtovoltamperereactivehour,
+            Gigavoltamperereactivehour,
+            Hectovoltamperereactivehour,
+            Kilovoltamperereactivehour,
+            Megavoltamperereactivehour,
+            Microvoltamperereactivehour,
+            Millivoltamperereactivehour,
+            Nanovoltamperereactivehour,
+            Petavoltamperereactivehour,
+            Picovoltamperereactivehour,
+            Teravoltamperereactivehour,
             VoltampereReactiveHour,
-            YoctoVoltampereReactiveHour,
-            YottaVoltampereReactiveHour,
-            ZeptoVoltampereReactiveHour,
-            ZettaVoltampereReactiveHour,
+            Yoctovoltamperereactivehour,
+            Yottavoltamperereactivehour,
+            Zeptovoltamperereactivehour,
+            Zettavoltamperereactivehour,
         }
     }

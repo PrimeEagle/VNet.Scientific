@@ -1,38 +1,38 @@
 
-    // Auto-generated for VNet on 2023-07-03 11:25:32
+    // Auto-generated for VNet on 2023-07-05 10:24:46
     
     
     namespace VNet.Scientific.Measurement.Dimensions
     {
         public enum PowerUnit
         {
-            AttoWatt,
+            Attowatt,
             BoilerHorsepower,
             BritishThermalUnitPerHour,
-            CentiWatt,
-            DeciWatt,
-            DekaWatt,
+            Centiwatt,
+            Deciwatt,
+            Dekawatt,
             ElectricalHorsepower,
-            ExaWatt,
-            FemtoWatt,
-            GigaWatt,
-            HectoWatt,
+            Exawatt,
+            Femtowatt,
+            Gigawatt,
+            Hectowatt,
             HydraulicHorsepower,
             JoulePerHour,
-            KiloWatt,
+            Kilowatt,
             MechanicalHorsepower,
-            MegaWatt,
+            Megawatt,
             MetricHorsepower,
-            MicroWatt,
-            MilliWatt,
-            NanoWatt,
-            PetaWatt,
-            PicoWatt,
-            TeraWatt,
+            Microwatt,
+            Milliwatt,
+            Nanowatt,
+            Petawatt,
+            Picowatt,
+            Terawatt,
             Watt,
-            YoctoWatt,
-            YottaWatt,
-            ZeptoWatt,
-            ZettaWatt,
+            Yoctowatt,
+            Yottawatt,
+            Zeptowatt,
+            Zettawatt,
         }
     }

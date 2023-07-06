@@ -1,32 +1,32 @@
 
-    // Auto-generated for VNet on 2023-07-03 11:25:32
+    // Auto-generated for VNet on 2023-07-05 10:24:46
     
     
     namespace VNet.Scientific.Measurement.Dimensions
     {
         public enum VolumeFlowPerAreaUnit
         {
-            CubicAttoMeterPerSecondPerSquareMeter,
-            CubicCentiMeterPerSecondPerSquareMeter,
-            CubicDeciMeterPerSecondPerSquareMeter,
-            CubicDekaMeterPerSecondPerSquareMeter,
-            CubicExaMeterPerSecondPerSquareMeter,
-            CubicFemtoMeterPerSecondPerSquareMeter,
+            CubicAttometerpersecondpersquaremeter,
+            CubicCentimeterpersecondpersquaremeter,
+            CubicDecimeterpersecondpersquaremeter,
+            CubicDekameterpersecondpersquaremeter,
+            CubicExameterpersecondpersquaremeter,
+            CubicFemtometerpersecondpersquaremeter,
             CubicFootPerMinutePerSquareFoot,
-            CubicGigaMeterPerSecondPerSquareMeter,
-            CubicHectoMeterPerSecondPerSquareMeter,
-            CubicKiloMeterPerSecondPerSquareMeter,
-            CubicMegaMeterPerSecondPerSquareMeter,
+            CubicGigameterpersecondpersquaremeter,
+            CubicHectometerpersecondpersquaremeter,
+            CubicKilometerpersecondpersquaremeter,
+            CubicMegameterpersecondpersquaremeter,
             CubicMeterPerSecondPerSquareMeter,
-            CubicMicroMeterPerSecondPerSquareMeter,
-            CubicMilliMeterPerSecondPerSquareMeter,
-            CubicNanoMeterPerSecondPerSquareMeter,
-            CubicPetaMeterPerSecondPerSquareMeter,
-            CubicPicoMeterPerSecondPerSquareMeter,
-            CubicTeraMeterPerSecondPerSquareMeter,
-            CubicYoctoMeterPerSecondPerSquareMeter,
-            CubicYottaMeterPerSecondPerSquareMeter,
-            CubicZeptoMeterPerSecondPerSquareMeter,
-            CubicZettaMeterPerSecondPerSquareMeter,
+            CubicMicrometerpersecondpersquaremeter,
+            CubicMillimeterpersecondpersquaremeter,
+            CubicNanometerpersecondpersquaremeter,
+            CubicPetameterpersecondpersquaremeter,
+            CubicPicometerpersecondpersquaremeter,
+            CubicTerameterpersecondpersquaremeter,
+            CubicYoctometerpersecondpersquaremeter,
+            CubicYottameterpersecondpersquaremeter,
+            CubicZeptometerpersecondpersquaremeter,
+            CubicZettameterpersecondpersquaremeter,
         }
     }

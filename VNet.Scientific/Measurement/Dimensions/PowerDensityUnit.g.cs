@@ -1,34 +1,34 @@
 
-    // Auto-generated for VNet on 2023-07-03 11:25:32
+    // Auto-generated for VNet on 2023-07-05 10:24:46
     
     
     namespace VNet.Scientific.Measurement.Dimensions
     {
         public enum PowerDensityUnit
         {
-            AttoWattPerCubicMeter,
-            CentiWattPerCubicMeter,
-            DeciWattPerCubicMeter,
-            DekaWattPerCubicMeter,
-            ExaWattPerCubicMeter,
-            FemtoWattPerCubicMeter,
-            GigaWattPerCubicMeter,
-            HectoWattPerCubicMeter,
-            KiloWattPerCubicMeter,
-            MegaWattPerCubicMeter,
-            MicroWattPerCubicMeter,
-            MilliWattPerCubicMeter,
-            NanoWattPerCubicMeter,
-            PetaWattPerCubicMeter,
-            PicoWattPerCubicMeter,
-            TeraWattPerCubicMeter,
+            Attowattpercubicmeter,
+            Centiwattpercubicmeter,
+            Deciwattpercubicmeter,
+            Dekawattpercubicmeter,
+            Exawattpercubicmeter,
+            Femtowattpercubicmeter,
+            Gigawattpercubicmeter,
+            Hectowattpercubicmeter,
+            Kilowattpercubicmeter,
+            Megawattpercubicmeter,
+            Microwattpercubicmeter,
+            Milliwattpercubicmeter,
+            Nanowattpercubicmeter,
+            Petawattpercubicmeter,
+            Picowattpercubicmeter,
+            Terawattpercubicmeter,
             WattPerCubicFoot,
             WattPerCubicInch,
             WattPerCubicMeter,
             WattPerLiter,
-            YoctoWattPerCubicMeter,
-            YottaWattPerCubicMeter,
-            ZeptoWattPerCubicMeter,
-            ZettaWattPerCubicMeter,
+            Yoctowattpercubicmeter,
+            Yottawattpercubicmeter,
+            Zeptowattpercubicmeter,
+            Zettawattpercubicmeter,
         }
     }

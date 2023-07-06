@@ -1,39 +1,39 @@
 
-    // Auto-generated for VNet on 2023-07-03 11:25:32
+    // Auto-generated for VNet on 2023-07-05 10:24:46
     
     
     namespace VNet.Scientific.Measurement.Dimensions
     {
         public enum StandardVolumeFlowUnit
         {
-            StandardcubicAttoMeterPerSecond,
+            StandardcubicAttometerpersecond,
             StandardCubicCentimeterPerMinute,
-            StandardcubicCentiMeterPerSecond,
-            StandardcubicDeciMeterPerSecond,
-            StandardcubicDekaMeterPerSecond,
-            StandardcubicExaMeterPerSecond,
-            StandardcubicFemtoMeterPerSecond,
+            StandardcubicCentimeterpersecond,
+            StandardcubicDecimeterpersecond,
+            StandardcubicDekameterpersecond,
+            StandardcubicExameterpersecond,
+            StandardcubicFemtometerpersecond,
             StandardCubicFootPerHour,
             StandardCubicFootPerMinute,
             StandardCubicFootPerSecond,
-            StandardcubicGigaMeterPerSecond,
-            StandardcubicHectoMeterPerSecond,
-            StandardcubicKiloMeterPerSecond,
-            StandardcubicMegaMeterPerSecond,
+            StandardcubicGigameterpersecond,
+            StandardcubicHectometerpersecond,
+            StandardcubicKilometerpersecond,
+            StandardcubicMegameterpersecond,
             StandardCubicMeterPerDay,
             StandardCubicMeterPerHour,
             StandardCubicMeterPerMinute,
-            StandardcubicMeterPerSecond,
-            StandardcubicMicroMeterPerSecond,
-            StandardcubicMilliMeterPerSecond,
-            StandardcubicNanoMeterPerSecond,
-            StandardcubicPetaMeterPerSecond,
-            StandardcubicPicoMeterPerSecond,
-            StandardcubicTeraMeterPerSecond,
-            StandardcubicYoctoMeterPerSecond,
-            StandardcubicYottaMeterPerSecond,
-            StandardcubicZeptoMeterPerSecond,
-            StandardcubicZettaMeterPerSecond,
+            StandardCubicMeterPerSecond,
+            StandardcubicMicrometerpersecond,
+            StandardcubicMillimeterpersecond,
+            StandardcubicNanometerpersecond,
+            StandardcubicPetameterpersecond,
+            StandardcubicPicometerpersecond,
+            StandardcubicTerameterpersecond,
+            StandardcubicYoctometerpersecond,
+            StandardcubicYottameterpersecond,
+            StandardcubicZeptometerpersecond,
+            StandardcubicZettameterpersecond,
             StandardLiterPerMinute,
         }
     }

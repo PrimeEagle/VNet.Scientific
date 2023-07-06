@@ -1,31 +1,31 @@
 
-    // Auto-generated for VNet on 2023-07-03 11:25:32
+    // Auto-generated for VNet on 2023-07-05 10:24:46
     
     
     namespace VNet.Scientific.Measurement.Dimensions
     {
         public enum SolidAngleUnit
         {
-            AttoSteradian,
-            CentiSteradian,
-            DeciSteradian,
-            DekaSteradian,
-            ExaSteradian,
-            FemtoSteradian,
-            GigaSteradian,
-            HectoSteradian,
-            KiloSteradian,
-            MegaSteradian,
-            MicroSteradian,
-            MilliSteradian,
-            NanoSteradian,
-            PetaSteradian,
-            PicoSteradian,
+            Attosteradian,
+            Centisteradian,
+            Decisteradian,
+            Dekasteradian,
+            Exasteradian,
+            Femtosteradian,
+            Gigasteradian,
+            Hectosteradian,
+            Kilosteradian,
+            Megasteradian,
+            Microsteradian,
+            Millisteradian,
+            Nanosteradian,
+            Petasteradian,
+            Picosteradian,
             Steradian,
-            TeraSteradian,
-            YoctoSteradian,
-            YottaSteradian,
-            ZeptoSteradian,
-            ZettaSteradian,
+            Terasteradian,
+            Yoctosteradian,
+            Yottasteradian,
+            Zeptosteradian,
+            Zettasteradian,
         }
     }

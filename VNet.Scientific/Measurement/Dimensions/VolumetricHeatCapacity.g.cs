@@ -1,5 +1,5 @@
 
-    // Auto-generated for VNet on 2023-07-03 11:25:32
+    // Auto-generated for VNet on 2023-07-05 10:24:46
     using System.Numerics;
     
     
@@ -22,30 +22,30 @@
                 DefaultUnit = VolumetricHeatCapacityUnit.JoulePerCubicMeterKelvin;
                 
                 
-                _conversionFunctions.Add("JoulePerCubicMeterDegreeCelsius", "x");
-                _conversionFunctions.Add("CaloriePerCubicCentimeterDegreeCelsius", "x / 2.388459e-7");
-                _conversionFunctions.Add("BtuPerCubicFootDegreeFahrenheit", "x / 1.4910660e-5");
-                _conversionFunctions.Add("YottaJoulePerCubicMeterKelvin", "x * 1e24");
-                _conversionFunctions.Add("ZettaJoulePerCubicMeterKelvin", "x * 1e21");
-                _conversionFunctions.Add("ExaJoulePerCubicMeterKelvin", "x * 1e18");
-                _conversionFunctions.Add("PetaJoulePerCubicMeterKelvin", "x * 1e15");
-                _conversionFunctions.Add("TeraJoulePerCubicMeterKelvin", "x * 1e12");
-                _conversionFunctions.Add("GigaJoulePerCubicMeterKelvin", "x * 1e9");
-                _conversionFunctions.Add("MegaJoulePerCubicMeterKelvin", "x * 1e6");
-                _conversionFunctions.Add("KiloJoulePerCubicMeterKelvin", "x * 1e3");
-                _conversionFunctions.Add("HectoJoulePerCubicMeterKelvin", "x * 1e2");
-                _conversionFunctions.Add("DekaJoulePerCubicMeterKelvin", "x * 1e1");
-                _conversionFunctions.Add("JoulePerCubicMeterKelvin", "x * 1e0");
-                _conversionFunctions.Add("DeciJoulePerCubicMeterKelvin", "x * 1e-1");
-                _conversionFunctions.Add("CentiJoulePerCubicMeterKelvin", "x * 1e-2");
-                _conversionFunctions.Add("MilliJoulePerCubicMeterKelvin", "x * 1e-3");
-                _conversionFunctions.Add("MicroJoulePerCubicMeterKelvin", "x * 1e-6");
-                _conversionFunctions.Add("NanoJoulePerCubicMeterKelvin", "x * 1e-9");
-                _conversionFunctions.Add("PicoJoulePerCubicMeterKelvin", "x * 1e-12");
-                _conversionFunctions.Add("FemtoJoulePerCubicMeterKelvin", "x * 1e-15");
-                _conversionFunctions.Add("AttoJoulePerCubicMeterKelvin", "x * 1e-18");
-                _conversionFunctions.Add("ZeptoJoulePerCubicMeterKelvin", "x * 1e-21");
-                _conversionFunctions.Add("YoctoJoulePerCubicMeterKelvin", "x * 1e-24");
+                ConversionFunctions.Add(VolumetricHeatCapacityUnit.JoulePerCubicMeterDegreeCelsius, "x");
+                ConversionFunctions.Add(VolumetricHeatCapacityUnit.CaloriePerCubicCentimeterDegreeCelsius, "x / 2.388459e-7");
+                ConversionFunctions.Add(VolumetricHeatCapacityUnit.BtuPerCubicFootDegreeFahrenheit, "x / 1.4910660e-5");
+                ConversionFunctions.Add(VolumetricHeatCapacityUnit.Yottajoulepercubicmeterkelvin, "x * 1e24");
+                ConversionFunctions.Add(VolumetricHeatCapacityUnit.Zettajoulepercubicmeterkelvin, "x * 1e21");
+                ConversionFunctions.Add(VolumetricHeatCapacityUnit.Exajoulepercubicmeterkelvin, "x * 1e18");
+                ConversionFunctions.Add(VolumetricHeatCapacityUnit.Petajoulepercubicmeterkelvin, "x * 1e15");
+                ConversionFunctions.Add(VolumetricHeatCapacityUnit.Terajoulepercubicmeterkelvin, "x * 1e12");
+                ConversionFunctions.Add(VolumetricHeatCapacityUnit.Gigajoulepercubicmeterkelvin, "x * 1e9");
+                ConversionFunctions.Add(VolumetricHeatCapacityUnit.Megajoulepercubicmeterkelvin, "x * 1e6");
+                ConversionFunctions.Add(VolumetricHeatCapacityUnit.Kilojoulepercubicmeterkelvin, "x * 1e3");
+                ConversionFunctions.Add(VolumetricHeatCapacityUnit.Hectojoulepercubicmeterkelvin, "x * 1e2");
+                ConversionFunctions.Add(VolumetricHeatCapacityUnit.Dekajoulepercubicmeterkelvin, "x * 1e1");
+                ConversionFunctions.Add(VolumetricHeatCapacityUnit.JoulePerCubicMeterKelvin, "x * 1e0");
+                ConversionFunctions.Add(VolumetricHeatCapacityUnit.Decijoulepercubicmeterkelvin, "x * 1e-1");
+                ConversionFunctions.Add(VolumetricHeatCapacityUnit.Centijoulepercubicmeterkelvin, "x * 1e-2");
+                ConversionFunctions.Add(VolumetricHeatCapacityUnit.Millijoulepercubicmeterkelvin, "x * 1e-3");
+                ConversionFunctions.Add(VolumetricHeatCapacityUnit.Microjoulepercubicmeterkelvin, "x * 1e-6");
+                ConversionFunctions.Add(VolumetricHeatCapacityUnit.Nanojoulepercubicmeterkelvin, "x * 1e-9");
+                ConversionFunctions.Add(VolumetricHeatCapacityUnit.Picojoulepercubicmeterkelvin, "x * 1e-12");
+                ConversionFunctions.Add(VolumetricHeatCapacityUnit.Femtojoulepercubicmeterkelvin, "x * 1e-15");
+                ConversionFunctions.Add(VolumetricHeatCapacityUnit.Attojoulepercubicmeterkelvin, "x * 1e-18");
+                ConversionFunctions.Add(VolumetricHeatCapacityUnit.Zeptojoulepercubicmeterkelvin, "x * 1e-21");
+                ConversionFunctions.Add(VolumetricHeatCapacityUnit.Yoctojoulepercubicmeterkelvin, "x * 1e-24");
             }
         }
     }

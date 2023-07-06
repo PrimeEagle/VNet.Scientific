@@ -1,5 +1,5 @@
 
-    // Auto-generated for VNet on 2023-07-03 11:25:32
+    // Auto-generated for VNet on 2023-07-05 10:24:46
     using System.Numerics;
     
     
@@ -22,32 +22,32 @@
                 DefaultUnit = ReciprocalAreaUnit.InverseSquareMeter;
                 
                 
-                _conversionFunctions.Add("InverseSquareMile", "x / 2.59e6");
-                _conversionFunctions.Add("InverseSquareYard", "x / 0.836127");
-                _conversionFunctions.Add("InverseSquareFoot", "x / 0.092903");
-                _conversionFunctions.Add("InverseUsSurveySquareFoot", "x / 0.09290341161");
-                _conversionFunctions.Add("InverseSquareInch", "x / 0.00064516");
-                _conversionFunctions.Add("InversesquareYottaMeter", "x / 1e48");
-                _conversionFunctions.Add("InversesquareZettaMeter", "x / 1e42");
-                _conversionFunctions.Add("InversesquareExaMeter", "x / 1e36");
-                _conversionFunctions.Add("InversesquarePetaMeter", "x / 1e30");
-                _conversionFunctions.Add("InversesquareTeraMeter", "x / 1e24");
-                _conversionFunctions.Add("InversesquareGigaMeter", "x / 1e18");
-                _conversionFunctions.Add("InversesquareMegaMeter", "x / 1e12");
-                _conversionFunctions.Add("InversesquareKiloMeter", "x / 1e6");
-                _conversionFunctions.Add("InversesquareHectoMeter", "x / 1e4");
-                _conversionFunctions.Add("InversesquareDekaMeter", "x / 1e2");
-                _conversionFunctions.Add("InversesquareMeter", "x / 1e0");
-                _conversionFunctions.Add("InversesquareDeciMeter", "x / 1e-2");
-                _conversionFunctions.Add("InversesquareCentiMeter", "x / 1e-4");
-                _conversionFunctions.Add("InversesquareMilliMeter", "x / 1e-6");
-                _conversionFunctions.Add("InversesquareMicroMeter", "x / 1e-12");
-                _conversionFunctions.Add("InversesquareNanoMeter", "x / 1e-18");
-                _conversionFunctions.Add("InversesquarePicoMeter", "x / 1e-24");
-                _conversionFunctions.Add("InversesquareFemtoMeter", "x / 1e-30");
-                _conversionFunctions.Add("InversesquareAttoMeter", "x / 1e-36");
-                _conversionFunctions.Add("InversesquareZeptoMeter", "x / 1e-42");
-                _conversionFunctions.Add("InversesquareYoctoMeter", "x / 1e-48");
+                ConversionFunctions.Add(ReciprocalAreaUnit.InverseSquareMile, "x / 2.59e6");
+                ConversionFunctions.Add(ReciprocalAreaUnit.InverseSquareYard, "x / 0.836127");
+                ConversionFunctions.Add(ReciprocalAreaUnit.InverseSquareFoot, "x / 0.092903");
+                ConversionFunctions.Add(ReciprocalAreaUnit.InverseUsSurveySquareFoot, "x / 0.09290341161");
+                ConversionFunctions.Add(ReciprocalAreaUnit.InverseSquareInch, "x / 0.00064516");
+                ConversionFunctions.Add(ReciprocalAreaUnit.InversesquareYottameter, "x / 1e48");
+                ConversionFunctions.Add(ReciprocalAreaUnit.InversesquareZettameter, "x / 1e42");
+                ConversionFunctions.Add(ReciprocalAreaUnit.InversesquareExameter, "x / 1e36");
+                ConversionFunctions.Add(ReciprocalAreaUnit.InversesquarePetameter, "x / 1e30");
+                ConversionFunctions.Add(ReciprocalAreaUnit.InversesquareTerameter, "x / 1e24");
+                ConversionFunctions.Add(ReciprocalAreaUnit.InversesquareGigameter, "x / 1e18");
+                ConversionFunctions.Add(ReciprocalAreaUnit.InversesquareMegameter, "x / 1e12");
+                ConversionFunctions.Add(ReciprocalAreaUnit.InversesquareKilometer, "x / 1e6");
+                ConversionFunctions.Add(ReciprocalAreaUnit.InversesquareHectometer, "x / 1e4");
+                ConversionFunctions.Add(ReciprocalAreaUnit.InversesquareDekameter, "x / 1e2");
+                ConversionFunctions.Add(ReciprocalAreaUnit.InverseSquareMeter, "x / 1e0");
+                ConversionFunctions.Add(ReciprocalAreaUnit.InversesquareDecimeter, "x / 1e-2");
+                ConversionFunctions.Add(ReciprocalAreaUnit.InversesquareCentimeter, "x / 1e-4");
+                ConversionFunctions.Add(ReciprocalAreaUnit.InversesquareMillimeter, "x / 1e-6");
+                ConversionFunctions.Add(ReciprocalAreaUnit.InversesquareMicrometer, "x / 1e-12");
+                ConversionFunctions.Add(ReciprocalAreaUnit.InversesquareNanometer, "x / 1e-18");
+                ConversionFunctions.Add(ReciprocalAreaUnit.InversesquarePicometer, "x / 1e-24");
+                ConversionFunctions.Add(ReciprocalAreaUnit.InversesquareFemtometer, "x / 1e-30");
+                ConversionFunctions.Add(ReciprocalAreaUnit.InversesquareAttometer, "x / 1e-36");
+                ConversionFunctions.Add(ReciprocalAreaUnit.InversesquareZeptometer, "x / 1e-42");
+                ConversionFunctions.Add(ReciprocalAreaUnit.InversesquareYoctometer, "x / 1e-48");
             }
         }
     }
