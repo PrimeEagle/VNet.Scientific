@@ -16,18 +16,13 @@ namespace VNet.Scientific.CodeGen
     [Generator]
     public class DimensionSourceGenerator : ISourceGenerator
     {
-        public class TestClass
-        {
-            public string Name { get; set; }
-        }
-
         public void Initialize(GeneratorInitializationContext context)
         {
 #if DEBUG
-            if (!System.Diagnostics.Debugger.IsAttached)
-            {
-                System.Diagnostics.Debugger.Launch();
-            }
+            //if (!System.Diagnostics.Debugger.IsAttached)
+            //{
+            //    System.Diagnostics.Debugger.Launch();
+            //}
 #endif
         }
 
@@ -127,13 +122,13 @@ namespace VNet.Scientific.CodeGen
                                     .AddMethod()
                                         .ThatIsAConstructor()
                                         .WithModifier("public")
-                                        .AddCodeLine($"DimensionComponent.Exponents.Length = {dimVNet.Exponents[0]};")
-                                        .AddCodeLine($"DimensionComponent.Exponents.Mass = {dimVNet.Exponents[1]};")
-                                        .AddCodeLine($"DimensionComponent.Exponents.Time = {dimVNet.Exponents[2]};")
-                                        .AddCodeLine($"DimensionComponent.Exponents.ElectricalCurrent = {dimVNet.Exponents[3]};")
-                                        .AddCodeLine($"DimensionComponent.Exponents.LuminousIntensity = {dimVNet.Exponents[4]};")
-                                        .AddCodeLine($"DimensionComponent.Exponents.Temperature = {dimVNet.Exponents[5]};")
-                                        .AddCodeLine($"DimensionComponent.Exponents.Amount = {dimVNet.Exponents[6]};")
+                                        .AddCodeLine($"Exponents.Length = {dimVNet.Exponents[0]};")
+                                        .AddCodeLine($"Exponents.Mass = {dimVNet.Exponents[1]};")
+                                        .AddCodeLine($"Exponents.Time = {dimVNet.Exponents[2]};")
+                                        .AddCodeLine($"Exponents.ElectricalCurrent = {dimVNet.Exponents[3]};")
+                                        .AddCodeLine($"Exponents.LuminousIntensity = {dimVNet.Exponents[4]};")
+                                        .AddCodeLine($"Exponents.Temperature = {dimVNet.Exponents[5]};")
+                                        .AddCodeLine($"Exponents.Amount = {dimVNet.Exponents[6]};")
                                         .AddBlankLine()
                                         .AddCodeLine($"DefaultUnit = {dimVNet.Name}Unit.{dimVNet.DefaultUnit};")
                                         .AddBlankLine()
@@ -149,8 +144,38 @@ namespace VNet.Scientific.CodeGen
 
                     log.WriteLine("done");
                 }
+                var dimensionDefFileName = Path.Combine(context.ProjectDir(), "Measurement", "DimensionDef");
 
 
+                var exponentsDictLines = new List<string>();
+
+                var targetFolder = Path.Combine(context.ProjectDir(), "Measurement", "VNet.Json");
+                var genFiles = Directory.GetFiles(targetFolder);
+                exponentsDictLines.Add("public static Dictionary<string, DimensionExponents> Exponents = new Dictionary<string, DimensionExponents>()");
+                exponentsDictLines.Add("{");
+                foreach (var gf in genFiles)
+                {
+                    if (Path.GetFileName(gf).StartsWith("_")) continue;
+
+                    var vNetDim = Json.Deserialize<VNetDimension>(File.ReadAllText(gf));
+                    exponentsDictLines.Add($"{{ \"{vNetDim.Name}\", new DimensionExponents({vNetDim.Exponents[0]}, {vNetDim.Exponents[1]}, {vNetDim.Exponents[2]}, {vNetDim.Exponents[3]}, {vNetDim.Exponents[4]}, {vNetDim.Exponents[5]}, {vNetDim.Exponents[6]}) }},");
+                }
+                exponentsDictLines.Add("};");
+
+                if (File.Exists($"{dimensionDefFileName}.g.cs")) File.Delete($"{dimensionDefFileName}.g.cs");
+
+                CodeWriter.For<CSharpCodeFile>()
+                              .AddComment($"Auto-generated for VNet on {DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss")}")
+                              .AddUsing("System.Collections.Generic")
+                              .AddBlankLines(2)
+                              .AddScopedNamespace("VNet.Scientific.Measurement")
+                                .AddClass("DimensionDef")
+                                    .WithModifier("public")
+                                    .WithModifier("static")
+                                    .AddCodeLines(exponentsDictLines)
+                                    .UpTo<NamespaceScope>()
+                                .UpTo<CSharpCodeFile>()
+                              .Save(dimensionDefFileName);
                 //var targetPath = Path.Combine(context.ProjectDir(), "Measurement", "Dimensions");
                 //var di = new DirectoryInfo(targetPath);
 

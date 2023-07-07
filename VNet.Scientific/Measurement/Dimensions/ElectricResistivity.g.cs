@@ -1,5 +1,5 @@
 
-    // Auto-generated for VNet on 2023-07-05 10:35:43
+    // Auto-generated for VNet on 2023-07-06 12:42:23
     using System.Numerics;
     
     
@@ -11,13 +11,13 @@
             
             public ElectricResistivity() : base()
             {
-                DimensionComponent.Exponents.Length = 3;
-                DimensionComponent.Exponents.Mass = 1;
-                DimensionComponent.Exponents.Time = -3;
-                DimensionComponent.Exponents.ElectricalCurrent = -2;
-                DimensionComponent.Exponents.LuminousIntensity = 0;
-                DimensionComponent.Exponents.Temperature = 0;
-                DimensionComponent.Exponents.Amount = 0;
+                Exponents.Length = 3;
+                Exponents.Mass = 1;
+                Exponents.Time = -3;
+                Exponents.ElectricalCurrent = -2;
+                Exponents.LuminousIntensity = 0;
+                Exponents.Temperature = 0;
+                Exponents.Amount = 0;
                 
                 DefaultUnit = ElectricResistivityUnit.OhmMeter;
                 

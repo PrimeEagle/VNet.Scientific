@@ -9,7 +9,7 @@ namespace VNet.Scientific.Measurement;
 public interface IDimensionBase<TVal> where TVal : notnull, INumber<TVal>
 {
     public string IdTag { get; }
-    public DimensionComponent DimensionComponent { get; init; }
+    public DimensionExponents Exponents { get; init; }
 
 
 

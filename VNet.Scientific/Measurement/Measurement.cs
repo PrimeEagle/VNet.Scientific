@@ -36,7 +36,7 @@ public class Measurement<TDim, TVal> where TDim : notnull, IDimensionBase<TVal>
 
     private static bool AreDimensionsCompatible(Measurement<TDim, TVal> a, Measurement<TDim, TVal> b)
     {
-        return a.Dimension.DimensionComponent == b.Dimension.DimensionComponent;
+        return a.Dimension.Exponents == b.Dimension.Exponents;
     }
 
     public static Measurement<TDim, TVal> operator +(Measurement<TDim, TVal> a, Measurement<TDim, TVal> b)
@@ -62,7 +62,7 @@ public class Measurement<TDim, TVal> where TDim : notnull, IDimensionBase<TVal>
     {
         var value = a.Value * b.Value;
 
-        var tempDimensionComponent = a.Dimension.DimensionComponent + b.Dimension.DimensionComponent;
+        var tempDimensionComponent = a.Dimension.Exponents + b.Dimension.Exponents;
         var matchedDimension = tempDimensionComponent.FindMatch();
 
         var genericClass = typeof(Measurement<,>);
@@ -78,7 +78,7 @@ public class Measurement<TDim, TVal> where TDim : notnull, IDimensionBase<TVal>
     {
         var value = a.Value / b.Value;
 
-        var tempDimensionComponent = a.Dimension.DimensionComponent - b.Dimension.DimensionComponent;
+        var tempDimensionComponent = a.Dimension.Exponents - b.Dimension.Exponents;
         var matchedDimension = tempDimensionComponent.FindMatch();
 
         var genericClass = typeof(Measurement<,>);

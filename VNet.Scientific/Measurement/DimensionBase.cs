@@ -5,7 +5,7 @@ namespace VNet.Scientific.Measurement;
 public abstract class DimensionBase<TUnit, TVal> : IDimension<TUnit, TVal> where TUnit : notnull, Enum where TVal : notnull, INumber<TVal>
 {
     public abstract string IdTag { get; }
-    public DimensionComponent DimensionComponent { get; init; }
+    public DimensionExponents Exponents { get; init; }
     public TUnit DefaultUnit { get; set; }
     public Dictionary<TUnit, string> Symbols => _symbols;
     public Dictionary<TUnit, string> PluralSymbols => _pluralSymbols;
@@ -18,7 +18,7 @@ public abstract class DimensionBase<TUnit, TVal> : IDimension<TUnit, TVal> where
 
     public DimensionBase()
     {
-        DimensionComponent = new DimensionComponent();
+        Exponents = new DimensionExponents();
         _symbols = new Dictionary<TUnit, string>();
         _pluralSymbols = new Dictionary<TUnit, string>(); 
         _conversionFunctions = new Dictionary<TUnit, string>();
