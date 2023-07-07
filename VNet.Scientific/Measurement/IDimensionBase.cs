@@ -2,18 +2,19 @@
 
 // ReSharper disable UnusedMember.Global
 // ReSharper disable StaticMemberInGenericType
-#pragma warning disable CA2211
 
 namespace VNet.Scientific.Measurement;
 
-public interface IDimensionBase<TVal> where TVal : notnull, INumber<TVal>
+public interface IDimensionBase<TUnit, TVal> where TUnit : notnull, Enum
+                                             where TVal : notnull, INumber<TVal>
+    
 {
     public string IdTag { get; }
     public DimensionExponents Exponents { get; init; }
 
 
 
-    public void ValidateUnit(Enum unit);
-    public TVal ConvertToDefaultUnit(TVal value, Enum fromUnit);
-    public TVal ConvertFromDefaultUnit(TVal value, Enum toUnit);
+    public void ValidateUnit(TUnit unit);
+    public TVal ConvertToDefaultUnit(TVal value, TUnit fromUnit);
+    public TVal ConvertFromDefaultUnit(TVal value, TUnit toUnit);
 }

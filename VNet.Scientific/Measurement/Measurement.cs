@@ -5,7 +5,8 @@
 
 namespace VNet.Scientific.Measurement;
 
-public class Measurement<TDim, TVal> where TDim : notnull, IDimensionBase<TVal>
+public class Measurement<TDim, TUnit, TVal> where TDim : notnull, IDimensionBase<TVal>
+    where TUnit : notnull, Enum    
     where TVal : notnull, INumber<TVal>
 {
     private TDim Dimension { get; set; }
@@ -17,81 +18,81 @@ public class Measurement<TDim, TVal> where TDim : notnull, IDimensionBase<TVal>
         Value = value;
     }
 
-    public Measurement(TVal value, Enum unit)
+    public Measurement(TVal value, TUnit unit)
     {
         SetValue(value, unit);
     }
 
-    public void SetValue(TVal value, Enum unit)
+    public void SetValue(TVal value, TUnit unit)
     {
         Dimension.ValidateUnit(unit);
         Value = Dimension.ConvertToDefaultUnit(value, unit);
     }
 
-    public TVal GetValue(Enum unit)
+    public TVal GetValue(TUnit unit)
     {
         Dimension.ValidateUnit(unit);
         return Dimension.ConvertFromDefaultUnit(Value, unit);
     }
 
-    private static bool AreDimensionsCompatible(Measurement<TDim, TVal> a, Measurement<TDim, TVal> b)
+    private static bool AreDimensionsCompatible(Measurement<TDim, TUnit, TVal> a, Measurement<TDim, TUnit, TVal> b)
     {
         return a.Dimension.Exponents == b.Dimension.Exponents;
     }
 
-    public static Measurement<TDim, TVal> operator +(Measurement<TDim, TVal> a, Measurement<TDim, TVal> b)
+    public static Measurement<TDim, TUnit, TVal> operator +(Measurement<TDim, TUnit, TVal> a, Measurement<TDim, TUnit, TVal> b)
     {
         if (!AreDimensionsCompatible(a, b)) throw new InvalidOperationException("Dimensions are incompatible for this operation.");
 
 
         var value = a.Value + b.Value;
 
-        return new Measurement<TDim, TVal>(value);
+        return new Measurement<TDim, TUnit, TVal>(value);
     }
 
-    public static Measurement<TDim, TVal> operator -(Measurement<TDim, TVal> a, Measurement<TDim, TVal> b)
+    public static Measurement<TDim, TUnit, TVal> operator -(Measurement<TDim, TUnit, TVal> a, Measurement<TDim, TUnit, TVal> b)
     {
         if (!AreDimensionsCompatible(a, b)) throw new InvalidOperationException("Dimensions are incompatible for this operation.");
 
         var value = a.Value - b.Value;
 
-        return new Measurement<TDim, TVal>(value);
+        return new Measurement<TDim, TUnit, TVal>(value);
     }
 
-    public static Measurement<TDim, TVal> operator *(Measurement<TDim, TVal> a, Measurement<TDim, TVal> b)
+    public static Measurement<TDim, TUnit, TVal> operator *(Measurement<TDim, TUnit, TVal> a, Measurement<TDim, TUnit, TVal> b)
     {
         var value = a.Value * b.Value;
 
         var tempDimensionComponent = a.Dimension.Exponents + b.Dimension.Exponents;
         var matchedDimension = tempDimensionComponent.FindMatch();
 
-        var genericClass = typeof(Measurement<,>);
+        var genericClass = typeof(Measurement<TDim, TUnit, TVal>);
         var constructedClass = genericClass.MakeGenericType(matchedDimension.GetType(), typeof(TVal));
 
-        var result = (Measurement<TDim,TVal>)Activator.CreateInstance(constructedClass, value)!;
+        var result = (Measurement<TDim, TUnit, TVal>)Activator.CreateInstance(constructedClass, value)!;
         if (result == null) throw new ArgumentNullException(nameof(result));
 
         return result;
     }
 
-    public static Measurement<TDim, TVal> operator /(Measurement<TDim, TVal> a, Measurement<TDim, TVal> b)
+    public static Measurement<TDim, TUnit, TVal> operator /(Measurement<TDim, TUnit, TVal> a, Measurement<TDim, TUnit, TVal> b)
     {
         var value = a.Value / b.Value;
 
         var tempDimensionComponent = a.Dimension.Exponents - b.Dimension.Exponents;
         var matchedDimension = tempDimensionComponent.FindMatch();
 
-        var genericClass = typeof(Measurement<,>);
+        var genericClass = typeof(Measurement<TDim, TUnit, TVal>);
         var constructedClass = genericClass.MakeGenericType(matchedDimension.GetType(), typeof(TVal));
 
-        var result = (Measurement<TDim, TVal>)Activator.CreateInstance(constructedClass, value)!;
+        var result = (Measurement<TDim, TUnit, TVal>)Activator.CreateInstance(constructedClass, value)!;
         if (result == null) throw new ArgumentNullException(nameof(result));
 
         return result;
     }
 
-    public static Measurement<TDim, TVal> operator -(Measurement<TDim, TVal> a)
+    public static Measurement<TDim, TUnit, TVal> operator -(Measurement<TDim, TUnit, TVal> a)
     {
-        return new Measurement<TDim, TVal>(-a.Value);
+        return new Measurement<TDim, TUnit, TVal>(-a.Value);
     }
 }
