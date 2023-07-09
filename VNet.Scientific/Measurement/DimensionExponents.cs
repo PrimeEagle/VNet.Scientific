@@ -112,29 +112,31 @@ public class DimensionExponents
         return !(a == b);
     }
 
-    public string FindMatch()
+    public dynamic FindMatch()
     {
-        string matchedIdTag = null;
+        var matches = DimensionDef.Exponents.Keys.Where(e =>
+            DimensionDef.Exponents[e].Length == Length &&
+            DimensionDef.Exponents[e].Mass == Mass &&
+            DimensionDef.Exponents[e].Time == Time &&
+            DimensionDef.Exponents[e].ElectricalCurrent == ElectricalCurrent &&
+            DimensionDef.Exponents[e].LuminousIntensity == LuminousIntensity &&
+            DimensionDef.Exponents[e].Temperature == Temperature &&
+            DimensionDef.Exponents[e].Amount == Amount).ToList<string>();
 
-        // ReSharper disable once ForeachCanBePartlyConvertedToQueryUsingAnotherGetEExponents
-        // ReSharper disable once ForeachCanBeConvertedToQueryUsingAnotherGetEExponents
-        //foreach (var definition in UnitDefinition.Components)
-        //{
-        //    if (definition.Value.Item1[0] != Exponents.Length) continue;
-        //    if (definition.Value.Item1[1] != Exponents.Mass) continue;
-        //    if (definition.Value.Item1[2] != Exponents.Time) continue;
-        //    if (definition.Value.Item1[3] != Exponents.ElectricalCurrent) continue;
-        //    if (definition.Value.Item1[4] != Exponents.LuminousIntensity) continue;
-        //    if (definition.Value.Item1[5] != Exponents.Temperature) continue;
-        //    if (definition.Value.Item1[6] != Exponents.Amount) continue;
+        if (matches is null || matches.Count == 0) return null;
 
-        //    matchedIdTag = definition.Key;
-        //    break;
-        //}
+        string dimTypeName = $"VNet.Scientific.Measurement.Dimensions.{matches.First()}";
+        string unitTypeName = $"{dimTypeName}Unit";
 
-        //if (string.IsNullOrEmpty(matchedIdTag)) matchedIdTag = "UndefinedDimension";
+        Type dimType = Type.GetType(dimTypeName);
+        Type unitType = Type.GetType(unitTypeName);
+        Type valType = typeof(double);
 
-        return matchedIdTag;
+        Type genericType = typeof(Measurement<,,>);
+        Type specificType = genericType.MakeGenericType(new Type[] { dimType, unitType, valType });
+        object measurement = Activator.CreateInstance(specificType);
+
+        return measurement;
     }
 
     public bool IsScalar()

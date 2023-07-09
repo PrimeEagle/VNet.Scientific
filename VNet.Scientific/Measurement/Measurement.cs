@@ -5,7 +5,7 @@
 
 namespace VNet.Scientific.Measurement;
 
-public class Measurement<TDim, TUnit, TVal> where TDim : notnull, IDimensionBase<TVal>
+public class Measurement<TDim, TUnit, TVal> where TDim : notnull, IDimensionBase<TUnit, TVal>
     where TUnit : notnull, Enum    
     where TVal : notnull, INumber<TVal>
 {
@@ -59,36 +59,23 @@ public class Measurement<TDim, TUnit, TVal> where TDim : notnull, IDimensionBase
         return new Measurement<TDim, TUnit, TVal>(value);
     }
 
-    public static Measurement<TDim, TUnit, TVal> operator *(Measurement<TDim, TUnit, TVal> a, Measurement<TDim, TUnit, TVal> b)
+    public static dynamic operator *(Measurement<TDim, TUnit, TVal> a, Measurement<TDim, TUnit, TVal> b)
     {
         var value = a.Value * b.Value;
-
         var tempDimensionComponent = a.Dimension.Exponents + b.Dimension.Exponents;
-        var matchedDimension = tempDimensionComponent.FindMatch();
+        var measurement = tempDimensionComponent.FindMatch();
 
-        var genericClass = typeof(Measurement<TDim, TUnit, TVal>);
-        var constructedClass = genericClass.MakeGenericType(matchedDimension.GetType(), typeof(TVal));
-
-        var result = (Measurement<TDim, TUnit, TVal>)Activator.CreateInstance(constructedClass, value)!;
-        if (result == null) throw new ArgumentNullException(nameof(result));
-
-        return result;
+        return measurement;
     }
 
-    public static Measurement<TDim, TUnit, TVal> operator /(Measurement<TDim, TUnit, TVal> a, Measurement<TDim, TUnit, TVal> b)
+    public static dynamic operator /(Measurement<TDim, TUnit, TVal> a, Measurement<TDim, TUnit, TVal> b)
     {
         var value = a.Value / b.Value;
 
         var tempDimensionComponent = a.Dimension.Exponents - b.Dimension.Exponents;
-        var matchedDimension = tempDimensionComponent.FindMatch();
+        var measurement = tempDimensionComponent.FindMatch();
 
-        var genericClass = typeof(Measurement<TDim, TUnit, TVal>);
-        var constructedClass = genericClass.MakeGenericType(matchedDimension.GetType(), typeof(TVal));
-
-        var result = (Measurement<TDim, TUnit, TVal>)Activator.CreateInstance(constructedClass, value)!;
-        if (result == null) throw new ArgumentNullException(nameof(result));
-
-        return result;
+        return measurement;
     }
 
     public static Measurement<TDim, TUnit, TVal> operator -(Measurement<TDim, TUnit, TVal> a)
