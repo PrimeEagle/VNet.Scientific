@@ -44,7 +44,7 @@ public class ButterworthFilterAlgorithm : FilterAlgorithmBase
     public override bool IsValid()
     {
         var valid = ((IButterworthFilterArgs)Args).PassBandRipple > 0;
-        if (valid && ((IButterworthFilterArgs) Args).StopBandAttenuation > 0) ;
+        if (valid && ((IButterworthFilterArgs) Args).StopBandAttenuation > 0);
         if (valid && BandType == AlgorithmBandType.LowPass) valid &= ((IButterworthLowPassFilterArgs)Args).PassBandFrequency > 0;
         if (valid && BandType == AlgorithmBandType.HighPass) valid &= ((IButterworthLowPassFilterArgs)Args).PassBandFrequency > 0;
         if (valid && BandType == AlgorithmBandType.LowPass) valid &= ((IButterworthLowPassFilterArgs)Args).StopBandFrequency > 0;
