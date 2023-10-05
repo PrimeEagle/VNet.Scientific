@@ -3,27 +3,30 @@
 public class NoiseLayer
 {
     public List<NoiseBlendLayer> Layers { get; } = new List<NoiseBlendLayer>();
+    private double[] cachedResult = null; // for caching
 
-    public double[,] Generate(int width, int height)
+    public double[] Generate()
     {
+        if (cachedResult != null)
+            return cachedResult;
+
         if (!Layers.Any())
             throw new InvalidOperationException("At least one layer is required.");
 
-        double[,] result = Layers[0].NoiseAlgorithm.Generate();
+        var result = Layers[0].NoiseAlgorithm.Generate();
+        var totalSize = result.Length;
 
-        for (int i = 1; i < Layers.Count; i++)
+        for (var i = 1; i < Layers.Count; i++)
         {
-            double[,] currentNoise = Layers[i].NoiseAlgorithm.Generate();
+            var currentNoise = Layers[i].NoiseAlgorithm.Generate();
 
-            for (int x = 0; x < width; x++)
+            for (var j = 0; j < totalSize; j++)
             {
-                for (int y = 0; y < height; y++)
-                {
-                    result[x, y] = Layers[i].BlendMode.Blend(result[x, y], currentNoise[x, y]);
-                }
+                result[j] = Layers[i].ApplyBlends(result[j], currentNoise[j]);
             }
         }
 
+        cachedResult = result;
         return result;
     }
 
@@ -32,19 +35,45 @@ public class NoiseLayer
         if (!Layers.Any())
             throw new InvalidOperationException("At least one layer is required.");
 
-        double result = Layers[0].NoiseAlgorithm.GenerateSingleSample();
+        var result = Layers[0].NoiseAlgorithm.GenerateSingleSample();
 
-        for (int i = 1; i < Layers.Count; i++)
+        for (var i = 1; i < Layers.Count; i++)
         {
-            double currentSample = Layers[i].NoiseAlgorithm.GenerateSingleSample();
+            var currentSample = Layers[i].NoiseAlgorithm.GenerateSingleSample();
             result = Layers[i].BlendMode.Blend(result, currentSample);
         }
 
         return result;
     }
 
-    public void AddLayer(INoiseAlgorithm noiseAlgorithm, IBlendMode blendMode)
+    public void AddLayer(INoiseAlgorithm noiseAlgorithm, IBlendMode blendMode, double opacity = 1.0)
     {
-        Layers.Add(new NoiseBlendLayer(noiseAlgorithm, blendMode));
+        InvalidateCache();
+        Layers.Add(new NoiseBlendLayer(noiseAlgorithm, blendMode, opacity));
+    }
+
+    public void RemoveLayerAt(int index)
+    {
+        InvalidateCache();
+        Layers.RemoveAt(index);
+    }
+
+    public void MoveLayer(int oldIndex, int newIndex)
+    {
+        InvalidateCache();
+        var item = Layers[oldIndex];
+        Layers.RemoveAt(oldIndex);
+        Layers.Insert(newIndex, item);
+    }
+
+    public void ClearLayers()
+    {
+        InvalidateCache();
+        Layers.Clear();
+    }
+
+    private void InvalidateCache()
+    {
+        cachedResult = null;
     }
 }

@@ -9,15 +9,26 @@ namespace VNet.Scientific.Noise.Color
         public required int MaxAttempts { get; set; }
         public required int Width { get; set; }
         public required int Height { get; set; }
+
+        public int[] Dimensions
+        {
+            get { return new[] { Width, Height }; }
+            set
+            {
+                if (value.Length != 2) throw new ArgumentException("BlueNoise is 2D, so dimensions array should have 2 elements.");
+                Width = value[0];
+                Height = value[1];
+            }
+        }
+
         public int QuantizeLevels { get; set; }
         public double Scale { get; set; }
         public required IRandomDistributionAlgorithm RandomDistributionAlgorithm { get; set; }
         public IFilter? OutputFilter { get; set; }
 
-
         public INoiseAlgorithmArgs Clone()
         {
-            var result = new BlueNoiseAlgorithmArgs()
+            return new BlueNoiseAlgorithmArgs()
             {
                 Width = Width,
                 Height = Height,
@@ -28,8 +39,6 @@ namespace VNet.Scientific.Noise.Color
                 Radius = Radius,
                 MaxAttempts = MaxAttempts
             };
-
-            return result;
         }
     }
 }

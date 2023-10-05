@@ -4,9 +4,16 @@ namespace VNet.Scientific.Noise
 {
     public interface INoiseAlgorithm : IRandomizationAlgorithm
     {
-        public double[,] GenerateRaw();
-        public double[,] Generate();
-        public double GenerateSingleSampleRaw();
-        public double GenerateSingleSample();
+        // Generates a single noise sample without any processing.
+        double GenerateSingleSampleRaw();
+
+        // Generates a single noise sample with any post-processing.
+        double GenerateSingleSample();
+
+        // Generates a raw noise array of n-dimensions defined in Args.
+        double[] GenerateRaw();
+
+        // Generates a processed noise array of n-dimensions.
+        double[] Generate();
     }
 }

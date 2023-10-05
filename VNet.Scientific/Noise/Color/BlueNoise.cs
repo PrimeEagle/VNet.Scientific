@@ -1,7 +1,6 @@
 ﻿// ReSharper disable UnusedMember.Global
 // ReSharper disable SuggestBaseTypeForParameterInConstructor
-
-using System.Numerics;
+// ReSharper disable SuggestBaseTypeForParameter
 
 namespace VNet.Scientific.Noise.Color;
 
@@ -14,101 +13,117 @@ public class BlueNoise : NoiseBase
     {
     }
 
-    public override double[,] GenerateRaw()
+    public override double[] GenerateRaw()
     {
         var samples = GenerateBlueNoiseSamples();
+        var result = new double[Args.Dimensions.Aggregate(1, (acc, val) => acc * val)];
 
-        var result = new double[Args.Height, Args.Width];
-        for (var i = 0; i < Args.Height; i++)
-            for (var j = 0; j < Args.Width; j++)
+        for (var i = 0; i < result.Length; i++)
+        {
+            var samplePoint = GetMultiDimensionalIndices(i, Args.Dimensions);
+            var minDistance = double.MaxValue;
+
+            foreach (var sample in samples)
             {
-                var samplePoint = new Vector2((float)j / Args.Width, (float)i / Args.Height);
-                var minDistance = double.MaxValue;
-
-                foreach (var sample in samples)
-                {
-                    double distance = Vector2.Distance(samplePoint, sample);
-                    minDistance = Math.Min(minDistance, distance);
-                }
-
-                result[i, j] = minDistance * Args.Scale;
+                var distance = CalculateDistance(samplePoint.Select(p => (double)p).ToArray(), sample);
+                minDistance = Math.Min(minDistance, distance);
             }
+
+            result[i] = minDistance * Args.Scale;
+        }
 
         return result;
     }
 
-    public override double GenerateSingleSampleRaw()
+    private double CalculateDistance(double[] point1, double[] point2)
     {
-        throw new NotImplementedException("Blue noise is generated for the entire grid, so generating a single sample is not applicable.");
+        return Math.Sqrt(point1.Zip(point2, (a, b) => Math.Pow(a - b, 2)).Sum());
     }
 
-    private List<Vector2> GenerateBlueNoiseSamples()
+    private List<double[]> GenerateBlueNoiseSamples()
     {
-        var cellSize = ((IBlueNoiseAlgorithmArgs)Args).Radius / Math.Sqrt(2);
-        var gridWidth = (int)Math.Ceiling(Args.Width / cellSize);
-        var gridHeight = (int)Math.Ceiling(Args.Height / cellSize);
-
-        var grid = new int[gridHeight, gridWidth];
-        var samples = new List<Vector2>();
-        var activeSamples = new List<Vector2>();
-
         var random = new Random();
-        var firstSample = new Vector2((float)random.NextDouble(), (float)random.NextDouble());
+        var dimensions = Args.Dimensions.Length;
+        var totalCells = Args.Dimensions.Aggregate(1, (acc, val) => acc * val);
+
+        var grid = new int[totalCells];
+        var samples = new List<double[]>();
+        var activeSamples = new List<double[]>();
+
+        var firstSample = Enumerable.Range(0, dimensions).Select(_ => random.NextDouble()).ToArray();
         activeSamples.Add(firstSample);
         samples.Add(firstSample);
-        var gridX = (int)(firstSample.X * gridWidth);
-        var gridY = (int)(firstSample.Y * gridHeight);
-        grid[gridY, gridX] = 1;
+        grid[GetFlatIndex(firstSample.Select(d => (int)(d * totalCells)).ToArray(), Args.Dimensions)] = 1;
 
         while (activeSamples.Count > 0)
         {
-            var index = random.Next(activeSamples.Count);
-            var sample = activeSamples[index];
+            var sampleIndex = random.Next(activeSamples.Count);
+            var sample = activeSamples[sampleIndex];
             var foundCandidate = false;
 
             for (var attempt = 0; attempt < ((IBlueNoiseAlgorithmArgs)Args).MaxAttempts; attempt++)
             {
-                var angle = 2 * Math.PI * random.NextDouble();
-                var distance = ((IBlueNoiseAlgorithmArgs)Args).Radius * (1 + random.NextDouble());
-                var candidate = sample + new Vector2((float)(distance * Math.Cos(angle)), (float)(distance * Math.Sin(angle)));
+                var candidate = sample.Zip(Enumerable.Range(0, dimensions).Select(_ => random.NextDouble() - 0.5), (s, r) => s + r).ToArray();
 
-                if (candidate.X is < 0 or >= 1 || candidate.Y is < 0 or >= 1 || !IsCandidateValid(candidate, samples, grid, cellSize, gridWidth, gridHeight)) continue;
+                if (!IsValidCandidate(candidate, samples, grid))
+                    continue;
 
+                foundCandidate = true;
                 activeSamples.Add(candidate);
                 samples.Add(candidate);
-                gridX = (int)(candidate.X * gridWidth);
-                gridY = (int)(candidate.Y * gridHeight);
-                grid[gridY, gridX] = 1;
-                foundCandidate = true;
+                grid[GetFlatIndex(candidate.Select(d => (int)(d * totalCells)).ToArray(), Args.Dimensions)] = samples.Count;
                 break;
             }
 
-            if (!foundCandidate) activeSamples.RemoveAt(index);
+            if (!foundCandidate)
+                activeSamples.RemoveAt(sampleIndex);
         }
 
         return samples;
     }
 
-    private static bool IsCandidateValid(Vector2 candidate, IReadOnlyList<Vector2> samples, int[,] grid, double cellSize, int gridWidth, int gridHeight)
+    private bool IsValidCandidate(double[] candidate, List<double[]> samples, int[] grid)
     {
-        var cellX = (int)(candidate.X * gridWidth);
-        var cellY = (int)(candidate.Y * gridHeight);
-
-        var startX = Math.Max(0, cellX - 2);
-        var startY = Math.Max(0, cellY - 2);
-        var endX = Math.Min(gridWidth - 1, cellX + 2);
-        var endY = Math.Min(gridHeight - 1, cellY + 2);
-
-        for (var y = startY; y <= endY; y++)
-            for (var x = startX; x <= endX; x++)
-                if (grid[y, x] == 1)
-                {
-                    var existingSample = samples[grid[y, x] - 1];
-                    double distance = Vector2.Distance(candidate, existingSample);
-
-                    if (distance < cellSize) return false;
-                }
-
+        var neighboringIndices = GetNeighboringIndices(candidate.Select(d => (int)(d * Args.Dimensions.Length)).ToArray(), Args.Dimensions);
+        foreach (var neighbor in neighboringIndices)
+        {
+            var gridIndex = GetFlatIndex(neighbor, Args.Dimensions);
+            if (grid[gridIndex] != 0)
+            {
+                var existingSample = samples[grid[gridIndex] - 1];
+                if (CalculateDistance(candidate, existingSample) < ((IBlueNoiseAlgorithmArgs)Args).Radius)
+                    return false;
+            }
+        }
         return true;
+    }
+
+    private List<int[]> GetNeighboringIndices(int[] point, int[] dimensions)
+    {
+        var neighbors = new List<int[]>();
+        GetNeighboringIndicesRecursive(point, 0, new int[point.Length], neighbors, dimensions);
+        return neighbors;
+    }
+
+    private void GetNeighboringIndicesRecursive(int[] point, int depth, int[] current, ICollection<int[]> neighbors, int[] dimensions)
+    {
+        if (depth == point.Length)
+        {
+            if (current.Zip(point, (a, b) => a != b).Count(diff => diff) == 1) // Only one dimension is different
+                neighbors.Add(current.ToArray());
+            return;
+        }
+
+        for (var i = -1; i <= 1; i++)
+        {
+            current[depth] = point[depth] + i;
+            if (current[depth] >= 0 && current[depth] < dimensions[depth])
+                GetNeighboringIndicesRecursive(point, depth + 1, current, neighbors, dimensions);
+        }
+    }
+
+    public override double GenerateSingleSampleRaw()
+    {
+        throw new NotImplementedException("Blue noise is generated for the entire grid, so generating a single sample is not applicable.");
     }
 }

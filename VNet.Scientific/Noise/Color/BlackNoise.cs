@@ -16,17 +16,18 @@ public class BlackNoise : NoiseBase
         _whiteNoise = new WhiteNoise(whiteArgs);
     }
 
-    public override double[,] GenerateRaw()
+    public override double[] GenerateRaw()
     {
         var whiteNoiseData = _whiteNoise.Generate();
 
-        var result = new double[Args.Height, Args.Width];
-        for (var i = 0; i < Args.Height; i++)
-            for (var j = 0; j < Args.Width; j++)
-            {
-                var whiteNoiseValue = whiteNoiseData[i, j];
-                result[i, j] = whiteNoiseValue * Args.Scale;
-            }
+        var totalSize = Args.Dimensions.Aggregate(1, (acc, val) => acc * val);
+        var result = new double[totalSize];
+
+        for (var i = 0; i < totalSize; i++)
+        {
+            var whiteNoiseValue = whiteNoiseData[i];
+            result[i] = whiteNoiseValue * Args.Scale;
+        }
 
         return result;
     }

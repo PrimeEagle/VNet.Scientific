@@ -11,40 +11,37 @@ public class AzureNoise : NoiseBase
 
     public AzureNoise(IAzureNoiseAlgorithmArgs args) : base(args)
     {
-        var blueArgs = new BlueNoiseAlgorithmArgs()
-        {
-            OutputFilter = null,
-            Scale = 1,
-            Width = Args.Width,
-            Height = Args.Height,
-            RandomDistributionAlgorithm = Args.RandomDistributionAlgorithm,
-            QuantizeLevels = 0,
-            MaxAttempts = 35,
-            Radius = 0.5
-        };
+        // Copying properties from the given args to blueArgs
+        var blueArgs = (IBlueNoiseAlgorithmArgs)args.Clone();
+        blueArgs.OutputFilter = null;
+        blueArgs.Scale = 1;
+        blueArgs.QuantizeLevels = 0;
+        // Additional properties specific to BlueNoise
+        // blueArgs.MaxAttempts = 35;
+        // blueArgs.Radius = 0.5;
         _blueNoise = new BlueNoise(blueArgs);
 
-        var violetArgs = Args.Clone();
+        var violetArgs = (INoiseAlgorithmArgs)args.Clone();
         violetArgs.OutputFilter = null;
         violetArgs.Scale = 1;
         violetArgs.QuantizeLevels = 0;
         _violetNoise = new VioletNoise(violetArgs);
     }
 
-    public override double[,] GenerateRaw()
+    public override double[] GenerateRaw()
     {
-        var result = new double[Args.Height, Args.Width];
+        var totalSize = Args.Dimensions.Aggregate(1, (acc, val) => acc * val);
+        var result = new double[totalSize];
 
         var blueNoiseData = _blueNoise.Generate();
         var violetNoiseData = _violetNoise.Generate();
 
-        for (var i = 0; i < Args.Height; i++)
-            for (var j = 0; j < Args.Width; j++)
-            {
-                var blueNoiseValue = blueNoiseData[i, j];
-                var violetNoiseValue = violetNoiseData[i, j];
-                result[i, j] = ((IAzureNoiseAlgorithmArgs)Args).BlueNoiseWeight * blueNoiseValue + ((IAzureNoiseAlgorithmArgs)Args).VioletNoiseWeight * violetNoiseValue;
-            }
+        for (var i = 0; i < totalSize; i++)
+        {
+            var blueNoiseValue = blueNoiseData[i];
+            var violetNoiseValue = violetNoiseData[i];
+            result[i] = ((IAzureNoiseAlgorithmArgs)Args).BlueNoiseWeight * blueNoiseValue + ((IAzureNoiseAlgorithmArgs)Args).VioletNoiseWeight * violetNoiseValue;
+        }
 
         return result;
     }

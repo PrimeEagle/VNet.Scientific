@@ -6,14 +6,12 @@ namespace VNet.Scientific.Noise
 {
     public interface INoiseAlgorithmArgs : IRandomizationAlgorithmArgs
     {
-        public int Width { get; set; }
-        public int Height { get; set; }
-        public int QuantizeLevels { get; set; }
-        public double Scale { get; set; }
-        public IRandomDistributionAlgorithm RandomDistributionAlgorithm { get; set; }
-        public IFilter? OutputFilter { get; set; }
-        
-        
-        public INoiseAlgorithmArgs Clone();
+        int[] Dimensions { get; set; }
+        int QuantizeLevels { get; set; }
+        double Scale { get; set; }
+        IRandomDistributionAlgorithm RandomDistributionAlgorithm { get; set; }
+        IFilter? OutputFilter { get; set; }
+
+        INoiseAlgorithmArgs Clone();
     }
 }

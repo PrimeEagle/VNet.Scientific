@@ -1,10 +1,9 @@
-﻿namespace VNet.Scientific.Noise
+﻿// ReSharper disable SuggestBaseTypeForParameter
+namespace VNet.Scientific.Noise
 {
     public abstract class NoiseBase : INoiseAlgorithm
     {
         protected readonly INoiseAlgorithmArgs Args;
-
-
 
         protected NoiseBase(INoiseAlgorithmArgs args)
         {
@@ -15,42 +14,44 @@
 
         public virtual double GenerateSingleSample()
         {
-            // get raw sample
             var sample = GenerateSingleSampleRaw();
-
             return sample;
         }
 
-        public virtual double[,] GenerateRaw()
+        public virtual double[] GenerateRaw()
         {
-            var samples = new double[Args.Height, Args.Width];
+            var totalSize = Args.Dimensions.Aggregate(1, (acc, val) => acc * val);
+            var samples = new double[totalSize];
 
-            for (var i = 0; i < Args.Height; i++)
-            {
-                for (var j = 0; j < Args.Width; j++)
-                {
-                    var sample = GenerateSingleSampleRaw();
-                    samples[i, j] = sample;
-                }
-            }
+            GenerateRecursive(samples, Args.Dimensions, 0, Array.Empty<int>());
 
             return samples;
         }
 
-        public virtual double[,] Generate()
+        private void GenerateRecursive(double[] samples, int[] dimensions, int depth, int[] indices)
         {
-            var samples = GenerateRaw();
-            var output = new double[Args.Height, Args.Width];
-
-            for (var i = 0; i < Args.Height; i++)
+            if (depth == dimensions.Length)
             {
-                for (var j = 0; j < Args.Width; j++)
-                {
-                    output[i, j] = PostProcess(samples[i, j]);
-                }
+                var index = GetFlatIndex(indices, dimensions);
+                samples[index] = GenerateSingleSampleRaw();
+                return;
             }
 
-            return output;
+            for (var i = 0; i < dimensions[depth]; i++)
+            {
+                GenerateRecursive(samples, dimensions, depth + 1, indices.Concat(new int[] { i }).ToArray());
+            }
+        }
+
+        public virtual double[] Generate()
+        {
+            var samples = GenerateRaw();
+            for (var i = 0; i < samples.Length; i++)
+            {
+                samples[i] = PostProcess(samples[i]);
+            }
+
+            return samples;
         }
 
         private double PostProcess(double sample)
@@ -73,6 +74,31 @@
             sample *= Args.Scale;
 
             return sample;
+        }
+
+        protected int GetFlatIndex(int[] indices, int[] dimensions)
+        {
+            var index = 0;
+            var multiplier = 1;
+
+            for (var i = indices.Length - 1; i >= 0; i--)
+            {
+                index += indices[i] * multiplier;
+                multiplier *= dimensions[i];
+            }
+
+            return index;
+        }
+
+        protected int[] GetMultiDimensionalIndices(int flatIndex, int[] dimensions)
+        {
+            var indices = new int[dimensions.Length];
+            for (var i = 0; i < dimensions.Length; i++)
+            {
+                indices[i] = flatIndex % dimensions[i];
+                flatIndex /= dimensions[i];
+            }
+            return indices;
         }
     }
 }
