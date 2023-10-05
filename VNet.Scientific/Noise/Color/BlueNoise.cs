@@ -88,12 +88,10 @@ public class BlueNoise : NoiseBase
         foreach (var neighbor in neighboringIndices)
         {
             var gridIndex = GetFlatIndex(neighbor, Args.Dimensions);
-            if (grid[gridIndex] != 0)
-            {
-                var existingSample = samples[grid[gridIndex] - 1];
-                if (CalculateDistance(candidate, existingSample) < ((IBlueNoiseAlgorithmArgs)Args).Radius)
-                    return false;
-            }
+            if (grid[gridIndex] == 0) continue;
+            var existingSample = samples[grid[gridIndex] - 1];
+            if (CalculateDistance(candidate, existingSample) < ((IBlueNoiseAlgorithmArgs)Args).Radius)
+                return false;
         }
         return true;
     }
