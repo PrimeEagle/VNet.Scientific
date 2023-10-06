@@ -5,8 +5,19 @@ namespace VNet.Scientific.Noise
 {
     public class NoiseAlgorithmArgs : INoiseAlgorithmArgs
     {
+        private int _quantizeLevel = 1;
+
+
         public int[] Dimensions { get; set; }
-        public int QuantizeLevels { get; set; }
+        public int QuantizeLevel
+        {
+            get => _quantizeLevel;
+            set
+            {
+                if (value <= 0) throw new ArgumentException("QuantizeLevels must be greater than zero.");
+                _quantizeLevel = value;
+            }
+        }
         public double Scale { get; set; }
         public bool NormalizeOutput { get; set; }
         public double DesiredMinValue { get; set; }
@@ -19,17 +30,17 @@ namespace VNet.Scientific.Noise
         public NoiseAlgorithmArgs(IRandomDistributionAlgorithm distributionAlgorithm)
         {
             RandomDistributionAlgorithm = distributionAlgorithm;
-            QuantizeLevels = 1;
+            QuantizeLevel = 1;
             Scale = 1.0d;
             NormalizeOutput = false;
         }
 
-        public INoiseAlgorithmArgs Clone()
+        public virtual INoiseAlgorithmArgs Clone()
         {
             return new NoiseAlgorithmArgs(RandomDistributionAlgorithm)
             {
                 Dimensions = (int[])Dimensions.Clone(),
-                QuantizeLevels = QuantizeLevels,
+                QuantizeLevel = QuantizeLevel,
                 RandomDistributionAlgorithm = RandomDistributionAlgorithm,
                 Scale = Scale,
                 OutputFilter = OutputFilter,

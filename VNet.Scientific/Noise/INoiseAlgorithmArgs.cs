@@ -7,7 +7,7 @@ namespace VNet.Scientific.Noise
     public interface INoiseAlgorithmArgs : IRandomizationAlgorithmArgs
     {
         int[] Dimensions { get; set; }
-        int QuantizeLevels { get; set; }
+        int QuantizeLevel { get; set; }
         double Scale { get; set; }
         bool NormalizeOutput { get; set; }
         double DesiredMinValue { get; set; }

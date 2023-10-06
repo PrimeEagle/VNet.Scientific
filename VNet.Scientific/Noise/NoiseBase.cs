@@ -1,9 +1,16 @@
 ﻿// ReSharper disable SuggestBaseTypeForParameter
+// ReSharper disable MemberCanBePrivate.Global
+// ReSharper disable MemberCanBeMadeStatic.Global
+
+using VNet.Mathematics.Randomization.Distribution;
+
+#pragma warning disable CA1822
 namespace VNet.Scientific.Noise
 {
     public abstract class NoiseBase : INoiseAlgorithm
     {
         protected readonly INoiseAlgorithmArgs Args;
+
         protected double EstimatedMinValue { get; set; } = double.MaxValue;
         protected double EstimatedMaxValue { get; set; } = double.MinValue;
 
@@ -26,10 +33,32 @@ namespace VNet.Scientific.Noise
             var totalSize = Args.Dimensions.Aggregate(1, (acc, val) => acc * val);
             var samples = new double[totalSize];
 
-            GenerateRecursive(samples, Args.Dimensions, 0, Array.Empty<int>());
+            var indices = new int[Args.Dimensions.Length];
+            for (var flatIndex = 0; flatIndex < totalSize; flatIndex++)
+            {
+                samples[flatIndex] = GenerateSingleSampleRaw();
+                IncrementIndices(indices, Args.Dimensions);
+            }
 
             return samples;
         }
+
+        protected void IncrementIndices(int[] indices, int[] dimensions)
+        {
+            for (var i = indices.Length - 1; i >= 0; i--)
+            {
+                if (indices[i] < dimensions[i] - 1)
+                {
+                    indices[i]++;
+                    break;
+                }
+                else
+                {
+                    indices[i] = 0; // Reset and carry over
+                }
+            }
+        }
+
 
         private void GenerateRecursive(double[] samples, int[] dimensions, int depth, int[] indices)
         {
@@ -49,23 +78,23 @@ namespace VNet.Scientific.Noise
         public virtual double[] Generate()
         {
             var samples = GenerateRaw();
+            var shouldNormalize = Args.NormalizeOutput;
+
+            if (shouldNormalize) EstimateNoiseRange(samples); // Estimate before any post-processing
+
             for (var i = 0; i < samples.Length; i++)
             {
                 samples[i] = PostProcess(samples[i]);
-            }
-
-            if (!Args.NormalizeOutput) return samples;
-
-            EstimateNoiseRange(samples);  // Estimate after post-processing
-            for (var i = 0; i < samples.Length; i++)
-            {
-                samples[i] = NormalizeToRange(samples[i], EstimatedMinValue, EstimatedMaxValue);
+                if (shouldNormalize)
+                {
+                    samples[i] = NormalizeToRange(samples[i], EstimatedMinValue, EstimatedMaxValue);
+                }
             }
 
             return samples;
         }
 
-        private void EstimateNoiseRange(double[] samples)
+        protected void EstimateNoiseRange(double[] samples)
         {
             EstimatedMinValue = samples.Min();
             EstimatedMaxValue = samples.Max();
@@ -84,14 +113,15 @@ namespace VNet.Scientific.Noise
             }
 
             // quantize
-            if (Args.QuantizeLevels != 1)
+            if (Args.QuantizeLevel != 1)
             {
-                var quantizationLevel = (int) (sample * Args.QuantizeLevels);
-                sample = (double) quantizationLevel / Args.QuantizeLevels;
+                if (Args.QuantizeLevel == 0) throw new ArgumentException("QuantizeLevels cannot be zero.");
+                var quantizationLevel = (int)(sample * Args.QuantizeLevel);
+                sample = (double)quantizationLevel / Args.QuantizeLevel;
             }
 
             // scale
-            if (Args.Scale != 1.0d)
+            if (Math.Abs(Args.Scale - 1.0d) > double.Epsilon)
             {
                 sample *= Args.Scale;
             }
@@ -133,9 +163,14 @@ namespace VNet.Scientific.Noise
         protected double NormalizeToRange(double value, double min, double max)
         {
             // Normalize to 0-1 first
-            double normalized = (value - min) / (max - min);
+            var normalized = (value - min) / (max - min);
             // Then map to DesiredMinValue to DesiredMaxValue
             return Args.DesiredMinValue + normalized * (Args.DesiredMaxValue - Args.DesiredMinValue);
+        }
+
+        protected double GetRandomValue()
+        {
+            return Args.RandomDistributionAlgorithm.NextDouble();
         }
     }
 }

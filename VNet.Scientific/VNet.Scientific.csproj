@@ -35,7 +35,7 @@
 	<ItemGroup>
 		<Folder Include="Measurement\VNet.Json\" />
 		<Folder Include="Measurement\Dimensions\" />
-		<Folder Include="Astronomy\" />
+		<Folder Include="Astrophysics\" />
 	</ItemGroup>
 
 	<Import Project="..\..\VNet.Expressions\VNet.Expressions\VNet.Expressions.projitems" Label="Shared" />

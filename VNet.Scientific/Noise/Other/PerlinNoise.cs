@@ -1,5 +1,9 @@
 ﻿// ReSharper disable UnusedMember.Global
 // ReSharper disable SuggestBaseTypeForParameter
+// ReSharper disable SuggestBaseTypeForParameterInConstructor
+// ReSharper disable ParameterTypeCanBeEnumerable.Local
+// ReSharper disable MemberCanBeMadeStatic.Local
+#pragma warning disable CA1822
 
 namespace VNet.Scientific.Noise.Other;
 // Perlin noise is a gradient noise developed by Ken Perlin in 1983. It is a procedural texture primitive, a type of gradient noise used by visual
@@ -7,13 +11,11 @@ namespace VNet.Scientific.Noise.Other;
 // effects like fire, smoke and clouds. It's also frequently used to generate textures when memory is extremely limited, such as in 3D graphic development.
 public class PerlinNoise : NoiseBase
 {
-    private static Random sharedRandom = new Random();
-
     public PerlinNoise(IPerlinNoiseAlgorithmArgs args) : base(args) { }
 
     public override double GenerateSingleSampleRaw()
     {
-        var point = GetMultiDimensionalIndices(sharedRandom.Next(Args.Dimensions.Aggregate(1, (acc, val) => acc * val)), Args.Dimensions);
+        var point = GetMultiDimensionalIndices((int)GetRandomValue(), Args.Dimensions);
         return Noise(point.Select(p => (double)p).ToArray());
     }
 
@@ -21,7 +23,7 @@ public class PerlinNoise : NoiseBase
     {
         for (var i = 0; i < point.Length; i++)
         {
-            point[i] *= ((IPerlinNoiseAlgorithmArgs)Args).Octave;
+            point[i] *= Args.Scale; // Assuming Scale here represents the Octave
         }
 
         var cell = point.Select(p => (int)Math.Floor(p)).ToArray();
@@ -41,14 +43,12 @@ public class PerlinNoise : NoiseBase
     {
         // Use a hash function of 'forPoint' to seed a local random generator
         var hash = ComputeHash(forPoint);
-        var localRandom = new Random(hash);
-
         var gradient = Enumerable.Range(0, Args.Dimensions.Length)
-            .Select(_ => localRandom.NextDouble() * 2 - 1)
+            .Select(_ => GetRandomValue() * 2 - 1)
             .ToArray();
+
         return Normalize(gradient);
     }
-
 
     private static IEnumerable<int[]> GetCorners(int[] cell)
     {
