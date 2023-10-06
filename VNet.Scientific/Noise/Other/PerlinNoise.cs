@@ -1,88 +1,110 @@
-﻿//// ReSharper disable UnusedMember.Global
+﻿// ReSharper disable UnusedMember.Global
+// ReSharper disable SuggestBaseTypeForParameter
 
-//namespace VNet.Scientific.Noise.Other;
-//// Perlin noise is a gradient noise developed by Ken Perlin in 1983. It is a procedural texture primitive, a type of gradient noise used by visual
-//// effects artists to increase the appearance of realism in computer graphics. Perlin noise is extensively used in computer graphics for
-//// effects like fire, smoke and clouds. It's also frequently used to generate textures when memory is extremely limited, such as in 3D graphic development.
-//public class PerlinNoise : INoiseAlgorithm
-//{
-//    private double[,] _grid;
+namespace VNet.Scientific.Noise.Other;
+// Perlin noise is a gradient noise developed by Ken Perlin in 1983. It is a procedural texture primitive, a type of gradient noise used by visual
+// effects artists to increase the appearance of realism in computer graphics. Perlin noise is extensively used in computer graphics for
+// effects like fire, smoke and clouds. It's also frequently used to generate textures when memory is extremely limited, such as in 3D graphic development.
+public class PerlinNoise : NoiseBase
+{
+    private static Random sharedRandom = new Random();
 
-//    public double[,] Generate(INoiseAlgorithmArgs args)
-//    {
-//        _grid = new double[Args.Height, Args.Width];
+    public PerlinNoise(IPerlinNoiseAlgorithmArgs args) : base(args) { }
 
-//        // Fill the grid with random values between -1 and 1.
-//        for (var i = 0; i < Args.Height; i++)
-//        {
-//            for (var j = 0; j < Args.Width; j++)
-//            {
-//                _grid[i, j] = 2 * Args.RandomDistributionAlgorithm.NextDouble() - 1;
-//            }
-//        }
+    public override double GenerateSingleSampleRaw()
+    {
+        var point = GetMultiDimensionalIndices(sharedRandom.Next(Args.Dimensions.Aggregate(1, (acc, val) => acc * val)), Args.Dimensions);
+        return Noise(point.Select(p => (double)p).ToArray());
+    }
 
-//        var result = new double[Args.Height, Args.Width];
+    private double Noise(double[] point)
+    {
+        for (var i = 0; i < point.Length; i++)
+        {
+            point[i] *= ((IPerlinNoiseAlgorithmArgs)Args).Octave;
+        }
 
-//        // Calculate Perlin noise value for each point.
-//        for (var i = 0; i < Args.Height; i++)
-//        {
-//            for (var j = 0; j < Args.Width; j++)
-//            {
-//                var sample = GenerateSingleSample(args, i / (double)Args.Height, j / (double)Args.Width);
-//                result[i, j] = sample;
-//            }
-//        }
+        var cell = point.Select(p => (int)Math.Floor(p)).ToArray();
+        var value = 0.0;
 
-//        return result;
-//    }
+        foreach (var corner in GetCorners(cell))
+        {
+            var gradient = GenerateRandomGradient(corner); // On-the-fly gradient generation
+            var distance = point.Zip(corner, (p, c) => p - c).ToArray();
+            value += DotProduct(gradient, distance) * Fade(distance);
+        }
 
-//    private double GenerateSingleSample(INoiseAlgorithmArgs args, double x, double y)
-//    {
-//        int x0 = (int)x;
-//        int x1 = x0 + 1;
-//        int y0 = (int)y;
-//        int y1 = y0 + 1;
+        return value;
+    }
 
-//        // Determine interpolation weights
-//        double sx = x - x0;
-//        double sy = y - y0;
+    private double[] GenerateRandomGradient(int[] forPoint)
+    {
+        // Use a hash function of 'forPoint' to seed a local random generator
+        var hash = ComputeHash(forPoint);
+        var localRandom = new Random(hash);
 
-//        // Interpolate between grid point gradients
-//        double n0, n1, ix0, ix1, value;
+        var gradient = Enumerable.Range(0, Args.Dimensions.Length)
+            .Select(_ => localRandom.NextDouble() * 2 - 1)
+            .ToArray();
+        return Normalize(gradient);
+    }
 
-//        n0 = DotGridGradient(x0, y0, x, y);
-//        n1 = DotGridGradient(x1, y0, x, y);
-//        ix0 = Interpolate(n0, n1, sx);
 
-//        n0 = DotGridGradient(x0, y1, x, y);
-//        n1 = DotGridGradient(x1, y1, x, y);
-//        ix1 = Interpolate(n0, n1, sx);
+    private static IEnumerable<int[]> GetCorners(int[] cell)
+    {
+        var dimensions = cell.Length;
+        for (var i = 0; i < (1 << dimensions); i++)
+        {
+            yield return cell.Select((c, j) => c + ((i >> j) & 1)).ToArray();
+        }
+    }
 
-//        value = Interpolate(ix0, ix1, sy);
+    private static double DotProduct(double[] gradient, double[] distance)
+    {
+        return gradient.Zip(distance, (g, d) => g * d).Sum();
+    }
 
-//        return value;
-//    }
+    private double[] Normalize(double[] vector)
+    {
+        var magnitude = Math.Sqrt(vector.Sum(component => component * component));
+        return vector.Select(component => component / magnitude).ToArray();
+    }
 
-//    private double DotGridGradient(int ix, int iy, double x, double y)
-//    {
-//        // Compute the distance vector
-//        double dx = x - ix;
-//        double dy = y - iy;
 
-//        // Compute the dot-product
-//        return dx * _grid[iy, ix] + dy * _grid[iy, ix];
-//    }
+    private static double Fade(double[] distance)
+    {
+        return distance.Select(d => d * d * d * (d * (d * 6 - 15) + 10)).Aggregate((acc, val) => acc * val);
+    }
 
-//    private double Interpolate(double a, double b, double x)
-//    {
-//        // Simple linear interpolation
-//        return a + x * (b - a);
-//    }
+    private static int ComputeHash(int[] data)
+    {
+        const uint c1 = 0xcc9e2d51;
+        const uint c2 = 0x1b873593;
+        const int r1 = 15;
+        const int r2 = 13;
+        const uint m = 5;
+        const uint n = 0xe6546b64;
 
-//    public double GenerateSingleSample(INoiseAlgorithmArgs args)
-//    {
-//        // Perlin Noise is generated using a grid, so generating a single sample
-//        // independently of the rest doesn't make sense.
-//        throw new NotImplementedException();
-//    }
-//}
+        uint hash = 17; // Seed value
+        foreach (var item in data)
+        {
+            var k = (uint)item;
+            k *= c1;
+            k = (k << r1) | (k >> (32 - r1));
+            k *= c2;
+
+            hash ^= k;
+            hash = ((hash << r2) | (hash >> (32 - r2)));
+            hash = hash * m + n;
+        }
+
+        hash ^= (uint)data.Length;
+        hash ^= (hash >> 16);
+        hash *= 0x85ebca6b;
+        hash ^= (hash >> 13);
+        hash *= 0xc2b2ae35;
+        hash ^= (hash >> 16);
+
+        return (int)hash; // Casting uint to int for the return value
+    }
+}

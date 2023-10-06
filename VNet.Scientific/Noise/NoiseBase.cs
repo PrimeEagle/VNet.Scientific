@@ -4,6 +4,9 @@ namespace VNet.Scientific.Noise
     public abstract class NoiseBase : INoiseAlgorithm
     {
         protected readonly INoiseAlgorithmArgs Args;
+        protected double EstimatedMinValue { get; set; } = double.MaxValue;
+        protected double EstimatedMaxValue { get; set; } = double.MinValue;
+
 
         protected NoiseBase(INoiseAlgorithmArgs args)
         {
@@ -51,7 +54,21 @@ namespace VNet.Scientific.Noise
                 samples[i] = PostProcess(samples[i]);
             }
 
+            if (!Args.NormalizeOutput) return samples;
+
+            EstimateNoiseRange(samples);  // Estimate after post-processing
+            for (var i = 0; i < samples.Length; i++)
+            {
+                samples[i] = NormalizeToRange(samples[i], EstimatedMinValue, EstimatedMaxValue);
+            }
+
             return samples;
+        }
+
+        private void EstimateNoiseRange(double[] samples)
+        {
+            EstimatedMinValue = samples.Min();
+            EstimatedMaxValue = samples.Max();
         }
 
         private double PostProcess(double sample)
@@ -67,11 +84,23 @@ namespace VNet.Scientific.Noise
             }
 
             // quantize
-            var quantizationLevel = (int)(sample * Args.QuantizeLevels);
-            sample = (double)quantizationLevel / Args.QuantizeLevels;
+            if (Args.QuantizeLevels != 1)
+            {
+                var quantizationLevel = (int) (sample * Args.QuantizeLevels);
+                sample = (double) quantizationLevel / Args.QuantizeLevels;
+            }
 
             // scale
-            sample *= Args.Scale;
+            if (Args.Scale != 1.0d)
+            {
+                sample *= Args.Scale;
+            }
+
+            // normalize
+            if (Args.NormalizeOutput)
+            {
+                sample = NormalizeToRange(sample, EstimatedMinValue, EstimatedMaxValue);
+            }
 
             return sample;
         }
@@ -99,6 +128,14 @@ namespace VNet.Scientific.Noise
                 flatIndex /= dimensions[i];
             }
             return indices;
+        }
+
+        protected double NormalizeToRange(double value, double min, double max)
+        {
+            // Normalize to 0-1 first
+            double normalized = (value - min) / (max - min);
+            // Then map to DesiredMinValue to DesiredMaxValue
+            return Args.DesiredMinValue + normalized * (Args.DesiredMaxValue - Args.DesiredMinValue);
         }
     }
 }
