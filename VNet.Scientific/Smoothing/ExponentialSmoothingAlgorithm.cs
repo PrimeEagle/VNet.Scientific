@@ -1,4 +1,5 @@
-﻿namespace VNet.Scientific.Smoothing
+﻿// ReSharper disable MemberCanBeMadeStatic.Local
+namespace VNet.Scientific.Smoothing
 {
     /*
         Simple Exponential Smoothing (SES) is a time series forecasting method for univariate data without a trend or seasonality. It requires a single parameter, α (alpha), also called the smoothing factor. This parameter controls the rate at which the influence of the observations at prior time steps decay exponentially. α ranges between 0 and 1.
@@ -112,7 +113,51 @@
 
             foreach (var dim in smoothDimensions)
             {
-                if (dim == 0)  // smoothing along the X dimension
+                if (dim != 0) // smoothing along the X dimension
+                {
+                    if (dim != 1) // smoothing along the Y dimension
+                    {
+                        if (dim != 2) continue; // smoothing along the Z dimension
+                        for (var x = 0; x < width; x++)
+                        {
+                            for (var y = 0; y < height; y++)
+                            {
+                                var segment = new double[depth];
+                                for (var z = 0; z < depth; z++)
+                                {
+                                    segment[z] = data[x, y, z];
+                                }
+
+                                var smoothedSegment = Smooth1D(segment);
+                                for (var z = 0; z < depth; z++)
+                                {
+                                    result[x, y, z] = smoothedSegment[z];
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        for (var x = 0; x < width; x++)
+                        {
+                            for (var z = 0; z < depth; z++)
+                            {
+                                var segment = new double[height];
+                                for (var y = 0; y < height; y++)
+                                {
+                                    segment[y] = data[x, y, z];
+                                }
+
+                                var smoothedSegment = Smooth1D(segment);
+                                for (var y = 0; y < height; y++)
+                                {
+                                    result[x, y, z] = smoothedSegment[y];
+                                }
+                            }
+                        }
+                    }
+                }
+                else
                 {
                     for (var y = 0; y < height; y++)
                     {
@@ -128,46 +173,6 @@
                             for (var x = 0; x < width; x++)
                             {
                                 result[x, y, z] = smoothedSegment[x];
-                            }
-                        }
-                    }
-                }
-                else if (dim == 1)  // smoothing along the Y dimension
-                {
-                    for (var x = 0; x < width; x++)
-                    {
-                        for (var z = 0; z < depth; z++)
-                        {
-                            var segment = new double[height];
-                            for (var y = 0; y < height; y++)
-                            {
-                                segment[y] = data[x, y, z];
-                            }
-
-                            var smoothedSegment = Smooth1D(segment);
-                            for (var y = 0; y < height; y++)
-                            {
-                                result[x, y, z] = smoothedSegment[y];
-                            }
-                        }
-                    }
-                }
-                else if (dim == 2)  // smoothing along the Z dimension
-                {
-                    for (var x = 0; x < width; x++)
-                    {
-                        for (var y = 0; y < height; y++)
-                        {
-                            var segment = new double[depth];
-                            for (var z = 0; z < depth; z++)
-                            {
-                                segment[z] = data[x, y, z];
-                            }
-
-                            var smoothedSegment = Smooth1D(segment);
-                            for (var z = 0; z < depth; z++)
-                            {
-                                result[x, y, z] = smoothedSegment[z];
                             }
                         }
                     }
