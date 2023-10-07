@@ -1,33 +1,33 @@
-﻿using VNet.Mathematics.Randomization.Distribution;
-using VNet.Scientific.Filtering;
+﻿//using VNet.Mathematics.Randomization.Distribution;
+//using VNet.Scientific.Filtering;
 
-namespace VNet.Scientific.Noise.Color
-{
-    public class RedNoiseAlgorithmArgs : IRedNoiseAlgorithmArgs
-    {
-        public double SamplingRate { get; set; }
-        public required int Width { get; set; }
-        public required int Height { get; set; }
-        public int QuantizeLevel { get; set; }
-        public double Scale { get; set; }
-        public required IRandomDistributionAlgorithm RandomDistributionAlgorithm { get; set; }
-        public IFilter? OutputFilter { get; set; }
+//namespace VNet.Scientific.Noise.Color
+//{
+//    public class RedNoiseAlgorithmArgs : IRedNoiseAlgorithmArgs
+//    {
+//        public double SamplingRate { get; set; }
+//        public required int Width { get; set; }
+//        public required int Height { get; set; }
+//        public int QuantizeLevel { get; set; }
+//        public double Scale { get; set; }
+//        public required IRandomDistributionAlgorithm RandomDistributionAlgorithm { get; set; }
+//        public IFilter? OutputFilter { get; set; }
 
 
-        public INoiseAlgorithmArgs Clone()
-        {
-            var result = new RedNoiseAlgorithmArgs()
-            {
-                Width = Width,
-                Height = Height,
-                QuantizeLevel = QuantizeLevel,
-                RandomDistributionAlgorithm = RandomDistributionAlgorithm,
-                Scale = Scale,
-                OutputFilter = OutputFilter,
-                SamplingRate = SamplingRate
-            };
+//        public INoiseAlgorithmArgs Clone()
+//        {
+//            var result = new RedNoiseAlgorithmArgs()
+//            {
+//                Width = Width,
+//                Height = Height,
+//                QuantizeLevel = QuantizeLevel,
+//                RandomDistributionAlgorithm = RandomDistributionAlgorithm,
+//                Scale = Scale,
+//                OutputFilter = OutputFilter,
+//                SamplingRate = SamplingRate
+//            };
 
-            return result;
-        }
-    }
-}
+//            return result;
+//        }
+//    }
+//}

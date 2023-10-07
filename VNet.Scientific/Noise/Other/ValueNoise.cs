@@ -1,62 +1,80 @@
-﻿//// ReSharper disable UnusedMember.Global
+﻿// ReSharper disable UnusedMember.Global
 
-//namespace VNet.Scientific.Noise.Other;
-//// Value noise is a type of noise commonly used in procedural texture generation, such as for terrain generation in computer graphics.
-//// It's created by interpolating random values on a grid. Creating value noise typically requires a grid of random values and an interpolation
-//// method.The interpolation can be linear, cosine, cubic, or another method depending on the desired smoothness.
-//public class ValueNoise : INoiseAlgorithm
-//{
-//    private double[,] _grid;
+// ReSharper disable MemberCanBeMadeStatic.Local
+// ReSharper disable SuggestBaseTypeForParameter
+#pragma warning disable CA1822
+namespace VNet.Scientific.Noise.Other;
+// Value noise is a type of noise commonly used in procedural texture generation, such as for terrain generation in computer graphics.
+// It's created by interpolating random values on a grid. Creating value noise typically requires a grid of random values and an interpolation
+// method.The interpolation can be linear, cosine, cubic, or another method depending on the desired smoothness.
+public class ValueNoise : NoiseBase
+{
+    private double[] _grid;
 
-//    public double[,] Generate(INoiseAlgorithmArgs args)
-//    {
-//        _grid = new double[Args.Height, Args.Width];
-//        var random = new Random();
+    public ValueNoise(INoiseAlgorithmArgs args) : base(args) { }
 
-//        // Fill the grid with random values.
-//        for (var i = 0; i < Args.Height; i++)
-//        {
-//            for (var j = 0; j < Args.Width; j++)
-//            {
-//                _grid[i, j] = Args.RandomDistributionAlgorithm.NextDouble();
-//            }
-//        }
+    public override double[] GenerateRaw()
+    {
+        var totalSize = Args.Dimensions.Aggregate(1, (acc, val) => acc * val);
+        _grid = new double[totalSize];
 
-//        var result = new double[Args.Height, Args.Width];
+        // Fill the grid with random values.
+        for (var i = 0; i < totalSize; i++)
+        {
+            _grid[i] = GetRandomValue();
+        }
 
-//        // Interpolate between the grid values.
-//        for (var i = 0; i < Args.Height; i++)
-//        {
-//            for (var j = 0; j < Args.Width; j++)
-//            {
-//                var yFraction = i / (double)Args.Height;
-//                var xFraction = j / (double)Args.Width;
+        var result = new double[totalSize];
+        var indices = new int[Args.Dimensions.Length];
 
-//                var top = Interpolate(_grid[(int)(yFraction * (Args.Height - 1)), (int)(xFraction * (Args.Width - 1))],
-//                    _grid[(int)(yFraction * (Args.Height - 1)), (int)Math.Min(xFraction * Args.Width, Args.Width - 1)],
-//                    xFraction * Args.Width % 1);
+        for (var flatIndex = 0; flatIndex < totalSize; flatIndex++)
+        {
+            var fractions = indices.Select((idx, dim) => idx / (double)Args.Dimensions[dim]).ToArray();
+            result[flatIndex] = InterpolateMultiDimensional(fractions, Args.Dimensions);
+            IncrementIndices(indices, Args.Dimensions);
+        }
 
-//                var bottom = Interpolate(_grid[(int)Math.Min(yFraction * Args.Height, Args.Height - 1), (int)(xFraction * (Args.Width - 1))],
-//                    _grid[(int)Math.Min(yFraction * Args.Height, Args.Height - 1), (int)Math.Min(xFraction * Args.Width, Args.Width - 1)],
-//                    xFraction * Args.Width % 1);
+        return result;
+    }
 
-//                result[i, j] = Interpolate(top, bottom, yFraction * Args.Height % 1);
-//            }
-//        }
+    private double InterpolateMultiDimensional(double[] fractions, int[] dimensions)
+    {
+        if (fractions.Length == 1)
+        {
+            var leftIndex = (int)(fractions[0] * dimensions[0]);
+            var rightIndex = Math.Min(leftIndex + 1, dimensions[0] - 1);
 
-//        return result;
-//    }
+            return Interpolate(_grid[leftIndex], _grid[rightIndex], fractions[0] * dimensions[0] % 1);
+        }
 
-//    private double Interpolate(double a, double b, double fraction)
-//    {
-//        // This is a simple linear interpolation.
-//        return a * (1 - fraction) + b * fraction;
-//    }
+        var lowerFractions = fractions.Skip(1).ToArray();
+        var lowerDimensions = dimensions.Skip(1).ToArray();
 
-//    public double GenerateSingleSample(INoiseAlgorithmArgs args)
-//    {
-//        // The GenerateSingleSample method doesn't really make sense for value noise,
-//        // since each value is dependent on its neighbors in the grid.
-//        throw new NotImplementedException();
-//    }
-//}
+        InterpolateMultiDimensional(lowerFractions, lowerDimensions);
+
+        var leftIndices = new int[dimensions.Length];
+        leftIndices[0] = (int)(fractions[0] * dimensions[0]);
+        for (var i = 1; i < dimensions.Length; i++)
+        {
+            leftIndices[i] = (int)(fractions[i] * dimensions[i]);
+        }
+
+        var rightIndices = leftIndices.ToArray();
+        rightIndices[0] = Math.Min(rightIndices[0] + 1, dimensions[0] - 1);
+
+        return Interpolate(
+            _grid[GetFlatIndex(leftIndices, dimensions)],
+            _grid[GetFlatIndex(rightIndices, dimensions)],
+            fractions[0] * dimensions[0] % 1);
+    }
+
+    private double Interpolate(double a, double b, double fraction)
+    {
+        return a * (1 - fraction) + b * fraction;
+    }
+
+    public override double GenerateSingleSampleRaw()
+    {
+        throw new NotImplementedException("GenerateSingleSampleRaw method doesn't really make sense for value noise, since each value is dependent on its neighbors in the grid.");
+    }
+}

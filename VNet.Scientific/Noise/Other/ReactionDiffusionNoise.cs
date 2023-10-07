@@ -1,148 +1,76 @@
-﻿//// ReSharper disable UnusedMember.Global
+﻿// ReSharper disable UnusedMember.Global
+// ReSharper disable SuggestBaseTypeForParameterInConstructor
 
-//using VNet.Mathematics.Randomization.Distribution;
+namespace VNet.Scientific.Noise.Other;
+// Reaction-diffusion noise algorithms simulate the behavior of chemical reactions and diffusion processes to generate complex patterns.
+// They are used to model natural phenomena like fire, smoke, or animal skin patterns. Reaction-diffusion algorithms involve the interaction
+// of multiple variables over time.
+public class ReactionDiffusionNoise : NoiseBase
+{
+    private double[] _grid;
 
-//namespace VNet.Scientific.Noise.Other;
-//// Reaction-diffusion noise algorithms simulate the behavior of chemical reactions and diffusion processes to generate complex patterns.
-//// They are used to model natural phenomena like fire, smoke, or animal skin patterns. Reaction-diffusion algorithms involve the interaction
-//// of multiple variables over time.
-//public class ReactionDiffusionNoise : INoiseAlgorithm
-//{
-//    private double[,] _grid;
-//    private double _diffusionRateA;
-//    private double _diffusionRateB;
-//    private double _feedRate;
-//    private double _killRate;
-//    private double _timeStep;
-//    private int _iterations;
+    public ReactionDiffusionNoise(IReactionDiffusionNoiseAlgorithmArgs args)
+        : base(args)
+    {
+    }
 
-//    public ReactionDiffusionNoise(double diffusionRateA = 1.0, double diffusionRateB = 0.5, double feedRate = 0.055, double killRate = 0.062, double timeStep = 1.0, int iterations = 1000)
-//    {
-//        _diffusionRateA = diffusionRateA;
-//        _diffusionRateB = diffusionRateB;
-//        _feedRate = feedRate;
-//        _killRate = killRate;
-//        _timeStep = timeStep;
-//        _iterations = iterations;
-//    }
+    public override double GenerateSingleSampleRaw()
+    {
+        // For reaction-diffusion, a single sample might not make much sense in isolation. 
+        // We can return a random value for simplicity, but it won't be representative of the noise.
+        return GetRandomValue();
+    }
 
-//    public double[,] Generate(INoiseAlgorithmArgs args)
-//    {
-//        int width = Args.Width;
-//        int height = Args.Height;
+    public override double[] GenerateRaw()
+    {
+        var totalSize = Args.Dimensions.Aggregate(1, (acc, val) => acc * val);
+        _grid = new double[totalSize];
 
-//        _grid = new double[height, width];
+        // Initialize the grid with random values
+        InitializeGrid();
 
-//        // Initialize the grid with random values
-//        InitializeGrid(Args.RandomDistributionAlgorithm);
+        // Perform the reaction-diffusion simulation
+        for (var i = 0; i < ((IReactionDiffusionNoiseAlgorithmArgs)Args).Iterations; i++)
+        {
+            SimulateReactionDiffusion();
+        }
 
-//        // Perform the reaction-diffusion simulation
-//        for (int i = 0; i < _iterations; i++)
-//        {
-//            SimulateReactionDiffusion();
-//        }
+        return _grid;
+    }
 
-//        Normalize(_grid, Args.QuantizeLevel, Args.Scale);
-//        return _grid;
-//    }
+    private void InitializeGrid()
+    {
+        for (var i = 0; i < _grid.Length; i++)
+        {
+            _grid[i] = GetRandomValue();
+        }
+    }
 
-//    public double GenerateSingleSample(INoiseAlgorithmArgs args)
-//    {
-//        // Reaction-diffusion noise is generated for the entire grid, so generating a single sample is not applicable.
-//        throw new NotImplementedException();
-//    }
+    private void SimulateReactionDiffusion()
+    {
+        var nextGrid = new double[_grid.Length];
 
-//    private void InitializeGrid(IRandomDistributionAlgorithm randomDistributionAlgorithm)
-//    {
-//        int height = _grid.GetLength(0);
-//        int width = _grid.GetLength(1);
+        for (var i = 0; i < _grid.Length; i++)
+        {
+            GetMultiDimensionalIndices(i, Args.Dimensions);
+            var value = _grid[i];
 
-//        for (int i = 0; i < height; i++)
-//        {
-//            for (int j = 0; j < width; j++)
-//            {
-//                _grid[i, j] = randomDistributionAlgorithm.NextDouble();
-//            }
-//        }
-//    }
+            // Here, we'll need a generalization of the Laplacian operation 
+            // for n-dimensions. For simplicity, we're using the current value 
+            // (this part would require more research to be meaningful in n-dimensions)
 
-//    private void SimulateReactionDiffusion()
-//    {
-//        int height = _grid.GetLength(0);
-//        int width = _grid.GetLength(1);
+            var reaction = value * value * value;
+            var diffusionA = value * ((IReactionDiffusionNoiseAlgorithmArgs)Args).DiffusionRateA;
+            var diffusionB = value * ((IReactionDiffusionNoiseAlgorithmArgs)Args).DiffusionRateB;
 
-//        double[,] nextGrid = new double[height, width];
+            var timeStep = ((IReactionDiffusionNoiseAlgorithmArgs) Args).TimeStep;
+            var feedRate = ((IReactionDiffusionNoiseAlgorithmArgs)Args).FeedRate;
+            var killRate = ((IReactionDiffusionNoiseAlgorithmArgs) Args).KillRate;
 
-//        for (int i = 0; i < height; i++)
-//        {
-//            for (int j = 0; j < width; j++)
-//            {
-//                double a = _grid[i, j];
-//                double b = _grid[i, j];
+            nextGrid[i] = value + timeStep * (diffusionA - reaction + feedRate * (1.0 - value));
+            nextGrid[i] = value + timeStep * (diffusionB + reaction - (killRate + feedRate) * value);
+        }
 
-//                double laplacianA = GetLaplacian(_grid, i, j, _diffusionRateA);
-//                double laplacianB = GetLaplacian(_grid, i, j, _diffusionRateB);
-
-//                double reaction = a * b * b;
-//                double diffusionA = laplacianA * _diffusionRateA;
-//                double diffusionB = laplacianB * _diffusionRateB;
-
-//                nextGrid[i, j] = a + _timeStep * (diffusionA - reaction + _feedRate * (1.0 - a));
-//                nextGrid[i, j] = b + _timeStep * (diffusionB + reaction - (_killRate + _feedRate) * b);
-//            }
-//        }
-
-//        _grid = nextGrid;
-//    }
-
-//    private double GetLaplacian(double[,] grid, int x, int y, double diffusionRate)
-//    {
-//        int height = grid.GetLength(0);
-//        int width = grid.GetLength(1);
-
-//        double value = grid[x, y];
-//        double laplacian = -4 * value;
-
-//        if (x > 0)
-//            laplacian += diffusionRate * grid[x - 1, y];
-//        if (x < height - 1)
-//            laplacian += diffusionRate * grid[x + 1, y];
-//        if (y > 0)
-//            laplacian += diffusionRate * grid[x, y - 1];
-//        if (y < width - 1)
-//            laplacian += diffusionRate * grid[x, y + 1];
-
-//        return laplacian;
-//    }
-
-//    private void Normalize(double[,] noise, int quantizeLevels, double scale)
-//    {
-//        double min = double.MaxValue;
-//        double max = double.MinValue;
-
-//        int height = noise.GetLength(0);
-//        int width = noise.GetLength(1);
-
-//        for (int i = 0; i < height; i++)
-//        {
-//            for (int j = 0; j < width; j++)
-//            {
-//                double value = noise[i, j];
-//                min = Math.Min(min, value);
-//                max = Math.Max(max, value);
-//            }
-//        }
-
-//        double range = max - min;
-//        double invRange = range > 0.0 ? 1.0 / range : 0.0;
-
-//        for (int i = 0; i < height; i++)
-//        {
-//            for (int j = 0; j < width; j++)
-//            {
-//                double value = (noise[i, j] - min) * invRange;
-//                noise[i, j] = value * (quantizeLevels - 1) * scale;
-//            }
-//        }
-//    }
-//}
+        _grid = nextGrid;
+    }
+}

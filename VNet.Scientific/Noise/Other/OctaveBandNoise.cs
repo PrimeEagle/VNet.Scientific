@@ -2,6 +2,10 @@
 
 using VNet.Scientific.Filtering;
 using VNet.Scientific.Filtering.Arguments;
+// ReSharper disable MemberCanBeMadeStatic.Local
+// ReSharper disable SuggestBaseTypeForParameter
+// ReSharper disable SuggestBaseTypeForParameterInConstructor
+#pragma warning disable CA1822
 
 namespace VNet.Scientific.Noise.Other;
 // Octave band noise refers to noise that is divided into distinct frequency bands according to octave intervals. This allows for analysis
@@ -36,56 +40,18 @@ public class OctaveBandNoise : NoiseBase
             SamplingRate = ((IOctaveBandNoiseAlgorithmArgs)Args).SamplingRate
         };
 
-        if (_baseNoise is IFilteredNoiseAlgorithm filteredNoise)
-        {
-            result = Convert2DTo1D(filteredNoise.GenerateFilteredNoise(Args, filterArgs));
-        }
-        else
-        {
-            var baseNoiseData = Convert1DTo2D(((IOctaveBandNoiseAlgorithmArgs)Args).BaseNoiseAlgorithm.Generate());
-            var filteredData = FilterNoise(baseNoiseData, ((IOctaveBandNoiseAlgorithmArgs)Args).SamplingRate, filterArgs);
-            result = Convert2DTo1D(filteredData);
-        }
+        var filter = ((IOctaveBandNoiseAlgorithmArgs) Args).Filter;
+        var baseNoiseData = Convert1DTo2D(((IOctaveBandNoiseAlgorithmArgs)Args).BaseNoiseAlgorithm.Generate());
+        var filteredNoiseData = baseNoiseData;
 
+        if (filter.IsValid())
+        {
+            filteredNoiseData = filter.Filter(baseNoiseData);
+        }
+        
+        result = Convert2DTo1D(filteredNoiseData);
+        
         return result;
-    }
-
-    private double[,] FilterNoise(double[,] noiseData, double sampleRate, IFilterArgs filterArgs)
-    {
-        var height = noiseData.GetLength(0);
-        var width = noiseData.GetLength(1);
-
-        var result = new double[height, width];
-
-        for (var i = 0; i < height; i++)
-        {
-            var input = new double[width];
-            for (var j = 0; j < width; j++)
-            {
-                input[j] = noiseData[i, j];
-            }
-
-            var filteredSamples = FilterSamples(input, sampleRate, filterArgs);
-
-            for (var j = 0; j < width; j++)
-            {
-                result[i, j] = filteredSamples[j];
-            }
-        }
-
-        return result;
-    }
-
-    private double[] FilterSamples(double[] input, double sampleRate, IFilterArgs filterArgs)
-    {
-        IFilter filter = FilterFactory.CreateFilter(filterArgs);
-
-        if (filter is null || !filter.IsValid(filterArgs))
-        {
-            return input;
-        }
-
-        return filter.Filter(input, filterArgs);
     }
 
     // Utility functions to convert between 1D and 2D arrays.

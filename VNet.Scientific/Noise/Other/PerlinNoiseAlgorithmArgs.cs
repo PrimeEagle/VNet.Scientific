@@ -1,4 +1,5 @@
-﻿namespace VNet.Scientific.Noise.Other
+﻿// ReSharper disable MemberCanBePrivate.Global
+namespace VNet.Scientific.Noise.Other
 {
     public class PerlinNoiseAlgorithmArgs : NoiseAlgorithmArgs
     {

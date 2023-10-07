@@ -1,4 +1,6 @@
-﻿namespace VNet.Scientific.Noise.Other
+﻿using VNet.Scientific.Filtering;
+
+namespace VNet.Scientific.Noise.Other
 {
     public interface IOctaveBandNoiseAlgorithmArgs : INoiseAlgorithmArgs
     {
@@ -6,5 +8,6 @@
         public double Bandwidth { get; set; }
         public double SamplingRate { get; set; }
         public INoiseAlgorithm BaseNoiseAlgorithm { get; set; }
+        public IFilter Filter { get; set; }
     }
 }

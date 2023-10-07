@@ -8,7 +8,7 @@
         public INoiseAlgorithm BaseNoiseAlgorithm { get; set; }
 
 
-        public FractalNoiseAlgorithmArgs(INoiseAlgorithm baseNoiseAlgorithm, INoiseAlgorithmArgs baseNoiseAlgorithmArgs, int octaves = 8, double lacunarity = 2.0, double gain = 0.5)
+        public FractalNoiseAlgorithmArgs(INoiseAlgorithm baseNoiseAlgorithm, int octaves = 8, double lacunarity = 2.0, double gain = 0.5)
         {
             Octaves = octaves;
             Lacunarity = lacunarity;

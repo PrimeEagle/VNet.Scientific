@@ -1,53 +1,45 @@
-﻿//// ReSharper disable UnusedMember.Global
+﻿// ReSharper disable UnusedMember.Global
 
-//namespace VNet.Scientific.Noise.Other;
-//// In addition to the standard Worley noise algorithm, there are several variants that modify the behavior or properties of cellular noise.
-//// Examples include Voronoi-based noise with distance metrics like Manhattan or Chebyshev distance, or variations that introduce perturbations
-//// or modifications to the cell shapes.
-//public class WorleyNoise : INoiseAlgorithm
-//{
-//    private int _numPoints;
+// ReSharper disable SuggestBaseTypeForParameterInConstructor
+namespace VNet.Scientific.Noise.Other;
+// In addition to the standard Worley noise algorithm, there are several variants that modify the behavior or properties of cellular noise.
+// Examples include Voronoi-based noise with distance metrics like Manhattan or Chebyshev distance, or variations that introduce perturbations
+// or modifications to the cell shapes.
+public class WorleyNoise : NoiseBase
+{
+    public WorleyNoise(IWorleyNoiseAlgorithmArgs args) : base(args)
+    {
+    }
 
-//    public WorleyNoise(int numPoints = 10)
-//    {
-//        _numPoints = numPoints;
-//    }
+    public override double[] GenerateRaw()
+    {
+        var totalSize = Args.Dimensions.Aggregate(1, (acc, val) => acc * val);
+        var result = new double[totalSize];
 
-//    public double[,] Generate(INoiseAlgorithmArgs args)
-//    {
-//        int width = Args.Width;
-//        int height = Args.Height;
+        var indices = new int[Args.Dimensions.Length];
 
-//        double[,] result = new double[height, width];
+        for (var flatIndex = 0; flatIndex < totalSize; flatIndex++)
+        {
+            var minDistance = double.MaxValue;
 
-//        for (int i = 0; i < height; i++)
-//        {
-//            for (int j = 0; j < width; j++)
-//            {
-//                double minDistance = double.MaxValue;
+            for (var k = 0; k < ((IWorleyNoiseAlgorithmArgs)Args).PointCount; k++)
+            {
+                double distanceSquared = Args.Dimensions.Select(t => Args.RandomDistributionAlgorithm.NextDouble() * t).Select((randomPoint, dim) => Math.Pow(randomPoint - indices[dim], 2)).Sum();
 
-//                for (int k = 0; k < _numPoints; k++)
-//                {
-//                    double x = Args.RandomDistributionAlgorithm.NextDouble();
-//                    double y = Args.RandomDistributionAlgorithm.NextDouble();
-//                    double distance = Math.Sqrt(Math.Pow(x - i, 2) + Math.Pow(y - j, 2));
+                var distance = Math.Sqrt(distanceSquared);
+                minDistance = Math.Min(minDistance, distance);
+            }
 
-//                    if (distance < minDistance)
-//                    {
-//                        minDistance = distance;
-//                    }
-//                }
+            result[flatIndex] = minDistance * Args.Scale;
 
-//                result[i, j] = minDistance * Args.Scale;
-//            }
-//        }
+            IncrementIndices(indices, Args.Dimensions);
+        }
 
-//        return result;
-//    }
+        return result;
+    }
 
-//    public double GenerateSingleSample(INoiseAlgorithmArgs args)
-//    {
-//        // Worley noise is generated for the entire grid, so generating a single sample is not applicable.
-//        throw new NotImplementedException();
-//    }
-//}
+    public override double GenerateSingleSampleRaw()
+    {
+        throw new NotImplementedException("GenerateSingleSampleRaw method doesn't really make sense for Worley noise, since each value is dependent on its neighbors in the grid.");
+    }
+}

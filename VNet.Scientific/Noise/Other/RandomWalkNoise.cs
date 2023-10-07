@@ -1,53 +1,47 @@
-﻿//// ReSharper disable UnusedMember.Global
+﻿// ReSharper disable UnusedMember.Global
 
-//namespace VNet.Scientific.Noise.Other;
+// ReSharper disable SuggestBaseTypeForParameterInConstructor
+namespace VNet.Scientific.Noise.Other;
 
-//// Random walk algorithms simulate a random path taken by a point in a discrete space. By accumulating the positions at each step,
-//// it generates a noise signal that exhibits a random, unpredictable pattern. Random walks have applications in modeling diffusion,
-//// financial markets, and generating irregular patterns.
-//public class RandomWalkNoise : INoiseAlgorithm
-//{
-//    private int _numSteps;
-//    private double _stepSize;
+// Random walk algorithms simulate a random path taken by a point in a discrete space. By accumulating the positions at each step,
+// it generates a noise signal that exhibits a random, unpredictable pattern. Random walks have applications in modeling diffusion,
+// financial markets, and generating irregular patterns.
+public class RandomWalkNoise : NoiseBase
+{
+    public RandomWalkNoise(IRandomWalkNoiseAlgorithmArgs args)
+        : base(args)
+    {
+    }
 
-//    public RandomWalkNoise(int numSteps = 1000, double stepSize = 0.1)
-//    {
-//        _numSteps = numSteps;
-//        _stepSize = stepSize;
-//    }
+    public override double GenerateSingleSampleRaw()
+    {
+        return RandomWalk();
+    }
 
-//    public double[,] Generate(INoiseAlgorithmArgs args)
-//    {
-//        int width = Args.Width;
-//        int height = Args.Height;
+    public override double[] GenerateRaw()
+    {
+        var totalSize = Args.Dimensions.Aggregate(1, (acc, val) => acc * val);
+        var result = new double[totalSize];
 
-//        double[,] result = new double[height, width];
-//        for (int i = 0; i < height; i++)
-//        {
-//            for (int j = 0; j < width; j++)
-//            {
-//                double noiseValue = RandomWalk(_numSteps, _stepSize);
-//                result[i, j] = noiseValue * Args.Scale;
-//            }
-//        }
+        for (var i = 0; i < totalSize; i++)
+        {
+            result[i] = RandomWalk();
+        }
 
-//        return result;
-//    }
+        return result;
+    }
 
-//    public double GenerateSingleSample(INoiseAlgorithmArgs args)
-//    {
-//        // Random Walk noise is generated for the entire grid, so generating a single sample is not applicable.
-//        throw new NotImplementedException();
-//    }
+    private double RandomWalk()
+    {
+        var numSteps = ((IRandomWalkNoiseAlgorithmArgs) Args).NumSteps;
+        var stepSize = ((IRandomWalkNoiseAlgorithmArgs)Args).StepSize;
 
-//    private double RandomWalk(int numSteps, double stepSize)
-//    {
-//        double value = 0.0;
-//        for (int i = 0; i < numSteps; i++)
-//        {
-//            double randomStep = (2 * RandomProvider.NextDouble() - 1) * stepSize;
-//            value += randomStep;
-//        }
-//        return value / Math.Sqrt(numSteps);
-//    }
-//}
+        var value = 0.0;
+        for (var i = 0; i < numSteps; i++)
+        {
+            var randomStep = (2 * GetRandomValue() - 1) * stepSize;  // Using the GetRandomValue() method from NoiseBase
+            value += randomStep;
+        }
+        return value / Math.Sqrt(numSteps);
+    }
+}
