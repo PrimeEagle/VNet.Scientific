@@ -105,10 +105,22 @@ namespace VNet.Scientific.Noise
             // filter
             if (Args.OutputFilter is not null && Args.OutputFilter.IsValid())
             {
-                var filteredSamples = Args.OutputFilter.Filter(new double[] { sample });
-                if (filteredSamples.Length > 0)
+                var arrayResult = Args.OutputFilter.Filter(new double[] { sample });
+
+                if (arrayResult is {Rank: 1, Length: > 0})
                 {
-                    sample = filteredSamples[0];
+                    if (arrayResult.GetValue(0) is double filteredValue)
+                    {
+                        sample = filteredValue;
+                    }
+                    else
+                    {
+                        throw new InvalidOperationException("Unexpected filter output value type.");
+                    }
+                }
+                else
+                {
+                    throw new InvalidOperationException($"Expected a one-dimensional array from the filter when processing a single sample. Received an array of rank {arrayResult.Rank}.");
                 }
             }
 

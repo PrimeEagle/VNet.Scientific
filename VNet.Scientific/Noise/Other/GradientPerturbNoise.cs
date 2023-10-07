@@ -3,24 +3,19 @@
 // ReSharper disable ParameterTypeCanBeEnumerable.Local
 // ReSharper disable SuggestBaseTypeForParameter
 // ReSharper disable MemberCanBeMadeStatic.Local
+// ReSharper disable SuggestBaseTypeForParameterInConstructor
 #pragma warning disable CA1822
 namespace VNet.Scientific.Noise.Other;
 // Gradient perturb noise is a type of noise where the coordinates of each point are slightly altered (or "perturbed") using another noise function
 // before being input into the main noise function. This has the effect of distorting the output in an interesting way.
 public class GradientPerturbNoise : NoiseBase
 {
-    private SimplexNoise _perturbNoise; // Note: SimplexNoise will need to be refactored to handle n-dimensions.
-    private INoiseAlgorithm _baseNoise;
+    private readonly INoiseAlgorithm _perturbNoise; // Added this line
 
-    private double _frequency;
-    private double _amplitude;
-
-    public GradientPerturbNoise(IGradientPerturbNoiseAlgorithmArgs args) : base(args)
+    public GradientPerturbNoise(IGradientPerturbNoiseAlgorithmArgs args)
+        : base(args)
     {
-        _perturbNoise = new SimplexNoise();
-        _baseNoise = args.BaseNoise;
-        _frequency = args.Frequency;
-        _amplitude = args.Amplitude;
+        _perturbNoise = args.BaseNoise; // Initialize _perturbNoise
     }
 
     public override double[] GenerateRaw()
@@ -28,24 +23,17 @@ public class GradientPerturbNoise : NoiseBase
         var dimensions = Args.Dimensions;
 
         var result = new double[GetTotalSize(dimensions)];
+        var frequency = ((IGradientPerturbNoiseAlgorithmArgs)Args).Frequency;
+        var amplitude = ((IGradientPerturbNoiseAlgorithmArgs)Args).Amplitude;
+        var baseNoise = ((IGradientPerturbNoiseAlgorithmArgs)Args).BaseNoise;
 
         for (var i = 0; i < GetTotalSize(dimensions); i++)
         {
             var indices = ConvertIndexToNDimensional(i, dimensions);
-            double perturbedValue = _perturbNoise.Noise(indices.Select(index => index * _frequency).ToArray()); // This assumes that SimplexNoise is n-dimensional.
-            indices = indices.Select(index => (int)Math.Max(0, Math.Min(dimensions[Array.IndexOf(indices, index)] - 1, index + _amplitude * perturbedValue))).ToArray();
+            var perturbedValue = _perturbNoise.GenerateSingleSampleRaw();
+            indices = indices.Select(index => (int)Math.Max(0, Math.Min(dimensions[Array.IndexOf(indices, index)] - 1, index + amplitude * perturbedValue))).ToArray();
 
-            // Use base noise's raw generation method
-            if (_baseNoise is NoiseBase noiseBase)
-            {
-                result[i] = noiseBase.GenerateRawSample(indices);
-            }
-            else
-            {
-                // You'd need to refactor this section further to support n-dimensional input for GenerateSingleSample.
-                // For now, this throws an exception.
-                throw new NotImplementedException();
-            }
+            result[i] = baseNoise.GenerateSingleSampleRaw();
         }
 
         return result;

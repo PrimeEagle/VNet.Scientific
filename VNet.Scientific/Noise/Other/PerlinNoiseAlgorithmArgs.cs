@@ -1,7 +1,7 @@
 ﻿// ReSharper disable MemberCanBePrivate.Global
 namespace VNet.Scientific.Noise.Other
 {
-    public class PerlinNoiseAlgorithmArgs : NoiseAlgorithmArgs
+    public class PerlinNoiseAlgorithmArgs : NoiseAlgorithmArgs, IPerlinNoiseAlgorithmArgs
     {
         public int Octave { get; set; }
 
@@ -9,7 +9,7 @@ namespace VNet.Scientific.Noise.Other
         {
             var result = base.Clone();
 
-            ((PerlinNoiseAlgorithmArgs)result).Octave = Octave;
+            ((IPerlinNoiseAlgorithmArgs)result).Octave = Octave;
 
             return result;
         }

@@ -4,5 +4,6 @@
     {
         double[] Frequencies { get; set; }
         double[] Amplitudes { get; set; }
+        double SampleRate { get; set; }
     }
 }

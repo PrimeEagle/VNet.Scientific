@@ -40,7 +40,7 @@ public class NoiseLayer
         for (var i = 1; i < Layers.Count; i++)
         {
             var currentSample = Layers[i].NoiseAlgorithm.GenerateSingleSample();
-            result = Layers[i].BlendMode.Blend(result, currentSample);
+            result = Layers[i].ApplyBlends(result, currentSample);
         }
 
         return result;
@@ -49,7 +49,7 @@ public class NoiseLayer
     public void AddLayer(INoiseAlgorithm noiseAlgorithm, IBlendMode blendMode, double opacity = 1.0)
     {
         InvalidateCache();
-        Layers.Add(new NoiseBlendLayer(noiseAlgorithm, blendMode, opacity));
+        Layers.Add(new NoiseBlendLayer(noiseAlgorithm, new List<IBlendMode> { blendMode }, opacity));
     }
 
     public void RemoveLayerAt(int index)

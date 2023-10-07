@@ -1,6 +1,5 @@
 ﻿// ReSharper disable UnusedMember.Global
 // ReSharper disable SuggestBaseTypeForParameterInConstructor
-
 using VNet.Scientific.Noise.Color;
 
 namespace VNet.Scientific.Noise.Other;

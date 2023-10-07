@@ -3,6 +3,7 @@
 // ReSharper disable MemberCanBeMadeStatic.Local
 // ReSharper disable SuggestBaseTypeForParameter
 // ReSharper disable SuggestBaseTypeForParameterInConstructor
+#pragma warning disable CA1822
 namespace VNet.Scientific.Noise.Other;
 
 // Wavelet noise algorithms utilize wavelet transforms to generate noise signals with frequency characteristics that vary across scales.
@@ -51,19 +52,21 @@ public class WaveletNoise : NoiseBase
     {
         var result = 0.0;
 
+        var perlinArgs = new PerlinNoiseAlgorithmArgs
+        {
+            Dimensions = Args.Dimensions,
+            Scale = Args.Scale,
+            RandomDistributionAlgorithm = Args.RandomDistributionAlgorithm,
+        };
+
+        var perlinNoise = new PerlinNoise(perlinArgs);
+
         for (var i = 0; i < 4; i++)
         {
             var scale = Math.Pow(2, i);
-            var scaledCoords = new double[coords.Length];
+            var scaledCoords = coords.Select(c => c / scale).ToArray();
 
-            for (var dim = 0; dim < coords.Length; dim++)
-            {
-                scaledCoords[dim] = coords[dim] / scale;
-            }
-
-            // Here, you need a way to get n-dimensional noise. 
-            // This is a placeholder using a theoretical PerlinNoise method.
-            var noiseValue = PerlinNoise.Noise(scaledCoords);
+            var noiseValue = perlinNoise.GenerateSingleSampleRaw();
 
             result += noiseValue / scale;
         }

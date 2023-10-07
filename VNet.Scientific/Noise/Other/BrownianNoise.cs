@@ -13,12 +13,7 @@ public class BrownianNoise : NoiseBase
     {
         var perlinArgs = new PerlinNoiseAlgorithmArgs()
         {
-            Dimensions = args.Dimensions,
-            NormalizeOutput = args.NormalizeOutput,
-            Scale = args.Scale,
-            DesiredMinValue = args.DesiredMinValue,
-            DesiredMaxValue = args.DesiredMaxValue,
-            RandomDistributionAlgorithm = args.RandomDistributionAlgorithm
+            Octave = args.Octaves
         };
 
         _perlinNoise = new PerlinNoise(perlinArgs);

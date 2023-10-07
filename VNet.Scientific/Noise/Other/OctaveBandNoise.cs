@@ -46,7 +46,7 @@ public class OctaveBandNoise : NoiseBase
 
         if (filter.IsValid())
         {
-            filteredNoiseData = filter.Filter(baseNoiseData);
+            filteredNoiseData = (double[,])filter.Filter(baseNoiseData);
         }
         
         result = Convert2DTo1D(filteredNoiseData);
