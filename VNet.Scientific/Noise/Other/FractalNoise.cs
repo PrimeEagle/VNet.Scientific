@@ -1,63 +1,43 @@
-﻿//// ReSharper disable UnusedMember.Global
+﻿// ReSharper disable UnusedMember.Global
 
-//namespace VNet.Scientific.Noise.Other;
-//// Fractal noise, also known as Fractional Brownian Motion (fBm), is a way of combining multiple layers of noise to create a more complex and
-//// rich output. Each layer of noise is typically called an "octave", and each octave is given a frequency and an amplitude.
-//public class FractalNoise : INoiseAlgorithm
-//{
-//    private INoiseAlgorithm _baseNoise;
-//    private int _octaves;
-//    private double _lacunarity;
-//    private double _gain;
+namespace VNet.Scientific.Noise.Other;
+// Fractal noise, also known as Fractional Brownian Motion (fBm), is a way of combining multiple layers of noise to create a more complex and
+// rich output. Each layer of noise is typically called an "octave", and each octave is given a frequency and an amplitude.
+public class FractalNoise : NoiseBase
+{
+    public FractalNoise(IFractalNoiseAlgorithmArgs args)
+        : base(args)
+    { }
 
-//    public FractalNoise(INoiseAlgorithm baseNoise, int octaves = 8, double lacunarity = 2.0, double gain = 0.5)
-//    {
-//        _baseNoise = baseNoise;
-//        _octaves = octaves;
-//        _lacunarity = lacunarity;
-//        _gain = gain;
-//    }
+    public override double GenerateSingleSampleRaw()
+    {
+        double frequency = 1;
+        double amplitude = 1;
+        double total = 0;
 
-//    public double[,] Generate(INoiseAlgorithmArgs args)
-//    {
-//        var result = new double[Args.Height, Args.Width];
+        for (var octave = 0; octave < ((IFractalNoiseAlgorithmArgs)Args).Octaves; octave++)
+        {
+            var dimensions = Args.Dimensions.Select(dim => (int)(dim * frequency)).ToArray();
+            var noise = ((IFractalNoiseAlgorithmArgs)Args).BaseNoiseAlgorithm.GenerateSingleSample();
 
-//        for (int i = 0; i < Args.Height; i++)
-//        {
-//            for (int j = 0; j < Args.Width; j++)
-//            {
-//                double frequency = 1;
-//                double amplitude = 1;
-//                double total = 0;
+            total += noise * amplitude;
+            frequency *= ((IFractalNoiseAlgorithmArgs)Args).Lacunarity;
+            amplitude *= ((IFractalNoiseAlgorithmArgs)Args).Gain;
+        }
 
-//                for (int octave = 0; octave < _octaves; octave++)
-//                {
-//                    double x = j * frequency / Args.Width;
-//                    double y = i * frequency / Args.Height;
-//                    double noise = _baseNoise.GenerateSingleSample(new NoiseAlgorithmArgs
-//                    {
-//                        Width = (int)x,
-//                        Height = (int)y,
-//                        QuantizeLevels = Args.QuantizeLevels,
-//                        Scale = Args.Scale,
-//                        RandomDistributionAlgorithm = Args.RandomDistributionAlgorithm
-//                    });
+        return total;
+    }
 
-//                    total += noise * amplitude;
-//                    frequency *= _lacunarity;
-//                    amplitude *= _gain;
-//                }
+    public override double[] GenerateRaw()
+    {
+        var totalSize = Args.Dimensions.Aggregate(1, (acc, val) => acc * val);
+        var samples = new double[totalSize];
 
-//                result[i, j] = total;
-//            }
-//        }
+        for (var i = 0; i < totalSize; i++)
+        {
+            samples[i] = GenerateSingleSampleRaw();
+        }
 
-//        return result;
-//    }
-
-//    public double GenerateSingleSample(INoiseAlgorithmArgs args)
-//    {
-//        // Fractal noise is generated for the entire grid, so generating a single sample is not applicable.
-//        throw new NotImplementedException();
-//    }
-//}
+        return samples;
+    }
+}

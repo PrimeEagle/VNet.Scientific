@@ -20,7 +20,7 @@ public class CyanNoise : NoiseBase
             RandomDistributionAlgorithm = Args.RandomDistributionAlgorithm,
             OutputFilter = null,
             Scale = 1,
-            QuantizeLevels = 0,
+            QuantizeLevel = 0,
             MaxAttempts = 35,
             Radius = 0.5
         };
@@ -33,7 +33,7 @@ public class CyanNoise : NoiseBase
             RandomDistributionAlgorithm = Args.RandomDistributionAlgorithm,
             OutputFilter = null,
             Scale = 1,
-            QuantizeLevels = 0,
+            QuantizeLevel = 0,
         };
         _greenNoise = new GreenNoise(greenArgs);
         _blueNoiseWeight = ((ICyanNoiseAlgorithmArgs)Args).BlueNoiseWeight;

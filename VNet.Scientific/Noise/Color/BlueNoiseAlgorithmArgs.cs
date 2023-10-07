@@ -21,7 +21,7 @@ namespace VNet.Scientific.Noise.Color
             }
         }
 
-        public int QuantizeLevels { get; set; }
+        public int QuantizeLevel { get; set; }
         public double Scale { get; set; }
         public required IRandomDistributionAlgorithm RandomDistributionAlgorithm { get; set; }
         public IFilter? OutputFilter { get; set; }
@@ -32,7 +32,7 @@ namespace VNet.Scientific.Noise.Color
             {
                 Width = Width,
                 Height = Height,
-                QuantizeLevels = QuantizeLevels,
+                QuantizeLevel = QuantizeLevel,
                 RandomDistributionAlgorithm = RandomDistributionAlgorithm,
                 Scale = Scale,
                 OutputFilter = OutputFilter,

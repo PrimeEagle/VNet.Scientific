@@ -14,7 +14,7 @@ namespace VNet.Scientific.Noise
             get => _quantizeLevel;
             set
             {
-                if (value <= 0) throw new ArgumentException("QuantizeLevels must be greater than zero.");
+                if (value <= 0) throw new ArgumentException("QuantizeLevel must be greater than zero.");
                 _quantizeLevel = value;
             }
         }

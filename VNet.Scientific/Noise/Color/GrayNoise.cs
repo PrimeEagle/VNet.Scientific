@@ -18,7 +18,7 @@ public class GrayNoise : NoiseBase
             Width = Args.Width,
             Height = Args.Height,
             RandomDistributionAlgorithm = Args.RandomDistributionAlgorithm,
-            QuantizeLevels = 0,
+            QuantizeLevel = 0,
             MaxAttempts = 35,
             Radius = 0.5
         };
@@ -27,7 +27,7 @@ public class GrayNoise : NoiseBase
         var whiteArgs = Args.Clone();
         whiteArgs.OutputFilter = null;
         whiteArgs.Scale = 1;
-        whiteArgs.QuantizeLevels = 0;
+        whiteArgs.QuantizeLevel = 0;
         _whiteNoise = new WhiteNoise(whiteArgs);
     }
 

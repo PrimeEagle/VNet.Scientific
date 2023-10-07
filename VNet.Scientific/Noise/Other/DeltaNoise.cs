@@ -7,20 +7,25 @@ namespace VNet.Scientific.Noise.Other;
 // often used to simulate or model abrupt or transient events in a signal.
 public class DeltaNoise : NoiseBase
 {
-    public DeltaNoise(IDeltaNoiseAlgorithmArgs args):base(args)
+    public DeltaNoise(IDeltaNoiseAlgorithmArgs args) : base(args)
     {
     }
 
-    public override double[,] Generate()
+    public override double[] GenerateRaw()
     {
-        var width = Args.Width;
-        var height = Args.Height;
+        var totalSize = Args.Dimensions.Aggregate(1, (acc, val) => acc * val);
+        var result = new double[totalSize];
 
-        var result = new double[height, width];
+        int[] deltaIndices = { ((IDeltaNoiseAlgorithmArgs)Args).DeltaIndex, ((IDeltaNoiseAlgorithmArgs)Args).DeltaIndex };
+        var deltaFlatIndex = GetFlatIndex(deltaIndices, Args.Dimensions);
 
-        for (var i = 0; i < height; i++)
-            for (var j = 0; j < width; j++)
-                result[i, j] = i == ((IDeltaNoiseAlgorithmArgs)Args).DeltaIndex && j == ((IDeltaNoiseAlgorithmArgs)Args).DeltaIndex ? ((IDeltaNoiseAlgorithmArgs)Args).DeltaValue * Args.Scale : 0.0;
+        for (var i = 0; i < totalSize; i++)
+        {
+            if (i == deltaFlatIndex)
+            {
+                result[i] = ((IDeltaNoiseAlgorithmArgs)Args).DeltaValue * Args.Scale;
+            }
+        }
 
         return result;
     }

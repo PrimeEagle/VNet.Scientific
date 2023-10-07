@@ -12,7 +12,7 @@ public class TealNoise : NoiseBase
         var whiteArgs = Args.Clone();
         whiteArgs.OutputFilter = null;
         whiteArgs.Scale = 1;
-        whiteArgs.QuantizeLevels = 0;
+        whiteArgs.QuantizeLevel = 0;
         _whiteNoise = new WhiteNoise(whiteArgs);
     }
 

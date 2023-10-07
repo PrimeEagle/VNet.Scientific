@@ -42,7 +42,7 @@
 //            SimulateReactionDiffusion();
 //        }
 
-//        Normalize(_grid, Args.QuantizeLevels, Args.Scale);
+//        Normalize(_grid, Args.QuantizeLevel, Args.Scale);
 //        return _grid;
 //    }
 

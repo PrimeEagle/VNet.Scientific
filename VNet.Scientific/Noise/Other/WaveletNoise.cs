@@ -46,7 +46,7 @@
 //            amplitude *= _gain;
 //        }
 
-//        Normalize(result, Args.QuantizeLevels, Args.Scale);
+//        Normalize(result, Args.QuantizeLevel, Args.Scale);
 //        return result;
 //    }
 

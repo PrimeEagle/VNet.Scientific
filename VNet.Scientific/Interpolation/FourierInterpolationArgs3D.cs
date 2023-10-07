@@ -9,7 +9,7 @@ public class FourierInterpolationArgs3D : IFourierInterpolationAlgorithmArgs
     public FourierInterpolationArgs3D(Complex32[] flattenedCoefficients, int Nx, int Ny, int Nz)
     {
         Coefficients = new Complex32[Nx][][];
-        int index = 0;
+        var index = 0;
         for (var i = 0; i < Nx; i++)
         {
             Coefficients[i] = new Complex32[Ny][];

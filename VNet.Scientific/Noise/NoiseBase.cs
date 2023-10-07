@@ -115,7 +115,7 @@ namespace VNet.Scientific.Noise
             // quantize
             if (Args.QuantizeLevel != 1)
             {
-                if (Args.QuantizeLevel == 0) throw new ArgumentException("QuantizeLevels cannot be zero.");
+                if (Args.QuantizeLevel == 0) throw new ArgumentException("QuantizeLevel cannot be zero.");
                 var quantizationLevel = (int)(sample * Args.QuantizeLevel);
                 sample = (double)quantizationLevel / Args.QuantizeLevel;
             }

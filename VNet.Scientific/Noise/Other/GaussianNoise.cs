@@ -1,42 +1,47 @@
-﻿//// ReSharper disable UnusedMember.Global
+﻿// ReSharper disable UnusedMember.Global
 
-//namespace VNet.Scientific.Noise.Other;
-//// Gaussian noise, also known as normal noise, is a type of noise that follows a Gaussian or normal distribution. It is characterized by random
-//// fluctuations with a bell-shaped distribution. Gaussian noise is commonly used in simulations, statistical modeling,
-//// and as a model for various noise sources.
-//public class GaussianNoise : INoiseAlgorithm
-//{
-//    private double _mean;
-//    private double _stdDev;
+namespace VNet.Scientific.Noise.Other;
+// Gaussian noise, also known as normal noise, is a type of noise that follows a Gaussian or normal distribution. It is characterized by random
+// fluctuations with a bell-shaped distribution. Gaussian noise is commonly used in simulations, statistical modeling,
+// and as a model for various noise sources.
+public class GaussianNoise : NoiseBase
+{
+    private double _mean;
+    private double _stdDev;
 
-//    public GaussianNoise(double mean = 0.0, double stdDev = 1.0)
-//    {
-//        _mean = mean;
-//        _stdDev = stdDev;
-//    }
+    public GaussianNoise(INoiseAlgorithmArgs args, double mean = 0.0, double stdDev = 1.0) : base(args)
+    {
+        _mean = mean;
+        _stdDev = stdDev;
+    }
 
-//    public double[,] Generate(INoiseAlgorithmArgs args)
-//    {
-//        int width = Args.Width;
-//        int height = Args.Height;
+    public override double GenerateSingleSampleRaw()
+    {
+        return NextGaussian(_mean, _stdDev) * Args.Scale;
+    }
 
-//        double[,] result = new double[height, width];
+    public override double[] GenerateRaw()
+    {
+        var totalSize = Args.Dimensions.Aggregate(1, (acc, val) => acc * val);
+        var samples = new double[totalSize];
 
-//        for (int i = 0; i < height; i++)
-//        {
-//            for (int j = 0; j < width; j++)
-//            {
-//                double randomValue = Args.RandomDistributionAlgorithm.NextGaussian(_mean, _stdDev);
-//                result[i, j] = randomValue * Args.Scale;
-//            }
-//        }
+        for (var i = 0; i < totalSize; i++)
+        {
+            samples[i] = GenerateSingleSampleRaw();
+        }
 
-//        return result;
-//    }
+        return samples;
+    }
 
-//    public double GenerateSingleSample(INoiseAlgorithmArgs args)
-//    {
-//        // Gaussian noise is generated for the entire grid, so generating a single sample is not applicable.
-//        throw new NotImplementedException();
-//    }
-//}
+    private double NextGaussian(double mean, double stdDev)
+    {
+        // Using the Box-Muller transform
+        var u1 = 1.0 - GetRandomValue(); // Uniform(0,1] random doubles
+        var u2 = 1.0 - GetRandomValue();
+
+        var randStdNormal = Math.Sqrt(-2.0 * Math.Log(u1)) * Math.Sin(2.0 * Math.PI * u2); // random normal (0,1)
+        var randNormal = mean + stdDev * randStdNormal; // random normal(mean, stdDev^2)
+
+        return randNormal;
+    }
+}

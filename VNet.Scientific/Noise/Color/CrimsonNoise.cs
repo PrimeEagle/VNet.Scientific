@@ -19,14 +19,14 @@ public class CrimsonNoise : NoiseBase
             Height = Args.Height,
             SamplingRate = 44100,
             RandomDistributionAlgorithm = Args.RandomDistributionAlgorithm,
-            QuantizeLevels = 0
+            QuantizeLevel = 0
         };
         _redNoise = new RedNoise(redArgs);
 
         var violetArgs = Args.Clone();
         violetArgs.OutputFilter = null;
         violetArgs.Scale = 1;
-        violetArgs.QuantizeLevels = 0;
+        violetArgs.QuantizeLevel = 0;
         _violetNoise = new VioletNoise(violetArgs);
     }
 

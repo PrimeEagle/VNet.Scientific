@@ -14,45 +14,60 @@ public class DiamondSquareNoise : NoiseBase
 {
     public DiamondSquareNoise(IDiamondSquareNoiseAlgorithmArgs args) : base(args)
     {
+        if (Args.Dimensions.Length != 2)
+            throw new ArgumentException("Diamond-Square noise is inherently 2D. Please provide 2D dimensions.");
     }
 
-    public override double[,] GenerateRaw()
+    public override double[] GenerateRaw()
     {
-        var width = Args.Width;
-        var height = Args.Height;
+        var width = Args.Dimensions[1];
+        var height = Args.Dimensions[0];
 
-        // Ensure the grid size is a power of 2 plus 1
         var gridSize = GetNextPowerOfTwo(Math.Max(width, height)) + 1;
+        var grid = new double[gridSize * gridSize];
 
-        var grid = new double[gridSize, gridSize];
-        grid[0, 0] = RandomRange(-1.0, 1.0);
-        grid[0, gridSize - 1] = RandomRange(-1.0, 1.0);
-        grid[gridSize - 1, 0] = RandomRange(-1.0, 1.0);
-        grid[gridSize - 1, gridSize - 1] = RandomRange(-1.0, 1.0);
+        var topLeft = GetFlatIndex(0, 0, gridSize, gridSize);
+        var topRight = GetFlatIndex(gridSize - 1, 0, gridSize, gridSize);
+        var bottomLeft = GetFlatIndex(0, gridSize - 1, gridSize, gridSize);
+        var bottomRight = GetFlatIndex(gridSize - 1, gridSize - 1, gridSize, gridSize);
+
+        grid[topLeft] = RandomRange(-1.0, 1.0);
+        grid[topRight] = RandomRange(-1.0, 1.0);
+        grid[bottomLeft] = RandomRange(-1.0, 1.0);
+        grid[bottomRight] = RandomRange(-1.0, 1.0);
 
         DiamondSquare(grid, 0, 0, gridSize - 1, gridSize - 1, ((IDiamondSquareNoiseAlgorithmArgs)Args).Roughness);
 
-        var result = new double[height, width];
+        var result = new double[height * width];
         for (var i = 0; i < height; i++)
+        {
             for (var j = 0; j < width; j++)
             {
                 var x = (int)Math.Floor(j * (double)(gridSize - 1) / (width - 1));
                 var y = (int)Math.Floor(i * (double)(gridSize - 1) / (height - 1));
-                result[i, j] = grid[y, x];
+                result[GetFlatIndex(j, i, width, height)] = grid[GetFlatIndex(x, y, gridSize, gridSize)];
             }
+        }
 
         return result;
     }
+
+    private int GetFlatIndex(int x, int y, int width, int height)
+    {
+        return y * width + x;
+    }
+
 
     public override double GenerateSingleSampleRaw()
     {
         throw new NotImplementedException("Diamond-Square noise is generated for the entire grid, so generating a single sample is not applicable.");
     }
 
-    private void DiamondSquare(double[,] grid, int startX, int startY, int endX, int endY, double roughness)
+    private void DiamondSquare(double[] grid, int startX, int startY, int endX, int endY, double roughness)
     {
         var size = endX - startX;
         var halfSize = size / 2;
+        var width = endX + 1; // The "+1" is to ensure it covers the full range, including the end index.
 
         if (halfSize < 1)
             return;
@@ -61,29 +76,29 @@ public class DiamondSquareNoise : NoiseBase
 
         // Diamond step
         for (var y = startY + halfSize; y < endY; y += size)
-            for (var x = startX + halfSize; x < endX; x += size)
-            {
-                var a = grid[y - halfSize, x - halfSize];
-                var b = grid[y - halfSize, x + halfSize];
-                var c = grid[y + halfSize, x - halfSize];
-                var d = grid[y + halfSize, x + halfSize];
-                var average = (a + b + c + d) / 4.0;
-                var offset = RandomRange(-scale, scale);
-                grid[y, x] = average + offset;
-            }
+        for (var x = startX + halfSize; x < endX; x += size)
+        {
+            var a = grid[GetFlatIndex(x - halfSize, y - halfSize, width)];
+            var b = grid[GetFlatIndex(x + halfSize, y - halfSize, width)];
+            var c = grid[GetFlatIndex(x - halfSize, y + halfSize, width)];
+            var d = grid[GetFlatIndex(x + halfSize, y + halfSize, width)];
+            var average = (a + b + c + d) / 4.0;
+            var offset = RandomRange(-scale, scale);
+            grid[GetFlatIndex(x, y, width)] = average + offset;
+        }
 
         // Square step
         for (var y = startY; y <= endY; y += halfSize)
-            for (var x = startX + (y + halfSize) % size; x <= endX; x += size)
-            {
-                var a = GetGridValue(grid, x - halfSize, y);
-                var b = GetGridValue(grid, x + halfSize, y);
-                var c = GetGridValue(grid, x, y - halfSize);
-                var d = GetGridValue(grid, x, y + halfSize);
-                var average = (a + b + c + d) / 4.0;
-                var offset = RandomRange(-scale, scale);
-                grid[y, x] = average + offset;
-            }
+        for (var x = startX + (y + halfSize) % size; x <= endX; x += size)
+        {
+            var a = grid[GetFlatIndex(x - halfSize, y, width)];
+            var b = grid[GetFlatIndex(x + halfSize, y, width)];
+            var c = grid[GetFlatIndex(x, y - halfSize, width)];
+            var d = grid[GetFlatIndex(x, y + halfSize, width)];
+            var average = (a + b + c + d) / 4.0;
+            var offset = RandomRange(-scale, scale);
+            grid[GetFlatIndex(x, y, width)] = average + offset;
+        }
 
         DiamondSquare(grid, startX, startY, startX + halfSize, startY + halfSize, roughness);
         DiamondSquare(grid, startX + halfSize, startY, endX, startY + halfSize, roughness);
@@ -103,6 +118,10 @@ public class DiamondSquareNoise : NoiseBase
     {
         return min + (max - min) * Args.RandomDistributionAlgorithm.NextDouble();
     }
+    private int GetFlatIndex(int x, int y, int[] dimensions)
+    {
+        return y * dimensions[1] + x;
+    }
 
     private static int GetNextPowerOfTwo(int n)
     {
@@ -110,5 +129,10 @@ public class DiamondSquareNoise : NoiseBase
         while (power < n)
             power *= 2;
         return power;
+    }
+
+    private int GetFlatIndex(int x, int y, int width)
+    {
+        return y * width + x;
     }
 }

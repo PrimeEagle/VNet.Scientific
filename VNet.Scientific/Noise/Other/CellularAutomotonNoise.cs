@@ -1,6 +1,10 @@
 ﻿// ReSharper disable UnusedMember.Global
+#pragma warning disable CA1822
 
 using VNet.Mathematics.Randomization.Distribution;
+// ReSharper disable SuggestBaseTypeForParameterInConstructor
+// ReSharper disable MemberCanBeMadeStatic.Local
+// ReSharper disable SuggestBaseTypeForParameter
 
 namespace VNet.Scientific.Noise.Other;
 
@@ -13,10 +17,16 @@ public class CellularAutomatonNoise : NoiseBase
     {
     }
 
-    public override double[,] Generate()
+    public override double GenerateSingleSampleRaw()
     {
-        var result = new double[Args.Height, Args.Width];
-        var grid = new int[Args.Height, Args.Width];
+        throw new NotImplementedException("Cellular automaton noise is generated for the entire grid, so generating a single sample is not applicable.");
+    }
+
+    public override double[] GenerateRaw()
+    {
+        var totalSize = Args.Dimensions.Aggregate(1, (acc, val) => acc * val);
+        var result = new double[totalSize];
+        var grid = new int[totalSize];
 
         // Initialize the grid with random values
         InitializeGrid(grid, Args.RandomDistributionAlgorithm);
@@ -25,77 +35,93 @@ public class CellularAutomatonNoise : NoiseBase
         for (var i = 0; i < ((ICellularAutomatonNoiseAlgorithmArgs)Args).Iterations; i++) grid = ApplyCellularAutomatonRule(grid);
 
         // Convert the binary grid to noise values
-        ConvertGridToNoise(grid, result, Args.QuantizeLevels, Args.Scale);
+        ConvertGridToNoise(grid, result, Args.QuantizeLevel, Args.Scale);
         return result;
     }
 
-    public override double GenerateSingleSampleRaw()
+    private void InitializeGrid(int[] grid, IRandomDistributionAlgorithm randomDistributionAlgorithm)
     {
-        throw new NotImplementedException("Cellular automaton noise is generated for the entire grid, so generating a single sample is not applicable.");
+        for (var i = 0; i < grid.Length; i++)
+            grid[i] = randomDistributionAlgorithm.NextDouble() < ((ICellularAutomatonNoiseAlgorithmArgs)Args).Threshold ? 1 : 0;
     }
 
-    private void InitializeGrid(int[,] grid, IRandomDistributionAlgorithm randomDistributionAlgorithm)
+    private int[] ApplyCellularAutomatonRule(int[] grid)
     {
-        var height = grid.GetLength(0);
-        var width = grid.GetLength(1);
+        var newGrid = new int[grid.Length];
+        for (var i = 0; i < grid.Length; i++)
+        {
+            var state = grid[i];
+            var neighbors = CountAliveNeighbors(grid, i);
 
-        for (var i = 0; i < height; i++)
-            for (var j = 0; j < width; j++)
-                grid[i, j] = randomDistributionAlgorithm.NextDouble() < ((ICellularAutomatonNoiseAlgorithmArgs)Args).Threshold ? 1 : 0;
-    }
-
-    private static int[,] ApplyCellularAutomatonRule(int[,] grid)
-    {
-        var height = grid.GetLength(0);
-        var width = grid.GetLength(1);
-
-        var newGrid = new int[height, width];
-
-        for (var i = 0; i < height; i++)
-            for (var j = 0; j < width; j++)
+            newGrid[i] = state switch
             {
-                var state = grid[i, j];
-                var neighbors = CountAliveNeighbors(grid, i, j);
-
-                newGrid[i, j] = state switch
-                {
-                    0 when neighbors >= 5 => 1,
-                    1 when neighbors <= 3 => 0,
-                    _ => state
-                };
-            }
-
+                0 when neighbors >= 5 => 1,
+                1 when neighbors <= 3 => 0,
+                _ => state
+            };
+        }
         return newGrid;
     }
 
-    private static int CountAliveNeighbors(int[,] grid, int x, int y)
+    private int CountAliveNeighbors(int[] grid, int index)
     {
+        var neighborsOffsets = Enumerable.Range(0, Args.Dimensions.Length).Select(_ => new[] { -1, 0, 1 }).ToArray();
+        var neighborCombinations = GetCombinations(neighborsOffsets).Where(comb => comb.Any(val => val != 0)).ToList();
+
         var count = 0;
-        var height = grid.GetLength(0);
-        var width = grid.GetLength(1);
-
-        for (var i = -1; i <= 1; i++)
-            for (var j = -1; j <= 1; j++)
+        foreach (var combination in neighborCombinations)
+        {
+            var neighborIndex = GetNeighborIndex(index, combination);
+            if (neighborIndex >= 0 && neighborIndex < grid.Length && grid[neighborIndex] == 1)
             {
-                var neighborX = (x + i + height) % height;
-                var neighborY = (y + j + width) % width;
-                count += grid[neighborX, neighborY];
+                count++;
             }
+        }
 
-        count -= grid[x, y];
         return count;
     }
 
-    private static void ConvertGridToNoise(int[,] grid, double[,] noise, int quantizeLevels, double scale)
+    private int GetNeighborIndex(int index, int[] offsets)
     {
-        var height = grid.GetLength(0);
-        var width = grid.GetLength(1);
+        var originalIndices = GetMultiDimensionalIndices(index, Args.Dimensions);
+        var neighborIndices = new int[originalIndices.Length];
 
-        for (var i = 0; i < height; i++)
-            for (var j = 0; j < width; j++)
-            {
-                var value = grid[i, j] == 1 ? 1.0 : 0.0;
-                noise[i, j] = value * (quantizeLevels - 1) * scale;
-            }
+        for (var i = 0; i < originalIndices.Length; i++)
+        {
+            neighborIndices[i] = (originalIndices[i] + offsets[i] + Args.Dimensions[i]) % Args.Dimensions[i];
+        }
+
+        return GetFlatIndex(neighborIndices, Args.Dimensions);
+    }
+
+    private IEnumerable<int[]> GetCombinations(int[][] arrays)
+    {
+        var combinations = new List<int[]>();
+        GenerateCombinations(arrays, 0, new int[arrays.Length], combinations);
+        return combinations;
+    }
+
+    private void GenerateCombinations(int[][] arrays, int arrayIndex, int[] currentCombination, List<int[]> combinations)
+    {
+        if (arrayIndex == arrays.Length)
+        {
+            combinations.Add((int[])currentCombination.Clone());
+            return;
+        }
+
+        foreach (var value in arrays[arrayIndex])
+        {
+            currentCombination[arrayIndex] = value;
+            GenerateCombinations(arrays, arrayIndex + 1, currentCombination, combinations);
+        }
+    }
+
+    private void ConvertGridToNoise(int[] grid, double[] noise, int quantizeLevels, double scale)
+    {
+        for (var i = 0; i < grid.Length; i++)
+        {
+            var value = grid[i] == 1 ? 1.0 : 0.0;
+            noise[i] = value * (quantizeLevels - 1) * scale;
+        }
     }
 }

@@ -1,47 +1,40 @@
-﻿//// ReSharper disable UnusedMember.Global
+﻿// ReSharper disable UnusedMember.Global
 
-//using VNet.Mathematics.Randomization.Distribution;
+using VNet.Mathematics.Randomization.Distribution;
 
-//namespace VNet.Scientific.Noise.Other;
-//// Exponential noise is a type of noise that follows an exponential distribution. It is characterized by a rapid initial decay and a
-//// long tail. Exponential noise can be used to model phenomena with decay or exponential growth processes.
-//public class ExponentialNoise : INoiseAlgorithm
-//{
-//    private double _lambda;
+namespace VNet.Scientific.Noise.Other;
+// Exponential noise is a type of noise that follows an exponential distribution. It is characterized by a rapid initial decay and a
+// long tail. Exponential noise can be used to model phenomena with decay or exponential growth processes.
+public class ExponentialNoise : NoiseBase
+{
+    private double _lambda;
 
-//    public ExponentialNoise(double lambda = 1.0)
-//    {
-//        _lambda = lambda;
-//    }
+    public ExponentialNoise(double lambda, INoiseAlgorithmArgs args) : base(args)
+    {
+        _lambda = lambda;
+    }
 
-//    public double[,] Generate(INoiseAlgorithmArgs args)
-//    {
-//        int width = Args.Width;
-//        int height = Args.Height;
+    public override double GenerateSingleSampleRaw()
+    {
+        return GenerateExponentialRandomValue(_lambda);
+    }
 
-//        double[,] result = new double[height, width];
+    public override double[] GenerateRaw()
+    {
+        var totalSize = Args.Dimensions.Aggregate(1, (acc, val) => acc * val);
+        var samples = new double[totalSize];
 
-//        for (int i = 0; i < height; i++)
-//        {
-//            for (int j = 0; j < width; j++)
-//            {
-//                double randomValue = GenerateExponentialRandomValue(_lambda, Args.RandomDistributionAlgorithm);
-//                result[i, j] = randomValue * Args.Scale;
-//            }
-//        }
+        for (var i = 0; i < totalSize; i++)
+        {
+            samples[i] = GenerateSingleSampleRaw();
+        }
 
-//        return result;
-//    }
+        return samples;
+    }
 
-//    public double GenerateSingleSample(INoiseAlgorithmArgs args)
-//    {
-//        // Exponential noise is generated for the entire grid, so generating a single sample is not applicable.
-//        throw new NotImplementedException();
-//    }
-
-//    private double GenerateExponentialRandomValue(double lambda, IRandomDistributionAlgorithm randomDistributionAlgorithm)
-//    {
-//        double uniformRandomValue = randomDistributionAlgorithm.NextDouble();
-//        return -Math.Log(1 - uniformRandomValue) / lambda;
-//    }
-//}
+    private double GenerateExponentialRandomValue(double lambda)
+    {
+        var uniformRandomValue = Args.RandomDistributionAlgorithm.NextDouble();
+        return -Math.Log(1 - uniformRandomValue) / lambda;
+    }
+}

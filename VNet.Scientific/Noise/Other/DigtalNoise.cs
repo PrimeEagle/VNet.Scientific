@@ -10,27 +10,24 @@ public class DigitalNoise : NoiseBase
     {
     }
 
-    public override double[,] GenerateRaw()
-    {
-        var width = Args.Width;
-        var height = Args.Height;
-
-        var result = new double[height, width];
-
-        for (var i = 0; i < height; i++)
-            for (var j = 0; j < width; j++)
-            {
-                var randomValue = Args.RandomDistributionAlgorithm.NextDouble();
-                var quantizedValue = (int)(randomValue * Args.QuantizeLevels);
-                var scaledValue = quantizedValue / (double)(Args.QuantizeLevels - 1);
-                result[i, j] = scaledValue * Args.Scale;
-            }
-
-        return result;
-    }
-
     public override double GenerateSingleSampleRaw()
     {
-        throw new NotImplementedException("Digital noise is generated for the entire grid, so generating a single sample is not applicable.");
+        var randomValue = Args.RandomDistributionAlgorithm.NextDouble();
+        var quantizedValue = (int)(randomValue * Args.QuantizeLevel);
+        var scaledValue = quantizedValue / (double)(Args.QuantizeLevel - 1);
+        return scaledValue * Args.Scale;
+    }
+
+    public override double[] GenerateRaw()
+    {
+        var totalSize = Args.Dimensions.Aggregate(1, (acc, val) => acc * val);
+        var samples = new double[totalSize];
+
+        for (var i = 0; i < totalSize; i++)
+        {
+            samples[i] = GenerateSingleSampleRaw();
+        }
+
+        return samples;
     }
 }

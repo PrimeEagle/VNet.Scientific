@@ -34,7 +34,7 @@
 //            {
 //                Width = width,
 //                Height = height,
-//                QuantizeLevels = 1,
+//                QuantizeLevel = 1,
 //                Scale = 1.0,
 //                RandomDistributionAlgorithm = Args.RandomDistributionAlgorithm
 //            });
@@ -51,7 +51,7 @@
 //            frequency *= _lacunarity;
 //        }
 
-//        Normalize(result, Args.QuantizeLevels, Args.Scale);
+//        Normalize(result, Args.QuantizeLevel, Args.Scale);
 //        return result;
 //    }
 

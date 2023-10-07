@@ -74,7 +74,7 @@ public class FourierInterpolation3D : InterpolationBase
 
         var coefficients = new Complex32[Nx * Ny * Nz];
 
-        int index = 0;
+        var index = 0;
         for (var i = 0; i < Nx; i++)
         {
             for (var j = 0; j < Ny; j++)

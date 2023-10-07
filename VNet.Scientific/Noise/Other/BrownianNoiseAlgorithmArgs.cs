@@ -1,6 +1,6 @@
 ﻿namespace VNet.Scientific.Noise.Other;
 
-public class BrownianNoiseAlgorithmArgs : NoiseAlgorithmArgs
+public class BrownianNoiseAlgorithmArgs : NoiseAlgorithmArgs, IBrownianNoiseAlgorithmArgs
 {
     public int Octaves { get; set; }
     public double Frequency { get; set; }

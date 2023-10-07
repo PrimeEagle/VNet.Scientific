@@ -125,16 +125,16 @@ public class DimensionExponents
 
         if (matches is null || matches.Count == 0) return null;
 
-        string dimTypeName = $"VNet.Scientific.Measurement.Dimensions.{matches.First()}";
-        string unitTypeName = $"{dimTypeName}Unit";
+        var dimTypeName = $"VNet.Scientific.Measurement.Dimensions.{matches.First()}";
+        var unitTypeName = $"{dimTypeName}Unit";
 
-        Type dimType = Type.GetType(dimTypeName);
-        Type unitType = Type.GetType(unitTypeName);
-        Type valType = typeof(double);
+        var dimType = Type.GetType(dimTypeName);
+        var unitType = Type.GetType(unitTypeName);
+        var valType = typeof(double);
 
-        Type genericType = typeof(Measurement<,,>);
-        Type specificType = genericType.MakeGenericType(new Type[] { dimType, unitType, valType });
-        object measurement = Activator.CreateInstance(specificType);
+        var genericType = typeof(Measurement<,,>);
+        var specificType = genericType.MakeGenericType(new Type[] { dimType, unitType, valType });
+        var measurement = Activator.CreateInstance(specificType);
 
         return measurement;
     }

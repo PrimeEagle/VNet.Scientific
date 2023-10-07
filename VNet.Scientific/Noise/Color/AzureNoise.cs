@@ -15,7 +15,7 @@ public class AzureNoise : NoiseBase
         var blueArgs = (IBlueNoiseAlgorithmArgs)args.Clone();
         blueArgs.OutputFilter = null;
         blueArgs.Scale = 1;
-        blueArgs.QuantizeLevels = 0;
+        blueArgs.QuantizeLevel = 0;
         // Additional properties specific to BlueNoise
         // blueArgs.MaxAttempts = 35;
         // blueArgs.Radius = 0.5;
@@ -24,7 +24,7 @@ public class AzureNoise : NoiseBase
         var violetArgs = (INoiseAlgorithmArgs)args.Clone();
         violetArgs.OutputFilter = null;
         violetArgs.Scale = 1;
-        violetArgs.QuantizeLevels = 0;
+        violetArgs.QuantizeLevel = 0;
         _violetNoise = new VioletNoise(violetArgs);
     }
 

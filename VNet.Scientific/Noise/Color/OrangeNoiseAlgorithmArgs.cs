@@ -10,7 +10,7 @@ namespace VNet.Scientific.Noise.Color
         public int Octaves { get; set; }
         public required int Width { get; set; }
         public required int Height { get; set; }
-        public int QuantizeLevels { get; set; }
+        public int QuantizeLevel { get; set; }
         public double Scale { get; set; }
         public required IRandomDistributionAlgorithm RandomDistributionAlgorithm { get; set; }
         public IFilter? OutputFilter { get; set; }
@@ -22,7 +22,7 @@ namespace VNet.Scientific.Noise.Color
             {
                 Width = Width,
                 Height = Height,
-                QuantizeLevels = QuantizeLevels,
+                QuantizeLevel = QuantizeLevel,
                 RandomDistributionAlgorithm = RandomDistributionAlgorithm,
                 Scale = Scale,
                 OutputFilter = OutputFilter,

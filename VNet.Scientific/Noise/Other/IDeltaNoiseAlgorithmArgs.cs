@@ -1,4 +1,6 @@
-﻿namespace VNet.Scientific.Noise.Other
+﻿using VNet.Scientific.Measurement.Dimensions;
+
+namespace VNet.Scientific.Noise.Other
 {
     public interface IDeltaNoiseAlgorithmArgs : INoiseAlgorithmArgs
     {
