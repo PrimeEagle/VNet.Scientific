@@ -1,4 +1,7 @@
-﻿namespace VNet.Scientific.Interpolation;
+﻿// ReSharper disable MemberCanBeMadeStatic.Local
+// ReSharper disable SuggestBaseTypeForParameter
+#pragma warning disable CA1822
+namespace VNet.Scientific.Interpolation;
 
 public class LinearInterpolation : InterpolationBase
 {
