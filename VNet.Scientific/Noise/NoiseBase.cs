@@ -2,13 +2,13 @@
 // ReSharper disable MemberCanBePrivate.Global
 // ReSharper disable MemberCanBeMadeStatic.Global
 
-using VNet.Mathematics.Randomization.Distribution;
 
 #pragma warning disable CA1822
 namespace VNet.Scientific.Noise
 {
     public abstract class NoiseBase : INoiseAlgorithm
     {
+        private double[] _noiseCache = null;
         protected readonly INoiseAlgorithmArgs Args;
 
         protected double EstimatedMinValue { get; set; } = double.MaxValue;
@@ -21,6 +21,18 @@ namespace VNet.Scientific.Noise
         }
 
         public abstract double GenerateSingleSampleRaw();
+        public double GenerateSpatialSingleSample(double[] coordinates)
+        {
+            _noiseCache ??= Generate();
+
+            var index = GetFlatIndex(coordinates.Select(c => (int)c).ToArray(), Args.Dimensions);
+            return _noiseCache[index];
+        }
+
+        public void ResetCache()
+        {
+            _noiseCache = null;
+        }
 
         public virtual double GenerateSingleSample()
         {

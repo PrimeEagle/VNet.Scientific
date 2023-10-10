@@ -6,11 +6,11 @@ namespace VNet.Scientific.NumericalVolumes
     public class BoundingBox<TVal> where TVal : INumber<TVal>
     {
         public float Volume => (float)Math.Pow(SideLength, 3);
-        public Vector3 Origin { get; private set; }
-        public float CellSize { get; private set; }
-        public int LocalGridLength { get; private set; }
+        public Vector3 Origin { get; set; }
+        public float CellSize { get; set; }
+        public int LocalGridLength { get; set; }
         public float SideLength => CellSize * LocalGridLength;
-        public Matrix4x4 Rotation { get; private set; }
+        public Matrix4x4 Rotation { get; set; }
         public TVal[,,] Values { get; set; }
 
         public BoundingBox(Vector3 origin, float cellSize, Vector3 orientation)

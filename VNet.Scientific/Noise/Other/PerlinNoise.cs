@@ -70,7 +70,6 @@ public class PerlinNoise : NoiseBase
         return vector.Select(component => component / magnitude).ToArray();
     }
 
-
     private static double Fade(double[] distance)
     {
         return distance.Select(d => d * d * d * (d * (d * 6 - 15) + 10)).Aggregate((acc, val) => acc * val);
