@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 using VNet.CodeGeneration.Extensions;
 using VNet.CodeGeneration.FileComparer;
@@ -29,8 +30,8 @@ namespace VNet.Scientific.CodeGen
         public void Execute(GeneratorExecutionContext context)
         {
            var log = new Logger();
-            var vNetJsonDir = "VNet.Json";
-            var unitNetJsonDir = "UnitNet.Json";
+            const string vNetJsonDir = "VNet.Json";
+            const string unitNetJsonDir = "UnitNet.Json";
 
             try
             {
@@ -81,7 +82,7 @@ namespace VNet.Scientific.CodeGen
                     if (File.Exists($"{targetFileName}.g.cs")) File.Delete($"{targetFileName}.g.cs");
 
                     CodeWriter.For<CSharpCodeFile>()
-                        .AddComment($"Auto-generated for VNet on {DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss")}")
+                        .AddComment($"Auto-generated for VNet on {DateTime.Now:yyyy-MM-dd hh:mm:ss}")
                         .AddBlankLines(2)
                         .AddScopedNamespace("VNet.Scientific.Measurement.Dimensions")
                             .AddEnum($"{dimVNet.Name}Unit")
@@ -95,26 +96,12 @@ namespace VNet.Scientific.CodeGen
                     targetFileName = Path.Combine(context.ProjectDir(), "Measurement", "Dimensions", dimVNet.Name);
                     if (File.Exists($"{targetFileName}.g.cs")) File.Delete($"{targetFileName}.g.cs");
 
-                    var conversionDictLines = new List<string>();
-                    foreach (var key in dimVNet.ConversionFunctions.Keys)
-                    {
-                        conversionDictLines.Add($"ConversionFunctions.Add({dimVNet.Name}Unit.{key}, \"{dimVNet.ConversionFunctions[key]}\");");
-                    }
-
-                    var symbolsDictLines = new List<string>();
-                    foreach (var key in dimVNet.Symbols.Keys)
-                    {
-                        symbolsDictLines.Add($"Symbols.Add({dimVNet.Name}Unit.{key}, \"{dimVNet.Symbols[key]}\");");
-                    }
-
-                    var pluralSymbolsDictLines = new List<string>();
-                    foreach (var key in dimVNet.PluralSymbols.Keys)
-                    {
-                        pluralSymbolsDictLines.Add($"PluralSymbols.Add({dimVNet.Name}Unit.{key}, \"{dimVNet.PluralSymbols[key]}\");");
-                    }
+                    var conversionDictLines = dimVNet.ConversionFunctions.Keys.Select(key => $"ConversionFunctions.Add({dimVNet.Name}Unit.{key}, \"{dimVNet.ConversionFunctions[key]}\");").ToList();
+                    var symbolsDictLines = dimVNet.Symbols.Keys.Select(key => $"Symbols.Add({dimVNet.Name}Unit.{key}, \"{dimVNet.Symbols[key]}\");").ToList();
+                    var pluralSymbolsDictLines = dimVNet.PluralSymbols.Keys.Select(key => $"PluralSymbols.Add({dimVNet.Name}Unit.{key}, \"{dimVNet.PluralSymbols[key]}\");").ToList();
 
                     CodeWriter.For<CSharpCodeFile>()
-                              .AddComment($"Auto-generated for VNet on {DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss")}")
+                              .AddComment($"Auto-generated for VNet on {DateTime.Now:yyyy-MM-dd hh:mm:ss}")
                               .AddUsing("System.Numerics")
                               .AddBlankLines(2)
                               .AddScopedNamespace("VNet.Scientific.Measurement.Dimensions")
@@ -172,7 +159,7 @@ namespace VNet.Scientific.CodeGen
                 if (File.Exists($"{dimensionDefFileName}.g.cs")) File.Delete($"{dimensionDefFileName}.g.cs");
 
                 CodeWriter.For<CSharpCodeFile>()
-                              .AddComment($"Auto-generated for VNet on {DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss")}")
+                              .AddComment($"Auto-generated for VNet on {DateTime.Now:yyyy-MM-dd hh:mm:ss}")
                               .AddUsing("System.Collections.Generic")
                               .AddBlankLines(2)
                               .AddScopedNamespace("VNet.Scientific.Measurement")
