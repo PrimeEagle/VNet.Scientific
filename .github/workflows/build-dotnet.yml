@@ -1,0 +1,31 @@
+name: .NET Build and Version
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Install .NET 8.0 SDK
+      run: |
+        $url = "https://download.visualstudio.microsoft.com/download/pr/2b2d6133-c4f9-46dd-9ab6-86443a7f5783/340054e2ac7de2bff9eea73ec9d4995a/dotnet-sdk-8.0.100-win-x64.zip"
+        $output = "dotnet-sdk-8.0.100-win-x64.zip"
+        Invoke-WebRequest -Uri $url -OutFile $output
+        Expand-Archive $output -DestinationPath $Env:ProgramFiles\dotnet -Force
+        $env:PATH = "$Env:ProgramFiles\dotnet;" + $env:PATH
+        [Environment]::SetEnvironmentVariable("PATH", $env:PATH, [EnvironmentVariableTarget]::Machine)
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v2
+      with:
+        dotnet-version: ${{ env.DOTNET_VERSION }}
+
+    - name: Build with version
+      run: dotnet build ${{ env.DOTNET_SOLUTION }} /p:BuildNumber=${{ github.run_number }}
+      
+    - name: Print Run Number
+      run: echo "Run number $env:GITHUB_RUN_NUMBER"
+      shell: pwsh

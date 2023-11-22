@@ -1,0 +1,77 @@
+name: Create NuGet Package
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'version.json'
+
+jobs:
+  check-version-change:
+    runs-on: windows-latest
+    outputs:
+      version_changed: ${{ steps.check.outputs.version_changed }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Check for version.json changes
+        id: check
+        run: |
+          $versionChanged = git diff --name-only ${{ github.event.before }} ${{ github.sha }} | Select-String -Pattern 'version.json' -Quiet
+          echo "version_changed=$versionChanged" | Out-File -Append -FilePath $Env:GITHUB_ENV
+          echo "::set-output name=version_changed::$versionChanged"
+
+  create-package:
+    needs: check-version-change
+    runs-on: windows-latest
+    if: github.event_name == 'workflow_dispatch' || needs.check-version-change.outputs.version_changed == 'True'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+    
+      - name: Install .NET 8.0 SDK
+        run: |
+          $url = "https://download.visualstudio.microsoft.com/download/pr/2b2d6133-c4f9-46dd-9ab6-86443a7f5783/340054e2ac7de2bff9eea73ec9d4995a/dotnet-sdk-8.0.100-win-x64.zip"
+          $output = "dotnet-sdk-8.0.100-win-x64.zip"
+          Invoke-WebRequest -Uri $url -OutFile $output
+          Expand-Archive $output -DestinationPath $Env:ProgramFiles\dotnet -Force
+          $env:PATH = "$Env:ProgramFiles\dotnet;" + $env:PATH
+          [Environment]::SetEnvironmentVariable("PATH", $env:PATH, [EnvironmentVariableTarget]::Machine)
+          
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+  
+      - name: Pack
+        run: |
+          dotnet pack ${{ env.DOTNET_SOLUTION }} --configuration Release -o nupkgs
+  
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: nuget-packages
+          path: nupkgs/*.nupkg
+  
+      - name: Download Artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: nuget-packages
+          path: nupkgs
+  
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+  
+      - name: Determine Package File
+        id: package_file
+        run: |
+          $PACKAGE_FILE = Get-ChildItem nupkgs/*.nupkg | Sort-Object LastWriteTime | Select-Object -Last 1 -ExpandProperty FullName
+          echo "PACKAGE_FILE=$PACKAGE_FILE" | Out-File -Append -FilePath $Env:GITHUB_ENV
+          
+      - name: Publish
+        run: |
+          dotnet nuget push "${{ env.PACKAGE_FILE }}" --source "github" --api-key ${{ secrets.NUGET_TOKEN }}
