@@ -17,14 +17,17 @@ jobs:
         Expand-Archive $output -DestinationPath $Env:ProgramFiles\dotnet -Force
         $env:PATH = "$Env:ProgramFiles\dotnet;" + $env:PATH
         [Environment]::SetEnvironmentVariable("PATH", $env:PATH, [EnvironmentVariableTarget]::Machine)
-
+        
     - name: Setup .NET
       uses: actions/setup-dotnet@v2
       with:
-        dotnet-version: ${{ env.DOTNET_VERSION }}
+        dotnet-version: ${{ secrets.DOTNET_VERSION }}
 
+    - name: Restore NuGet packages
+      run: dotnet restore ${{ secrets.DOTNET_SOLUTION }}
+  
     - name: Build with version
-      run: dotnet build ${{ env.DOTNET_SOLUTION }} /p:BuildNumber=${{ github.run_number }}
+      run: dotnet build ${{ secrets.DOTNET_SOLUTION }} /p:BuildNumber=${{ github.run_number }}
       
     - name: Print Run Number
       run: echo "Run number $env:GITHUB_RUN_NUMBER"
