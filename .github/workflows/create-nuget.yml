@@ -16,12 +16,20 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+
       - name: Check for version.json changes
         id: check
         run: |
           $versionChanged = git diff --name-only ${{ github.event.before }} ${{ github.sha }} | Select-String -Pattern 'version.json' -Quiet
-          echo "version_changed=$versionChanged" | Out-File -Append -FilePath $Env:GITHUB_ENV
-          echo "::set-output name=version_changed::$versionChanged"
+          if ($versionChanged) {
+            echo "VERSION_CHANGED=true" | Out-File -Append -FilePath $Env:GITHUB_ENV
+          } else {
+            echo "VERSION_CHANGED=false" | Out-File -Append -FilePath $Env:GITHUB_ENV
+          }
+          echo "version_changed=$versionChanged" >> $GITHUB_ENV
+      - name: Add GitHub Packages source
+        run: |
+          nuget sources Add -Name "GitHub" -Source "https://nuget.pkg.github.com/PrimeEagle/index.json" -Username PrimeEagle -Password ${{ secrets.NUGET_TOKEN }}
 
   create-package:
     needs: check-version-change
@@ -36,9 +44,20 @@ jobs:
         with:
           dotnet-version: ${{ secrets.DOTNET_VERSION }}
   
-      - name: Pack
+      - name: Add GitHub Packages source
         run: |
-          dotnet pack ${{ secrets.DOTNET_SOLUTION }} --configuration Release -o nupkgs
+          nuget sources Add -Name "GitHub" -Source "https://nuget.pkg.github.com/PrimeEagle/index.json" -Username PrimeEagle -Password ${{ secrets.NUGET_TOKEN }}
+
+      - name: Read Version from version.json
+        run: |
+          $versionJson = Get-Content version.json -Raw | ConvertFrom-Json
+          echo "VERSION_NUMBER=$($versionJson.version)" | Out-File -Append -FilePath $Env:GITHUB_ENV
+
+      - name: Print Version Number
+        run: echo "Version number is $env:VERSION_NUMBER"
+
+      - name: Pack
+        run: dotnet pack ${{ secrets.DOTNET_SOLUTION }} --configuration Release -o nupkgs /p:Version=${{ env.VERSION_NUMBER }}
   
       - name: Upload Artifacts
         uses: actions/upload-artifact@v2

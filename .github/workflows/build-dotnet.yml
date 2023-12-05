@@ -1,6 +1,9 @@
 name: .NET Build and Version
 
-on: [push, pull_request]
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
 
 jobs:
   build:
@@ -23,9 +26,15 @@ jobs:
       with:
         dotnet-version: ${{ secrets.DOTNET_VERSION }}
 
+    - name: Add GitHub Packages source
+      run: |
+        nuget sources Add -Name "GitHub" -Source "https://nuget.pkg.github.com/PrimeEagle/index.json" -Username PrimeEagle -Password ${{ secrets.NUGET_TOKEN }}
+      
     - name: Restore NuGet packages
       run: dotnet restore ${{ secrets.DOTNET_SOLUTION }}
-  
+      env:
+            NUGET_AUTH_TOKEN: ${{ secrets.NUGET_TOKEN }}
+              
     - name: Build with version
       run: dotnet build ${{ secrets.DOTNET_SOLUTION }} /p:BuildNumber=${{ github.run_number }}
       
