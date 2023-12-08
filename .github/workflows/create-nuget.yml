@@ -68,13 +68,13 @@ jobs:
         run: dotnet pack ${{ secrets.DOTNET_SOLUTION }} --configuration Release -o nupkgs /p:Version=${{ env.VERSION_NUMBER }}
   
       - name: Upload Artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: nuget-packages
           path: nupkgs/*.nupkg
   
       - name: Download Artifacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: nuget-packages
           path: nupkgs
@@ -96,14 +96,15 @@ jobs:
 
       - name: Update version-nuget.json
         run: |
-          $NugetVersion = ${{ env.VERSION_NUMBER }}
+          $NugetVersion = "${{ env.VERSION_NUMBER }}"
           $VersionData = @{
             version = $NugetVersion
           }
+          
           $nugetVersionFile = ".version/version-nuget.json"
           $VersionData | ConvertTo-Json | Set-Content -Path $nugetVersionFile
           git config --global user.email "${{ secrets.USER_EMAIL }}"
           git config --global user.name "${{ github.repository_owner }}"
-          git add version-nuget.json
+          git add $nugetVersionFile
           git commit -m "Update NuGet package version to $NugetVersion"
           git push
