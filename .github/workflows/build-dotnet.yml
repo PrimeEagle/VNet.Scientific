@@ -5,6 +5,9 @@ on:
     paths-ignore:
       - 'README.md'
       - '.github/workflows/*.yml'
+      - '.version/*.json'
+      - '.gitignore'
+      - '*.png' 
   pull_request:
   workflow_dispatch:
 
