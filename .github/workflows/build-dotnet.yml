@@ -1,7 +1,10 @@
-name: .NET Build and Version
+name: Build .NET
 
 on:
   push:
+    paths-ignore:
+      - 'README.md'
+      - '.github/workflows/*.yml'
   pull_request:
   workflow_dispatch:
 
@@ -11,6 +14,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+      with:
+          submodules: 'recursive'
+          token: ${{ secrets.BUILD_TOKEN }}
 
     - name: Install .NET 8.0 SDK
       run: |
@@ -28,16 +34,72 @@ jobs:
 
     - name: Add GitHub Packages source
       run: |
-        nuget sources Add -Name "GitHub" -Source "https://nuget.pkg.github.com/PrimeEagle/index.json" -Username PrimeEagle -Password ${{ secrets.NUGET_TOKEN }}
+        nuget sources Add -Name "GitHub" -Source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" -Username ${{ github.repository_owner }} -Password ${{ secrets.BUILD_TOKEN }}
       
     - name: Restore NuGet packages
       run: dotnet restore ${{ secrets.DOTNET_SOLUTION }}
       env:
-            NUGET_AUTH_TOKEN: ${{ secrets.NUGET_TOKEN }}
+            NUGET_AUTH_TOKEN: ${{ secrets.BUILD_TOKEN }}
+            UsePackageReferences: true
               
     - name: Build with version
       run: dotnet build ${{ secrets.DOTNET_SOLUTION }} /p:BuildNumber=${{ github.run_number }}
+      env:
+            UsePackageReferences: true
       
     - name: Print Run Number
       run: echo "Run number $env:GITHUB_RUN_NUMBER"
       shell: pwsh
+
+    - name: Check Latest Release
+      id: latest_release
+      uses: octokit/request-action@v2.x
+      with:
+        route: GET /repos/${{ github.repository_owner }}/${{ secrets.DOTNET_SOLUTION }}/releases/latest
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      continue-on-error: true
+
+    - name: Compare with version.json and Write to Script
+      run: |
+        $versionFile = ".version/version.json"
+        $versionJson = Get-Content $versionFile | ConvertFrom-Json
+        $latestReleaseTag = ""
+        try {
+          $latestReleaseResponse = Invoke-RestMethod -Uri "https://api.github.com/repos/${{ github.repository }}/releases/latest" -Headers @{Authorization = "Bearer ${{ secrets.BUILD_TOKEN }}"}
+          $latestReleaseTag = $latestReleaseResponse.tag_name
+        } catch {
+          echo "No latest release found"
+        }
+        if ($latestReleaseTag -ne $versionJson.version) {
+          "`$release_needed='true'" | Out-File -FilePath release-info.ps1 -Encoding UTF8
+          "`$version='$($versionJson.version)'" | Add-Content -Path release-info.ps1
+        } else {
+          "`$release_needed='false'" | Out-File -FilePath release-info.ps1 -Encoding UTF8
+        }
+      shell: pwsh
+
+    - name: Create Release
+      run: |
+          . .\release-info.ps1
+          if ($release_needed -eq 'true') {
+            $tag_name = $version
+            $release_name = "Release $tag_name"
+            $release_notes = "Release $tag_name"
+            
+            $uri = "https://api.github.com/repos/${{ github.repository_owner }}/${{ github.repository }}/releases"
+            $headers = @{
+              Authorization = "Bearer ${{ secrets.BUILD_TOKEN }}"
+              Accept = "application/vnd.github.v3+json"
+            }
+            $body = @{
+              tag_name = $tag_name
+              name = $release_name
+              body = $release_notes
+            }
+            
+            Invoke-RestMethod -Uri $uri -Headers $headers -Method Post -Body ($body | ConvertTo-Json)
+          }
+      shell: pwsh
+      env:
+        DOTNET_ROOT: C:\Users\runneradmin\AppData\Local\Microsoft\dotnet

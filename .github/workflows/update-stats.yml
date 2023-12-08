@@ -1,0 +1,108 @@
+name: Update Stats
+
+on:
+  workflow_run:
+    workflows: ["Build .NET", "Build NuGet"]
+    branches: [main]
+    types: [completed]
+  workflow_dispatch:
+
+jobs:
+  update-stats:
+    runs-on: windows-latest
+    steps:
+    - name: Check out repository
+      uses: actions/checkout@v2
+              
+    - name: Update Latest Release, .NET, and NuGet Version in README
+      run: |
+        $Owner = "${{ github.repository_owner }}"
+        $Repo = "${{ github.repository }}"
+        $Email = "${{ secrets.USER_EMAIL }}"
+        $versionFile = ".version/version.json"
+        $versionFileNuget = ".version/version-nuget.json"
+        $latestBuildError = $false
+        $nugetError = $false
+        $buildErrorMsg = "version.json not found"
+        $nugetErrorMsg = "version-nuget.json not found"
+        
+        # Get latest build number
+        $uri = "https://api.github.com/repos/$Repo/actions/runs?status=completed&conclusion=success&per_page=1"
+        $headers = @{ Authorization = "token ${{ secrets.BUILD_TOKEN }}" }
+        $responseBuild = Invoke-RestMethod -Uri $uri -Headers $headers
+        $buildNumber = $responseBuild.workflow_runs[0].run_number
+        try {
+          $versionJson = Get-Content $versionFile | ConvertFrom-Json
+          $version="$($versionJson.version)"
+          $NewBuildVersion = "$version.$buildNumber"
+        }
+        catch {
+          $latestBuildError = $true
+          $NewBuildVersion = $buildErrorMsg
+        }
+        
+        echo "build number = $buildNumber"
+        echo "new build version = $NewBuildVersion"
+        
+         # API request to get the latest release version number
+        $uri = "https://api.github.com/repos/$Repo/releases/latest"
+        $responseRelease = Invoke-RestMethod -Uri $uri -Headers $headers
+        $NewReleaseVersion = $responseRelease.tag_name
+        echo "new release = $NewReleaseVersion"
+        
+        $NewDotNetVersion = "${{ secrets.DOTNET_VERSION }}"
+        $NewDotNetVersion = $NewDotNetVersion.Replace(".*", "")
+        echo ".NET version = $NewDotNetVersion"
+
+        try {
+          $versionJson = Get-Content $versionFileNuget | ConvertFrom-Json
+          $NewNugetVersion ="$($versionJson.version)"
+        }
+        catch {
+          $NewNugetVersion = $nugetErrorMsg
+        }
+        echo "NuGet version = $NewNugetVersion"
+        
+        # Patterns to identify the badge lines
+        $BuildPattern = "!\[Static Badge\]\(https://img\.shields\.io/badge/Latest_Build-v[0-9]+(\.[0-9]+){0,3}-lightblue\)"
+        $BuildErrorPattern = "!\[Static Badge\]\(https://img\.shields\.io/badge/Latest_Build-$buildErrorMsg-darkred\)"
+        $ReleasePattern = "!\[Static Badge\]\(https://img\.shields\.io/badge/Latest_Release-v[0-9]+(\.[0-9]+){0,2}-blue\)"
+        $DotNetPattern = "!\[Static Badge\]\(https://img\.shields\.io/badge/\.NET-[0-9]+(\.[0-9]+){0,2}-darkblue\)"
+        $NugetPattern = "!\[Static Badge\]\(https://img\.shields\.io/badge/NuGet_Package-v[0-9]+(\.[0-9]+){0,2}-blue\)"
+        $NugetErrorPattern = "!\[Static Badge\]\(https://img\.shields\.io/badge/NuGet_Package-$nugetErrorMsg-darkred\)"
+        $LicensePattern = "!\[GitHub License]\(https://img.shields.io/github/license/[^\)]*\)"
+
+        # New badge lines with updated versions
+        if($latestBuildError) {
+          $BuildReplacement = "![Static Badge](https://img.shields.io/badge/Latest_Build-$NewBuildVersion-darkred)"
+        }
+        else {
+          $BuildReplacement = "![Static Badge](https://img.shields.io/badge/Latest_Build-v$NewBuildVersion-lightblue)"
+        }
+        $ReleaseReplacement = "![Static Badge](https://img.shields.io/badge/Latest_Release-v$NewReleaseVersion-blue)"
+        $DotNetReplacement = "![Static Badge](https://img.shields.io/badge/.NET-$NewDotNetVersion-darkblue)"
+
+        if($nugetError) {
+          $NugetReplacement = "![Static Badge](https://img.shields.io/badge/NuGet_Package-$NewNugetVersion-darkred)"
+        }
+        else {
+          $NugetReplacement = "![Static Badge](https://img.shields.io/badge/NuGet_Package-v$NewNugetVersion-blue)"
+        }
+
+        $LicenseReplacement = "![GitHub License](https://img.shields.io/github/license/$Repo)"
+        
+        # Update the README.md
+        $readmeContent = Get-Content README.md
+        $readmeContent -replace $ReleasePattern, $ReleaseReplacement -replace $DotNetPattern, $DotNetReplacement -replace $NugetPattern, $NugetReplacement -replace $NugetErrorPattern, $NugetReplacement -replace $BuildPattern, $BuildReplacement -replace $BuildErrorPattern, $BuildReplacement -replace $LicensePattern, $LicenseReplacement | Set-Content README.md
+
+        # Check if there are changes and commit them
+        if (git status --porcelain) {
+          git config --global user.name "$Owner"
+          git config --global user.email "$Email"
+          git add README.md
+          git commit -m "Update version badges in README"
+          git push
+        }
+      env:
+        GITHUB_TOKEN: ${{ secrets.BUILD_TOKEN }}
+      shell: pwsh

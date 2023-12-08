@@ -1,4 +1,4 @@
-name: Create NuGet Package
+name: Build NuGet
 
 on:
   workflow_dispatch:
@@ -16,11 +16,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          submodules: 'recursive'
+          token: ${{ secrets.BUILD_TOKEN }}
 
       - name: Check for version.json changes
         id: check
         run: |
-          $versionChanged = git diff --name-only ${{ github.event.before }} ${{ github.sha }} | Select-String -Pattern 'version.json' -Quiet
+          $versionFile = ".version/version.json"
+          $versionChanged = git diff --name-only ${{ github.event.before }} ${{ github.sha }} | Select-String -Pattern $versionFile -Quiet
           if ($versionChanged) {
             echo "VERSION_CHANGED=true" | Out-File -Append -FilePath $Env:GITHUB_ENV
           } else {
@@ -29,7 +33,7 @@ jobs:
           echo "version_changed=$versionChanged" >> $GITHUB_ENV
       - name: Add GitHub Packages source
         run: |
-          nuget sources Add -Name "GitHub" -Source "https://nuget.pkg.github.com/PrimeEagle/index.json" -Username PrimeEagle -Password ${{ secrets.NUGET_TOKEN }}
+          nuget sources Add -Name "GitHub" -Source "https://nuget.pkg.github.com/PrimeEagle/index.json" -Username ${{ github.repository_owner }} -Password ${{ secrets.BUILD_TOKEN }}
 
   create-package:
     needs: check-version-change
@@ -38,6 +42,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          submodules: 'recursive'
+          token: ${{ secrets.BUILD_TOKEN }}
              
       - name: Setup .NET
         uses: actions/setup-dotnet@v3
@@ -46,11 +53,12 @@ jobs:
   
       - name: Add GitHub Packages source
         run: |
-          nuget sources Add -Name "GitHub" -Source "https://nuget.pkg.github.com/PrimeEagle/index.json" -Username PrimeEagle -Password ${{ secrets.NUGET_TOKEN }}
+          nuget sources Add -Name "GitHub" -Source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" -Username ${{ github.repository_owner }} -Password ${{ secrets.BUILD_TOKEN }}
 
       - name: Read Version from version.json
         run: |
-          $versionJson = Get-Content version.json -Raw | ConvertFrom-Json
+          $versionFile = ".version/version.json"
+          $versionJson = Get-Content $versionFile -Raw | ConvertFrom-Json
           echo "VERSION_NUMBER=$($versionJson.version)" | Out-File -Append -FilePath $Env:GITHUB_ENV
 
       - name: Print Version Number
@@ -84,4 +92,18 @@ jobs:
           
       - name: Publish
         run: |
-          dotnet nuget push "${{ env.PACKAGE_FILE }}" --source "github" --skip-duplicate --api-key ${{ secrets.NUGET_TOKEN }}
+          dotnet nuget push "${{ env.PACKAGE_FILE }}" --source "github" --skip-duplicate --api-key ${{ secrets.BUILD_TOKEN }}
+
+      - name: Update version-nuget.json
+        run: |
+          $NugetVersion = ${{ env.VERSION_NUMBER }}
+          $VersionData = @{
+            version = $NugetVersion
+          }
+          $nugetVersionFile = ".version/version-nuget.json"
+          $VersionData | ConvertTo-Json | Set-Content -Path $nugetVersionFile
+          git config --global user.email "${{ secrets.USER_EMAIL }}"
+          git config --global user.name "${{ github.repository_owner }}"
+          git add version-nuget.json
+          git commit -m "Update NuGet package version to $NugetVersion"
+          git push
