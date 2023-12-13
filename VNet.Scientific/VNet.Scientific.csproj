@@ -40,5 +40,25 @@
 		<Folder Include="Measurement\Dimensions\" />
 	</ItemGroup>
 
-	<Import Project="..\..\VNet.Expressions\VNet.Expressions\VNet.Expressions.projitems" Label="Shared" />
+	<ItemGroup Label="Imports">
+		<Compile Include="..\VNet.Expressions\**\*.cs"></Compile>
+		<Compile Remove="..\VNet.Expressions\obj\Debug\**" />
+		<Compile Remove="..\VNet.Expressions\obj\Release\**" />
+		<Compile Remove="..\VNet.Expressions\VNet.Expressions.Tests\**" />
+		<Compile Remove="..\VNet.Expressions\VNet.Expressions\**" />
+		<Compile Remove="obj\**" />
+		<EmbeddedResource Remove="obj\**" />
+		<None Remove="obj\**" />
+	</ItemGroup>
+
+	<ItemGroup Label="Imports">
+		<Compile Include="..\VNet.Scientific.CodeGen\**\*.cs"></Compile>
+		<Compile Remove="..\VNet.Scientific.CodeGen\obj\Debug\**" />
+		<Compile Remove="..\VNet.Scientific.CodeGen\obj\Release\**" />
+		<Compile Remove="..\VNet.Scientific.CodeGen\VNet.Scientific.CodeGen.Tests\**" />
+		<Compile Remove="..\VNet.Scientific.CodeGen\VNet.Scientific.CodeGen\**" />
+		<Compile Remove="obj\**" />
+		<EmbeddedResource Remove="obj\**" />
+		<None Remove="obj\**" />
+	</ItemGroup>
 </Project>

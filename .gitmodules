@@ -4,3 +4,6 @@
 [submodule "VNet.Scientific.CodeGen"]
 	path = VNet.Scientific.CodeGen
 	url = https://github.com/PrimeEagle/VNet.Scientific.CodeGen.git
+[submodule "VNet.CodeGeneration"]
+	path = VNet.CodeGeneration
+	url = https://github.com/PrimeEagle/VNet.CodeGeneration.git
