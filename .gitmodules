@@ -1,0 +1,6 @@
+[submodule "VNet.Expressions"]
+	path = VNet.Expressions
+	url = https://github.com/PrimeEagle/VNet.Expressions.git
+[submodule "VNet.Scientific.CodeGen"]
+	path = VNet.Scientific.CodeGen
+	url = https://github.com/PrimeEagle/VNet.Scientific.CodeGen.git

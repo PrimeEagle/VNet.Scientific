@@ -15,12 +15,9 @@
 	<ItemGroup>
 		<PackageReference Include="MathNet.Filtering" Version="0.7.0" />
 		<PackageReference Include="MathNet.Numerics" Version="5.0.0" />
-		<PackageReference Include="System.CodeDom" Version="7.0.0" />
-	</ItemGroup>
-	<ItemGroup>
-		<ProjectReference Include="..\..\VNet.Mathematics\VNet.Mathematics\VNet.Mathematics.csproj" />
-		<ProjectReference Include="..\..\VNet.System\VNet.System\VNet.System.csproj" />
-		<ProjectReference Include="..\VNet.Scientific.CodeGen\VNet.Scientific.CodeGen.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+		<PackageReference Include="System.CodeDom" Version="8.0.0" />
+		<PackageReference Include="VNet.Mathematics" Version="1.0.0" />
+		<PackageReference Include="VNet.System" Version="1.0.0" />
 	</ItemGroup>
 
 	<Target Name="CleanSourceGeneratedFiles" BeforeTargets="BeforeBuild" DependsOnTargets="$(BeforeBuildDependsOn)">
@@ -28,14 +25,19 @@
 	</Target>
 
 	<ItemGroup>
+		<Compile Remove="Astrophysics\**" />
 		<Compile Remove="Generated\**" />
 		<Content Include="Generated\**" />
 	</ItemGroup>
 
 	<ItemGroup>
+	  <EmbeddedResource Remove="Astrophysics\**" />
+	  <None Remove="Astrophysics\**" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<Folder Include="Measurement\VNet.Json\" />
 		<Folder Include="Measurement\Dimensions\" />
-		<Folder Include="Astrophysics\" />
 	</ItemGroup>
 
 	<Import Project="..\..\VNet.Expressions\VNet.Expressions\VNet.Expressions.projitems" Label="Shared" />

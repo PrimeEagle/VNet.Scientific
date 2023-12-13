@@ -7,6 +7,10 @@ on:
     types: [completed]
   workflow_dispatch:
 
+concurrency: 
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+  
 jobs:
   update-stats:
     runs-on: windows-latest
