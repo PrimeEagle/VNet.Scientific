@@ -1,5 +1,6 @@
 ﻿using System.Numerics;
 using VNet.System.Conversion;
+using VNet.Expressions;
 
 namespace VNet.Scientific.Measurement;
 
