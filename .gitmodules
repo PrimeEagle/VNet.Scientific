@@ -1,0 +1,3 @@
+[submodule "VNet.Expressions"]
+	path = VNet.Expressions
+	url = https://github.com/PrimeEagle/VNet.Expressions.git
