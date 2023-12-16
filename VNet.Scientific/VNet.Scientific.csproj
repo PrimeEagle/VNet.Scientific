@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+		<CompilerGeneratedFilesOutputPath>Generated</CompilerGeneratedFilesOutputPath>
+	</PropertyGroup>
+
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+		<Exec Command="xcopy /e /y &quot;$(TargetPath)&quot; &quot;D:\My Code\VNet bin\&quot;" />
+	</Target>
+
+	<ItemGroup>
+		<PackageReference Include="MathNet.Filtering" Version="0.7.0" />
+		<PackageReference Include="MathNet.Numerics" Version="5.0.0" />
+		<PackageReference Include="System.CodeDom" Version="7.0.0" />
+		<PackageReference Include="VNet.Mathematics" Version="1.0.0" />
+		<PackageReference Include="VNet.System" Version="1.0.0" />
+	</ItemGroup>
+
+	<Target Name="CleanSourceGeneratedFiles" BeforeTargets="BeforeBuild" DependsOnTargets="$(BeforeBuildDependsOn)">
+		<RemoveDir Directories="Generated" />
+	</Target>
+
+	<ItemGroup>
+		<Content Include="Generated\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Folder Include="Generated\" />
+		<Folder Include="Measurement\VNet.Json\" />
+		<Folder Include="Measurement\Dimensions\" />
+		<Folder Include="Astrophysics\" />
+	</ItemGroup>
+
+	<ItemGroup Label="Imports">
+		<Compile Include="..\VNet.Expressions\**\*.cs"></Compile>
+		<Compile Remove="..\VNet.Expressions\obj\Debug\**" />
+		<Compile Remove="..\VNet.Expressions\obj\Release\**" />
+		<Compile Remove="obj\**" />
+		<EmbeddedResource Remove="obj\**" />
+		<None Remove="obj\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Remove="..\VNet.Expressions\VNet.Expressions.Tests\Usings.cs" />
+	</ItemGroup>
+</Project>

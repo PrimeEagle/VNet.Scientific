@@ -1,0 +1,1 @@
+{"name":"RatioChangeRate","exponents":[0,0,-1,0,0,0,0],"default unit":"DecimalFractionPerSecond","units":["PercentPerSecond","DecimalFractionPerSecond"],"conversion functions":{"PercentPerSecond":"x / 1e2","DecimalFractionPerSecond":"x"},"symbols":{"PercentPerSecond":"%/s","DecimalFractionPerSecond":"/s"},"plural symbols":{}}
