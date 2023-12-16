@@ -41,9 +41,9 @@
 	</ItemGroup>
 	
 	<ItemGroup Label="Imports">
-		<Compile Include="..\..\VNet.Expressions\VNet.Expressions\*.cs"></Compile>
-		<Compile Remove="..\..\VNet.Expressions\VNet.Expressions\obj\Debug\**" />
-		<Compile Remove="..\..\VNet.Expressions\VNet.Expressions\obj\Release\**" />
+		<Compile Include="..\VNet.Expressions\VNet.Expressions\*.cs"></Compile>
+		<Compile Remove="..\VNet.Expressions\VNet.Expressions\obj\Debug\**" />
+		<Compile Remove="..\VNet.Expressions\VNet.Expressions\obj\Release\**" />
 		<Compile Remove="obj\**" />
 		<EmbeddedResource Remove="obj\**" />
 		<None Remove="obj\**" />
