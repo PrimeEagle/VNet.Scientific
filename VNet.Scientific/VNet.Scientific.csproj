@@ -47,4 +47,8 @@
 	<ItemGroup>
 	  <Compile Remove="..\VNet.Expressions\VNet.Expressions.Tests\Usings.cs" />
 	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\VNet.Scientific.CodeGen\VNet.Scientific.CodeGen.csproj" />
+	</ItemGroup>
 </Project>
