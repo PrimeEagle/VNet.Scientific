@@ -1,5 +1,4 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
 	<PropertyGroup>
 		<TargetFramework>net8.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
@@ -15,7 +14,10 @@
 	<ItemGroup>
 		<PackageReference Include="MathNet.Filtering" Version="0.7.0" />
 		<PackageReference Include="MathNet.Numerics" Version="5.0.0" />
-		<PackageReference Include="System.CodeDom" Version="7.0.0" />
+		<PackageReference Include="Microsoft.CodeAnalysis.Common" Version="4.8.0" />
+		<PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.8.0" />
+		<PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+		<PackageReference Include="System.CodeDom" Version="8.0.0" />
 		<PackageReference Include="VNet.Mathematics" Version="1.0.0" />
 		<PackageReference Include="VNet.System" Version="1.0.0" />
 	</ItemGroup>
@@ -25,30 +27,38 @@
 	</Target>
 
 	<ItemGroup>
-		<Content Include="Generated\**" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<Folder Include="Generated\" />
 		<Folder Include="Measurement\VNet.Json\" />
 		<Folder Include="Measurement\Dimensions\" />
-		<Folder Include="Astrophysics\" />
 	</ItemGroup>
 
 	<ItemGroup Label="Imports">
-		<Compile Include="..\VNet.Expressions\**\*.cs"></Compile>
-		<Compile Remove="..\VNet.Expressions\obj\Debug\**" />
-		<Compile Remove="..\VNet.Expressions\obj\Release\**" />
+		<Compile Include="..\VNet.Expressions\VNet.Expressions\**\*.cs"></Compile>
+		<Compile Remove="..\VNet.Expressions\VNet.Expressions\obj\Debug\**" />
+		<Compile Remove="..\VNet.Expressions\VNet.Expressions\obj\Release\**" />
+		<Compile Remove="..\VNet.Expressions\VNet.Expressions\VNet.Expressions.Tests\**" />
+		<Compile Remove="..\VNet.Expressions\VNet.Expressions\VNet.Expressions\**" />
 		<Compile Remove="obj\**" />
 		<EmbeddedResource Remove="obj\**" />
 		<None Remove="obj\**" />
 	</ItemGroup>
 
-	<ItemGroup>
-	  <Compile Remove="..\VNet.Expressions\VNet.Expressions.Tests\Usings.cs" />
+	<ItemGroup Label="Imports">
+		<Compile Include="..\VNet.CodeGeneration\VNet.CodeGeneration\**\*.cs"></Compile>
+		<Compile Remove="..\VNet.CodeGeneration\VNet.CodeGeneration\obj\Debug\**" />
+		<Compile Remove="..\VNet.CodeGeneration\VNet.CodeGeneration\obj\Release\**" />
+		<Compile Remove="..\VNet.CodeGeneration\VNet.CodeGeneration\VNet.CodeGeneration.Tests\**" />
+		<Compile Remove="..\VNet.CodeGeneration\VNet.CodeGeneration\VNet.CodeGeneration\**" />
+		<Compile Remove="obj\**" />
+		<EmbeddedResource Remove="obj\**" />
+		<None Remove="obj\**" />
 	</ItemGroup>
-
-	<ItemGroup>
-	  <ProjectReference Include="..\VNet.Scientific.CodeGen\VNet.Scientific.CodeGen.csproj" />
+	
+	<ItemGroup Label="Imports">
+		<Compile Include="..\VNet.Scientific.CodeGen\**\*.cs"></Compile>
+		<Compile Remove="..\VNet.Scientific.CodeGen\obj\Debug\**" />
+		<Compile Remove="..\VNet.Scientific.CodeGen\obj\Release\**" />
+		<Compile Remove="obj\**" />
+		<EmbeddedResource Remove="obj\**" />
+		<None Remove="obj\**" />
 	</ItemGroup>
 </Project>

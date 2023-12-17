@@ -3,15 +3,52 @@
 		<TargetFramework>netstandard2.0</TargetFramework>
 		<IsRoslynComponent>true</IsRoslynComponent>
 		<GenerateAssemblyInfo>true</GenerateAssemblyInfo>
-		<!--<EnforceExtendedAnalyzerRules>true</EnforceExtendedAnalyzerRules>-->
+		<EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+		<EnableDefaultNoneItems>false</EnableDefaultNoneItems>
+		<MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
 	</PropertyGroup>
-
 	<ItemGroup>
-		<PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.4">
-			<PrivateAssets>all</PrivateAssets>
-			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-		</PackageReference>
-		<PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.7.0" />
-		<PackageReference Include="System.CodeDom" Version="7.0.0" />
+	  <Compile Include="DimensionSourceGenerator.cs" />
+	  <Compile Include="IVNetConvertible.cs" />
+	  <Compile Include="UnitNetVNetMappingEntry.cs" />
+	  <Compile Include="UnitNet\UnitNetBaseDimensions.cs" />
+	  <Compile Include="UnitNet\UnitNetBaseUnits.cs" />
+	  <Compile Include="UnitNet\UnitNetDimension.cs" />
+	  <Compile Include="UnitNet\UnitNetLocalization.cs" />
+	  <Compile Include="UnitNet\UnitNetUnit.cs" />
+	  <Compile Include="VNetDimension.cs" />
+	</ItemGroup>
+	<ItemGroup>
+	  <PackageReference Include="Microsoft.CodeAnalysis" Version="4.8.0" />
+	  <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.4">
+	    <PrivateAssets>all</PrivateAssets>
+	    <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+	  </PackageReference>
+	  <PackageReference Include="Microsoft.CodeAnalysis.Common" Version="4.8.0" />
+	  <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.8.0" />
+	  <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+	  <PackageReference Include="System.CodeDom" Version="8.0.0" />
+	</ItemGroup>
+
+	<ItemGroup Label="Imports">
+		<Compile Include="..\VNet.Expressions\VNet.Expressions\**\*.cs"></Compile>
+		<Compile Remove="..\VNet.Expressions\VNet.Expressions\obj\Debug\**" />
+		<Compile Remove="..\VNet.Expressions\VNet.Expressions\obj\Release\**" />
+		<Compile Remove="..\VNet.Expressions\VNet.Expressions\VNet.Expressions.Tests\**" />
+		<Compile Remove="..\VNet.Expressions\VNet.Expressions\VNet.Expressions\**" />
+		<Compile Remove="obj\**" />
+		<EmbeddedResource Remove="obj\**" />
+		<None Remove="obj\**" />
+	</ItemGroup>
+
+	<ItemGroup Label="Imports">
+		<Compile Include="..\VNet.CodeGeneration\VNet.CodeGeneration\**\*.cs"></Compile>
+		<Compile Remove="..\VNet.CodeGeneration\VNet.CodeGeneration\obj\Debug\**" />
+		<Compile Remove="..\VNet.CodeGeneration\VNet.CodeGeneration\obj\Release\**" />
+		<Compile Remove="..\VNet.CodeGeneration\VNet.CodeGeneration\VNet.CodeGeneration.Tests\**" />
+		<Compile Remove="..\VNet.CodeGeneration\VNet.CodeGeneration\VNet.CodeGeneration\**" />
+		<Compile Remove="obj\**" />
+		<EmbeddedResource Remove="obj\**" />
+		<None Remove="obj\**" />
 	</ItemGroup>
 </Project>

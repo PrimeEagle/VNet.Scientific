@@ -20,9 +20,9 @@ namespace VNet.Scientific.CodeGen
         public void Initialize(GeneratorInitializationContext context)
         {
 #if DEBUG
-            if (!System.Diagnostics.Debugger.IsAttached)
+            if (!global::System.Diagnostics.Debugger.IsAttached)
             {
-                System.Diagnostics.Debugger.Launch();
+                global::System.Diagnostics.Debugger.Launch();
             }
 #endif
         }

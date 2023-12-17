@@ -14,6 +14,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".version", ".version", "{74
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VNet.Scientific.CodeGen", "VNet.Scientific.CodeGen\VNet.Scientific.CodeGen.csproj", "{0AEBAEE9-1E14-40CB-B8BF-1906D26DA511}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VNet.CodeGeneration", "VNet.CodeGeneration\VNet.CodeGeneration\VNet.CodeGeneration.csproj", "{A8F8D87A-4798-48CC-B096-CB996249B64C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VNet.Expressions", "VNet.Expressions\VNet.Expressions\VNet.Expressions.csproj", "{BE177AA0-6C65-4A88-BF35-96D99DB1530C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,6 +36,14 @@ Global
 		{0AEBAEE9-1E14-40CB-B8BF-1906D26DA511}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0AEBAEE9-1E14-40CB-B8BF-1906D26DA511}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0AEBAEE9-1E14-40CB-B8BF-1906D26DA511}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8F8D87A-4798-48CC-B096-CB996249B64C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8F8D87A-4798-48CC-B096-CB996249B64C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8F8D87A-4798-48CC-B096-CB996249B64C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8F8D87A-4798-48CC-B096-CB996249B64C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE177AA0-6C65-4A88-BF35-96D99DB1530C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE177AA0-6C65-4A88-BF35-96D99DB1530C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE177AA0-6C65-4A88-BF35-96D99DB1530C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE177AA0-6C65-4A88-BF35-96D99DB1530C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
