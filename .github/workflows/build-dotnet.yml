@@ -50,7 +50,7 @@ jobs:
             UsePackageReferences: true
               
     - name: Build with version
-      run: dotnet build ${{ secrets.DOTNET_SOLUTION }} /p:BuildNumber=${{ github.run_number }}
+      run: dotnet build ${{ secrets.DOTNET_SOLUTION }} /p:BuildNumber=${{ github.run_number }} /p:ServerBuild=true
       env:
             UsePackageReferences: true
       
