@@ -44,10 +44,9 @@ jobs:
         nuget sources Add -Name "GitHub" -Source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" -Username ${{ github.repository_owner }} -Password ${{ secrets.BUILD_TOKEN }}
       
     - name: Restore NuGet packages
-      run: dotnet restore ${{ secrets.DOTNET_SOLUTION }}
+      run: dotnet restore ${{ secrets.DOTNET_SOLUTION }} /p:ServerBuild=true
       env:
             NUGET_AUTH_TOKEN: ${{ secrets.BUILD_TOKEN }}
-            UsePackageReferences: true
               
     - name: Build with version
       run: dotnet build ${{ secrets.DOTNET_SOLUTION }} /p:BuildNumber=${{ github.run_number }} /p:ServerBuild=true

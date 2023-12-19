@@ -30,7 +30,10 @@
 	  <PackageReference Include="System.CodeDom" Version="8.0.0" />
 	</ItemGroup>
 
-	<ItemGroup Label="Imports">
+	<PropertyGroup Condition="'$(ServerBuild)' != ''">
+	</PropertyGroup>
+
+	<ItemGroup Label="Imports" Condition="'$(ServerBuild)' != ''">
 		<Compile Include="..\VNet.Expressions\VNet.Expressions\**\*.cs"></Compile>
 		<Compile Remove="..\VNet.Expressions\VNet.Expressions\obj\Debug\**" />
 		<Compile Remove="..\VNet.Expressions\VNet.Expressions\obj\Release\**" />
@@ -41,12 +44,34 @@
 		<None Remove="obj\**" />
 	</ItemGroup>
 
-	<ItemGroup Label="Imports">
+	<ItemGroup Label="Imports" Condition="'$(ServerBuild)' != ''">
 		<Compile Include="..\VNet.CodeGeneration\VNet.CodeGeneration\**\*.cs"></Compile>
 		<Compile Remove="..\VNet.CodeGeneration\VNet.CodeGeneration\obj\Debug\**" />
 		<Compile Remove="..\VNet.CodeGeneration\VNet.CodeGeneration\obj\Release\**" />
 		<Compile Remove="..\VNet.CodeGeneration\VNet.CodeGeneration\VNet.CodeGeneration.Tests\**" />
 		<Compile Remove="..\VNet.CodeGeneration\VNet.CodeGeneration\VNet.CodeGeneration\**" />
+		<Compile Remove="obj\**" />
+		<EmbeddedResource Remove="obj\**" />
+		<None Remove="obj\**" />
+	</ItemGroup>
+
+	<ItemGroup Label="Imports" Condition="'$(ServerBuild)' == ''">
+		<Compile Include="..\..\VNet.Expressions\VNet.Expressions\**\*.cs"></Compile>
+		<Compile Remove="..\..\VNet.Expressions\VNet.Expressions\obj\Debug\**" />
+		<Compile Remove="..\..\VNet.Expressions\VNet.Expressions\obj\Release\**" />
+		<Compile Remove="..\..\VNet.Expressions\VNet.Expressions\VNet.Expressions.Tests\**" />
+		<Compile Remove="..\..\VNet.Expressions\VNet.Expressions\VNet.Expressions\**" />
+		<Compile Remove="obj\**" />
+		<EmbeddedResource Remove="obj\**" />
+		<None Remove="obj\**" />
+	</ItemGroup>
+
+	<ItemGroup Label="Imports" Condition="'$(ServerBuild)' == ''">
+		<Compile Include="..\..\VNet.CodeGeneration\VNet.CodeGeneration\**\*.cs"></Compile>
+		<Compile Remove="..\..\VNet.CodeGeneration\VNet.CodeGeneration\obj\Debug\**" />
+		<Compile Remove="..\..\VNet.CodeGeneration\VNet.CodeGeneration\obj\Release\**" />
+		<Compile Remove="..\..\VNet.CodeGeneration\VNet.CodeGeneration\VNet.CodeGeneration.Tests\**" />
+		<Compile Remove="..\..\VNet.CodeGeneration\VNet.CodeGeneration\VNet.CodeGeneration\**" />
 		<Compile Remove="obj\**" />
 		<EmbeddedResource Remove="obj\**" />
 		<None Remove="obj\**" />

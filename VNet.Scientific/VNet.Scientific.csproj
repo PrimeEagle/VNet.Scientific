@@ -7,10 +7,6 @@
 		<CompilerGeneratedFilesOutputPath>Generated</CompilerGeneratedFilesOutputPath>
 	</PropertyGroup>
 
-	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
-		<Exec Command="xcopy /e /y &quot;$(TargetPath)&quot; &quot;D:\My Code\VNet bin\&quot;" />
-	</Target>
-
 	<ItemGroup>
 		<PackageReference Include="MathNet.Filtering" Version="0.7.0" />
 		<PackageReference Include="MathNet.Numerics" Version="5.0.0" />
@@ -18,8 +14,6 @@
 		<PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.8.0" />
 		<PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
 		<PackageReference Include="System.CodeDom" Version="8.0.0" />
-		<PackageReference Include="VNet.Mathematics" Version="1.0.0" />
-		<PackageReference Include="VNet.System" Version="1.0.0" />
 	</ItemGroup>
 
 	<Target Name="CleanSourceGeneratedFiles" BeforeTargets="BeforeBuild" DependsOnTargets="$(BeforeBuildDependsOn)">
@@ -31,7 +25,7 @@
 		<Folder Include="Measurement\Dimensions\" />
 	</ItemGroup>
 
-	<ItemGroup Label="Imports">
+	<ItemGroup Label="Imports" Condition="'$(ServerBuild)' != ''">
 		<Compile Include="..\VNet.Expressions\VNet.Expressions\**\*.cs"></Compile>
 		<Compile Remove="..\VNet.Expressions\VNet.Expressions\obj\Debug\**" />
 		<Compile Remove="..\VNet.Expressions\VNet.Expressions\obj\Release\**" />
@@ -42,12 +36,34 @@
 		<None Remove="obj\**" />
 	</ItemGroup>
 
-	<ItemGroup Label="Imports">
+	<ItemGroup Label="Imports" Condition="'$(ServerBuild)' != ''">
 		<Compile Include="..\VNet.CodeGeneration\VNet.CodeGeneration\**\*.cs"></Compile>
 		<Compile Remove="..\VNet.CodeGeneration\VNet.CodeGeneration\obj\Debug\**" />
 		<Compile Remove="..\VNet.CodeGeneration\VNet.CodeGeneration\obj\Release\**" />
 		<Compile Remove="..\VNet.CodeGeneration\VNet.CodeGeneration\VNet.CodeGeneration.Tests\**" />
 		<Compile Remove="..\VNet.CodeGeneration\VNet.CodeGeneration\VNet.CodeGeneration\**" />
+		<Compile Remove="obj\**" />
+		<EmbeddedResource Remove="obj\**" />
+		<None Remove="obj\**" />
+	</ItemGroup>
+
+	<ItemGroup Label="Imports" Condition="'$(ServerBuild)' == ''">
+		<Compile Include="..\..\VNet.Expressions\VNet.Expressions\**\*.cs"></Compile>
+		<Compile Remove="..\..\VNet.Expressions\VNet.Expressions\obj\Debug\**" />
+		<Compile Remove="..\..\VNet.Expressions\VNet.Expressions\obj\Release\**" />
+		<Compile Remove="..\..\VNet.Expressions\VNet.Expressions\VNet.Expressions.Tests\**" />
+		<Compile Remove="..\..\VNet.Expressions\VNet.Expressions\VNet.Expressions\**" />
+		<Compile Remove="obj\**" />
+		<EmbeddedResource Remove="obj\**" />
+		<None Remove="obj\**" />
+	</ItemGroup>
+
+	<ItemGroup Label="Imports" Condition="'$(ServerBuild)' == ''">
+		<Compile Include="..\..\VNet.CodeGeneration\VNet.CodeGeneration\**\*.cs"></Compile>
+		<Compile Remove="..\..\VNet.CodeGeneration\VNet.CodeGeneration\obj\Debug\**" />
+		<Compile Remove="..\..\VNet.CodeGeneration\VNet.CodeGeneration\obj\Release\**" />
+		<Compile Remove="..\..\VNet.CodeGeneration\VNet.CodeGeneration\VNet.CodeGeneration.Tests\**" />
+		<Compile Remove="..\..\VNet.CodeGeneration\VNet.CodeGeneration\VNet.CodeGeneration\**" />
 		<Compile Remove="obj\**" />
 		<EmbeddedResource Remove="obj\**" />
 		<None Remove="obj\**" />
@@ -61,4 +77,21 @@
 		<EmbeddedResource Remove="obj\**" />
 		<None Remove="obj\**" />
 	</ItemGroup>
+
+	<PropertyGroup Condition="'$(ServerBuild)' != ''">
+	</PropertyGroup>
+
+	<ItemGroup Condition="'$(ServerBuild)' != ''">
+		<PackageReference Include="VNet.Mathematics" Version="1.0.0" />
+		<PackageReference Include="VNet.System" Version="1.0.0" />
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(ServerBuild)' == ''">
+		<ProjectReference Include="..\..\VNet.Mathematics\VNet.Mathematics\VNet.Mathematics.csproj" />
+		<ProjectReference Include="..\..\VNet.System\VNet.System\VNet.System.csproj" />
+	</ItemGroup>
+
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="'$(ServerBuild)' == ''">
+		<Exec Command="xcopy /e /y &quot;$(TargetPath)&quot; &quot;D:\My Code\VNet bin\&quot;" />
+	</Target>
 </Project>
