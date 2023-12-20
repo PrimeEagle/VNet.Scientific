@@ -70,7 +70,7 @@ jobs:
         run: echo "Version number is $env:VERSION_NUMBER"
 
       - name: Pack
-        run: dotnet pack $env:GITHUB_ENV.sln --configuration Release -o nupkgs /p:Version=${{ env.VERSION_NUMBER }}
+        run: dotnet pack $env:GITHUB_ENV.sln --configuration Release -o nupkgs /p:Version=${{ env.VERSION_NUMBER }} /p:ServerBuild=true
   
       - name: Upload Artifacts
         uses: actions/upload-artifact@v3
