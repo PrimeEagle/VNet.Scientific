@@ -4,6 +4,7 @@ on:
   push:
     paths-ignore:
       - 'README.md'
+      - 'LICENSE'
       - '.github/workflows/*.yml'
       - '.version/*.json'
       - '.gitignore'
@@ -20,6 +21,12 @@ jobs:
     runs-on: windows-latest
 
     steps:
+    - name: Extract repo name
+      run: |
+        $repoName = "${{ github.repository }}".Split('/')[1]
+        echo "REPO_NAME=$repoName" | Out-File -FilePath $env:GITHUB_ENV -Append
+      shell: pwsh
+
     - uses: actions/checkout@v3
       with:
           submodules: 'recursive'
@@ -44,12 +51,12 @@ jobs:
         nuget sources Add -Name "GitHub" -Source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" -Username ${{ github.repository_owner }} -Password ${{ secrets.BUILD_TOKEN }}
       
     - name: Restore NuGet packages
-      run: dotnet restore ${{ secrets.DOTNET_SOLUTION }} /p:ServerBuild=true
+      run: dotnet restore $env:GITHUB_ENV.sln /p:ServerBuild=true
       env:
             NUGET_AUTH_TOKEN: ${{ secrets.BUILD_TOKEN }}
               
     - name: Build with version
-      run: dotnet build ${{ secrets.DOTNET_SOLUTION }} /p:BuildNumber=${{ github.run_number }} /p:ServerBuild=true
+      run: dotnet build $env:GITHUB_ENV.sln /p:BuildNumber=${{ github.run_number }} /p:ServerBuild=true
       env:
             UsePackageReferences: true
       

@@ -7,6 +7,27 @@
 		<CompilerGeneratedFilesOutputPath>Generated</CompilerGeneratedFilesOutputPath>
 	</PropertyGroup>
 
+	<PropertyGroup>
+		<PackageId>VNet.Scientific</PackageId>
+		<Authors>PrimeEagle</Authors>
+		<Product>VNet.Scientific</Product>
+		<Description>Class library of scientific functions, including noise generation, filters, interpolation algorithms, unit and dimension measurement, smoothing, transforms, and numerical volumes.</Description>
+		<PackageTags>dotnet;dotnet-core;dotnet-library;scientific;noise;filters;interpolation;units;dimensions;smoothing;transforms;volumes</PackageTags>
+		<PackageReleaseNotes>Add NuGet metadata.</PackageReleaseNotes>
+		<PackageIcon>icon.png</PackageIcon>
+		<PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+		<PackageProjectUrl>https://github.com/PrimeEagle/VNet.Scientific</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/PrimeEagle/VNet.Scientific</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+		<TargetFramework>net8.0</TargetFramework>
+		<AssemblyName>VNet.Scientific</AssemblyName>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="icon.png" Pack="true" PackagePath="" />
+	</ItemGroup>
+	
 	<ItemGroup>
 		<PackageReference Include="MathNet.Filtering" Version="0.7.0" />
 		<PackageReference Include="MathNet.Numerics" Version="5.0.0" />

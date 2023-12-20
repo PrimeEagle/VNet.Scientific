@@ -13,6 +13,12 @@ jobs:
     outputs:
       version_changed: ${{ steps.check.outputs.version_changed }}
     steps:
+      - name: Extract repo name
+        run: |
+            $repoName = "${{ github.repository }}".Split('/')[1]
+            echo "REPO_NAME=$repoName" | Out-File -FilePath $env:GITHUB_ENV -Append
+        shell: pwsh
+
       - name: Checkout
         uses: actions/checkout@v3
         with:
@@ -64,7 +70,7 @@ jobs:
         run: echo "Version number is $env:VERSION_NUMBER"
 
       - name: Pack
-        run: dotnet pack ${{ secrets.DOTNET_SOLUTION }} --configuration Release -o nupkgs /p:Version=${{ env.VERSION_NUMBER }}
+        run: dotnet pack $env:GITHUB_ENV.sln --configuration Release -o nupkgs /p:Version=${{ env.VERSION_NUMBER }}
   
       - name: Upload Artifacts
         uses: actions/upload-artifact@v3
