@@ -1,118 +1,109 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-	<PropertyGroup>
-		<TargetFramework>net8.0</TargetFramework>
-		<ImplicitUsings>enable</ImplicitUsings>
-		<Nullable>enable</Nullable>
-		<EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
-		<CompilerGeneratedFilesOutputPath>Generated</CompilerGeneratedFilesOutputPath>
-	</PropertyGroup>
-
-	<PropertyGroup>
-		<PackageId>VNet.Scientific</PackageId>
-		<Authors>PrimeEagle</Authors>
-		<Product>VNet.Scientific</Product>
-		<Description>Class library of scientific functions, including noise generation, filters, interpolation algorithms, unit and dimension measurement, smoothing, transforms, and numerical volumes.</Description>
-		<PackageTags>dotnet;dotnet-core;dotnet-library;scientific;noise;filters;interpolation;units;dimensions;smoothing;transforms;volumes</PackageTags>
-		<PackageReleaseNotes>Add NuGet metadata.</PackageReleaseNotes>
-		<PackageIcon>icon.png</PackageIcon>
-		<PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
-		<PackageProjectUrl>https://github.com/PrimeEagle/VNet.Scientific</PackageProjectUrl>
-		<RepositoryUrl>https://github.com/PrimeEagle/VNet.Scientific</RepositoryUrl>
-		<RepositoryType>git</RepositoryType>
-		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-		<TargetFramework>net8.0</TargetFramework>
-		<AssemblyName>VNet.Scientific</AssemblyName>
-	</PropertyGroup>
-
-	<ItemGroup>
-		<None Include="icon.png" Pack="true" PackagePath="" />
-	</ItemGroup>
-	
-	<ItemGroup>
-		<PackageReference Include="MathNet.Filtering" Version="0.7.0" />
-		<PackageReference Include="MathNet.Numerics" Version="5.0.0" />
-		<PackageReference Include="Microsoft.CodeAnalysis.Common" Version="4.8.0" />
-		<PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.8.0" />
-		<PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
-		<PackageReference Include="System.CodeDom" Version="8.0.0" />
-	</ItemGroup>
-
-	<Target Name="CleanSourceGeneratedFiles" BeforeTargets="BeforeBuild" DependsOnTargets="$(BeforeBuildDependsOn)">
-		<RemoveDir Directories="Generated" />
-	</Target>
-
-	<ItemGroup>
-		<Folder Include="Measurement\VNet.Json\" />
-		<Folder Include="Measurement\Dimensions\" />
-	</ItemGroup>
-
-	<ItemGroup Label="Imports" Condition="'$(ServerBuild)' != ''">
-		<Compile Include="..\VNet.Expressions\VNet.Expressions\**\*.cs"></Compile>
-		<Compile Remove="..\VNet.Expressions\VNet.Expressions\obj\Debug\**" />
-		<Compile Remove="..\VNet.Expressions\VNet.Expressions\obj\Release\**" />
-		<Compile Remove="..\VNet.Expressions\VNet.Expressions\VNet.Expressions.Tests\**" />
-		<Compile Remove="..\VNet.Expressions\VNet.Expressions\VNet.Expressions\**" />
-		<Compile Remove="obj\**" />
-		<EmbeddedResource Remove="obj\**" />
-		<None Remove="obj\**" />
-	</ItemGroup>
-
-	<ItemGroup Label="Imports" Condition="'$(ServerBuild)' != ''">
-		<Compile Include="..\VNet.CodeGeneration\VNet.CodeGeneration\**\*.cs"></Compile>
-		<Compile Remove="..\VNet.CodeGeneration\VNet.CodeGeneration\obj\Debug\**" />
-		<Compile Remove="..\VNet.CodeGeneration\VNet.CodeGeneration\obj\Release\**" />
-		<Compile Remove="..\VNet.CodeGeneration\VNet.CodeGeneration\VNet.CodeGeneration.Tests\**" />
-		<Compile Remove="..\VNet.CodeGeneration\VNet.CodeGeneration\VNet.CodeGeneration\**" />
-		<Compile Remove="obj\**" />
-		<EmbeddedResource Remove="obj\**" />
-		<None Remove="obj\**" />
-	</ItemGroup>
-
-	<ItemGroup Label="Imports" Condition="'$(ServerBuild)' == ''">
-		<Compile Include="..\..\VNet.Expressions\VNet.Expressions\**\*.cs"></Compile>
-		<Compile Remove="..\..\VNet.Expressions\VNet.Expressions\obj\Debug\**" />
-		<Compile Remove="..\..\VNet.Expressions\VNet.Expressions\obj\Release\**" />
-		<Compile Remove="..\..\VNet.Expressions\VNet.Expressions\VNet.Expressions.Tests\**" />
-		<Compile Remove="..\..\VNet.Expressions\VNet.Expressions\VNet.Expressions\**" />
-		<Compile Remove="obj\**" />
-		<EmbeddedResource Remove="obj\**" />
-		<None Remove="obj\**" />
-	</ItemGroup>
-
-	<ItemGroup Label="Imports" Condition="'$(ServerBuild)' == ''">
-		<Compile Include="..\..\VNet.CodeGeneration\VNet.CodeGeneration\**\*.cs"></Compile>
-		<Compile Remove="..\..\VNet.CodeGeneration\VNet.CodeGeneration\obj\Debug\**" />
-		<Compile Remove="..\..\VNet.CodeGeneration\VNet.CodeGeneration\obj\Release\**" />
-		<Compile Remove="..\..\VNet.CodeGeneration\VNet.CodeGeneration\VNet.CodeGeneration.Tests\**" />
-		<Compile Remove="..\..\VNet.CodeGeneration\VNet.CodeGeneration\VNet.CodeGeneration\**" />
-		<Compile Remove="obj\**" />
-		<EmbeddedResource Remove="obj\**" />
-		<None Remove="obj\**" />
-	</ItemGroup>
-	
-	<ItemGroup Label="Imports">
-		<Compile Include="..\VNet.Scientific.CodeGen\**\*.cs"></Compile>
-		<Compile Remove="..\VNet.Scientific.CodeGen\obj\Debug\**" />
-		<Compile Remove="..\VNet.Scientific.CodeGen\obj\Release\**" />
-		<Compile Remove="obj\**" />
-		<EmbeddedResource Remove="obj\**" />
-		<None Remove="obj\**" />
-	</ItemGroup>
-
-	<PropertyGroup Condition="'$(ServerBuild)' != ''">
-	</PropertyGroup>
-
-	<ItemGroup Condition="'$(ServerBuild)' != ''">
-		<PackageReference Include="VNet.Mathematics" Version="1.0.0" />
-		<PackageReference Include="VNet.System" Version="1.0.0" />
-	</ItemGroup>
-
-	<ItemGroup Condition="'$(ServerBuild)' == ''">
-		<ProjectReference Include="..\..\VNet.Mathematics\VNet.Mathematics\VNet.Mathematics.csproj" />
-		<ProjectReference Include="..\..\VNet.System\VNet.System\VNet.System.csproj" />
-	</ItemGroup>
-
-	<Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="'$(ServerBuild)' == ''">
-		<Exec Command="xcopy /e /y &quot;$(TargetPath)&quot; &quot;D:\My Code\VNet bin\&quot;" />
-	</Target>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+    <CompilerGeneratedFilesOutputPath>Generated</CompilerGeneratedFilesOutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PackageId>VNet.Scientific</PackageId>
+    <Authors>PrimeEagle</Authors>
+    <Product>VNet.Scientific</Product>
+    <Description>Class library of scientific functions, including noise generation, filters, interpolation algorithms, unit and dimension measurement, smoothing, transforms, and numerical volumes.</Description>
+    <PackageTags>dotnet;dotnet-core;dotnet-library;scientific;noise;filters;interpolation;units;dimensions;smoothing;transforms;volumes</PackageTags>
+    <PackageReleaseNotes>Add NuGet metadata.</PackageReleaseNotes>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/PrimeEagle/VNet.Scientific</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/PrimeEagle/VNet.Scientific</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <TargetFramework>net8.0</TargetFramework>
+    <AssemblyName>VNet.Scientific</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="icon.png" Pack="true" PackagePath="" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="MathNet.Filtering" Version="0.7.0" />
+    <PackageReference Include="MathNet.Numerics" Version="5.0.0" />
+    <PackageReference Include="Microsoft.CodeAnalysis.Common" Version="4.8.0" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.8.0" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="System.CodeDom" Version="8.0.0" />
+  </ItemGroup>
+  <Target Name="CleanSourceGeneratedFiles" BeforeTargets="BeforeBuild" DependsOnTargets="$(BeforeBuildDependsOn)">
+    <RemoveDir Directories="Generated" />
+  </Target>
+  <ItemGroup>
+    <Folder Include="Measurement\VNet.Json\" />
+    <Folder Include="Measurement\Dimensions\" />
+  </ItemGroup>
+  <ItemGroup Label="Imports" Condition="'$(ServerBuild)' != ''">
+    <Compile Include="..\VNet.Expressions\VNet.Expressions\**\*.cs">
+    </Compile>
+    <Compile Remove="..\VNet.Expressions\VNet.Expressions\obj\Debug\**" />
+    <Compile Remove="..\VNet.Expressions\VNet.Expressions\obj\Release\**" />
+    <Compile Remove="..\VNet.Expressions\VNet.Expressions\VNet.Expressions.Tests\**" />
+    <Compile Remove="..\VNet.Expressions\VNet.Expressions\VNet.Expressions\**" />
+    <Compile Remove="obj\**" />
+    <EmbeddedResource Remove="obj\**" />
+    <None Remove="obj\**" />
+  </ItemGroup>
+  <ItemGroup Label="Imports" Condition="'$(ServerBuild)' != ''">
+    <Compile Include="..\VNet.CodeGeneration\VNet.CodeGeneration\**\*.cs">
+    </Compile>
+    <Compile Remove="..\VNet.CodeGeneration\VNet.CodeGeneration\obj\Debug\**" />
+    <Compile Remove="..\VNet.CodeGeneration\VNet.CodeGeneration\obj\Release\**" />
+    <Compile Remove="..\VNet.CodeGeneration\VNet.CodeGeneration\VNet.CodeGeneration.Tests\**" />
+    <Compile Remove="..\VNet.CodeGeneration\VNet.CodeGeneration\VNet.CodeGeneration\**" />
+    <Compile Remove="obj\**" />
+    <EmbeddedResource Remove="obj\**" />
+    <None Remove="obj\**" />
+  </ItemGroup>
+  <ItemGroup Label="Imports" Condition="'$(ServerBuild)' == ''">
+    <Compile Include="..\..\VNet.Expressions\VNet.Expressions\**\*.cs">
+    </Compile>
+    <Compile Remove="..\..\VNet.Expressions\VNet.Expressions\obj\Debug\**" />
+    <Compile Remove="..\..\VNet.Expressions\VNet.Expressions\obj\Release\**" />
+    <Compile Remove="..\..\VNet.Expressions\VNet.Expressions\VNet.Expressions.Tests\**" />
+    <Compile Remove="..\..\VNet.Expressions\VNet.Expressions\VNet.Expressions\**" />
+    <Compile Remove="obj\**" />
+    <EmbeddedResource Remove="obj\**" />
+    <None Remove="obj\**" />
+  </ItemGroup>
+  <ItemGroup Label="Imports" Condition="'$(ServerBuild)' == ''">
+    <Compile Include="..\..\VNet.CodeGeneration\VNet.CodeGeneration\**\*.cs">
+    </Compile>
+    <Compile Remove="..\..\VNet.CodeGeneration\VNet.CodeGeneration\obj\Debug\**" />
+    <Compile Remove="..\..\VNet.CodeGeneration\VNet.CodeGeneration\obj\Release\**" />
+    <Compile Remove="..\..\VNet.CodeGeneration\VNet.CodeGeneration\VNet.CodeGeneration.Tests\**" />
+    <Compile Remove="..\..\VNet.CodeGeneration\VNet.CodeGeneration\VNet.CodeGeneration\**" />
+    <Compile Remove="obj\**" />
+    <EmbeddedResource Remove="obj\**" />
+    <None Remove="obj\**" />
+  </ItemGroup>
+  <ItemGroup Label="Imports">
+    <Compile Include="..\VNet.Scientific.CodeGen\**\*.cs">
+    </Compile>
+    <Compile Remove="..\VNet.Scientific.CodeGen\obj\Debug\**" />
+    <Compile Remove="..\VNet.Scientific.CodeGen\obj\Release\**" />
+    <Compile Remove="obj\**" />
+    <EmbeddedResource Remove="obj\**" />
+    <None Remove="obj\**" />
+  </ItemGroup>
+  <PropertyGroup Condition="'$(ServerBuild)' != ''">
+  </PropertyGroup>
+  <ItemGroup Condition="'$(ServerBuild)' != ''">
+    <PackageReference Include="VNet.Mathematics" Version="1.0.0" />
+    <PackageReference Include="VNet.System" Version="1.0.0" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(ServerBuild)' == ''">
+    <ProjectReference Include="..\..\VNet.Mathematics\VNet.Mathematics\VNet.Mathematics.csproj" />
+    <ProjectReference Include="..\..\VNet.System\VNet.System\VNet.System.csproj" />
+  </ItemGroup>
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="'$(ServerBuild)' == ''">
+    <Exec Command="xcopy /e /y &quot;$(TargetPath)&quot; &quot;D:\My Code\VNet bin\&quot;" />
+  </Target>
 </Project>
