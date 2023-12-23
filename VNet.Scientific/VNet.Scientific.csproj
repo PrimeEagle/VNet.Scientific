@@ -96,8 +96,8 @@
   <PropertyGroup Condition="'$(ServerBuild)' != ''">
   </PropertyGroup>
   <ItemGroup Condition="'$(ServerBuild)' != ''">
-    <PackageReference Include="VNet.Mathematics" Version="1.0.0" />
-    <PackageReference Include="VNet.System" Version="1.0.0" />
+    <PackageReference Include="VNet.Mathematics" Version="1.0.1" />
+    <PackageReference Include="VNet.System" Version="1.1.1" />
   </ItemGroup>
   <ItemGroup Condition="'$(ServerBuild)' == ''">
     <ProjectReference Include="..\..\VNet.Mathematics\VNet.Mathematics\VNet.Mathematics.csproj" />
