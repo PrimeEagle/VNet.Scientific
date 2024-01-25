@@ -95,11 +95,11 @@
   </ItemGroup>
   <PropertyGroup Condition="'$(ServerBuild)' != ''">
   </PropertyGroup>
-  <ItemGroup Condition="'$(ServerBuild)' != ''">
+  <ItemGroup Condition="'$(ServerBuild)' == 'true' ">
     <PackageReference Include="VNet.Mathematics" Version="1.0.1" />
     <PackageReference Include="VNet.System" Version="1.1.1" />
   </ItemGroup>
-  <ItemGroup Condition="'$(ServerBuild)' == ''">
+  <ItemGroup Condition="'$(ServerBuild)' == 'false'  Or '$(ServerBuild)' == '' ">
     <ProjectReference Include="..\..\VNet.Mathematics\VNet.Mathematics\VNet.Mathematics.csproj" />
     <ProjectReference Include="..\..\VNet.System\VNet.System\VNet.System.csproj" />
   </ItemGroup>
